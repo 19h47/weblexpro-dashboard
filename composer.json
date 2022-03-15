@@ -1,0 +1,13 @@
+{
+	"require": {
+		"timber/timber": "2.0.0-alpha.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"WebLexProDashboard\\": "./includes"
+		},
+		"files": [
+			"./includes/helpers.php"
+		]
+	}
+}

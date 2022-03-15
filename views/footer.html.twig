@@ -1,0 +1,24 @@
+{#
+ # Footer
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+<footer class="py-12 text-white bg-blue-bright">
+	<div class="container">
+		<div class="row">
+			<div class="lg:col-6/12">
+				FOOTER
+			</div>
+
+			<div class="lg:col-6/12">
+				<ul class="flex lg:justify-end">
+					<li>Copyright@{{ 'now' | date( 'Y' ) }}</li>
+					{{- '&nbsp;&mdash;&nbsp;' -}}
+					<li>WebLex</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>

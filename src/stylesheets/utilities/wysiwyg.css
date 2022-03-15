@@ -1,0 +1,17 @@
+/**
+ * Wysiwyg
+ *
+ * @package WordPress
+ * @subpackage LesBottes
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ */
+
+@layer utilities {
+	.wysiwyg > *:first-child {
+		@apply mt-0;
+	}
+
+	.wysiwyg > *:last-child {
+		@apply mb-0;
+	}
+}
