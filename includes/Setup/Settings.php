@@ -31,7 +31,7 @@ class Settings {
 	public function register_settings() : void {
 		add_settings_field(
 			'copyright',
-			__( 'Copyright', 'mccormackfarms' ),
+			__( 'Copyright', 'weblexprodashboard' ),
 			array( $this, 'textarea_callback' ),
 			'reading',
 			'default',
@@ -39,7 +39,7 @@ class Settings {
 				'id'          => 'copyright',
 				'name'        => 'copyright',
 				'value'       => get_option( 'copyright' ),
-				'placeholder' => __( 'Copyright', 'mccormackfarms' ),
+				'placeholder' => __( 'Copyright', 'weblexprodashboard' ),
 			)
 		);
 

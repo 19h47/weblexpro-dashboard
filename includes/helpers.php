@@ -73,7 +73,7 @@ function html_class( $class = '' ) : string {
  */
 function get_webfonts() : array {
 	return array(
-		'open-sans' => '//fonts.googleapis.com/css2?family=Cookie&family=Open+Sans&display=swap',
+		'open-sans' => '//fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap',
 	);
 }
 

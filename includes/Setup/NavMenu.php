@@ -35,9 +35,7 @@ class NavMenu {
 	public function register_menus(): void {
 		register_nav_menus(
 			array(
-				'main'   => __( 'Main Menu', 'mccormackfarms' ),
-				'cloud'  => __( 'Cloud Menu', 'mccormackfarms' ),
-				'footer' => __( 'Footer Menu', 'mccormackfarms' ),
+				'main' => __( 'Main Menu', 'weblexprodashboard' ),
 			)
 		);
 	}

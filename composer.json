@@ -1,13 +1,29 @@
 {
 	"require": {
-		"timber/timber": "2.0.0-alpha.4"
+		"timber/timber": "2.0.0-alpha.4",
+		"19h47/wp-form-controls": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
 			"WebLexProDashboard\\": "./includes"
 		},
 		"files": [
-			"./includes/helpers.php"
+			"./includes/helpers.php",
+			"./vendor/19h47/wp-form-controls/wp-form-controls.php"
 		]
-	}
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "19h47/wp-form-controls",
+				"version": "master",
+				"source": {
+					"url": "https://gist.github.com/5bc7dc96204d7290ce781a54756e0a7b.git",
+					"type": "git",
+					"reference": "master"
+				}
+			}
+		}
+	]
 }

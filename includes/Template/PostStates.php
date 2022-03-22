@@ -34,15 +34,15 @@ class PostStates {
 	 */
 	public function filter_post_states( array $post_states, WP_Post $post ) {
 		if ( 'templates/leaf-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Leaf Page', 'mccormackfarms' );
+			$post_states[] = __( 'Leaf Page', 'weblexprodashboard' );
 		}
 
 		if ( 'templates/find-us-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Find Us Page', 'mccormackfarms' );
+			$post_states[] = __( 'Find Us Page', 'weblexprodashboard' );
 		}
 
 		if ( 'templates/salad-creator-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Salad Creator Page', 'mccormackfarms' );
+			$post_states[] = __( 'Salad Creator Page', 'weblexprodashboard' );
 		}
 
 		return $post_states;

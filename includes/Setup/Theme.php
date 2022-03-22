@@ -11,7 +11,7 @@ namespace WebLexProDashboard\Setup;
 
 use Timber\{ Timber };
 use Twig\{ TwigFunction };
-use WebLexProDashboard\Models\{ SaladCreatorPage };
+use WebLexProDashboard\Models\{ FrontPage };
 use WP_Post;
 
 $timber = new Timber();
@@ -156,6 +156,26 @@ class Theme {
 
 		$twig->addFunction( new TwigFunction( 'uniqid', 'uniqid' ) );
 
+		$twig->addFunction(
+			new TwigFunction(
+				'is_user_logged_in',
+				function() {
+					return is_user_logged_in();
+				}
+			)
+		);
+
+		$twig->addFunction(
+			new TwigFunction(
+				'wp_loginout',
+				function( string $redirect = '', bool $echo = false ) {
+					$redirect = '' === $redirect ? get_permalink() : $redirect;
+
+					return wp_loginout( $redirect, $echo );
+				}
+			)
+		);
+
 		return $twig;
 	}
 
@@ -177,7 +197,7 @@ class Theme {
 			array(
 				'title' => 'Twitter',
 				'slug'  => 'twitter',
-				'name'  => __( 'Share on Twitter', 'mccormackfarms' ),
+				'name'  => __( 'Share on Twitter', 'weblexprodashboard' ),
 				'link'  => 'https://twitter.com/intent/tweet?url=',
 				'url'   => get_option( 'twitter' ),
 				'color' => '#1da1f2',
@@ -185,7 +205,7 @@ class Theme {
 			array(
 				'title' => 'Facebook',
 				'slug'  => 'facebook',
-				'name'  => __( 'Share on Facebook', 'mccormackfarms' ),
+				'name'  => __( 'Share on Facebook', 'weblexprodashboard' ),
 				'link'  => 'https://www.facebook.com/sharer.php?u=',
 				'url'   => get_option( 'facebook' ),
 				'color' => '#3b5998',
@@ -199,14 +219,14 @@ class Theme {
 			array(
 				'title' => 'Pinterest',
 				'slug'  => 'pinterest',
-				'name'  => __( 'Share on Pinterest', 'mccormackfarms' ),
+				'name'  => __( 'Share on Pinterest', 'weblexprodashboard' ),
 				'link'  => 'https://pinterest.com/pin/create/link/?url=',
 				'color' => '#e60023',
 			),
 			array(
 				'title' => 'LinkedIn',
 				'slug'  => 'linkedin',
-				'name'  => __( 'Share on LinkedIn', 'mccormackfarms' ),
+				'name'  => __( 'Share on LinkedIn', 'weblexprodashboard' ),
 				'link'  => 'https://www.linkedin.com/sharing/share-offsite/?url=',
 				'url'   => get_option( 'linkedin' ),
 				'color' => '#0077b5',
@@ -238,7 +258,7 @@ class Theme {
 	public function add_to_context( array $context ) : array {
 		global $wp;
 
-		$context['current_url']  = home_url( add_query_arg( array(), $wp->request ) );
+		$context['current_url'] = home_url( add_query_arg( array(), $wp->request ) );
 
 		return $context;
 	}
@@ -251,8 +271,8 @@ class Theme {
 	public function add_post_classmap( $classmap ) : array {
 		$custom_classmap = array(
 			'page' => function( WP_Post $post ) {
-				if ( 'templates/salad-creator-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-					return SaladCreatorPage::class;
+				if ( is_front_page() ) {
+					return FrontPage::class;
 				}
 			},
 		);

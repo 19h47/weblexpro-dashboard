@@ -1,0 +1,28 @@
+{#
+ # Front Page
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block content %}
+	<div class="container my-20">
+		<div class="row">
+			<div class="lg:col-4/12 lg:ml-4/12">
+				<div class="p-12 border border-blue-dark-grayish-20">
+					{% if is_user_logged_in() %}
+						<h3 class="mb-4 font-semibold text-center text-red-light">
+							{{- __( 'Howdy %s', 'weblexprodashboard' ) | format( post.current_user.user_login ) -}}
+						</h3>
+						<p class="mb-5 text-center text-blue-dark-grayish">{{- __( 'You are already logged in.', 'weblexprodashboard' ) -}}</p>
+						<p>{{- wp_loginout() -}}</p>
+					{% else %}
+						{{ post.login_form() }}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

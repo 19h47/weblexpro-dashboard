@@ -8,7 +8,7 @@
 
 namespace WebLexProDashboard;
 
-use WebLexProDashboard\{ WP, Setup };
+use WebLexProDashboard\{ WP, Setup, PostTemplate, GeneralTemplate };
 
 /**
  * Init
@@ -33,6 +33,7 @@ class Init {
 			Setup\Settings::class,
 			PostTemplate\BodyClass::class,
 			Template\PostStates::class,
+			GeneralTemplate::class,
 		);
 
 		return $array;
