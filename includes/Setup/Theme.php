@@ -11,6 +11,7 @@ namespace WebLexProDashboard\Setup;
 
 use Timber\{ Timber };
 use Twig\{ TwigFunction };
+use Twig\Extra\Html\HtmlExtension;
 use WebLexProDashboard\Models\{ FrontPage };
 use WP_Post;
 
@@ -175,6 +176,17 @@ class Theme {
 				}
 			)
 		);
+
+		$twig->addFunction(
+			new TwigFunction(
+				'asset',
+				function( string $asset, bool $echo = false ) {
+					return asset( $asset, $echo );
+				}
+			)
+		);
+
+		$twig->addExtension( new HtmlExtension() );
 
 		return $twig;
 	}

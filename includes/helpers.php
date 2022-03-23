@@ -112,3 +112,28 @@ function get_theme_name() : string {
 function get_theme_text_domain() : string {
 	return wp_get_theme()->get( 'TextDomain' );
 }
+
+
+
+if ( function_exists( __NAMESPACE__ . '\get_theme_manifest' ) ) {
+	/**
+	 * Asset
+	 *
+	 * @param string $asset Asset to retrieve from theme manifest.
+	 * @param bool   $echo Whether to echo or return.
+	 *
+	 * @since 1.0.0
+	 */
+	function asset( string $asset, bool $echo = true ) {
+
+		if ( ! empty( get_theme_manifest()[ $asset ] ) ) {
+			$uri = get_template_directory_uri() . '/' . get_theme_manifest()[ $asset ];
+
+			if ( $echo ) {
+				echo esc_url( $uri ); //phpcs:ignore
+			} else {
+				return $uri;
+			}
+		}
+	}
+}

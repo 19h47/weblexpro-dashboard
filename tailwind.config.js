@@ -3,6 +3,7 @@
  */
 
 const colors = require("./tailwind/tailwind.config.colors");
+const minWidth = require("./tailwind/tailwind.config.minWidth");
 const spacing = require("./tailwind/tailwind.config.spacing");
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
 		fontFamily: {
 			body: ['Open Sans', 'sans-serif'],
 		},
-		extend: { colors, spacing },
+		extend: { colors, minWidth, spacing },
 	},
 	plugins: [],
 };

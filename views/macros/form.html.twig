@@ -1,0 +1,34 @@
+{% macro text( args ) %}
+	{%
+		set args = {
+			id: uniqid(),
+			name: '',
+			type: 'text',
+			value: '',
+			input_class: [],
+			label: '',
+			placeholder: '',
+			custom_attributes: {},
+		} | merge( args )
+	%}
+
+	<div class="px-4 py-2 border rounded border-blue-dark-grayish-20">
+
+		{% if args.label %}
+			<label class="block mb-2 text-xs text-blue-dark opacity-30" for="{{ args.id | e }}">
+				{{- args.label | e( 'esc_html' ) -}}
+			</label>
+		{% endif %}
+
+		<input
+			id="{{ args.id | e }}"
+			type="{{ args.type | e }}"
+			name="{{ args.name | e }}"
+			class="{{ html_classes( "font-sm block w-full focus:outline-none py-1.5 px-3 bg-gray-very-light #{ args.input_class | join( ' ' ) }"  ) | trim | e }}"
+			{{ args.placeholder ? "placeholder=\"#{ args.placeholder | e  }\"" : '' }}
+			value="{{ args.value | e }}"
+			{{ args.custom_attributes | map( ( value, key ) => "#{key}=\"#{value}\"" ) | join( ' ' ) | raw }}
+		>
+
+	</div>
+{% endmacro %}

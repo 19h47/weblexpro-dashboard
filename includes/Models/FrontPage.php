@@ -22,11 +22,21 @@ class FrontPage extends Post {
 	}
 
 	public function login_form() {
-		$args = array(
-			'echo'     => false,
-			'redirect' => get_permalink(),
+		$data = TImber::context();
+
+		$data = array_merge(
+			$data,
+			array(
+				'redirect'         => get_permalink(),
+				'action'           => site_url( 'wp-login.php', 'login_post' ),
+				'lostpassword_url' => wp_lostpassword_url(),
+			)
 		);
 
-		return wp_login_form( $args );
+		return Timber::compile( 'components/form-login.html.twig', $data );
+	}
+
+	public function lostpassword_url() {
+		return wp_lostpassword_url();
 	}
 }
