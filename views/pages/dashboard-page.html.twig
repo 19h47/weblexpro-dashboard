@@ -1,0 +1,20 @@
+{#
+ # Dashboard Page
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block content %}
+	<div class="container my-20">
+		<div class="row">
+			<div class="lg:col-4/12">
+				<a class="text-xs text-red-light hover:underline" href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
+					{{- __( 'Log out', 'weblexprodashboard' ) -}}
+				</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

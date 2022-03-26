@@ -8,16 +8,36 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
+
 	<div class="container my-20">
 		<div class="row">
 			<div class="lg:col-4/12 lg:ml-4/12">
 				<div class="p-12 border border-blue-dark-grayish-20">
-					{% if is_user_logged_in() %}
-						<h3 class="mb-4 font-semibold text-center text-red-light">
-							{{- __( 'Howdy %s', 'weblexprodashboard' ) | format( post.current_user.user_login ) -}}
-						</h3>
-						<p class="mb-5 text-center text-blue-dark-grayish">{{- __( 'You are already logged in.', 'weblexprodashboard' ) -}}</p>
-						<p>{{- wp_loginout() -}}</p>
+					{% if user %}
+						<div class="mt-3 mb-14 first:mt-0 last:mb-0">
+							<a class="block h-8" href="{{ site.link }}">
+								<img class="block h-full mx-auto" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="">
+							</a>
+						</div>
+						<div class="mt-3 mb-4 first:mt-0 last:mb-0">
+							<h3 class="text-center ont-semibold text-red-light">
+								{{- __( 'Howdy %s', 'weblexprodashboard' ) | format( user.user_login ) -}}
+							</h3>
+						</div>
+						<div class="my-3 first:mt-0 last:mb-0">
+							<p class="text-center text-blue-dark-grayish">
+								{{- __( 'You are already logged in.', 'weblexprodashboard' ) -}}
+							</p>
+						</div>
+						<div class="flex justify-between mt-5 mb-3 first:mt-0 last:mb-0">
+							<a class="flex items-center text-xs text-blue-bright hover:underline" href="{{ dashboard_url }}">
+								{{- include( 'svg/use.html.twig', { classes: [ 'mr-2', 'fill-current', 'w-4', 'h-4' ], icon: 'user-circle' } ) -}}
+								{{- __( 'Dashboard', 'weblexprodashboard' ) -}}
+							</a>
+							<a class="text-xs text-red-light hover:underline" href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
+								{{- __( 'Log out', 'weblexprodashboard' ) -}}
+							</a>
+						</div>
 					{% else %}
 						{{ post.login_form }}
 					{% endif %}
@@ -25,4 +45,5 @@
 			</div>
 		</div>
 	</div>
+
 {% endblock %}

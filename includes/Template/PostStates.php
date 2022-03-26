@@ -33,16 +33,8 @@ class PostStates {
 	 * @return array $states
 	 */
 	public function filter_post_states( array $post_states, WP_Post $post ) {
-		if ( 'templates/leaf-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Leaf Page', 'weblexprodashboard' );
-		}
-
-		if ( 'templates/find-us-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Find Us Page', 'weblexprodashboard' );
-		}
-
-		if ( 'templates/salad-creator-page.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Salad Creator Page', 'weblexprodashboard' );
+		if ( 'templates/dashboard.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+			$post_states[] = __( 'Dashboard Page', 'weblexprodashboard' );
 		}
 
 		return $post_states;

@@ -168,11 +168,18 @@ class Theme {
 
 		$twig->addFunction(
 			new TwigFunction(
-				'wp_loginout',
-				function( string $redirect = '', bool $echo = false ) {
-					$redirect = '' === $redirect ? get_permalink() : $redirect;
+				'wp_login_url',
+				function( string $redirect = '', bool $force_reauth = false ) {
+					return wp_login_url( $redirect, $force_reauth );
+				}
+			)
+		);
 
-					return wp_loginout( $redirect, $echo );
+		$twig->addFunction(
+			new TwigFunction(
+				'wp_logout_url',
+				function( string $redirect = '' ) {
+					return wp_logout_url( $redirect );
 				}
 			)
 		);
@@ -270,7 +277,9 @@ class Theme {
 	public function add_to_context( array $context ) : array {
 		global $wp;
 
-		$context['current_url'] = home_url( add_query_arg( array(), $wp->request ) );
+		$context['current_url']   = home_url( add_query_arg( array(), $wp->request ) );
+		$context['front_url']     = get_permalink( get_option( 'page_on_front' ) );
+		$context['dashboard_url'] = get_permalink( get_option( 'page_dashboard' ) );
 
 		return $context;
 	}

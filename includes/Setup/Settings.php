@@ -30,32 +30,29 @@ class Settings {
 	 */
 	public function register_settings() : void {
 		add_settings_field(
-			'copyright',
-			__( 'Copyright', 'weblexprodashboard' ),
-			array( $this, 'textarea_callback' ),
+			'page_dashboard',
+			__( 'Dashboard', 'weblexprodashboard' ),
+			array( $this, 'dashboard_page_callback' ),
 			'reading',
 			'default',
-			array(
-				'id'          => 'copyright',
-				'name'        => 'copyright',
-				'value'       => get_option( 'copyright' ),
-				'placeholder' => __( 'Copyright', 'weblexprodashboard' ),
-			)
+			array()
 		);
 
-		register_setting( 'reading', 'copyright' );
+		register_setting( 'reading', 'page_dashboard' );
 	}
 
 
 	/**
-	 * Description callback
-	 *
-	 * @param array $args Arguments.
-	 *
-	 * @see https://core.trac.wordpress.org/browser/tags/5.6/src/wp-includes/post-template.php#L1163
-	 * @return void
+	 * Dashboard Page
 	 */
-	public function textarea_callback( array $args ) : void {
-		wp_form_controls_textarea( $args );
+	public function dashboard_page_callback() : void {
+		wp_dropdown_pages(
+			array(
+				'name'              => 'page_dashboard',
+				'show_option_none'  => __( '&mdash; Select &mdash;', 'weblexprodashboard' ),
+				'option_none_value' => '0',
+				'selected'          => get_option( 'page_dashboard' ),
+			)
+		);
 	}
 }

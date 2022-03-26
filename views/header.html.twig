@@ -9,8 +9,15 @@
 <header class="py-8">
 	<div class="container">
 		<div class="row">
-			<div>
+			<div class="lg:col-6/12">
 				<img class="block w-auto h-11" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="{{ site.description }}">
+			</div>
+			<div class="text-right lg:col-6/12">
+				{% if not user %}
+					<a class="button bg-red-light" href="{{ front_url | e( 'esc_url' ) }}">
+						{{- __( 'Log in', 'weblexprodashboard' ) -}}
+					</a>
+				{% endif %}
 			</div>
 		</div>
 	</div>

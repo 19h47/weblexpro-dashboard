@@ -14,13 +14,10 @@ use Timber\{ Timber, Post };
  * Class Front Page
  */
 class FrontPage extends Post {
-	/**
-	 * Current User
-	 */
-	public function current_user() {
-		return wp_get_current_user();
-	}
 
+	/**
+	 * Login Form
+	 */
 	public function login_form() {
 		$data = TImber::context();
 

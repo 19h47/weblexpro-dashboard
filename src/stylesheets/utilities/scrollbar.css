@@ -2,17 +2,17 @@
  * Scrollbar
  *
  * @package WordPress
- * @subpackage LesBottes
+ * @subpackage WebLexProDashboard
  * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
- @layer utilities {
+@layer utilities {
 	.scrollbar-hide {
-      	/* IE and Edge */
-      	-ms-overflow-style: none;
+		/* IE and Edge */
+		-ms-overflow-style: none;
 
-      	/* Firefox */
-      	scrollbar-width: none;
+		/* Firefox */
+		scrollbar-width: none;
 	}
 
 	/* Safari and Chrome */
@@ -20,16 +20,16 @@
 		display: none;
 	}
 
-    .scrollbar-default {
+	.scrollbar-default {
 		/* IE and Edge */
-      	-ms-overflow-style: auto;
+		-ms-overflow-style: auto;
 
-      	/* Firefox */
-      	scrollbar-width: auto;
+		/* Firefox */
+		scrollbar-width: auto;
 	}
 
 	/* Safari and Chrome */
 	.scrollbar-default::-webkit-scrollbar {
-        display: block;
+		display: block;
 	}
 }

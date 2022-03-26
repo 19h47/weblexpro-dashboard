@@ -34,6 +34,7 @@ class Init {
 			PostTemplate\BodyClass::class,
 			Template\PostStates::class,
 			GeneralTemplate::class,
+			TemplateLoader::class,
 		);
 
 		return $array;
