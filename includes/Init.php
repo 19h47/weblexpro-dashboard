@@ -8,7 +8,7 @@
 
 namespace WebLexProDashboard;
 
-use WebLexProDashboard\{ WP, Setup, PostTemplate, GeneralTemplate };
+use WebLexProDashboard\{ WP, Setup, Plugins, Post, PostTemplate, Taxonomy, GeneralTemplate };
 
 /**
  * Init
@@ -32,9 +32,12 @@ class Init {
 			Setup\WordPress::class,
 			Setup\Settings::class,
 			PostTemplate\BodyClass::class,
+			Post\Document::class,
+			Taxonomy\DocumentCategory::class,
 			Template\PostStates::class,
 			GeneralTemplate::class,
 			TemplateLoader::class,
+			Plugins\ACF\DocumentCategoryFields::class,
 		);
 
 		return $array;

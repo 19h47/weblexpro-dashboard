@@ -28,7 +28,7 @@ class TemplateLoader {
 	public function template_redirect() {
 		global $post;
 
-		if ( 'templates/dashboard.php' === get_post_meta( $post->ID, '_wp_page_template', true ) && ! is_user_logged_in() ) {
+		if ( $post && 'templates/dashboard.php' === get_post_meta( $post->ID, '_wp_page_template', true ) && ! is_user_logged_in() ) {
 			wp_redirect( home_url() );
 			exit();
 		}

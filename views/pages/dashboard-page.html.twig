@@ -10,10 +10,29 @@
 {% block content %}
 	<div class="container my-20">
 		<div class="row">
-			<div class="lg:col-4/12">
-				<a class="text-xs text-red-light hover:underline" href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
-					{{- __( 'Log out', 'weblexprodashboard' ) -}}
-				</a>
+			<div class="lg:col-3/12">
+				<div class="p-5 border lg:h-full border-black/20">
+					<a class="text-xs text-red-light hover:underline " href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
+						{{- __( 'Log out', 'weblexprodashboard' ) -}}
+					</a>
+				</div>
+			</div>
+
+			<div class="lg:col-9/12">
+				<div class="-my-4 row">
+					{% for document_category in document_categories %}
+						<div class="my-4 lg:col-3/12">
+							<a class="block h-full overflow-hidden border rounded border-black/20 group" href="{{ document_category.link }}">
+								<div class="w-full h-32 bg-black/20">
+									{{- include( 'components/image.html.twig', { classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document_category.meta( 'thumbnail' ) } ) -}}
+								</div>
+								<div class="p-5 text-blue-bright group-hover:underline group-hover:text-red-light">
+									{{ document_category.name }}
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</div>

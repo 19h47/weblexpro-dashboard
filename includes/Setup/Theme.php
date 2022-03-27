@@ -281,6 +281,14 @@ class Theme {
 		$context['front_url']     = get_permalink( get_option( 'page_on_front' ) );
 		$context['dashboard_url'] = get_permalink( get_option( 'page_dashboard' ) );
 
+		$context['document_categories'] = Timber::get_terms(
+			array(
+				'taxonomy'   => 'document_category',
+				'parent'     => 0,
+				'hide_empty' => false,
+			)
+		);
+
 		return $context;
 	}
 
