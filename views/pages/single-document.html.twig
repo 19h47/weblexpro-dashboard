@@ -1,0 +1,102 @@
+{#
+ # Single Document
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block content %}
+
+	<div class="container mt-20 mb-9">
+		<div class="row">
+			<div>
+				<h1 class="text-4xl font-bold font-title text-gray-very-dark">{{- post.title -}}</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container my-9"><div><hr></div></div></div>
+
+	{% if post.thumbnail %}
+		<div class="container my-9">
+			<div class="row">
+				<div>
+					{{- include( 'components/image.html.twig', { image: post.thumbnail, classes: [ 'border', 'rounded', 'border-black/20', 'w-full', 'h-96', 'object-cover', 'object-center' ] } ) -}}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="container mb-4 mt-9">
+		<div class="row">
+			<div class="mb-8 lg:col-3/12 lg:mb-0">
+				<div class="p-5 my-4 border rounded first:mt-0 last:mb-0 border-black/20">
+					<ul>
+						<li class="my-2 first:mt-0 last:mb-0">
+							<a class="text-xs text-red-light hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+								{{- __( 'Dashboard', 'weblexprodashboard' ) -}}
+							</a>
+						</li>
+
+						{% for term in post.terms() %}
+							<li class="my-2 first:mt-0 last:mb-0">
+								<a class="text-xs text-red-light hover:underline" href="{{ term.link }}">
+									{{- term.name -}}
+								</a>
+							</li>
+						{% endfor %}
+
+						<li class="my-2 first:mt-0 last:mb-0">
+							<a class="text-xs text-red-light hover:underline" href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
+								{{- __( 'Log out', 'weblexprodashboard' ) -}}
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="p-5 my-4 mt-4 border rounded first:mt-0 last:mb-0 border-black/20">
+					<ul>
+						<li class="my-2 first:mt-0 last:mb-0">
+							<p class="text-xs ">
+								{{- __( 'Creation date %s', 'weblexprodashboard' ) | format( post.date() ) -}}
+							</p>
+						</li>
+						<li class="my-2 first:mt-0 last:mb-0">
+							<p class="text-xs">
+								{{- __( 'Last update %s', 'weblexprodashboard' ) | format( post.modified_date() ) -}}
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="lg:col-9/12">
+				<div class="my-4 row first:mt-0 last:mb-0">
+					<h2 class="text-4xl font-medium font-title text-gray-very-dark">{{- post.title -}}</h2>
+					<div class="mt-2 wysiwyg">{{- post.content -}}</div>
+				</div>
+
+				{% if post.meta( 'documents' ) %}
+					<div class="my-4 row">
+						<div><h3 class="text-2xl text-red-light">{{- __( 'Attached Files', 'weblexprodashboard' ) -}}</h3></div>
+					</div>
+
+					{% for document in post.meta( 'documents' ) %}
+						<div class="my-4 row first:mt-0 last:mb-0">
+							<div>
+								<a class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
+									<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
+
+									<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexprodashboard' ) -}}</p>
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

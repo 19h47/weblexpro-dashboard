@@ -8,10 +8,10 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-	<div class="container my-20">
+	<div class="container my-20 first:mt-0 last:mb-0">
 		<div class="row">
-			<div class="lg:col-3/12">
-				<div class="p-5 border lg:h-full border-black/20">
+			<div class="mb-8 lg:col-3/12 lg:mb-0">
+				<div class="p-5 border rounded lg:h-full border-black/20">
 					<a class="text-xs text-red-light hover:underline " href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
 						{{- __( 'Log out', 'weblexprodashboard' ) -}}
 					</a>

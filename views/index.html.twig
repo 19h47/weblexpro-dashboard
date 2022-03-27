@@ -34,15 +34,17 @@
 			{{- include( 'header.html.twig', { classes: [] } ) -}}
 		{% endblock %}
 
-		{% block content %}
-			<div class="container">
-				<div class="row">
-					<div>
-						CONTENT
+		<main class="my-20">
+			{% block content %}
+				<div class="container">
+					<div class="row">
+						<div>
+							{{- post.content -}}
+						</div>
 					</div>
 				</div>
-			</div>
-		{% endblock %}
+			{% endblock %}
+		</main>
 
 		{% block footer %}
 			{{- include( 'footer.html.twig' ) -}}

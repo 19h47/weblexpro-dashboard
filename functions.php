@@ -1,6 +1,6 @@
 <?php
 /**
- * McCormackFarms functions and definitions
+ * WebLexProDashboard functions and definitions
  *
  * @package WordPress
  * @subpackage WeblexProDashboard

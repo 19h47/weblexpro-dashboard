@@ -37,6 +37,7 @@ class Init {
 			Template\PostStates::class,
 			GeneralTemplate::class,
 			TemplateLoader::class,
+			Plugins\ACF\DocumentFields::class,
 			Plugins\ACF\DocumentCategoryFields::class,
 		);
 

@@ -14,6 +14,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			body: ['Open Sans', 'sans-serif'],
+			title: ['Fira Sans', 'sans-serif'],
 		},
 		extend: { colors, minWidth, spacing },
 	},
