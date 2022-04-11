@@ -11,6 +11,7 @@
 		"prod": "19h47-scripts prod"
 	},
 	"dependencies": {
-		"@19h47/scripts": "19h47/19h47-scripts"
-	}
+		"@19h47/scripts": "https://github.com/19h47/19h47-scripts.git#commit=cfcc12e24361617944e5178e9b084417ae0335fa"
+	},
+	"packageManager": "yarn@3.2.0"
 }

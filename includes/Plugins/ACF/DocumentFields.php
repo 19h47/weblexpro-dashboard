@@ -30,22 +30,49 @@ class DocumentFields {
 	 * @return void
 	 */
 	public function fields() {
-		register_extended_field_group(
-			array(
-				'title'    => __( 'Document', 'weblexprodashboard' ),
-				'style'    => 'default',
-				'fields'   => array(
-					Repeater::make( __( 'Documents', 'weblexprodashboard' ) )->fields(
-						array(
-							Text::make( __( 'Title', 'weblexprodashboard' ) )->placeholder( __( 'Title', 'weblexprodashboard' ) ),
-							File::make( __( 'File', 'weblexprodashboard' ), ),
-						)
-					)->layout( 'block' ),
+		$documents = array(
+			'key'          => 'field_documents',
+			'label'        => __( 'Documents', 'weblexprodashboard' ),
+			'name'         => 'documents',
+			'type'         => 'repeater',
+			'layout'       => 'block',
+			'button_label' => __( 'Add Document', 'weblexprodashboard' ),
+			'sub_fields'   => array(
+				array(
+					'key'         => 'field_documents_title',
+					'label'       => __( 'Title', 'weblexprodashboard' ),
+					'name'        => 'title',
+					'type'        => 'text',
+					'placeholder' => __( 'Title', 'weblexprodashboard' ),
 				),
-				'location' => array(
-					Location::where( 'post_type', 'document' ),
+				array(
+					'key'   => 'field_documents_file',
+					'label' => __( 'File', 'weblexprodashboard' ),
+					'name'  => 'file',
+					'type'  => 'file',
 				),
-			)
+			),
 		);
+
+		$location = array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'document',
+				),
+			),
+		);
+
+		if ( function_exists( 'acf_add_local_field_group' ) ) {
+			acf_add_local_field_group(
+				array(
+					'key'      => 'group_document',
+					'title'    => __( 'Document', 'weblexprodashboard' ),
+					'fields'   => array( $documents ),
+					'location' => $location,
+				)
+			);
+		}
 	}
 }

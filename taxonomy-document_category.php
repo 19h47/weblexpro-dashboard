@@ -26,7 +26,7 @@ $data['children'] = Timber::get_terms(
 );
 
 if ( $ancestors ) {
-	$data['ancestors'] = Timber::get_terms( get_ancestors( $queried_object['term_id'], 'document_category', 'taxonomy' ) );
+	$data['ancestors'] = array_reverse( Timber::get_terms( get_ancestors( $queried_object['term_id'], 'document_category', 'taxonomy' ) ) );
 }
 
 Timber::render( $filename, $data );

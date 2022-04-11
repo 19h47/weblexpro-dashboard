@@ -8,9 +8,6 @@
 
 namespace WebLexProDashboard\Plugins\ACF;
 
-use WordPlate\Acf\Fields\Image;
-use WordPlate\Acf\Location;
-
 /**
  * Document Category Fields
  */
@@ -30,16 +27,33 @@ class DocumentCategoryFields {
 	 * @return void
 	 */
 	public function fields() {
-		register_extended_field_group(
-			array(
-				'title'    => __( 'Document Category', 'weblexprodashboard' ),
-				'fields'   => array(
-					Image::make( __( 'Thumbnail', 'weblexprodashboard' ), 'thumbnail' )->returnFormat( 'id' ),
-				),
-				'location' => array(
-					Location::where( 'taxonomy', 'document_category' ),
-				),
-			)
+		$image = array(
+			'key'           => 'field_thumbnail',
+			'label'         => __( 'Thumbnail', 'weblexprodashboard' ),
+			'name'          => 'thumbnail',
+			'type'          => 'image',
+			'return_format' => 'id',
 		);
+
+		$location = array(
+			array(
+				array(
+					'param'    => 'taxonomy',
+					'operator' => '==',
+					'value'    => 'document_category',
+				),
+			),
+		);
+
+		if ( function_exists( 'acf_add_local_field_group' ) ) {
+			acf_add_local_field_group(
+				array(
+					'key'      => 'group_document_category',
+					'title'    => __( 'Document Category', 'weblexprodashboard' ),
+					'fields'   => array( $image ),
+					'location' => $location,
+				)
+			);
+		}
 	}
 }

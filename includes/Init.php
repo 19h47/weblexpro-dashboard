@@ -23,6 +23,7 @@ class Init {
 	public static function get_services() : array {
 		$array = array(
 			WP\Query::class,
+			WP\Settings::class,
 			Setup\Theme::class,
 			Setup\Enqueue::class,
 			Setup\WordPress::class,
@@ -37,6 +38,7 @@ class Init {
 			Template\PostStates::class,
 			GeneralTemplate::class,
 			TemplateLoader::class,
+			AdminHeader::class,
 			Plugins\ACF\DocumentFields::class,
 			Plugins\ACF\DocumentCategoryFields::class,
 		);

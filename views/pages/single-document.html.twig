@@ -12,6 +12,28 @@
 	<div class="container mt-20 mb-9">
 		<div class="row">
 			<div>
+				<p class="mb-4 text-xs">
+					<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+						{{- __( 'Dashboard', 'weblexprodashboard' ) -}}
+					</a>
+					{%- if post.terms() -%}
+						{% for term in post.terms() %}
+							{% if fn( 'get_ancestors', term.id, '', 'taxonomy' ) %}
+								{% for ancestor in get_terms( fn( 'get_ancestors', term.id, '', 'taxonomy' ) ) | reverse %}
+									{{- '&nbsp;&sol;&nbsp;' -}}
+									<a class="hover:underline" href="{{ ancestor.link }}">
+										{{- ancestor.name -}}
+									</a>
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+					{%- endif -%}
+
+					{%- if post.terms() -%}
+						{{- '&nbsp;&sol;&nbsp;' -}}
+						{{- post.terms() | reverse | map( t => "<a class=\"hover:underline\" href=\"#{ t.link }\">#{ t.name }</a>" ) | join( ' / ' ) -}}
+					{%- endif -%}
+				</p>
 				<h1 class="text-4xl font-bold font-title text-gray-very-dark">{{- post.title -}}</h1>
 			</div>
 		</div>
@@ -41,6 +63,15 @@
 						</li>
 
 						{% for term in post.terms() %}
+							{% if fn( 'get_ancestors', term.id, '', 'taxonomy' ) %}
+								{% for ancestor in get_terms( fn( 'get_ancestors', term.id, '', 'taxonomy' ) ) | reverse %}
+									<li class="my-2 first:mt-0 last:mb-0">
+										<a class="text-xs text-red-light hover:underline" href="{{ ancestor.link }}">
+											{{- ancestor.name -}}
+										</a>
+									</li>
+								{% endfor %}
+							{% endif %}
 							<li class="my-2 first:mt-0 last:mb-0">
 								<a class="text-xs text-red-light hover:underline" href="{{ term.link }}">
 									{{- term.name -}}
@@ -68,6 +99,15 @@
 								{{- __( 'Last update %s', 'weblexprodashboard' ) | format( post.modified_date() ) -}}
 							</p>
 						</li>
+						{% if post.meta( 'documents' ) %}
+							<li class="my-2 first:mt-0 last:mb-0">
+								<p class="text-xs">{{- _n( '%s file', '%s files', post.meta( 'documents' ) | length, 'weblexprodashboard' ) | format( post.meta( 'documents' ) | length ) -}}</p>
+							</li>
+
+							<li class="my-2 first:mt-0 last:mb-0">
+								<p class="text-xs">{{ _n( 'File size %s', 'File size %s', post.meta( 'documents' ) | length, 'weblexprodashboard' ) | format( fn( 'size_format', post.meta( 'documents' ) | reduce( ( a, b ) => a + ( b.file.filesize | default( 0 ) ), 0 ) ) ) -}}</p>
+							</li>
+						{% endif %}
 					</ul>
 				</div>
 			</div>
@@ -86,11 +126,15 @@
 					{% for document in post.meta( 'documents' ) %}
 						<div class="my-4 row first:mt-0 last:mb-0">
 							<div>
-								<a class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
-									<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
+								{% if document.file %}
+									<a download class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
+										<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
 
-									<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexprodashboard' ) -}}</p>
-								</a>
+										<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexprodashboard' ) -}}</p>
+									</a>
+								{% else %}
+									<p class="p-5 border rounded border-black/20">{{- document.title -}}</p>
+								{% endif %}
 							</div>
 						</div>
 					{% endfor %}

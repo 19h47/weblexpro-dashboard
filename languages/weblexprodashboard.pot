@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WebLexPro Dashoard\n"
-"POT-Creation-Date: 2022-03-27 14:33+0200\n"
+"POT-Creation-Date: 2022-03-29 17:31+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,77 +23,103 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: includes/Post/Document.php:84
+#: includes/Plugins/ACF/DocumentCategoryFields.php:32
+#: includes/Post/Document.php:84 includes/Taxonomy/DocumentCategory.php:87
 msgid "Thumbnail"
 msgstr ""
 
+#: includes/Plugins/ACF/DocumentCategoryFields.php:52
+msgid "Document Category"
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentFields.php:35
+msgid "Documents"
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentFields.php:39
+msgid "Add Document"
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentFields.php:43
+#: includes/Plugins/ACF/DocumentFields.php:46
+msgid "Title"
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentFields.php:50
+msgid "File"
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentFields.php:71 includes/Post/Document.php:248
+msgid "Document"
+msgstr ""
+
 #. translators: Publish box date format, see https://secure.php.net/date
-#: includes/Post/Document.php:139
+#: includes/Post/Document.php:136
 msgid "M j, Y @ H:i"
 msgstr ""
 
-#: includes/Post/Document.php:144
+#: includes/Post/Document.php:141
 msgid "View document"
 msgstr ""
 
-#: includes/Post/Document.php:150 includes/Post/Document.php:156
+#: includes/Post/Document.php:147 includes/Post/Document.php:153
 msgid "Preview document"
 msgstr ""
 
-#: includes/Post/Document.php:161 includes/Post/Document.php:164
-#: includes/Post/Document.php:242
+#: includes/Post/Document.php:158 includes/Post/Document.php:161
+#: includes/Post/Document.php:239
 msgid "Document updated."
 msgstr ""
 
-#: includes/Post/Document.php:162
+#: includes/Post/Document.php:159
 msgid "Custom field updated."
 msgstr ""
 
-#: includes/Post/Document.php:163
+#: includes/Post/Document.php:160
 msgid "Custom field deleted."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: includes/Post/Document.php:166
+#: includes/Post/Document.php:163
 #, php-format
 msgid "Document restored to revision from %s."
 msgstr ""
 
-#: includes/Post/Document.php:167 includes/Post/Document.php:238
+#: includes/Post/Document.php:164 includes/Post/Document.php:235
 msgid "Document published."
 msgstr ""
 
-#: includes/Post/Document.php:168
+#: includes/Post/Document.php:165
 msgid "Document saved."
 msgstr ""
 
-#: includes/Post/Document.php:169
+#: includes/Post/Document.php:166
 msgid "Document submitted."
 msgstr ""
 
-#: includes/Post/Document.php:170
+#: includes/Post/Document.php:167
 #, php-format
 msgid "Document scheduled for: %s."
 msgstr ""
 
-#: includes/Post/Document.php:171
+#: includes/Post/Document.php:168
 msgid "Document draft updated."
 msgstr ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:191
+#: includes/Post/Document.php:188
 #, php-format
 msgid "%s document updated."
 msgid_plural "%s documents updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/Post/Document.php:192
+#: includes/Post/Document.php:189
 msgid "1 document not updated, somebody is editing it."
 msgstr ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:194
+#: includes/Post/Document.php:191
 #, php-format
 msgid "%s document not updated, somebody is editing it."
 msgid_plural "%s documents not updated, somebody is editing them."
@@ -101,7 +127,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:196
+#: includes/Post/Document.php:193
 #, php-format
 msgid "%s document permanently deleted."
 msgid_plural "%s document permanently deleted."
@@ -109,7 +135,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:198
+#: includes/Post/Document.php:195
 #, php-format
 msgid "%s document moved to the Trash."
 msgid_plural "%s document moved to the Trash."
@@ -117,133 +143,131 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:200
+#: includes/Post/Document.php:197
 #, php-format
 msgid "%s document restored from the Trash."
 msgid_plural "%s document restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/Post/Document.php:215
+#: includes/Post/Document.php:212
 msgctxt "document type generale name"
 msgid "Documents"
 msgstr ""
 
-#: includes/Post/Document.php:216
+#: includes/Post/Document.php:213
 msgctxt "document type singular name"
 msgid "Document"
 msgstr ""
 
-#: includes/Post/Document.php:217
+#: includes/Post/Document.php:214
 msgctxt "document type"
 msgid "Add New"
 msgstr ""
 
-#: includes/Post/Document.php:218
+#: includes/Post/Document.php:215
 msgid "Add New Document"
 msgstr ""
 
-#: includes/Post/Document.php:219
+#: includes/Post/Document.php:216
 msgid "Edit Document"
 msgstr ""
 
-#: includes/Post/Document.php:220
+#: includes/Post/Document.php:217
 msgid "New Document"
 msgstr ""
 
-#: includes/Post/Document.php:221
+#: includes/Post/Document.php:218
 msgid "View Documents"
 msgstr ""
 
-#: includes/Post/Document.php:222
+#: includes/Post/Document.php:219
 msgid "View Document"
 msgstr ""
 
-#: includes/Post/Document.php:223
+#: includes/Post/Document.php:220
 msgid "Search Documents"
 msgstr ""
 
-#: includes/Post/Document.php:224
+#: includes/Post/Document.php:221
 msgid "No Documents found."
 msgstr ""
 
-#: includes/Post/Document.php:225
+#: includes/Post/Document.php:222
 msgid "No Documents found in Trash."
 msgstr ""
 
-#: includes/Post/Document.php:226
+#: includes/Post/Document.php:223
 msgid "Parent Document:"
 msgstr ""
 
-#: includes/Post/Document.php:227
+#: includes/Post/Document.php:224
 msgid "All Documents"
 msgstr ""
 
-#: includes/Post/Document.php:228
+#: includes/Post/Document.php:225
 msgid "Document Archives"
 msgstr ""
 
-#: includes/Post/Document.php:229
+#: includes/Post/Document.php:226
 msgid "Document Attributes"
 msgstr ""
 
-#: includes/Post/Document.php:230
+#: includes/Post/Document.php:227
 msgid "Insert into document"
 msgstr ""
 
-#: includes/Post/Document.php:231
+#: includes/Post/Document.php:228
 msgid "Uploaded to this document"
 msgstr ""
 
-#: includes/Post/Document.php:232
+#: includes/Post/Document.php:229
 msgctxt "document"
 msgid "Featured Image"
 msgstr ""
 
-#: includes/Post/Document.php:233
+#: includes/Post/Document.php:230
 msgctxt "document"
 msgid "Set featured image"
 msgstr ""
 
-#: includes/Post/Document.php:234
+#: includes/Post/Document.php:231
 msgctxt "document"
 msgid "Remove featured image"
 msgstr ""
 
-#: includes/Post/Document.php:235
+#: includes/Post/Document.php:232
 msgctxt "document"
 msgid "Use as featured image"
 msgstr ""
 
-#: includes/Post/Document.php:236
+#: includes/Post/Document.php:233
 msgid "Documents list navigation"
 msgstr ""
 
-#: includes/Post/Document.php:237
+#: includes/Post/Document.php:234
 msgid "Documents list"
 msgstr ""
 
-#: includes/Post/Document.php:239
+#: includes/Post/Document.php:236
 msgid "Document published privately."
 msgstr ""
 
-#: includes/Post/Document.php:240
+#: includes/Post/Document.php:237
 msgid "Document reverted to draft."
 msgstr ""
 
-#: includes/Post/Document.php:241
+#: includes/Post/Document.php:238
 msgid "Document scheduled."
-msgstr ""
-
-#: includes/Post/Document.php:251
-msgid "Document"
 msgstr ""
 
 #: includes/Setup/NavMenu.php:38
 msgid "Main Menu"
 msgstr ""
 
-#: includes/Setup/Settings.php:34 views/pages/front-page.html.twig:35
+#: includes/Setup/Settings.php:34 views/pages/archive-document.html.twig:32
+#: views/pages/front-page.html.twig:35
+#: views/pages/single-document.html.twig:39
 msgid "Dashboard"
 msgstr ""
 
@@ -267,83 +291,83 @@ msgstr ""
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:40
+#: includes/Taxonomy/DocumentCategory.php:137
 msgctxt "document category general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:41
+#: includes/Taxonomy/DocumentCategory.php:138
 msgctxt "document category singular name"
 msgid "Category"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:42
+#: includes/Taxonomy/DocumentCategory.php:139
 msgid "Search Categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:43
+#: includes/Taxonomy/DocumentCategory.php:140
 msgid "All Categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:44
+#: includes/Taxonomy/DocumentCategory.php:141
 msgid "Popular Categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:45
+#: includes/Taxonomy/DocumentCategory.php:142
 msgid "Edit Category"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:46
+#: includes/Taxonomy/DocumentCategory.php:143
 msgid "View Category"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:47
+#: includes/Taxonomy/DocumentCategory.php:144
 msgid "Update Category"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:48
+#: includes/Taxonomy/DocumentCategory.php:145
 msgid "Add New Category"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:49
+#: includes/Taxonomy/DocumentCategory.php:146
 msgid "New Category Name"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:50
+#: includes/Taxonomy/DocumentCategory.php:147
 msgid "Separate categories with commas"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:51
+#: includes/Taxonomy/DocumentCategory.php:148
 msgid "Add or remove categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:52
+#: includes/Taxonomy/DocumentCategory.php:149
 msgid "Choose from the most used categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:53
+#: includes/Taxonomy/DocumentCategory.php:150
 msgid "No categories found."
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:54
+#: includes/Taxonomy/DocumentCategory.php:151
 msgid "No categories"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:55
+#: includes/Taxonomy/DocumentCategory.php:152
 msgid "Categories list navigation"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:56
+#: includes/Taxonomy/DocumentCategory.php:153
 msgid "Categories list"
 msgstr ""
 
-#. translators: Product type heading when selecting from the most used terms.
-#: includes/Taxonomy/DocumentCategory.php:58
+#. translators: Document category heading when selecting from the most used terms.
+#: includes/Taxonomy/DocumentCategory.php:155
 msgctxt "document category"
 msgid "Most Used"
 msgstr ""
 
-#: includes/Taxonomy/DocumentCategory.php:59
+#: includes/Taxonomy/DocumentCategory.php:156
 msgid "&larr; Back to Categories"
 msgstr ""
 
@@ -371,11 +395,13 @@ msgstr ""
 msgid "Lost your password?"
 msgstr ""
 
-#: views/header.html.twig:18
+#: views/header.html.twig:20
 msgid "Log in"
 msgstr ""
 
-#: views/pages/dashboard-page.html.twig:15 views/pages/front-page.html.twig:38
+#: views/pages/archive-document.html.twig:46
+#: views/pages/dashboard-page.html.twig:16 views/pages/front-page.html.twig:38
+#: views/pages/single-document.html.twig:53
 msgid "Log out"
 msgstr ""
 
@@ -386,6 +412,24 @@ msgstr ""
 
 #: views/pages/front-page.html.twig:29
 msgid "You are already logged in."
+msgstr ""
+
+#: views/pages/single-document.html.twig:63
+#, php-format
+msgid "Creation date %s"
+msgstr ""
+
+#: views/pages/single-document.html.twig:68
+#, php-format
+msgid "Last update %s"
+msgstr ""
+
+#: views/pages/single-document.html.twig:83
+msgid "Attached Files"
+msgstr ""
+
+#: views/pages/single-document.html.twig:92
+msgid "Download"
 msgstr ""
 
 #. Theme Name of the plugin/theme
