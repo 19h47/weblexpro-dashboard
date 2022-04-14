@@ -62,9 +62,9 @@
 			<div class="lg:col-9/12">
 				<div class="-my-4 row">
 					{% for document_category in children %}
-						<div class="my-4 lg:col-3/12">
+						<div class="my-4 lg:col-6/12">
 							<a class="block h-full overflow-hidden border rounded border-black/20 group" href="{{ document_category.link }}">
-								<div class="w-full h-32 bg-black/20">
+								<div class="w-full h-64 bg-black/20">
 									{{- include( 'components/image.html.twig', { classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document_category.meta( 'thumbnail' ) } ) -}}
 								</div>
 								<div class="p-5 text-blue-bright group-hover:underline group-hover:text-red-light">
@@ -81,9 +81,9 @@
 	<div class="container mt-4 mb-20 first:mt-0 last:mb-0">
 		<div class="-my-4 row">
 			{% for document in term.posts( { post_type: 'document', tax_query: [ { taxonomy: 'document_category', terms: term.term_id, field: 'term_id', include_children: false } ] } ) %}
-				<div class="my-4 lg:col-3/12">
+				<div class="my-4 lg:col-6/12">
 					<a class="block h-full overflow-hidden border rounded border-black/20 group" href="{{ document.link }}">
-						<div class="w-full h-32 bg-black/20">
+						<div class="w-full h-64 bg-black/20">
 							{{- include( 'components/image.html.twig', { classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document.thumbnail } ) -}}
 						</div>
 						<div class="p-5 text-blue-bright group-hover:underline group-hover:text-red-light">

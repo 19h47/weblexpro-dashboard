@@ -52,10 +52,12 @@ class NavMenu {
 	 * @return array
 	 */
 	public function add_to_context( array $context ): array {
-		$menus = get_registered_nav_menus();
+		foreach ( array_keys( get_registered_nav_menus() ) as $location ) {
+			if ( ! has_nav_menu( $location ) ) {
+				continue;
+			}
 
-		foreach ( $menus as $menu => $value ) {
-			$context['nav_menus'][ $menu ] = Timber::get_menu( $menu );
+			$context['nav_menus'][ $location ] = Timber::get_menu( $location );
 		}
 
 		return $context;

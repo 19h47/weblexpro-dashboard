@@ -8,15 +8,26 @@
 
 <header class="py-8">
 	<div class="container">
-		<div class="row">
+		<div class="items-center row">
 			<div class="lg:col-6/12">
 				<a class="inline-block align-middle" href="{{ site.link }}" aria-label="{{ site.description }}">
 					<img class="block w-auto h-11" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="{{ site.description }}">
 				</a>
 			</div>
-			<div class="text-right lg:col-6/12">
+			<div class="mt-2 lg:flex lg:mt-0 lg:items-center lg:justify-end lg:col-6/12">
+				{% if nav_menus.main.get_items() %}
+					<ul class="lg:-m-1 lg:flex">
+						{% for item in nav_menus.main.get_items() %}
+							<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
+								<a class="p-1 text-sm hover:underline" href="{{ item.link }}" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>
+									{{- item.title -}}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 				{% if not user %}
-					<a class="button bg-red-light" href="{{ front_url | e( 'esc_url' ) }}">
+					<a class="button bg-red-light w-full lg:w-auto {{ nav_menus.main.get_items() ? 'lg:ml-2' : '' }}" href="{{ front_url | e( 'esc_url' ) }}">
 						{{- __( 'Log in', 'weblexprodashboard' ) -}}
 					</a>
 				{% endif %}

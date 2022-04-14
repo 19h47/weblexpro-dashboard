@@ -55,26 +55,33 @@
 		<div class="row">
 			<div class="mb-8 lg:col-3/12 lg:mb-0">
 				<div class="p-5 my-4 border rounded first:mt-0 last:mb-0 border-black/20">
-					<ul>
-						<li class="my-2 first:mt-0 last:mb-0">
-							<a class="text-xs text-red-light hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-								{{- __( 'Dashboard', 'weblexprodashboard' ) -}}
+					{% set position = 1 %}
+					<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+						<li class="my-2 first:mt-0 last:mb-0" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" class="text-xs text-red-light hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+								<span itemprop="name">{{- __( 'Dashboard', 'weblexprodashboard' ) -}}</span>
+								<meta itemprop="position" content="{{ position }}" />
 							</a>
 						</li>
 
 						{% for term in post.terms() %}
 							{% if fn( 'get_ancestors', term.id, '', 'taxonomy' ) %}
 								{% for ancestor in get_terms( fn( 'get_ancestors', term.id, '', 'taxonomy' ) ) | reverse %}
-									<li class="my-2 first:mt-0 last:mb-0">
-										<a class="text-xs text-red-light hover:underline" href="{{ ancestor.link }}">
-											{{- ancestor.name -}}
+									{% set position = position + 1 %}
+									<li class="my-2 first:mt-0 last:mb-0" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<a itemprop="item" class="text-xs text-red-light hover:underline" href="{{ ancestor.link }}">
+											<span itemprop="name">{{- ancestor.name -}}</span>
+											<meta itemprop="position" content="{{ position }}" />
 										</a>
 									</li>
 								{% endfor %}
 							{% endif %}
-							<li class="my-2 first:mt-0 last:mb-0">
-								<a class="text-xs text-red-light hover:underline" href="{{ term.link }}">
-									{{- term.name -}}
+
+							{% set position = position + 1 %}
+							<li class="my-2 first:mt-0 last:mb-0" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<a itemprop="item" class="text-xs text-red-light hover:underline" href="{{ term.link }}">
+									<span itemprop="name">{{- term.name -}}</span>
+									<meta itemprop="position" content="{{ position }}" />
 								</a>
 							</li>
 						{% endfor %}
@@ -84,7 +91,7 @@
 								{{- __( 'Log out', 'weblexprodashboard' ) -}}
 							</a>
 						</li>
-					</ul>
+					</ol>
 				</div>
 
 				<div class="p-5 my-4 mt-4 border rounded first:mt-0 last:mb-0 border-black/20">
