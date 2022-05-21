@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashoard\n"
-"POT-Creation-Date: 2022-03-29 17:31+0200\n"
-"PO-Revision-Date: 2022-03-29 17:32+0200\n"
+"POT-Creation-Date: 2022-05-21 12:13+0200\n"
+"PO-Revision-Date: 2022-05-21 12:13+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -28,7 +28,16 @@ msgstr ""
 msgid "Thumbnail"
 msgstr "Image mise en avant"
 
-#: includes/Plugins/ACF/DocumentCategoryFields.php:52
+#: includes/Plugins/ACF/DocumentCategoryFields.php:40
+#: includes/Plugins/ACF/DocumentCategoryFields.php:44
+msgid "Redirect"
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentCategoryFields.php:43
+msgid "Redirect documents of this category to their respective file."
+msgstr ""
+
+#: includes/Plugins/ACF/DocumentCategoryFields.php:62
 msgid "Document Category"
 msgstr "Catégorie de document"
 
@@ -266,8 +275,10 @@ msgstr "Document planifié."
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: includes/Setup/Settings.php:34 views/pages/archive-document.html.twig:32
-#: views/pages/front-page.html.twig:35 views/pages/single-document.html.twig:39
+#: includes/Setup/Settings.php:34 views/pages/archive-document.html.twig:17
+#: views/pages/archive-document.html.twig:41
+#: views/pages/front-page.html.twig:35 views/pages/single-document.html.twig:17
+#: views/pages/single-document.html.twig:62
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -395,13 +406,13 @@ msgstr "Se connecter"
 msgid "Lost your password?"
 msgstr "Mot de passe perdu ?"
 
-#: views/header.html.twig:20
+#: views/header.html.twig:31
 msgid "Log in"
 msgstr "Identification"
 
-#: views/pages/archive-document.html.twig:46
+#: views/pages/archive-document.html.twig:55
 #: views/pages/dashboard-page.html.twig:16 views/pages/front-page.html.twig:38
-#: views/pages/single-document.html.twig:53
+#: views/pages/single-document.html.twig:91
 msgid "Log out"
 msgstr "Déconnexion"
 
@@ -414,21 +425,35 @@ msgstr "Salut %s"
 msgid "You are already logged in."
 msgstr "Vous êtes déjà connecté(e)."
 
-#: views/pages/single-document.html.twig:63
+#: views/pages/single-document.html.twig:101
 #, php-format
 msgid "Creation date %s"
 msgstr "Date de création %s"
 
-#: views/pages/single-document.html.twig:68
+#: views/pages/single-document.html.twig:106
 #, php-format
 msgid "Last update %s"
 msgstr "Dernière mise à jour %s"
 
-#: views/pages/single-document.html.twig:83
+#: views/pages/single-document.html.twig:111
+#, php-format
+msgid "%s file"
+msgid_plural "%s files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/pages/single-document.html.twig:115
+#, php-format
+msgid "File size %s"
+msgid_plural "File size %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/pages/single-document.html.twig:130
 msgid "Attached Files"
 msgstr "Fichiers joints"
 
-#: views/pages/single-document.html.twig:92
+#: views/pages/single-document.html.twig:140
 msgid "Download"
 msgstr "Télécharger"
 

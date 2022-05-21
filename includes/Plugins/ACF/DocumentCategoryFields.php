@@ -35,6 +35,16 @@ class DocumentCategoryFields {
 			'return_format' => 'id',
 		);
 
+		$redirect = array(
+			'key'           => 'field_redirect',
+			'label'         => __( 'Redirect', 'weblexprodashboard' ),
+			'name'          => 'redirect',
+			'type'          => 'true_false',
+			'instructions'  => __( 'Redirect documents of this category to their respective file.', 'weblexprodashboard' ),
+			'message'       => __( 'Redirect', 'weblexprodashboard' ),
+			'default_value' => 0,
+		);
+
 		$location = array(
 			array(
 				array(
@@ -50,7 +60,7 @@ class DocumentCategoryFields {
 				array(
 					'key'      => 'group_document_category',
 					'title'    => __( 'Document Category', 'weblexprodashboard' ),
-					'fields'   => array( $image ),
+					'fields'   => array( $image, $redirect ),
 					'location' => $location,
 				)
 			);

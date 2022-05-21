@@ -55,6 +55,7 @@ class Init {
 	public static function run_services() : void {
 		foreach ( self::get_services() as $class ) {
 			$service = self::instantiate( $class );
+
 			if ( method_exists( $service, 'run' ) ) {
 				$service->run();
 			}
