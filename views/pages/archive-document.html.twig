@@ -65,7 +65,7 @@
 						<div class="my-4 lg:col-6/12">
 							<a class="block h-full overflow-hidden border rounded border-black/20 group" href="{{ document_category.link }}">
 								<div class="w-full h-64 bg-black/20">
-									{{- include( 'components/image.html.twig', { classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document_category.meta( 'thumbnail' ) } ) -}}
+									{{- include( 'components/image.html.twig', { size: 'large', classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document_category.meta( 'thumbnail' ) } ) -}}
 								</div>
 								<div class="p-5 text-blue-bright group-hover:underline group-hover:text-red-light">
 									{{- document_category.name -}}
@@ -89,7 +89,7 @@
 						{{ term.meta( 'redirect' ) and document.meta( 'documents' )[0].file.url ? 'download="' ~ document.meta( 'documents' )[0].file.title ~ '"' }}
 					>
 						<div class="w-full h-64 bg-black/20">
-							{{- include( 'components/image.html.twig', { classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document.thumbnail } ) -}}
+							{{- include( 'components/image.html.twig', { size: 'large', classes: [ 'h-full', 'w-full', 'block', 'object-cover', 'object-center' ], image: document.thumbnail } ) -}}
 						</div>
 						<div class="p-5 text-blue-bright group-hover:underline group-hover:text-red-light">
 							{{ document.title }}
