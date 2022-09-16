@@ -133,14 +133,34 @@
 					{% for document in post.meta( 'documents' ) %}
 						<div class="my-4 row first:mt-0 last:mb-0">
 							<div>
-								{% if document.file %}
+
+								{% if 'audio' == document.file.type and document.file %}
+									<div class="flex items-center p-5 border rounded border-black/20">
+										<audio class="w-full" controls src="{{ document.file.url }}">
+											{{- __( "Sorry, your browser doesn't support the audio element.", 'weblexprodashboard' ) -}}
+										</audio>
+										<a href="{{ document.file.url }}" class="ml-5 button hover:bg-red-light hover:shadow-lg">
+											{{- __( 'Download', 'weblexprodashboard' ) -}}
+										</a>
+									</div>
+								{% elseif 'video' == document.file.type and document.file %}
+									<div class="p-5 border rounded border-black/20">
+										<div class="relative pb-[56.25%] h-auto max-w-full overflow-hidden">
+											<video controls class="absolute inset-0 w-full h-full">
+												<source src="{{ document.file.url }}" type="{{ mime_type }}">
+												{{ __( "Sorry, your browser doesn't support embedded videos.", 'weblexprodashboard' ) -}}
+											</video>
+										</div>
+										<a href="{{ document.file.url }}" class="w-full mt-5 button hover:bg-red-light hover:shadow-lg">
+											{{- __( 'Download', 'weblexprodashboard' ) -}}
+										</a>
+									</div>
+								{% elseif document.file %}
 									<a download class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
 										<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
 
 										<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexprodashboard' ) -}}</p>
 									</a>
-								{% else %}
-									<p class="p-5 border rounded border-black/20">{{- document.title -}}</p>
 								{% endif %}
 							</div>
 						</div>

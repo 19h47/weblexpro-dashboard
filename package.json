@@ -12,6 +12,5 @@
 	},
 	"dependencies": {
 		"@19h47/scripts": "19h47/19h47-scripts"
-	},
-	"packageManager": "yarn@3.2.0"
+	}
 }
