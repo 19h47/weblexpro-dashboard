@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashoard\n"
-"POT-Creation-Date: 2022-05-21 12:13+0200\n"
-"PO-Revision-Date: 2022-05-21 12:13+0200\n"
+"POT-Creation-Date: 2022-09-20 15:49+0200\n"
+"PO-Revision-Date: 2022-09-20 15:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -31,11 +31,12 @@ msgstr "Image mise en avant"
 #: includes/Plugins/ACF/DocumentCategoryFields.php:40
 #: includes/Plugins/ACF/DocumentCategoryFields.php:44
 msgid "Redirect"
-msgstr ""
+msgstr "Redirection"
 
 #: includes/Plugins/ACF/DocumentCategoryFields.php:43
 msgid "Redirect documents of this category to their respective file."
 msgstr ""
+"Rediriger les documents de cette catégorie vers leur fichier respectif."
 
 #: includes/Plugins/ACF/DocumentCategoryFields.php:62
 msgid "Document Category"
@@ -386,13 +387,30 @@ msgstr "&larr; Retour aux catégories"
 msgid "Dashboard Page"
 msgstr "Page du tableau de bord"
 
-#: views/components/form-login.html.twig:19
-msgid "Username or Email Address"
-msgstr "Nom d'utilisateur ou adresse e-mail"
+#: includes/Template/PostStates.php:41
+msgid "Naked Page"
+msgstr "Page nue"
 
+#: views/components/form-login-post.html.twig:13
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
+msgstr ""
+"Cet article est protégé par un mot de passe. Pour le lire, veuillez saisir "
+"votre mot de passe ci-dessous :"
+
+#: views/components/form-login-post.html.twig:22
 #: views/components/form-login.html.twig:27
 msgid "Password"
 msgstr "Mot de passe"
+
+#: views/components/form-login-post.html.twig:28
+msgid "Enter"
+msgstr "Valider"
+
+#: views/components/form-login.html.twig:19
+msgid "Username or Email Address"
+msgstr "Nom d'utilisateur ou adresse e-mail"
 
 #: views/components/form-login.html.twig:44
 msgid "Remember Me"
@@ -439,23 +457,33 @@ msgstr "Dernière mise à jour %s"
 #, php-format
 msgid "%s file"
 msgid_plural "%s files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s fichier"
+msgstr[1] "%s fichiers"
 
 #: views/pages/single-document.html.twig:115
 #, php-format
 msgid "File size %s"
 msgid_plural "File size %s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Taille du fichier %s"
+msgstr[1] "Taille du fichier %s"
 
 #: views/pages/single-document.html.twig:130
 msgid "Attached Files"
 msgstr "Fichiers joints"
 
 #: views/pages/single-document.html.twig:140
+msgid "Sorry, your browser doesn't support the audio element."
+msgstr "Désolé, votre navigateur ne prend pas en charge l’élément audio."
+
+#: views/pages/single-document.html.twig:143
+#: views/pages/single-document.html.twig:155
+#: views/pages/single-document.html.twig:162
 msgid "Download"
 msgstr "Télécharger"
+
+#: views/pages/single-document.html.twig:151
+msgid "Sorry, your browser doesn't support embedded videos."
+msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
 
 #. Theme Name of the plugin/theme
 msgid "WebLexPro Dashoard"

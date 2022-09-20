@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashoard\n"
-"POT-Creation-Date: 2022-05-21 12:13+0200\n"
+"POT-Creation-Date: 2022-09-20 15:49+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -386,12 +386,27 @@ msgstr ""
 msgid "Dashboard Page"
 msgstr ""
 
-#: views/components/form-login.html.twig:19
-msgid "Username or Email Address"
+#: includes/Template/PostStates.php:41
+msgid "Naked Page"
 msgstr ""
 
+#: views/components/form-login-post.html.twig:13
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
+msgstr ""
+
+#: views/components/form-login-post.html.twig:22
 #: views/components/form-login.html.twig:27
 msgid "Password"
+msgstr ""
+
+#: views/components/form-login-post.html.twig:28
+msgid "Enter"
+msgstr ""
+
+#: views/components/form-login.html.twig:19
+msgid "Username or Email Address"
 msgstr ""
 
 #: views/components/form-login.html.twig:44
@@ -454,7 +469,17 @@ msgid "Attached Files"
 msgstr ""
 
 #: views/pages/single-document.html.twig:140
+msgid "Sorry, your browser doesn't support the audio element."
+msgstr ""
+
+#: views/pages/single-document.html.twig:143
+#: views/pages/single-document.html.twig:155
+#: views/pages/single-document.html.twig:162
 msgid "Download"
+msgstr ""
+
+#: views/pages/single-document.html.twig:151
+msgid "Sorry, your browser doesn't support embedded videos."
 msgstr ""
 
 #. Theme Name of the plugin/theme

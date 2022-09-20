@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 /**
- * Front Page
+ * Page
  *
  * @package WordPress
  * @subpackage WebLexProDashboard
@@ -13,7 +13,7 @@ use Timber\{ Timber, Post };
 /**
  * Class Front Page
  */
-class FrontPage extends Post {
+class Page extends Post {
 
 	/**
 	 * Login Form
@@ -33,6 +33,28 @@ class FrontPage extends Post {
 		return Timber::compile( 'components/form-login.html.twig', $data );
 	}
 
+
+	/**
+	 * Post Login Form
+	 */
+	public function post_login_form() {
+		$data = TImber::context();
+
+		$data = array_merge(
+			$data,
+			array(
+				'redirect'         => get_permalink(),
+				'action'           => site_url( 'wp-login.php?action=postpass', 'login_post' ),
+				'lostpassword_url' => wp_lostpassword_url(),
+			)
+		);
+
+		return Timber::compile( 'components/form-login-post.html.twig', $data );
+	}
+
+	/**
+	 * Loaspassword url
+	 */
 	public function lostpassword_url() {
 		return wp_lostpassword_url();
 	}

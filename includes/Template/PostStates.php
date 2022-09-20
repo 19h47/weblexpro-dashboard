@@ -37,6 +37,10 @@ class PostStates {
 			$post_states[] = __( 'Dashboard Page', 'weblexprodashboard' );
 		}
 
+		if ( 'templates/naked.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+			$post_states[] = __( 'Naked Page', 'weblexprodashboard' );
+		}
+
 		return $post_states;
 	}
 }

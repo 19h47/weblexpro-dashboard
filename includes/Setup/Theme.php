@@ -12,7 +12,7 @@ namespace WebLexProDashboard\Setup;
 use Timber\{ Timber };
 use Twig\{ TwigFunction };
 use Twig\Extra\Html\HtmlExtension;
-use WebLexProDashboard\Models\{ FrontPage };
+use WebLexProDashboard\Models\{ Page };
 use WP_Post;
 
 $timber = new Timber();
@@ -295,14 +295,14 @@ class Theme {
 	/**
 	 * Add post classmap
 	 *
+	 * @param array $classmap Class map.
+	 *
 	 * @return array
 	 */
 	public function add_post_classmap( $classmap ) : array {
 		$custom_classmap = array(
 			'page' => function( WP_Post $post ) {
-				if ( is_front_page() ) {
-					return FrontPage::class;
-				}
+				return Page::class;
 			},
 		);
 
