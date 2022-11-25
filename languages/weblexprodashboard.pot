@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashoard\n"
-"POT-Creation-Date: 2022-09-20 15:49+0200\n"
+"POT-Creation-Date: 2022-09-21 13:41+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"

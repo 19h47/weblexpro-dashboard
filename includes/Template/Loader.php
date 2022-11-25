@@ -1,17 +1,17 @@
 <?php // phpcs:ignore
 /**
- * General Template
+ * Loader
  *
  * @package WordPress
  * @subpackage WebLexProDashboard
  */
 
-namespace WebLexProDashboard;
+namespace WebLexProDashboard\Template;
 
 /**
- * General Template
+ * Loader
  */
-class TemplateLoader {
+class Loader {
 
 	/**
 	 * Runs initialization tasks.
@@ -29,17 +29,17 @@ class TemplateLoader {
 		global $post;
 
 		if ( $post && 'templates/dashboard.php' === get_post_meta( $post->ID, '_wp_page_template', true ) && ! is_user_logged_in() ) {
-			wp_redirect( home_url() );
+			wp_safe_redirect( home_url() );
 			exit();
 		}
 
 		if ( is_singular( 'document' ) && ! is_user_logged_in() ) {
-			wp_redirect( home_url() );
+			wp_safe_redirect( home_url() );
 			exit();
 		}
 
 		if ( is_tax( 'document_category' ) && ! is_user_logged_in() ) {
-			wp_redirect( home_url() );
+			wp_safe_redirect( home_url() );
 			exit();
 		}
 	}
