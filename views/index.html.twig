@@ -34,17 +34,44 @@
 			{{- include( 'header.html.twig', { classes: [] } ) -}}
 		{% endblock %}
 
-		<main class="my-20">
-			{% block content %}
-				<div class="container">
-					<div class="row">
-						<div>
-							{{- post.content -}}
+		<div class="flex relative z-2">
+			<aside class="bg-blue-dark text-white px-4 min-w-98.5">
+				{{- include( 'components/socials.html.twig' ) -}}
+			</aside>
+			<main class="my-17.5 space-y-26.25 pl-21 w-full">
+				{% block content %}
+					<div class="container">
+						<div class="row">
+							<div>
+								<p class="mb-4 text-xs">
+									<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+										{{- __( 'Home', 'weblexprodashboard' ) -}}
+									</a>
+									{%- if ancestors -%}
+										{{- '&nbsp;&sol;&nbsp;' -}}
+										{{- ancestors | map( a => "<a class=\"hover:underline\" href=\"#{ a.link }\">#{ a.name }</a>" ) | join( ' / ' ) -}}
+									{%- endif -%}
+								</p>
+								<h1 class="text-4xl font-bold font-title text-gray-very-dark">{{- term.name -}}</h1>
+								{%- if term.description %}
+									<p class="mt-4 text-xl font-light">{{- term.description -}}</p>
+								{%- endif -%}
+							</div>
 						</div>
 					</div>
-				</div>
-			{% endblock %}
-		</main>
+
+					{%- if post.content -%}
+						<div class="container">
+							<div class="row">
+								<div>
+									{{- post.content -}}
+								</div>
+							</div>
+						</div>
+					{%- endif -%}
+				{% endblock %}
+			</main>
+		</div>
 
 		{% block footer %}
 			{{- include( 'footer.html.twig' ) -}}

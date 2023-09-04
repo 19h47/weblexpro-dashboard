@@ -32,6 +32,7 @@ class Init {
 			Setup\Textdomain::class,
 			Setup\WordPress::class,
 			Setup\Settings::class,
+			Setup\Twig::class,
 			PostTemplate\BodyClass::class,
 			Post\Document::class,
 			Taxonomy\DocumentCategory::class,
@@ -39,8 +40,6 @@ class Init {
 			Template\PostStates::class,
 			GeneralTemplate::class,
 			AdminHeader::class,
-			Plugins\ACF\DocumentFields::class,
-			Plugins\ACF\DocumentCategoryFields::class,
 		);
 
 		return $array;

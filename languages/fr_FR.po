@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WebLexPro Dashoard\n"
-"POT-Creation-Date: 2023-09-04 16:47+0200\n"
-"PO-Revision-Date: 2023-09-04 16:47+0200\n"
+"Project-Id-Version: WebLexPro Dashboard\n"
+"POT-Creation-Date: 2022-09-20 15:55+0200\n"
+"PO-Revision-Date: 2022-09-20 15:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -437,7 +437,7 @@ msgstr "Déconnexion"
 #: views/pages/front-page.html.twig:24
 #, php-format
 msgid "Howdy %s"
-msgstr "Bonjour %s"
+msgstr "Salut %s"
 
 #: views/pages/front-page.html.twig:29
 msgid "You are already logged in."
@@ -486,8 +486,8 @@ msgid "Sorry, your browser doesn't support embedded videos."
 msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
 
 #. Theme Name of the plugin/theme
-msgid "WebLexPro Dashoard"
-msgstr "WebLexPro Dashoard"
+msgid "WebLexPro Dashboard"
+msgstr "WebLexPro Dashboard"
 
 #. Theme URI of the plugin/theme
 msgid "https://dashboard.weblexpro.fr/"

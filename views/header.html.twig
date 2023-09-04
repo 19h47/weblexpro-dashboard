@@ -6,32 +6,48 @@
  # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  #}
 
-<header class="py-8">
-	<div class="container">
-		<div class="items-center row">
-			<div class="lg:col-6/12">
-				<a class="inline-block align-middle" href="{{ site.link }}" aria-label="{{ site.description }}">
-					<img class="block w-auto h-11" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="{{ site.description }}">
-				</a>
-			</div>
-			<div class="mt-2 lg:flex lg:mt-0 lg:items-center lg:justify-end lg:col-6/12">
-				{% if nav_menus.main.get_items() %}
-					<ul class="lg:-m-1 lg:flex">
-						{% for item in nav_menus.main.get_items() %}
-							<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
-								<a class="p-1 text-sm hover:underline" href="{{ item.link }}" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>
-									{{- item.title -}}
-								</a>
-							</li>
-						{% endfor %}
-					</ul>
-				{% endif %}
-				{% if not user %}
-					<a class="button bg-red-light w-full lg:w-auto {{ nav_menus.main.get_items() ? 'lg:ml-2' : '' }}" href="{{ front_url | e( 'esc_url' ) }}">
-						{{- __( 'Log in', 'weblexprodashboard' ) -}}
+<header class="relative text-white z-1">
+	<div class="bg-blue-dark py-8 relative z-2">
+		<div class="container !max-w-full relative">
+			<div class="row">
+				<div class="lg:col-6/12">
+					<a class="block h-11.5 w-auto" href="{{ site.link }}" aria-label="{{ site.description }}">
+						<img class="block h-full" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="{{ site.description }}">
 					</a>
-				{% endif %}
+				</div>
+				<div class="lg:col-6/12">
+					{% if nav_menus.main.get_items() %}
+						<ul class="lg:-m-1 lg:flex">
+							{% for item in nav_menus.main.get_items() %}
+								<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
+									<a class="p-1 text-sm hover:underline" href="{{ item.link }}" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>
+										{{- item.title -}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+					{% if not user %}
+						<a class="button bg-red-light w-full lg:w-auto {{ nav_menus.main.get_items() ? 'lg:ml-2' : '' }}" href="{{ front_url | e( 'esc_url' ) }}">
+							{{- __( 'Log in', 'weblexprodashboard' ) -}}
+						</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container absolute inset-x-0 bottom-0 h-17 z-1 -mb-3">
+		<div class="row h-full">
+			<div class="h-full">
+				<div class="bg-cyan-soft h-full block w-full rotate-1"></div>
 			</div>
 		</div>
 	</div>
 </header>
+
+<div class="fixed top-0 right-0 z-10 ">
+	<button type="button" class="rounded-full w-31.5 h-31.5 border-blue-dark border-4 flex items-center justify-center bg-white mr-6 mt-8">
+		{{- icon( 'user', { classes: [ 'w-9 h-15 fill-red-light' ] } ) -}}
+	</button>
+</div>

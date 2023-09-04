@@ -1,0 +1,7 @@
+.acf-field-case-study-post-thumbnails > .acf-label,
+.acf-field-case-study-post-blocks-list-and-text-list-list-text > .acf-label,
+.acf-field-case-study-post-blocks-images-images > .acf-label,
+.acf-field-case-study-post-blocks-image-image > .acf-label,
+.acf-field-about-page-hero-sentences-sentence > .acf-label {
+	display: none;
+}

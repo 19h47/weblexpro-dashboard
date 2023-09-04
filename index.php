@@ -17,8 +17,6 @@
 use Timber\{ Timber };
 
 $templates = array( 'index.html.twig' );
-
-$data         = Timber::context();
-$data['post'] = Timber::get_post();
+$data      = Timber::context();
 
 Timber::render( $templates, $data );

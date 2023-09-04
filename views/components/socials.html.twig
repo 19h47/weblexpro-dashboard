@@ -1,0 +1,26 @@
+{#
+ # Socials
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+
+{% if socials is iterable %}
+	<ul class="{{ html_classes( classes | default( [] ) | join( ' ' ) ) }}">
+		{% for social in socials %}
+			<li>
+				<a
+					class="{{ html_classes() }}"
+					href="{{ social.url }}"
+					target="_blank"
+					rel="noopener noreferer"
+					aria-label="{{ social.title }}"
+				>
+					{{- icon( social.slug, { classes: [] } ) -}}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

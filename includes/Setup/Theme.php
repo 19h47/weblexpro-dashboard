@@ -9,20 +9,19 @@
 
 namespace WebLexProDashboard\Setup;
 
-use Timber\{ Timber };
+use Timber\{ Timber, Site };
 use Twig\{ TwigFunction };
 use Twig\Extra\Html\HtmlExtension;
 use WebLexProDashboard\Models\{ Page };
 use WP_Post;
 
-$timber = new Timber();
-
+Timber::init();
 Timber::$dirname = array( 'views', 'templates', 'dist' );
 
 /**
  * Theme
  */
-class Theme {
+class Theme extends Site {
 
 	/**
 	 * Constructor
@@ -30,7 +29,6 @@ class Theme {
 	 * @return void
 	 */
 	public function run() : void {
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_filter( 'timber/context', array( $this, 'add_socials_to_context' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_theme' ) );
@@ -53,149 +51,6 @@ class Theme {
 		}
 
 		return $context;
-	}
-
-
-	/**
-	 * Add to Twig
-	 *
-	 * @param object $twig Twig environment.
-	 * @return object $twig
-	 * @access public
-	 */
-	public function add_to_twig( object $twig ) : object {
-		$twig->addFunction(
-			new TwigFunction(
-				'html_class',
-				function ( $args = '' ) {
-					return html_class( $args );
-				}
-			)
-		);
-
-		$twig->addFunction(
-			new TwigFunction(
-				'body_class',
-				function ( $args = '' ) {
-					return body_class( $args );
-				}
-			)
-		);
-
-		$twig->addFunction(
-			new TwigFunction(
-				'set_product_global',
-				function( $post ) {
-					return set_product_global( $post );
-				}
-			)
-		);
-
-		if ( function_exists( 'pll_the_languages' ) ) {
-			$twig->addFunction(
-				new TwigFunction(
-					'pll_the_languages',
-					function( $args = array() ) {
-						return pll_the_languages( array_merge( $args, array( 'raw' => 1 ) ) );
-					}
-				)
-			);
-		}
-
-		if ( function_exists( 'pll__' ) ) {
-			$twig->addFunction(
-				new TwigFunction(
-					'pll__',
-					function ( string $string ) : string {
-						return pll__( $string );
-					}
-				)
-			);
-		}
-
-		if ( function_exists( 'sanitize_title' ) ) {
-			$twig->addFunction(
-				new TwigFunction(
-					'sanitize_title',
-					function ( string $title, string $fallback_title = '', string $context = 'save' ) : string {
-						return sanitize_title( $title, $fallback_title, $context );
-					}
-				)
-			);
-		}
-
-		if ( function_exists( 'get_extended' ) ) {
-			$twig->addFunction(
-				new TwigFunction(
-					'get_extended',
-					function( $content ) {
-						return get_extended( $content );
-					}
-				)
-			);
-		}
-
-		if ( function_exists( 'wp_get_document_title' ) ) {
-			$twig->addFunction(
-				new TwigFunction(
-					'wp_get_document_title',
-					function() {
-						return wp_get_document_title();
-					}
-				)
-			);
-		}
-
-		$twig->addFunction(
-			new TwigFunction(
-				'get_post_meta',
-				function( int $post_id, string $key = '', bool $single = false ) {
-					return get_post_meta( $post_id, $key, $single );
-				}
-			)
-		);
-
-		$twig->addFunction( new TwigFunction( 'uniqid', 'uniqid' ) );
-
-		$twig->addFunction(
-			new TwigFunction(
-				'is_user_logged_in',
-				function() {
-					return is_user_logged_in();
-				}
-			)
-		);
-
-		$twig->addFunction(
-			new TwigFunction(
-				'wp_login_url',
-				function( string $redirect = '', bool $force_reauth = false ) {
-					return wp_login_url( $redirect, $force_reauth );
-				}
-			)
-		);
-
-		$twig->addFunction(
-			new TwigFunction(
-				'wp_logout_url',
-				function( string $redirect = '' ) {
-					return wp_logout_url( $redirect );
-				}
-			)
-		);
-
-		$twig->addFunction(
-			new TwigFunction(
-				'asset',
-				function( string $asset, bool $echo = false ) {
-					return asset( $asset, $echo );
-				}
-			)
-		);
-
-		$twig->addExtension( new HtmlExtension() );
-
-		return $twig;
 	}
 
 

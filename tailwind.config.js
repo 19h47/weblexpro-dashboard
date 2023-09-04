@@ -6,6 +6,14 @@ const colors = require("./tailwind/tailwind.config.colors");
 const minWidth = require("./tailwind/tailwind.config.minWidth");
 const spacing = require("./tailwind/tailwind.config.spacing");
 
+const zIndex = {
+	1: '1',
+	2: '2',
+	3: '3',
+	4: '4',
+	5: '5',
+};
+
 module.exports = {
 	content: ["./views/**/*.twig", "./src/**/*.{html,js}", "./includes/**/*.php"],
 	corePlugins: {
@@ -16,7 +24,7 @@ module.exports = {
 			body: ['Open Sans', 'sans-serif'],
 			title: ['Fira Sans', 'sans-serif'],
 		},
-		extend: { colors, minWidth, spacing },
+		extend: { colors, minWidth, spacing, zIndex },
 	},
 	plugins: [],
 };

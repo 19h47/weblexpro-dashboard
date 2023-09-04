@@ -7,6 +7,6 @@
 
 @layer components {
 	.button {
-		@apply cursor-pointer p-4 bg-blue-bright inline-block hover:bg-red-light text-white text-center hover:shadow-lg uppercase text-sm;
+
 	}
 }
