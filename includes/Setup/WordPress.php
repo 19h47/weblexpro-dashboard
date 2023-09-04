@@ -24,8 +24,6 @@ class WordPress {
 		add_filter( 'pre_get_shortlink', '__return_empty_string' );
 		add_filter( 'wpseo_canonical', '__return_false' );
 		add_filter( 'query_vars', array( $this, 'add_query_vars' ), 10, 1 );
-
-		add_filter( 'searchwp_live_search_base_styles', '__return_false' );
 	}
 
 	/**

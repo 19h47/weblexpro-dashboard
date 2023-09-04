@@ -72,10 +72,7 @@ function html_class( $class = '' ) : string {
  * @access public
  */
 function get_webfonts() : array {
-	return array(
-		'fira-sans' => 'https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700&display=swap',
-		'open-sans' => '//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap',
-	);
+	return array();
 }
 
 

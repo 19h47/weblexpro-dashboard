@@ -1,0 +1,55 @@
+{#
+ # Tease: Offer
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+
+<article
+	class="text-2xl"
+	 style="
+		{{ active ? '' : 'color: #BABABA;' }}
+	"
+>
+	<header class="text-white relative mr-8 -mb-24">
+		<div
+			class="relative z-2 w-full py-4 px-11"
+			style="background-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }}">
+			<h3 class="text-[2.5rem] leading-[3rem]">{{- post.meta( 'catchphrase' ) -}}</h3>
+			<p class="">{{- post.title -}}</p>
+		</div>
+
+		<div
+			class="absolute left-full top-0 z-1 origin-bottom-left"
+			style="
+				border-bottom : 7rem solid transparent;
+ 				border-left : 2rem solid  {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }};
+			"
+		></div>
+	</header>
+
+	<div
+		class="border-[3px] ml-4 pt-33.5"
+		style="border-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }};"
+	>
+		<p class="px-7">{{- post.meta( 'description' ) -}}</p>
+		<footer class="mt-1 text-right">
+			{%- if active -%}
+				<a href="{{ offer.link }}" class="py-3 px-10 inline-block" style="background-color: {{ post.meta( 'color' ) | default( '#BABABA' ) }};">
+					<span class="w-6 h-6 border-white border rounded-full flex items-center justify-center">
+						{{- icon( 'chevron-right', { classes: [ 'w-2 h-3 fill-white' ] } ) -}}
+					</span>
+				</a>
+			{%- else -%}
+				<button
+					type="button"
+					class="text-xl bg-gray text-white py-3 px-4 hover:underline"
+				>
+					{{- __( 'En savoir plus...', 'weblexprodashboard' ) -}}
+				</button>
+			{%- endif -%}
+		</footer>
+	</div>
+</article>

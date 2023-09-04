@@ -10,5 +10,9 @@ module.exports = {
 	},
 	cyan: {
 		soft: '#60C3E3'
+	},
+	gray: {
+		DEFAULT: '#BABABA',
+		'very-dark': '#686868'
 	}
 };

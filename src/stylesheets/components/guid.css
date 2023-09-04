@@ -21,7 +21,5 @@
 
 	.Guid__column {
 		@apply w-full h-full;
-
-		color: theme("colors.black.DEFAULT");
 	}
 }

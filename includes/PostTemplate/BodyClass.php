@@ -37,38 +37,6 @@ class BodyClass {
 	 * @return $classes array
 	 */
 	public function body_classes( array $classes, array $class ) : array {
-		if ( is_front_page() ) {
-			$classes[] = 'Front-page';
-		}
-
-		if ( is_home() ) {
-			$classes[] = 'Home-page';
-		}
-
-		if ( is_singular( 'recipe' ) ) {
-			$classes[] = 'Single-recipe';
-		}
-
-		if ( is_singular( 'post' ) ) {
-			$classes[] = 'Single-post';
-		}
-
-		if ( is_singular( 'product' ) ) {
-			$classes[] = 'Single-product';
-		}
-
-		if ( is_post_type_archive( 'leaf' ) ) {
-			$classes[] = 'Archive-leaf';
-		}
-
-		if ( is_page_template( 'templates/find-us-page.php' ) ) {
-			$classes[] = 'Find-us-page';
-		}
-
-		if ( is_page_template( 'templates/salad-creator-page.php' ) ) {
-			$classes[] = 'Salad-creator-page';
-		}
-
 		return $classes;
 	}
 }

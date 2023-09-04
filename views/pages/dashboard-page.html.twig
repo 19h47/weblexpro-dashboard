@@ -9,7 +9,10 @@
 
 {% block content %}
 	{{ parent() }}
+
+	{% set offers = get_posts( { post_type: 'offer' } ) %}
 	<div class="container space-y-13 text-blue-dark">
+
 		<div class="row">
 			<div>
 				<h2 class="font-medium text-3xl">{{- __( 'My subscriptions', 'weblexprodashboard' ) -}}</h2>
@@ -17,13 +20,34 @@
 			<div>
 				<hr class="block border-none bg-blue-dark h-px w-full mt-4">
 			</div>
+
+			<div class="row mt-5">
+				{% for offer in offers %}
+					{% if offer.id in user.meta( 'offers' ) %}
+						<div class="col-6/12">
+							{{- include( 'components/tease-offer.html.twig', { post: offer, active: true } ) -}}
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
 		</div>
+
 		<div class="row">
 			<div>
 				<h2 class="font-medium text-3xl">{{- __( 'Subscriptions available', 'weblexprodashboard' ) -}}</h2>
 				<div>
 					<hr class="block border-none bg-blue-dark h-px w-full mt-4">
 				</div>
+			</div>
+
+			<div class="row mt-5">
+				{% for offer in offers %}
+					{% if offer.id not in user.meta( 'offers' ) %}
+						<div class="col-6/12">
+							{{- include( 'components/tease-offer.html.twig', { post: offer } ) -}}
+						</div>
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 	</div>

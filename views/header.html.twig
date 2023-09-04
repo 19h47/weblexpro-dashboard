@@ -20,7 +20,7 @@
 						<ul class="lg:-m-1 lg:flex">
 							{% for item in nav_menus.main.get_items() %}
 								<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
-									<a class="p-1 text-sm hover:underline" href="{{ item.link }}" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>
+									<a class="p-1 hover:underline" href="{{ item.link }}" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>
 										{{- item.title -}}
 									</a>
 								</li>

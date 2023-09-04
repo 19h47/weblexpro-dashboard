@@ -33,12 +33,7 @@ class Loader {
 			exit();
 		}
 
-		if ( is_singular( 'document' ) && ! is_user_logged_in() ) {
-			wp_safe_redirect( home_url() );
-			exit();
-		}
-
-		if ( is_tax( 'document_category' ) && ! is_user_logged_in() ) {
+		if ( is_singular( 'offer' ) && ! is_user_logged_in() ) {
 			wp_safe_redirect( home_url() );
 			exit();
 		}

@@ -1,0 +1,12 @@
+{#
+ # Column Background Color
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+
+<a
+	href="{{ url }}"
+	{{ attributes ? attributes | map( ( value, key ) => "#{key}=\"#{value}\"" ) | join( ' ' ) | raw }}
+></a>

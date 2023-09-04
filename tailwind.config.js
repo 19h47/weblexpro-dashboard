@@ -21,8 +21,8 @@ module.exports = {
 	},
 	theme: {
 		fontFamily: {
-			body: ['Open Sans', 'sans-serif'],
-			title: ['Fira Sans', 'sans-serif'],
+			body: ['Qlassik', 'sans-serif'],
+			title: ['Qlassik', 'sans-serif'],
 		},
 		extend: { colors, minWidth, spacing, zIndex },
 	},

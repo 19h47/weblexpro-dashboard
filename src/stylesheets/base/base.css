@@ -10,6 +10,24 @@
 
 @layer base {
 	body {
-		@apply font-body text-base font-normal;
+		@apply font-body text-xl font-medium text-gray-very-dark;
 	}
+
+	/* Qlassik */
+	@font-face {
+		font-family: 'Qlassik';
+		src: url('../fonts/qlassik/bold.woff2') format('woff2');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Qlassik';
+		src: url('../fonts/qlassik/medium.woff2') format('woff2');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
 }

@@ -13,8 +13,6 @@
 use Timber\{ Timber };
 
 $filename = 'pages/dashboard-page.html.twig';
-
-$data         = Timber::context();
-$data['post'] = Timber::get_post();
+$data     = Timber::context();
 
 Timber::render( $filename, $data );
