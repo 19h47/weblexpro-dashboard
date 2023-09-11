@@ -84,7 +84,7 @@ class DocumentCategory {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'name' === $key ) {
-				$new_columns['thumbnail'] = __( 'Thumbnail', 'weblexprodashboard' );
+				$new_columns['thumbnail'] = __( 'Thumbnail', 'weblexpro-dashboard' );
 			}
 
 			$new_columns[ $key ] = $value;
@@ -107,7 +107,7 @@ class DocumentCategory {
 	public function render_custom_columns( string $string, string $column_name, int $term_id ) : void {
 		switch ( $column_name ) {
 			case 'thumbnail':
-				$thumbnail = get_field( 'thumbnail', 'term_' . $term_id );
+				$thumbnail = get_field( 'image', 'term_' . $term_id );
 				$html      = '—';
 
 				if ( $thumbnail ) {
@@ -134,26 +134,26 @@ class DocumentCategory {
 	public function register() : void {
 
 		$labels = array(
-			'name'                       => _x( 'Categories', 'document category general name', 'weblexprodashboard' ),
-			'singular_name'              => _x( 'Category', 'document category singular name', 'weblexprodashboard' ),
-			'search_items'               => __( 'Search Categories', 'weblexprodashboard' ),
-			'all_items'                  => __( 'All Categories', 'weblexprodashboard' ),
-			'popular_items'              => __( 'Popular Categories', 'weblexprodashboard' ),
-			'edit_item'                  => __( 'Edit Category', 'weblexprodashboard' ),
-			'view_item'                  => __( 'View Category', 'weblexprodashboard' ),
-			'update_item'                => __( 'Update Category', 'weblexprodashboard' ),
-			'add_new_item'               => __( 'Add New Category', 'weblexprodashboard' ),
-			'new_item_name'              => __( 'New Category Name', 'weblexprodashboard' ),
-			'separate_items_with_commas' => __( 'Separate categories with commas', 'weblexprodashboard' ),
-			'add_or_remove_items'        => __( 'Add or remove categories', 'weblexprodashboard' ),
-			'choose_from_most_used'      => __( 'Choose from the most used categories', 'weblexprodashboard' ),
-			'not_found'                  => __( 'No categories found.', 'weblexprodashboard' ),
-			'no_terms'                   => __( 'No categories', 'weblexprodashboard' ),
-			'items_list_navigation'      => __( 'Categories list navigation', 'weblexprodashboard' ),
-			'items_list'                 => __( 'Categories list', 'weblexprodashboard' ),
+			'name'                       => _x( 'Categories', 'document category general name', 'weblexpro-dashboard' ),
+			'singular_name'              => _x( 'Category', 'document category singular name', 'weblexpro-dashboard' ),
+			'search_items'               => __( 'Search Categories', 'weblexpro-dashboard' ),
+			'all_items'                  => __( 'All Categories', 'weblexpro-dashboard' ),
+			'popular_items'              => __( 'Popular Categories', 'weblexpro-dashboard' ),
+			'edit_item'                  => __( 'Edit Category', 'weblexpro-dashboard' ),
+			'view_item'                  => __( 'View Category', 'weblexpro-dashboard' ),
+			'update_item'                => __( 'Update Category', 'weblexpro-dashboard' ),
+			'add_new_item'               => __( 'Add New Category', 'weblexpro-dashboard' ),
+			'new_item_name'              => __( 'New Category Name', 'weblexpro-dashboard' ),
+			'separate_items_with_commas' => __( 'Separate categories with commas', 'weblexpro-dashboard' ),
+			'add_or_remove_items'        => __( 'Add or remove categories', 'weblexpro-dashboard' ),
+			'choose_from_most_used'      => __( 'Choose from the most used categories', 'weblexpro-dashboard' ),
+			'not_found'                  => __( 'No categories found.', 'weblexpro-dashboard' ),
+			'no_terms'                   => __( 'No categories', 'weblexpro-dashboard' ),
+			'items_list_navigation'      => __( 'Categories list navigation', 'weblexpro-dashboard' ),
+			'items_list'                 => __( 'Categories list', 'weblexpro-dashboard' ),
 			/* translators: Document category heading when selecting from the most used terms. */
-			'most_used'                  => _x( 'Most Used', 'document category', 'weblexprodashboard' ),
-			'back_to_items'              => __( '&larr; Back to Categories', 'weblexprodashboard' ),
+			'most_used'                  => _x( 'Most Used', 'document category', 'weblexpro-dashboard' ),
+			'back_to_items'              => __( '&larr; Back to Categories', 'weblexpro-dashboard' ),
 		);
 
 		$args = array(

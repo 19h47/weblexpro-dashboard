@@ -34,11 +34,15 @@ class PostStates {
 	 */
 	public function filter_post_states( array $post_states, WP_Post $post ) {
 		if ( 'templates/dashboard.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Dashboard Page', 'weblexprodashboard' );
+			$post_states[] = __( 'Dashboard Page', 'weblexpro-dashboard' );
 		}
 
-		if ( 'templates/naked.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$post_states[] = __( 'Naked Page', 'weblexprodashboard' );
+		if ( 'templates/likes.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+			$post_states[] = __( 'Likes Page', 'weblexpro-dashboard' );
+		}
+
+		if ( 'templates/documents.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+			$post_states[] = __( 'Documents Page', 'weblexpro-dashboard' );
 		}
 
 		return $post_states;

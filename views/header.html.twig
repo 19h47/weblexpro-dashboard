@@ -6,33 +6,63 @@
  # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  #}
 
-<header class="relative text-white z-1">
+<header class="relative text-white z-10 lg:z-1">
 	<div class="bg-blue-dark py-8 relative z-2">
-		<div class="container !max-w-full relative">
+		<div class="container !max-w-full">
 			<div class="row">
-				<div class="lg:col-6/12">
+				<div class="lg:col-4/12">
 					<a class="block h-11.5 w-auto" href="{{ site.link }}" aria-label="{{ site.description }}">
-						<img class="block h-full" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="{{ site.description }}">
+						<img
+							class="block h-full"
+							src="{{ asset( 'img/svg/logo-white.svg' ) }}"
+							alt="{{ site.description }}"
+							width="247"
+							height="45"
+						>
 					</a>
 				</div>
-				<div class="lg:col-6/12">
-					{% if nav_menus.main.get_items() %}
-						<ul class="lg:-m-1 lg:flex">
-							{% for item in nav_menus.main.get_items() %}
-								<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
-									<a class="p-1 hover:underline" href="{{ item.link }}" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>
-										{{- item.title -}}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
-					{% if not user %}
-						<a class="button bg-red-light w-full lg:w-auto {{ nav_menus.main.get_items() ? 'lg:ml-2' : '' }}" href="{{ front_url | e( 'esc_url' ) }}">
-							{{- __( 'Log in', 'weblexprodashboard' ) -}}
+				<div class="lg:col-6/12 lg:flex lg:justify-end mt-8 lg:mt-0">
+					<div class="flex gap-7 items-center">
+						<a class="text-xl underline hover:no-underline" href="tel:{{ phone_number | replace( { '.' : '' } ) }}">
+							{{ phone_number }}
 						</a>
-					{% endif %}
+
+						<a href="{{ contact_url }}" class="h-8 w-12 block" aria-label="{{ __( 'Contact Us' ) }}">
+							{{ icon( 'envelope', { classes: [ 'w-full h-full fill-current' ] } ) }}
+						</a>
+
+						{{- icon( 'bell', { classes: [ 'w-10 h-10 fill-current' ] } ) -}}
+					</div>
 				</div>
+
+				{%- if user -%}
+					<div class="lg:col-2/12 flex justify-end mt-8 lg:mt-0">
+						<div class="relative -mb-[4.75rem] z-10 group w-full lg:w-auto">
+							<button data-module-disclosure-button aria-controls="user-menu" type="button" class="rounded-full ml-auto relative z-2 w-31.5 h-31.5 border-blue-dark border-4 flex items-center justify-center bg-white">
+								{{- icon( 'user', { classes: [ 'w-9 h-15 fill-red-light' ] } ) -}}
+							</button>
+							<div id="user-menu" style="display: none;" class="absolute w-full lg:w-auto z-1 -mt-[4.75rem] px-4 pt-[7.75rem] pb-8 top-full right-0 rounded-[2.25rem] border border-gray-very-dark bg-white text-blue-dark">
+								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ fn( 'get_edit_profile_url', user.id ) }}" target="_blank" rel="noopener noreferer">
+									{{- icon( 'user', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- __( 'My profile', 'weblexpro-dashboard' ) -}}
+								</a>
+								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ likes_url }}">
+									{{- icon( 'heart-fill', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- __( 'My likes', 'weblexpro-dashboard' ) -}}</a>
+								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ documents_url }}">
+									{{- icon( 'documents', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- __( 'My documents', 'weblexpro-dashboard' ) -}}
+								</a>
+								<hr class="border-dashed border-0.5 border-blue-dark w-full my-8">
+								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ fn( 'wp_logout_url' ) }}">
+									{{- icon( 'logout', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{ __( 'Sign Out', 'weblexpro-dashboard' ) }}
+								</a>
+							</div>
+						</div>
+
+					</div>
+				{%- endif -%}
 			</div>
 		</div>
 	</div>
@@ -46,8 +76,4 @@
 	</div>
 </header>
 
-<div class="fixed top-0 right-0 z-10 ">
-	<button type="button" class="rounded-full w-31.5 h-31.5 border-blue-dark border-4 flex items-center justify-center bg-white mr-6 mt-8">
-		{{- icon( 'user', { classes: [ 'w-9 h-15 fill-red-light' ] } ) -}}
-	</button>
-</div>
+

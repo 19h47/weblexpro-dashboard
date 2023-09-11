@@ -64,25 +64,33 @@ class Theme extends Site {
 		// Share and Socials links.
 		$socials = array(
 			array(
-				'title' => 'Instagram',
-				'slug'  => 'instagram',
-				'url'   => get_option( 'instagram' ),
+				'title' => 'Facebook',
+				'slug'  => 'facebook',
+				'name'  => __( 'Share on Facebook', 'weblexpro-dashboard' ),
+				'link'  => 'https://www.facebook.com/sharer.php?u=',
+				'url'   => get_option( 'facebook' ),
+				'color' => '#3b5998',
 			),
 			array(
 				'title' => 'Twitter',
 				'slug'  => 'twitter',
-				'name'  => __( 'Share on Twitter', 'weblexprodashboard' ),
+				'name'  => __( 'Share on Twitter', 'weblexpro-dashboard' ),
 				'link'  => 'https://twitter.com/intent/tweet?url=',
 				'url'   => get_option( 'twitter' ),
 				'color' => '#1da1f2',
 			),
 			array(
-				'title' => 'Facebook',
-				'slug'  => 'facebook',
-				'name'  => __( 'Share on Facebook', 'weblexprodashboard' ),
-				'link'  => 'https://www.facebook.com/sharer.php?u=',
-				'url'   => get_option( 'facebook' ),
-				'color' => '#3b5998',
+				'title' => 'LinkedIn',
+				'slug'  => 'linkedin',
+				'name'  => __( 'Share on LinkedIn', 'weblexpro-dashboard' ),
+				'link'  => 'https://www.linkedin.com/sharing/share-offsite/?url=',
+				'url'   => get_option( 'linkedin' ),
+				'color' => '#0077b5',
+			),
+			array(
+				'title' => 'Instagram',
+				'slug'  => 'instagram',
+				'url'   => get_option( 'instagram' ),
 			),
 			array(
 				'title' => 'YouTube',
@@ -93,17 +101,9 @@ class Theme extends Site {
 			array(
 				'title' => 'Pinterest',
 				'slug'  => 'pinterest',
-				'name'  => __( 'Share on Pinterest', 'weblexprodashboard' ),
+				'name'  => __( 'Share on Pinterest', 'weblexpro-dashboard' ),
 				'link'  => 'https://pinterest.com/pin/create/link/?url=',
 				'color' => '#e60023',
-			),
-			array(
-				'title' => 'LinkedIn',
-				'slug'  => 'linkedin',
-				'name'  => __( 'Share on LinkedIn', 'weblexprodashboard' ),
-				'link'  => 'https://www.linkedin.com/sharing/share-offsite/?url=',
-				'url'   => get_option( 'linkedin' ),
-				'color' => '#0077b5',
 			),
 		);
 
@@ -132,17 +132,15 @@ class Theme extends Site {
 	public function add_to_context( array $context ) : array {
 		global $wp;
 
-		$context['current_url']   = home_url( add_query_arg( array(), $wp->request ) );
-		$context['front_url']     = get_permalink( get_option( 'page_on_front' ) );
-		$context['dashboard_url'] = get_permalink( get_option( 'page_dashboard' ) );
-
-		$context['document_categories'] = Timber::get_terms(
-			array(
-				'taxonomy'   => 'document_category',
-				'parent'     => 0,
-				'hide_empty' => false,
-			)
-		);
+		$context['current_url']           = home_url( add_query_arg( array(), $wp->request ) );
+		$context['front_url']             = get_permalink( get_option( 'page_on_front' ) );
+		$context['dashboard_url']         = get_permalink( get_option( 'page_dashboard' ) );
+		$context['contact_url']           = get_permalink( get_option( 'page_contact' ) );
+		$context['likes_url']             = get_permalink( get_option( 'page_likes' ) );
+		$context['documents_url']         = get_permalink( get_option( 'page_documents' ) );
+		$context['phone_number']          = get_option( 'phone_number' );
+		$context['notice']                = get_option( 'notice' );
+		$context['url_weblexpro_contact'] = get_option( 'url_weblexpro_contact' );
 
 		return $context;
 	}

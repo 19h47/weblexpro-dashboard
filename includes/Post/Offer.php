@@ -96,8 +96,8 @@ class Offer {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'title' === $key ) {
-				// $new_columns['thumbnail']        = __( 'Thumbnail', 'weblexprodashboard' );
-				$new_columns['color'] = __( 'Color', 'weblexprodashboard' );
+				// $new_columns['thumbnail']        = __( 'Thumbnail', 'weblexpro-dashboard' );
+				$new_columns['color'] = __( 'Color', 'weblexpro-dashboard' );
 			}
 
 			$new_columns[ $key ] = $value;
@@ -178,39 +178,39 @@ class Offer {
 		$preview_url = get_preview_post_link( $post );
 
 		/* translators: Publish box date format, see https://secure.php.net/date */
-		$scheduled_date = date_i18n( __( 'M j, Y @ H:i', 'weblexprodashboard' ), strtotime( $post->post_date ) );
+		$scheduled_date = date_i18n( __( 'M j, Y @ H:i', 'weblexpro-dashboard' ), strtotime( $post->post_date ) );
 
 		$view_link_html = sprintf(
 			' <a href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'View Offer', 'weblexprodashboard' )
+			__( 'View Offer', 'weblexpro-dashboard' )
 		);
 
 		$scheduled_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'Preview Offer', 'weblexprodashboard' )
+			__( 'Preview Offer', 'weblexpro-dashboard' )
 		);
 
 		$preview_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( $preview_url ),
-			__( 'Preview Offer', 'weblexprodashboard' )
+			__( 'Preview Offer', 'weblexpro-dashboard' )
 		);
 
 		$messages['offer'] = array(
 			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Offer updated.', 'weblexprodashboard' ) . $view_link_html,
-			2  => __( 'Custom field updated.', 'weblexprodashboard' ),
-			3  => __( 'Custom field deleted.', 'weblexprodashboard' ),
-			4  => __( 'Offer updated.', 'weblexprodashboard' ),
+			1  => __( 'Offer updated.', 'weblexpro-dashboard' ) . $view_link_html,
+			2  => __( 'Custom field updated.', 'weblexpro-dashboard' ),
+			3  => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
+			4  => __( 'Offer updated.', 'weblexpro-dashboard' ),
 			/* translators: %s: date and time of the revision */
-        	5  => isset( $_GET['revision'] ) ? sprintf( __( 'Offer restored to revision from %s.', 'weblexprodashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-			6  => __( 'Offer published.', 'weblexprodashboard' ) . $view_link_html,
-			7  => __( 'Offer saved.', 'weblexprodashboard' ),
-			8  => __( 'Offer submitted.', 'weblexprodashboard' ) . $preview_link_html,
-        	9  => sprintf( __( 'Offer scheduled for: %s.', 'weblexprodashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-			10 => __( 'Offer draft updated.', 'weblexprodashboard' ) . $preview_link_html,
+        	5  => isset( $_GET['revision'] ) ? sprintf( __( 'Offer restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
+			6  => __( 'Offer published.', 'weblexpro-dashboard' ) . $view_link_html,
+			7  => __( 'Offer saved.', 'weblexpro-dashboard' ),
+			8  => __( 'Offer submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
+        	9  => sprintf( __( 'Offer scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
+			10 => __( 'Offer draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -236,16 +236,16 @@ class Offer {
 
 		$bulk_messages['offer'] = array(
 			/* translators: %s: Number of offers. */
-			'updated'   => _n( '%s offer updated.', '%s offers updated.', $bulk_counts_updated, 'weblexprodashboard' ),
-			'locked'    => ( 1 === $bulk_counts_locked ) ? __( '1 offer not updated, somebody is editing it.', 'weblexprodashboard' ) :
+			'updated'   => _n( '%s offer updated.', '%s offers updated.', $bulk_counts_updated, 'weblexpro-dashboard' ),
+			'locked'    => ( 1 === $bulk_counts_locked ) ? __( '1 offer not updated, somebody is editing it.', 'weblexpro-dashboard' ) :
 				/* translators: %s: Number of offers. */
-				_n( '%s offer not updated, somebody is editing it.', '%s offers not updated, somebody is editing them.', $bulk_counts_locked, 'weblexprodashboard' ),
+				_n( '%s offer not updated, somebody is editing it.', '%s offers not updated, somebody is editing them.', $bulk_counts_locked, 'weblexpro-dashboard' ),
 			/* translators: %s: Number of offers. */
-			'deleted'   => _n( '%s offer permanently deleted.', '%s offer permanently deleted.', $bulk_counts_deleted, 'weblexprodashboard' ),
+			'deleted'   => _n( '%s offer permanently deleted.', '%s offer permanently deleted.', $bulk_counts_deleted, 'weblexpro-dashboard' ),
 			/* translators: %s: Number of offers. */
-			'trashed'   => _n( '%s offer moved to the Trash.', '%s offer moved to the Trash.', $bulk_counts_trashed, 'weblexprodashboard' ),
+			'trashed'   => _n( '%s offer moved to the Trash.', '%s offer moved to the Trash.', $bulk_counts_trashed, 'weblexpro-dashboard' ),
 			/* translators: %s: Number of offers. */
-			'untrashed' => _n( '%s offer restored from the Trash.', '%s offer restored from the Trash.', $bulk_counts_untrashed, 'weblexprodashboard' ),
+			'untrashed' => _n( '%s offer restored from the Trash.', '%s offer restored from the Trash.', $bulk_counts_untrashed, 'weblexpro-dashboard' ),
 		);
 
 		return $bulk_messages;
@@ -260,34 +260,34 @@ class Offer {
 	 */
 	public function register() : void {
 		$labels = array(
-			'name'                     => _x( 'Offers', 'offer type generale name', 'weblexprodashboard' ),
-			'singular_name'            => _x( 'Offer', 'offer type singular name', 'weblexprodashboard' ),
-			'add_new'                  => _x( 'Add New', 'offer type', 'weblexprodashboard' ),
-			'add_new_item'             => __( 'Add New Offer', 'weblexprodashboard' ),
-			'edit_item'                => __( 'Edit Offer', 'weblexprodashboard' ),
-			'new_item'                 => __( 'New Offer', 'weblexprodashboard' ),
-			'view_items'               => __( 'View Offers', 'weblexprodashboard' ),
-			'view_item'                => __( 'View Offer', 'weblexprodashboard' ),
-			'search_items'             => __( 'Search Offers', 'weblexprodashboard' ),
-			'not_found'                => __( 'No Offers found.', 'weblexprodashboard' ),
-			'not_found_in_trash'       => __( 'No Offers found in Trash.', 'weblexprodashboard' ),
-			'parent_item_colon'        => __( 'Parent Offer:', 'weblexprodashboard' ),
-			'all_items'                => __( 'All Offers', 'weblexprodashboard' ),
-			'archives'                 => __( 'Offer Archives', 'weblexprodashboard' ),
-			'attributes'               => __( 'Offer Attributes', 'weblexprodashboard' ),
-			'insert_into_item'         => __( 'Insert into offer', 'weblexprodashboard' ),
-			'uploaded_to_this_item'    => __( 'Uploaded to this offer', 'weblexprodashboard' ),
-			'featured_image'           => _x( 'Featured Image', 'offer', 'weblexprodashboard' ),
-			'set_featured_image'       => _x( 'Set featured image', 'offer', 'weblexprodashboard' ),
-			'remove_featured_image'    => _x( 'Remove featured image', 'offer', 'weblexprodashboard' ),
-			'use_featured_image'       => _x( 'Use as featured image', 'offer', 'weblexprodashboard' ),
-			'items_list_navigation'    => __( 'Offers list navigation', 'weblexprodashboard' ),
-			'items_list'               => __( 'Offers list', 'weblexprodashboard' ),
-			'item_published'           => __( 'Offer published.', 'weblexprodashboard' ),
-			'item_published_privately' => __( 'Offer published privately.', 'weblexprodashboard' ),
-			'item_reverted_to_draft'   => __( 'Offer reverted to draft.', 'weblexprodashboard' ),
-			'item_scheduled'           => __( 'Offer scheduled.', 'weblexprodashboard' ),
-			'item_updated'             => __( 'Offer updated.', 'weblexprodashboard' ),
+			'name'                     => _x( 'Offers', 'offer type generale name', 'weblexpro-dashboard' ),
+			'singular_name'            => _x( 'Offer', 'offer type singular name', 'weblexpro-dashboard' ),
+			'add_new'                  => _x( 'Add New', 'offer type', 'weblexpro-dashboard' ),
+			'add_new_item'             => __( 'Add New Offer', 'weblexpro-dashboard' ),
+			'edit_item'                => __( 'Edit Offer', 'weblexpro-dashboard' ),
+			'new_item'                 => __( 'New Offer', 'weblexpro-dashboard' ),
+			'view_items'               => __( 'View Offers', 'weblexpro-dashboard' ),
+			'view_item'                => __( 'View Offer', 'weblexpro-dashboard' ),
+			'search_items'             => __( 'Search Offers', 'weblexpro-dashboard' ),
+			'not_found'                => __( 'No Offers found.', 'weblexpro-dashboard' ),
+			'not_found_in_trash'       => __( 'No Offers found in Trash.', 'weblexpro-dashboard' ),
+			'parent_item_colon'        => __( 'Parent Offer:', 'weblexpro-dashboard' ),
+			'all_items'                => __( 'All Offers', 'weblexpro-dashboard' ),
+			'archives'                 => __( 'Offer Archives', 'weblexpro-dashboard' ),
+			'attributes'               => __( 'Offer Attributes', 'weblexpro-dashboard' ),
+			'insert_into_item'         => __( 'Insert into offer', 'weblexpro-dashboard' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this offer', 'weblexpro-dashboard' ),
+			'featured_image'           => _x( 'Featured Image', 'offer', 'weblexpro-dashboard' ),
+			'set_featured_image'       => _x( 'Set featured image', 'offer', 'weblexpro-dashboard' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'offer', 'weblexpro-dashboard' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'offer', 'weblexpro-dashboard' ),
+			'items_list_navigation'    => __( 'Offers list navigation', 'weblexpro-dashboard' ),
+			'items_list'               => __( 'Offers list', 'weblexpro-dashboard' ),
+			'item_published'           => __( 'Offer published.', 'weblexpro-dashboard' ),
+			'item_published_privately' => __( 'Offer published privately.', 'weblexpro-dashboard' ),
+			'item_reverted_to_draft'   => __( 'Offer reverted to draft.', 'weblexpro-dashboard' ),
+			'item_scheduled'           => __( 'Offer scheduled.', 'weblexpro-dashboard' ),
+			'item_updated'             => __( 'Offer updated.', 'weblexpro-dashboard' ),
 		);
 
 		$rewrite = array(
@@ -295,11 +295,11 @@ class Offer {
 		);
 
 		$args = array(
-			'label'               => __( 'Offer', 'weblexprodashboard' ),
-			'description'         => __( 'Offer Description', 'weblexprodashboard' ),
+			'label'               => __( 'Offer', 'weblexpro-dashboard' ),
+			'description'         => __( 'Offer Description', 'weblexpro-dashboard' ),
 			'labels'              => $labels,
-			'supports'            => array( 'title', 'thumbnail' ),
-			'taxonomies'          => array(),
+			'supports'            => array( 'title', 'thumbnail', 'editor' ),
+			'taxonomies'          => array( 'offer_category' ),
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,

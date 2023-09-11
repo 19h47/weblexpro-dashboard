@@ -4,6 +4,7 @@
 
 const colors = require("./tailwind/tailwind.config.colors");
 const minWidth = require("./tailwind/tailwind.config.minWidth");
+const plugin = require('tailwindcss/plugin');
 const spacing = require("./tailwind/tailwind.config.spacing");
 
 const zIndex = {
@@ -26,5 +27,7 @@ module.exports = {
 		},
 		extend: { colors, minWidth, spacing, zIndex },
 	},
-	plugins: [],
+	plugins: [
+		plugin(({ addVariant }) => addVariant('parent-is-active', '.is-active > &')),
+	],
 };

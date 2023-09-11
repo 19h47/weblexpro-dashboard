@@ -35,7 +35,7 @@ class NavMenu {
 	public function register_menus(): void {
 		register_nav_menus(
 			array(
-				'main' => __( 'Main Menu', 'weblexprodashboard' ),
+				'main' => __( 'Main Menu', 'weblexpro-dashboard' ),
 			)
 		);
 	}

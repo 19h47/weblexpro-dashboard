@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="my-3 first:mt-0 last:mb-0">
-		{{- forms.text({ id: 'user_login', name: 'log', label: __( 'Username or Email Address', 'weblexprodashboard' ) }) -}}
+		{{- forms.text({ id: 'user_login', name: 'log', label: __( 'Username or Email Address', 'weblexpro-dashboard' ) }) -}}
 	</div>
 	<div class="my-3 first:mt-0 last:mb-0">
 		{{-
@@ -24,7 +24,7 @@
 				type: 'password',
 				id: 'user_pass',
 				name: 'pwd',
-				label: __( 'Password', 'weblexprodashboard' ),
+				label: __( 'Password', 'weblexpro-dashboard' ),
 				custom_attributes: {
 					autocapitalize: "off"
 				}
@@ -41,18 +41,18 @@
 				value="forever"
 			>
 			<span>
-				{{- __( 'Remember Me', 'weblexprodashboard' ) -}}
+				{{- __( 'Remember Me', 'weblexpro-dashboard' ) -}}
 			</span>
 		</label>
 	</div>
 	<div class="mt-10 mb-3 first:mt-0 last:mb-0">
-		<input type="submit" name="wp-submit" id="wp-submit" class="w-full button" value="{{ __( 'Log In', 'weblexprodashboard' ) }}">
+		<input type="submit" name="wp-submit" id="wp-submit" class="w-full button" value="{{ __( 'Log In', 'weblexpro-dashboard' ) }}">
 		<input type="hidden" name="redirect_to" value="{{ redirect | e }}">
 	</div>
 
 	<div class="my-3 text-right first:mt-0 last:mb-0">
 		<a class="text-xs text-blue-bright hover:underline" href="{{ lostpassword_url | e( 'esc_url' ) }}">
-			{{- __( 'Lost your password?', 'weblexprodashboard' ) -}}
+			{{- __( 'Lost your password?', 'weblexpro-dashboard' ) -}}
 		</a>
 	</div>
 </form>

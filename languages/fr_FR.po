@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2022-09-20 15:55+0200\n"
-"PO-Revision-Date: 2022-09-20 15:55+0200\n"
+"POT-Creation-Date: 2023-09-11 16:52+0200\n"
+"PO-Revision-Date: 2023-09-11 16:52+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -22,49 +22,163 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: dist\n"
 
-#: includes/Plugins/ACF/DocumentCategoryFields.php:32
+#: includes/Plugins/ACF/Admin/Init.php:32
+msgid "Theme Settings"
+msgstr "Paramètres du thème"
+
+#: includes/Plugins/ACF/Fields/ContactPageFields.php:46
+msgid "Form ID"
+msgstr "ID du formulaire"
+
+#: includes/Plugins/ACF/Fields/ContactPageFields.php:63
+msgid "Contact Page Fields"
+msgstr "Champs de la page contact"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:46
+msgid "Image"
+msgstr "Image"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:55
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:46
+msgid "Type"
+msgstr "Type"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:60
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:51
+msgid "Event"
+msgstr "Évènement"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:61
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:52
+msgid "Birdie"
+msgstr "Birdie"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:62
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:53
+msgid "Eagle"
+msgstr "Eagle"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:63
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:54
+msgid "Mag"
+msgstr "Man"
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:77
+msgid "Document Category Fields"
+msgstr "Champs de la catégorie de document"
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:35
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:63
+#: includes/Plugins/ACF/Fields/UserFormFields.php:66
+#: includes/Plugins/ACF/Fields/UserFormFields.php:82
+#: includes/Setup/Settings.php:215
+msgid "Documents"
+msgstr "Documents"
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:39
+#: includes/Plugins/ACF/Fields/UserFormFields.php:86
+msgid "Add Document"
+msgstr "Ajouter un document"
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:43
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:46
+msgid "Title"
+msgstr "Titre"
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:50
+#: includes/Plugins/ACF/Fields/UserFormFields.php:90
+msgid "File"
+msgstr "Fichier"
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:71
+#: includes/Post/Document.php:248
+msgid "Document"
+msgstr "Document"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:66
+msgid "Indicate the document categories related to the offer."
+msgstr "Indiquer les catégories de document liées à l’offre."
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:86
+#: includes/Post/Offer.php:100
+msgid "Color"
+msgstr "Couleur"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:93
+msgid "Catchphrase"
+msgstr "Phrase d’accroche"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:96
+msgid "catchphrase"
+msgstr "phrase d’accroche"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:100
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:105
+msgid "Description"
+msgstr "Description"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:109
+msgid "Links"
+msgstr "Liens"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:122
+msgid "Add Link"
+msgstr "Ajouter un lien"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:127
+msgid "Link"
+msgstr "Lien"
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:142
+msgid "Offer Post Fields"
+msgstr "Champs de la page d’une offre"
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:46
+msgid "Case Studies"
+msgstr "Études de cas"
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:57
+msgid "Footer"
+msgstr "Pied de page"
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:62
+msgid "Stickers"
+msgstr "Autocollants"
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:79
+msgid "Theme Settings Fields"
+msgstr "Champs des paramètres du thème"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:46
+msgid "Offers"
+msgstr "Offres"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:55
+#: includes/Setup/Settings.php:203
+msgid "Likes"
+msgstr "Favoris"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:70
+msgid "Add Category"
+msgstr "Ajouter une catégorie"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:74
+#: includes/Plugins/ACF/Fields/UserFormFields.php:77
+msgid "Category"
+msgstr "Catégorie"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:109
+msgid "Users"
+msgstr "Utilisateurs"
+
 #: includes/Post/Document.php:84 includes/Taxonomy/DocumentCategory.php:87
 msgid "Thumbnail"
 msgstr "Image mise en avant"
 
-#: includes/Plugins/ACF/DocumentCategoryFields.php:40
-#: includes/Plugins/ACF/DocumentCategoryFields.php:44
-msgid "Redirect"
-msgstr "Redirection"
-
-#: includes/Plugins/ACF/DocumentCategoryFields.php:43
-msgid "Redirect documents of this category to their respective file."
-msgstr ""
-"Rediriger les documents de cette catégorie vers leur fichier respectif."
-
-#: includes/Plugins/ACF/DocumentCategoryFields.php:62
-msgid "Document Category"
-msgstr "Catégorie de document"
-
-#: includes/Plugins/ACF/DocumentFields.php:35
-msgid "Documents"
-msgstr "Documents"
-
-#: includes/Plugins/ACF/DocumentFields.php:39
-msgid "Add Document"
-msgstr "Ajouter un document"
-
-#: includes/Plugins/ACF/DocumentFields.php:43
-#: includes/Plugins/ACF/DocumentFields.php:46
-msgid "Title"
-msgstr "Titre"
-
-#: includes/Plugins/ACF/DocumentFields.php:50
-msgid "File"
-msgstr "Fichier"
-
-#: includes/Plugins/ACF/DocumentFields.php:71 includes/Post/Document.php:248
-msgid "Document"
-msgstr "Document"
-
 #. translators: Publish box date format, see https://secure.php.net/date
-#: includes/Post/Document.php:136
+#: includes/Post/Document.php:136 includes/Post/Offer.php:181
 msgid "M j, Y @ H:i"
 msgstr "M j, Y @ H:i"
 
@@ -81,11 +195,11 @@ msgstr "Prévisualiser le document"
 msgid "Document updated."
 msgstr "Document mis à jour."
 
-#: includes/Post/Document.php:159
+#: includes/Post/Document.php:159 includes/Post/Offer.php:204
 msgid "Custom field updated."
 msgstr "Champ personnalisé mis à jour."
 
-#: includes/Post/Document.php:160
+#: includes/Post/Document.php:160 includes/Post/Offer.php:205
 msgid "Custom field deleted."
 msgstr "Champ personnalisé supprimé."
 
@@ -240,7 +354,7 @@ msgstr "Image mise en avant"
 #: includes/Post/Document.php:230
 msgctxt "document"
 msgid "Set featured image"
-msgstr "Définir l’image mise en avant"
+msgstr "Définir comme image mise en avant"
 
 #: includes/Post/Document.php:231
 msgctxt "document"
@@ -272,36 +386,329 @@ msgstr "Document reconverti en brouillon."
 msgid "Document scheduled."
 msgstr "Document planifié."
 
+#: includes/Post/Offer.php:186 includes/Post/Offer.php:270
+msgid "View Offer"
+msgstr "Voir l’offre"
+
+#: includes/Post/Offer.php:192 includes/Post/Offer.php:198
+msgid "Preview Offer"
+msgstr "Prévisualiser l’offre"
+
+#: includes/Post/Offer.php:203 includes/Post/Offer.php:206
+#: includes/Post/Offer.php:290
+msgid "Offer updated."
+msgstr "Offre mise à jour."
+
+#. translators: %s: date and time of the revision
+#: includes/Post/Offer.php:208
+#, php-format
+msgid "Offer restored to revision from %s."
+msgstr "Offre rétablie à partir de la révision du %s."
+
+#: includes/Post/Offer.php:209 includes/Post/Offer.php:286
+msgid "Offer published."
+msgstr "Offre mise en ligne."
+
+#: includes/Post/Offer.php:210
+msgid "Offer saved."
+msgstr "Offre enregistrée."
+
+#: includes/Post/Offer.php:211
+msgid "Offer submitted."
+msgstr "Offre envoyée."
+
+#: includes/Post/Offer.php:212
+#, php-format
+msgid "Offer scheduled for: %s."
+msgstr "Offre planifiée pour le : %s."
+
+#: includes/Post/Offer.php:213
+msgid "Offer draft updated."
+msgstr "Le brouillon de l’offre a été mis à jour."
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:239
+#, php-format
+msgid "%s offer updated."
+msgid_plural "%s offers updated."
+msgstr[0] "%s offre mise à jour."
+msgstr[1] "%s offres mise à jour."
+
+#: includes/Post/Offer.php:240
+msgid "1 offer not updated, somebody is editing it."
+msgstr ""
+"Une offre n’a pas été mise à jour, car quelqu’un est en train de la modifier."
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:242
+#, php-format
+msgid "%s offer not updated, somebody is editing it."
+msgid_plural "%s offers not updated, somebody is editing them."
+msgstr[0] ""
+"%s offre n’a pas été mise à jour : quelqu’un est déjà en train de la "
+"modifier."
+msgstr[1] "%s offres non mise à jour, quelqu’un les édite."
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:244
+#, php-format
+msgid "%s offer permanently deleted."
+msgid_plural "%s offer permanently deleted."
+msgstr[0] "%s offre définitivement supprimée."
+msgstr[1] "%s offres définitivement supprimées."
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:246
+#, php-format
+msgid "%s offer moved to the Trash."
+msgid_plural "%s offer moved to the Trash."
+msgstr[0] "%s offre déplacée dans la corbeille."
+msgstr[1] "%s offres déplacées dans la corbeille."
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:248
+#, php-format
+msgid "%s offer restored from the Trash."
+msgid_plural "%s offer restored from the Trash."
+msgstr[0] "%s offre récupérée depuis la corbeille."
+msgstr[1] "%s offres restaurées depuis la corbeille."
+
+#: includes/Post/Offer.php:263
+msgctxt "offer type generale name"
+msgid "Offers"
+msgstr "Offres"
+
+#: includes/Post/Offer.php:264
+msgctxt "offer type singular name"
+msgid "Offer"
+msgstr "Offre"
+
+#: includes/Post/Offer.php:265
+msgctxt "offer type"
+msgid "Add New"
+msgstr "Ajouter"
+
+#: includes/Post/Offer.php:266
+msgid "Add New Offer"
+msgstr "Ajouter une nouvelle offre"
+
+#: includes/Post/Offer.php:267
+msgid "Edit Offer"
+msgstr "Modifier l’offre"
+
+#: includes/Post/Offer.php:268
+msgid "New Offer"
+msgstr "Nouvelle offre"
+
+#: includes/Post/Offer.php:269
+msgid "View Offers"
+msgstr "Voir les offres"
+
+#: includes/Post/Offer.php:271
+msgid "Search Offers"
+msgstr "Rechercher des offres"
+
+#: includes/Post/Offer.php:272
+msgid "No Offers found."
+msgstr "Aucune offre trouvée."
+
+#: includes/Post/Offer.php:273
+msgid "No Offers found in Trash."
+msgstr "Aucune offre trouvée dans la corbeille."
+
+#: includes/Post/Offer.php:274
+msgid "Parent Offer:"
+msgstr "Offre parente :"
+
+#: includes/Post/Offer.php:275
+msgid "All Offers"
+msgstr "Toutes les offres"
+
+#: includes/Post/Offer.php:276
+msgid "Offer Archives"
+msgstr "Archives des offres"
+
+#: includes/Post/Offer.php:277
+msgid "Offer Attributes"
+msgstr "Attributs d’offre"
+
+#: includes/Post/Offer.php:278
+msgid "Insert into offer"
+msgstr "Insérer dans l’offre"
+
+#: includes/Post/Offer.php:279
+msgid "Uploaded to this offer"
+msgstr "Téléversés sur cette offre"
+
+#: includes/Post/Offer.php:280
+msgctxt "offer"
+msgid "Featured Image"
+msgstr "Image mise en avant"
+
+#: includes/Post/Offer.php:281
+msgctxt "offer"
+msgid "Set featured image"
+msgstr "Définir comme image mise en avant"
+
+#: includes/Post/Offer.php:282
+msgctxt "offer"
+msgid "Remove featured image"
+msgstr "Supprimer l’image mise en avant"
+
+#: includes/Post/Offer.php:283
+msgctxt "offer"
+msgid "Use as featured image"
+msgstr "Utiliser comme image mise en avant"
+
+#: includes/Post/Offer.php:284
+msgid "Offers list navigation"
+msgstr "Navigation de la liste des offres"
+
+#: includes/Post/Offer.php:285
+msgid "Offers list"
+msgstr "Liste des offres"
+
+#: includes/Post/Offer.php:287
+msgid "Offer published privately."
+msgstr "Offre mise en ligne en privé."
+
+#: includes/Post/Offer.php:288
+msgid "Offer reverted to draft."
+msgstr "Offre reconvertie en brouillon."
+
+#: includes/Post/Offer.php:289
+msgid "Offer scheduled."
+msgstr "Offre planifiée."
+
+#: includes/Post/Offer.php:298
+msgid "Offer"
+msgstr "Offre"
+
+#: includes/Post/Offer.php:299
+msgid "Offer Description"
+msgstr "Description de l'offre"
+
 #: includes/Setup/NavMenu.php:38
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: includes/Setup/Settings.php:34 views/pages/archive-document.html.twig:17
-#: views/pages/archive-document.html.twig:41
-#: views/pages/front-page.html.twig:35 views/pages/single-document.html.twig:17
-#: views/pages/single-document.html.twig:62
+#: includes/Setup/Settings.php:42
+msgid "Public Email Address"
+msgstr "Adresse email publique"
+
+#: includes/Setup/Settings.php:48
+msgid "Email"
+msgstr "Email"
+
+#: includes/Setup/Settings.php:49
+msgid "This address is used for public purposes."
+msgstr "Cette adresse est utilisée à des fins publiques."
+
+#: includes/Setup/Settings.php:56 includes/Setup/Settings.php:62
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: includes/Setup/Settings.php:64
+msgid "This phone number is used for public purposes."
+msgstr "Ce numéro de téléphone est utilisé à des fins publiques."
+
+#: includes/Setup/Settings.php:77
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/Setup/Settings.php:85
+msgid "Enter the Facebook URL here."
+msgstr "Indiquer l’URL du compte Facebook."
+
+#: includes/Setup/Settings.php:91
+msgid "Instagram"
+msgstr "Instagram"
+
+#: includes/Setup/Settings.php:99
+msgid "Enter the Instagram URL here."
+msgstr "Indiquer l’URL du compte Instagram."
+
+#: includes/Setup/Settings.php:105
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/Setup/Settings.php:113
+msgid "Enter the YouTube URL here."
+msgstr "Indiquer l’URL du compte YouTube."
+
+#: includes/Setup/Settings.php:119
+msgid "Twitter"
+msgstr "Partager sur Twitter"
+
+#: includes/Setup/Settings.php:127
+msgid "Enter the Twitter URL here."
+msgstr "Indiquer l’URL du compte Twitter."
+
+#: includes/Setup/Settings.php:133
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/Setup/Settings.php:141
+msgid "Enter the LinkedIn URL here."
+msgstr "Indiquer l’URL du compte LinkedIn."
+
+#: includes/Setup/Settings.php:147 includes/Setup/Settings.php:155
+msgid "Copyright"
+msgstr "Droit d’auteur"
+
+#: includes/Setup/Settings.php:162 includes/Setup/Settings.php:171
+msgid "Address"
+msgstr "Adresse postale"
+
+#: includes/Setup/Settings.php:177 includes/Setup/Settings.php:185
+msgid "Notice"
+msgstr "Notification"
+
+#: includes/Setup/Settings.php:191 views/pages/front-page.html.twig:35
+#: views/pages/single-document.html.twig:49
+#: views/pages/single-document.html.twig:94
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: includes/Setup/Settings.php:52
-msgid "&mdash; Select &mdash;"
-msgstr "&mdash; Sélectionner &mdash;"
+#: includes/Setup/Settings.php:197
+msgid "Page Dashboard"
+msgstr "Page du tableau de bord"
 
-#: includes/Setup/Theme.php:219
-msgid "Share on Twitter"
-msgstr "Partager sur Twitter"
+#: includes/Setup/Settings.php:209
+msgid "Page Likes"
+msgstr "Page des favoris"
 
-#: includes/Setup/Theme.php:227
+#: includes/Setup/Settings.php:221
+msgid "Page Documents"
+msgstr "Page des documents"
+
+#: includes/Setup/Settings.php:227
+msgid "Contact"
+msgstr "Contact"
+
+#: includes/Setup/Settings.php:233
+msgid "Page Contact"
+msgstr "Page Contact"
+
+#: includes/Setup/Settings.php:239 includes/Setup/Settings.php:246
+msgid "WebLexPro Contact Page"
+msgstr "Page de contact de WebLexPro"
+
+#: includes/Setup/Theme.php:69
 msgid "Share on Facebook"
 msgstr "Partager sur Facebook"
 
-#: includes/Setup/Theme.php:241
-msgid "Share on Pinterest"
-msgstr "Partager sur Pinterest"
+#: includes/Setup/Theme.php:77
+msgid "Share on Twitter"
+msgstr "Partager sur Twitter"
 
-#: includes/Setup/Theme.php:248
+#: includes/Setup/Theme.php:85
 msgid "Share on LinkedIn"
 msgstr "Partager sur LinkedIn"
+
+#: includes/Setup/Theme.php:104
+msgid "Share on Pinterest"
+msgstr "Partager sur Pinterest"
 
 #: includes/Taxonomy/DocumentCategory.php:137
 msgctxt "document category general name"
@@ -388,8 +795,12 @@ msgid "Dashboard Page"
 msgstr "Page du tableau de bord"
 
 #: includes/Template/PostStates.php:41
-msgid "Naked Page"
-msgstr "Page nue"
+msgid "Likes Page"
+msgstr "Page des favoris"
+
+#: includes/Template/PostStates.php:45
+msgid "Documents Page"
+msgstr "Page des documents"
 
 #: views/components/form-login-post.html.twig:13
 msgid ""
@@ -424,78 +835,133 @@ msgstr "Se connecter"
 msgid "Lost your password?"
 msgstr "Mot de passe perdu ?"
 
-#: views/header.html.twig:31
-msgid "Log in"
-msgstr "Identification"
+#: views/components/tease-offer.html.twig:52
+msgid "En savoir plus..."
+msgstr "En savoir plus..."
 
-#: views/pages/archive-document.html.twig:55
-#: views/pages/dashboard-page.html.twig:16 views/pages/front-page.html.twig:38
-#: views/pages/single-document.html.twig:91
-msgid "Log out"
-msgstr "Déconnexion"
+#: views/header.html.twig:24 views/index.html.twig:115
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: views/header.html.twig:41
+msgid "My profile"
+msgstr "Mon profil"
+
+#: views/header.html.twig:45
+msgid "My likes"
+msgstr "Mes favoris"
+
+#: views/header.html.twig:48
+msgid "My documents"
+msgstr "Mes documents"
+
+#: views/header.html.twig:53
+msgid "Sign Out"
+msgstr "Se déconnecter"
+
+#: views/index.html.twig:43
+msgid "Dismiss"
+msgstr "Ignorer"
+
+#: views/index.html.twig:126 views/pages/archive-document.html.twig:16
+#: views/pages/contact-page.html.twig:16
+#: views/pages/single-document.html.twig:17
+msgid "Home"
+msgstr "Accueil"
+
+#: views/index.html.twig:166
+msgid "It looks like you are not taking advantage of this solution!"
+msgstr ""
+"Il semble que vous ne bénéficiez pas\n"
+"encore de cette solution !"
+
+#: views/index.html.twig:175
+msgid "I want a demo!"
+msgstr "Je souhaite une démo !"
+
+#: views/pages/dashboard-page.html.twig:22
+msgid "My subscription"
+msgid_plural "My subscriptions"
+msgstr[0] "Mon abonnement"
+msgstr[1] "Mes abonnements"
+
+#: views/pages/dashboard-page.html.twig:41
+msgid "Subscription available"
+msgid_plural "Subscriptions available"
+msgstr[0] "Abonnement disponible"
+msgstr[1] "Abonnements disponibles"
+
+#: views/pages/documents-page.html.twig:54 views/pages/likes-page.html.twig:29
+msgid "No likes to display yet."
+msgstr "Aucun favoris à afficher pour le moment."
 
 #: views/pages/front-page.html.twig:24
 #, php-format
 msgid "Howdy %s"
-msgstr "Salut %s"
+msgstr "Bonjour %s"
 
 #: views/pages/front-page.html.twig:29
 msgid "You are already logged in."
 msgstr "Vous êtes déjà connecté(e)."
 
-#: views/pages/single-document.html.twig:101
+#: views/pages/front-page.html.twig:38
+#: views/pages/single-document.html.twig:123
+msgid "Log out"
+msgstr "Déconnexion"
+
+#: views/pages/single-document.html.twig:133
 #, php-format
 msgid "Creation date %s"
 msgstr "Date de création %s"
 
-#: views/pages/single-document.html.twig:106
+#: views/pages/single-document.html.twig:138
 #, php-format
 msgid "Last update %s"
 msgstr "Dernière mise à jour %s"
 
-#: views/pages/single-document.html.twig:111
+#: views/pages/single-document.html.twig:143
 #, php-format
 msgid "%s file"
 msgid_plural "%s files"
 msgstr[0] "%s fichier"
 msgstr[1] "%s fichiers"
 
-#: views/pages/single-document.html.twig:115
+#: views/pages/single-document.html.twig:147
 #, php-format
 msgid "File size %s"
 msgid_plural "File size %s"
 msgstr[0] "Taille du fichier %s"
 msgstr[1] "Taille du fichier %s"
 
-#: views/pages/single-document.html.twig:130
+#: views/pages/single-document.html.twig:162
 msgid "Attached Files"
 msgstr "Fichiers joints"
 
-#: views/pages/single-document.html.twig:140
+#: views/pages/single-document.html.twig:172
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr "Désolé, votre navigateur ne prend pas en charge l’élément audio."
 
-#: views/pages/single-document.html.twig:143
-#: views/pages/single-document.html.twig:155
-#: views/pages/single-document.html.twig:162
+#: views/pages/single-document.html.twig:175
+#: views/pages/single-document.html.twig:187
+#: views/pages/single-document.html.twig:194
 msgid "Download"
 msgstr "Télécharger"
 
-#: views/pages/single-document.html.twig:151
+#: views/pages/single-document.html.twig:183
 msgid "Sorry, your browser doesn't support embedded videos."
 msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
 
 #. Theme Name of the plugin/theme
-msgid "WebLexPro Dashboard"
-msgstr "WebLexPro Dashboard"
+msgid "WebLexPro Dashboard 2"
+msgstr "WebLexPro Dashboard 2"
 
 #. Theme URI of the plugin/theme
 msgid "https://dashboard.weblexpro.fr/"
 msgstr "https://dashboard.weblexpro.fr/"
 
 #. Description of the plugin/theme
-msgid "WP Theme for WebLexPro Dashboard"
-msgstr "Thème WP pour le tableau de bord WebLexPro"
+msgid "WP Theme for WebLexPro Dashboard 2"
+msgstr "Thème WP pour le tableau de bord WebLexPro 2"
 
 #. Author of the plugin/theme
 msgid "19h47"
@@ -504,3 +970,16 @@ msgstr "19h47"
 #. Author URI of the plugin/theme
 msgid "https://www.19h47.fr/"
 msgstr "https://www.19h47.fr/"
+
+#~ msgid "Redirect"
+#~ msgstr "Redirection"
+
+#~ msgid "Redirect documents of this category to their respective file."
+#~ msgstr ""
+#~ "Rediriger les documents de cette catégorie vers leur fichier respectif."
+
+#~ msgid "&mdash; Select &mdash;"
+#~ msgstr "&mdash; Sélectionner &mdash;"
+
+#~ msgid "Log in"
+#~ msgstr "Identification"

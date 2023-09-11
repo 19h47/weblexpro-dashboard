@@ -1,0 +1,30 @@
+{#
+ # Tease: Document
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+
+<div class="js-accordion-panel" data-accordion-open="false" data-accordion-deselect="true">
+	<button
+		class="js-accordion-header lg:text-4xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+		type="button"
+		aria-expanded="false"
+		aria-controls="{{ slug ~ '-' ~ document.slug }}"
+	>
+		{{ document.name }}
+		{{ icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) }}
+	</button>
+
+	<div id="{{ slug ~ '-' ~ document.slug }}" class="js-accordion-body lg:text-3xl" role="region">
+		<div class="js-accordion-inner ml-6 lg:ml-20 pt-6">
+			<div class="border-l border-gray-very-dark space-y-4 lg:space-y-0">
+				{% for post in document.posts( { post_type: 'document' } ) %}
+					{{- include( 'components/tease-document-child.html.twig', { post: post } ) -}}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

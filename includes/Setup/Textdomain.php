@@ -29,6 +29,6 @@ class Textdomain {
 	 * @return void
 	 */
 	public function add_theme_textdomain() : void {
-		load_theme_textdomain( get_theme_text_domain(), get_template_directory() . '/languages' );
+		load_theme_textdomain( wp_get_theme()->get( 'TextDomain' ), get_template_directory() . '/languages' );
 	}
 }

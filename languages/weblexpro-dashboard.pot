@@ -1,0 +1,965 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebLexPro Dashboard\n"
+"POT-Creation-Date: 2023-09-11 16:53+0200\n"
+"PO-Revision-Date: 2022-03-27 14:19+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: dist\n"
+
+#: includes/Plugins/ACF/Admin/Init.php:32
+msgid "Theme Settings"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/ContactPageFields.php:46
+msgid "Form ID"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/ContactPageFields.php:63
+msgid "Contact Page Fields"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:46
+msgid "Image"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:55
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:46
+msgid "Type"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:60
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:51
+msgid "Event"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:61
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:52
+msgid "Birdie"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:62
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:53
+msgid "Eagle"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:63
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:54
+msgid "Mag"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:77
+msgid "Document Category Fields"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:35
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:63
+#: includes/Plugins/ACF/Fields/UserFormFields.php:66
+#: includes/Plugins/ACF/Fields/UserFormFields.php:82
+#: includes/Setup/Settings.php:215
+msgid "Documents"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:39
+#: includes/Plugins/ACF/Fields/UserFormFields.php:86
+msgid "Add Document"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:43
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:46
+msgid "Title"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:50
+#: includes/Plugins/ACF/Fields/UserFormFields.php:90
+msgid "File"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:71
+#: includes/Post/Document.php:248
+msgid "Document"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:66
+msgid "Indicate the document categories related to the offer."
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:86
+#: includes/Post/Offer.php:100
+msgid "Color"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:93
+msgid "Catchphrase"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:96
+msgid "catchphrase"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:100
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:105
+msgid "Description"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:109
+msgid "Links"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:122
+msgid "Add Link"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:127
+msgid "Link"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:142
+msgid "Offer Post Fields"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:46
+msgid "Case Studies"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:57
+msgid "Footer"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:62
+msgid "Stickers"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:79
+msgid "Theme Settings Fields"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:46
+msgid "Offers"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:55
+#: includes/Setup/Settings.php:203
+msgid "Likes"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:70
+msgid "Add Category"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:74
+#: includes/Plugins/ACF/Fields/UserFormFields.php:77
+msgid "Category"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:109
+msgid "Users"
+msgstr ""
+
+#: includes/Post/Document.php:84 includes/Taxonomy/DocumentCategory.php:87
+msgid "Thumbnail"
+msgstr ""
+
+#. translators: Publish box date format, see https://secure.php.net/date
+#: includes/Post/Document.php:136 includes/Post/Offer.php:181
+msgid "M j, Y @ H:i"
+msgstr ""
+
+#: includes/Post/Document.php:141
+msgid "View document"
+msgstr ""
+
+#: includes/Post/Document.php:147 includes/Post/Document.php:153
+msgid "Preview document"
+msgstr ""
+
+#: includes/Post/Document.php:158 includes/Post/Document.php:161
+#: includes/Post/Document.php:239
+msgid "Document updated."
+msgstr ""
+
+#: includes/Post/Document.php:159 includes/Post/Offer.php:204
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/Post/Document.php:160 includes/Post/Offer.php:205
+msgid "Custom field deleted."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: includes/Post/Document.php:163
+#, php-format
+msgid "Document restored to revision from %s."
+msgstr ""
+
+#: includes/Post/Document.php:164 includes/Post/Document.php:235
+msgid "Document published."
+msgstr ""
+
+#: includes/Post/Document.php:165
+msgid "Document saved."
+msgstr ""
+
+#: includes/Post/Document.php:166
+msgid "Document submitted."
+msgstr ""
+
+#: includes/Post/Document.php:167
+#, php-format
+msgid "Document scheduled for: %s."
+msgstr ""
+
+#: includes/Post/Document.php:168
+msgid "Document draft updated."
+msgstr ""
+
+#. translators: %s: Number of documents.
+#: includes/Post/Document.php:188
+#, php-format
+msgid "%s document updated."
+msgid_plural "%s documents updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Post/Document.php:189
+msgid "1 document not updated, somebody is editing it."
+msgstr ""
+
+#. translators: %s: Number of documents.
+#: includes/Post/Document.php:191
+#, php-format
+msgid "%s document not updated, somebody is editing it."
+msgid_plural "%s documents not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of documents.
+#: includes/Post/Document.php:193
+#, php-format
+msgid "%s document permanently deleted."
+msgid_plural "%s document permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of documents.
+#: includes/Post/Document.php:195
+#, php-format
+msgid "%s document moved to the Trash."
+msgid_plural "%s document moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of documents.
+#: includes/Post/Document.php:197
+#, php-format
+msgid "%s document restored from the Trash."
+msgid_plural "%s document restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Post/Document.php:212
+msgctxt "document type generale name"
+msgid "Documents"
+msgstr ""
+
+#: includes/Post/Document.php:213
+msgctxt "document type singular name"
+msgid "Document"
+msgstr ""
+
+#: includes/Post/Document.php:214
+msgctxt "document type"
+msgid "Add New"
+msgstr ""
+
+#: includes/Post/Document.php:215
+msgid "Add New Document"
+msgstr ""
+
+#: includes/Post/Document.php:216
+msgid "Edit Document"
+msgstr ""
+
+#: includes/Post/Document.php:217
+msgid "New Document"
+msgstr ""
+
+#: includes/Post/Document.php:218
+msgid "View Documents"
+msgstr ""
+
+#: includes/Post/Document.php:219
+msgid "View Document"
+msgstr ""
+
+#: includes/Post/Document.php:220
+msgid "Search Documents"
+msgstr ""
+
+#: includes/Post/Document.php:221
+msgid "No Documents found."
+msgstr ""
+
+#: includes/Post/Document.php:222
+msgid "No Documents found in Trash."
+msgstr ""
+
+#: includes/Post/Document.php:223
+msgid "Parent Document:"
+msgstr ""
+
+#: includes/Post/Document.php:224
+msgid "All Documents"
+msgstr ""
+
+#: includes/Post/Document.php:225
+msgid "Document Archives"
+msgstr ""
+
+#: includes/Post/Document.php:226
+msgid "Document Attributes"
+msgstr ""
+
+#: includes/Post/Document.php:227
+msgid "Insert into document"
+msgstr ""
+
+#: includes/Post/Document.php:228
+msgid "Uploaded to this document"
+msgstr ""
+
+#: includes/Post/Document.php:229
+msgctxt "document"
+msgid "Featured Image"
+msgstr ""
+
+#: includes/Post/Document.php:230
+msgctxt "document"
+msgid "Set featured image"
+msgstr ""
+
+#: includes/Post/Document.php:231
+msgctxt "document"
+msgid "Remove featured image"
+msgstr ""
+
+#: includes/Post/Document.php:232
+msgctxt "document"
+msgid "Use as featured image"
+msgstr ""
+
+#: includes/Post/Document.php:233
+msgid "Documents list navigation"
+msgstr ""
+
+#: includes/Post/Document.php:234
+msgid "Documents list"
+msgstr ""
+
+#: includes/Post/Document.php:236
+msgid "Document published privately."
+msgstr ""
+
+#: includes/Post/Document.php:237
+msgid "Document reverted to draft."
+msgstr ""
+
+#: includes/Post/Document.php:238
+msgid "Document scheduled."
+msgstr ""
+
+#: includes/Post/Offer.php:186 includes/Post/Offer.php:270
+msgid "View Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:192 includes/Post/Offer.php:198
+msgid "Preview Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:203 includes/Post/Offer.php:206
+#: includes/Post/Offer.php:290
+msgid "Offer updated."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: includes/Post/Offer.php:208
+#, php-format
+msgid "Offer restored to revision from %s."
+msgstr ""
+
+#: includes/Post/Offer.php:209 includes/Post/Offer.php:286
+msgid "Offer published."
+msgstr ""
+
+#: includes/Post/Offer.php:210
+msgid "Offer saved."
+msgstr ""
+
+#: includes/Post/Offer.php:211
+msgid "Offer submitted."
+msgstr ""
+
+#: includes/Post/Offer.php:212
+#, php-format
+msgid "Offer scheduled for: %s."
+msgstr ""
+
+#: includes/Post/Offer.php:213
+msgid "Offer draft updated."
+msgstr ""
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:239
+#, php-format
+msgid "%s offer updated."
+msgid_plural "%s offers updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Post/Offer.php:240
+msgid "1 offer not updated, somebody is editing it."
+msgstr ""
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:242
+#, php-format
+msgid "%s offer not updated, somebody is editing it."
+msgid_plural "%s offers not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:244
+#, php-format
+msgid "%s offer permanently deleted."
+msgid_plural "%s offer permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:246
+#, php-format
+msgid "%s offer moved to the Trash."
+msgid_plural "%s offer moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of offers.
+#: includes/Post/Offer.php:248
+#, php-format
+msgid "%s offer restored from the Trash."
+msgid_plural "%s offer restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Post/Offer.php:263
+msgctxt "offer type generale name"
+msgid "Offers"
+msgstr ""
+
+#: includes/Post/Offer.php:264
+msgctxt "offer type singular name"
+msgid "Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:265
+msgctxt "offer type"
+msgid "Add New"
+msgstr ""
+
+#: includes/Post/Offer.php:266
+msgid "Add New Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:267
+msgid "Edit Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:268
+msgid "New Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:269
+msgid "View Offers"
+msgstr ""
+
+#: includes/Post/Offer.php:271
+msgid "Search Offers"
+msgstr ""
+
+#: includes/Post/Offer.php:272
+msgid "No Offers found."
+msgstr ""
+
+#: includes/Post/Offer.php:273
+msgid "No Offers found in Trash."
+msgstr ""
+
+#: includes/Post/Offer.php:274
+msgid "Parent Offer:"
+msgstr ""
+
+#: includes/Post/Offer.php:275
+msgid "All Offers"
+msgstr ""
+
+#: includes/Post/Offer.php:276
+msgid "Offer Archives"
+msgstr ""
+
+#: includes/Post/Offer.php:277
+msgid "Offer Attributes"
+msgstr ""
+
+#: includes/Post/Offer.php:278
+msgid "Insert into offer"
+msgstr ""
+
+#: includes/Post/Offer.php:279
+msgid "Uploaded to this offer"
+msgstr ""
+
+#: includes/Post/Offer.php:280
+msgctxt "offer"
+msgid "Featured Image"
+msgstr ""
+
+#: includes/Post/Offer.php:281
+msgctxt "offer"
+msgid "Set featured image"
+msgstr ""
+
+#: includes/Post/Offer.php:282
+msgctxt "offer"
+msgid "Remove featured image"
+msgstr ""
+
+#: includes/Post/Offer.php:283
+msgctxt "offer"
+msgid "Use as featured image"
+msgstr ""
+
+#: includes/Post/Offer.php:284
+msgid "Offers list navigation"
+msgstr ""
+
+#: includes/Post/Offer.php:285
+msgid "Offers list"
+msgstr ""
+
+#: includes/Post/Offer.php:287
+msgid "Offer published privately."
+msgstr ""
+
+#: includes/Post/Offer.php:288
+msgid "Offer reverted to draft."
+msgstr ""
+
+#: includes/Post/Offer.php:289
+msgid "Offer scheduled."
+msgstr ""
+
+#: includes/Post/Offer.php:298
+msgid "Offer"
+msgstr ""
+
+#: includes/Post/Offer.php:299
+msgid "Offer Description"
+msgstr ""
+
+#: includes/Setup/NavMenu.php:38
+msgid "Main Menu"
+msgstr ""
+
+#: includes/Setup/Settings.php:42
+msgid "Public Email Address"
+msgstr ""
+
+#: includes/Setup/Settings.php:48
+msgid "Email"
+msgstr ""
+
+#: includes/Setup/Settings.php:49
+msgid "This address is used for public purposes."
+msgstr ""
+
+#: includes/Setup/Settings.php:56 includes/Setup/Settings.php:62
+msgid "Phone Number"
+msgstr ""
+
+#: includes/Setup/Settings.php:64
+msgid "This phone number is used for public purposes."
+msgstr ""
+
+#: includes/Setup/Settings.php:77
+msgid "Facebook"
+msgstr ""
+
+#: includes/Setup/Settings.php:85
+msgid "Enter the Facebook URL here."
+msgstr ""
+
+#: includes/Setup/Settings.php:91
+msgid "Instagram"
+msgstr ""
+
+#: includes/Setup/Settings.php:99
+msgid "Enter the Instagram URL here."
+msgstr ""
+
+#: includes/Setup/Settings.php:105
+msgid "YouTube"
+msgstr ""
+
+#: includes/Setup/Settings.php:113
+msgid "Enter the YouTube URL here."
+msgstr ""
+
+#: includes/Setup/Settings.php:119
+msgid "Twitter"
+msgstr ""
+
+#: includes/Setup/Settings.php:127
+msgid "Enter the Twitter URL here."
+msgstr ""
+
+#: includes/Setup/Settings.php:133
+msgid "LinkedIn"
+msgstr ""
+
+#: includes/Setup/Settings.php:141
+msgid "Enter the LinkedIn URL here."
+msgstr ""
+
+#: includes/Setup/Settings.php:147 includes/Setup/Settings.php:155
+msgid "Copyright"
+msgstr ""
+
+#: includes/Setup/Settings.php:162 includes/Setup/Settings.php:171
+msgid "Address"
+msgstr ""
+
+#: includes/Setup/Settings.php:177 includes/Setup/Settings.php:185
+msgid "Notice"
+msgstr ""
+
+#: includes/Setup/Settings.php:191 views/pages/front-page.html.twig:35
+#: views/pages/single-document.html.twig:49
+#: views/pages/single-document.html.twig:94
+msgid "Dashboard"
+msgstr ""
+
+#: includes/Setup/Settings.php:197
+msgid "Page Dashboard"
+msgstr ""
+
+#: includes/Setup/Settings.php:209
+msgid "Page Likes"
+msgstr ""
+
+#: includes/Setup/Settings.php:221
+msgid "Page Documents"
+msgstr ""
+
+#: includes/Setup/Settings.php:227
+msgid "Contact"
+msgstr ""
+
+#: includes/Setup/Settings.php:233
+msgid "Page Contact"
+msgstr ""
+
+#: includes/Setup/Settings.php:239 includes/Setup/Settings.php:246
+msgid "WebLexPro Contact Page"
+msgstr ""
+
+#: includes/Setup/Theme.php:69
+msgid "Share on Facebook"
+msgstr ""
+
+#: includes/Setup/Theme.php:77
+msgid "Share on Twitter"
+msgstr ""
+
+#: includes/Setup/Theme.php:85
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: includes/Setup/Theme.php:104
+msgid "Share on Pinterest"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:137
+msgctxt "document category general name"
+msgid "Categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:138
+msgctxt "document category singular name"
+msgid "Category"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:139
+msgid "Search Categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:140
+msgid "All Categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:141
+msgid "Popular Categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:142
+msgid "Edit Category"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:143
+msgid "View Category"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:144
+msgid "Update Category"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:145
+msgid "Add New Category"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:146
+msgid "New Category Name"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:147
+msgid "Separate categories with commas"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:148
+msgid "Add or remove categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:149
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:150
+msgid "No categories found."
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:151
+msgid "No categories"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:152
+msgid "Categories list navigation"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:153
+msgid "Categories list"
+msgstr ""
+
+#. translators: Document category heading when selecting from the most used terms.
+#: includes/Taxonomy/DocumentCategory.php:155
+msgctxt "document category"
+msgid "Most Used"
+msgstr ""
+
+#: includes/Taxonomy/DocumentCategory.php:156
+msgid "&larr; Back to Categories"
+msgstr ""
+
+#: includes/Template/PostStates.php:37
+msgid "Dashboard Page"
+msgstr ""
+
+#: includes/Template/PostStates.php:41
+msgid "Likes Page"
+msgstr ""
+
+#: includes/Template/PostStates.php:45
+msgid "Documents Page"
+msgstr ""
+
+#: views/components/form-login-post.html.twig:13
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
+msgstr ""
+
+#: views/components/form-login-post.html.twig:22
+#: views/components/form-login.html.twig:27
+msgid "Password"
+msgstr ""
+
+#: views/components/form-login-post.html.twig:28
+msgid "Enter"
+msgstr ""
+
+#: views/components/form-login.html.twig:19
+msgid "Username or Email Address"
+msgstr ""
+
+#: views/components/form-login.html.twig:44
+msgid "Remember Me"
+msgstr ""
+
+#: views/components/form-login.html.twig:49
+msgid "Log In"
+msgstr ""
+
+#: views/components/form-login.html.twig:55
+msgid "Lost your password?"
+msgstr ""
+
+#: views/components/tease-offer.html.twig:52
+msgid "En savoir plus..."
+msgstr ""
+
+#: views/header.html.twig:24 views/index.html.twig:115
+msgid "Contact Us"
+msgstr ""
+
+#: views/header.html.twig:41
+msgid "My profile"
+msgstr ""
+
+#: views/header.html.twig:45
+msgid "My likes"
+msgstr ""
+
+#: views/header.html.twig:48
+msgid "My documents"
+msgstr ""
+
+#: views/header.html.twig:53
+msgid "Sign Out"
+msgstr ""
+
+#: views/index.html.twig:43
+msgid "Dismiss"
+msgstr ""
+
+#: views/index.html.twig:126 views/pages/archive-document.html.twig:16
+#: views/pages/contact-page.html.twig:16
+#: views/pages/single-document.html.twig:17
+msgid "Home"
+msgstr ""
+
+#: views/index.html.twig:166
+msgid "It looks like you are not taking advantage of this solution!"
+msgstr ""
+
+#: views/index.html.twig:175
+msgid "I want a demo!"
+msgstr ""
+
+#: views/pages/dashboard-page.html.twig:22
+msgid "My subscription"
+msgid_plural "My subscriptions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/pages/dashboard-page.html.twig:41
+msgid "Subscription available"
+msgid_plural "Subscriptions available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/pages/documents-page.html.twig:54
+#: views/pages/likes-page.html.twig:29
+msgid "No likes to display yet."
+msgstr ""
+
+#: views/pages/front-page.html.twig:24
+#, php-format
+msgid "Howdy %s"
+msgstr ""
+
+#: views/pages/front-page.html.twig:29
+msgid "You are already logged in."
+msgstr ""
+
+#: views/pages/front-page.html.twig:38
+#: views/pages/single-document.html.twig:123
+msgid "Log out"
+msgstr ""
+
+#: views/pages/single-document.html.twig:133
+#, php-format
+msgid "Creation date %s"
+msgstr ""
+
+#: views/pages/single-document.html.twig:138
+#, php-format
+msgid "Last update %s"
+msgstr ""
+
+#: views/pages/single-document.html.twig:143
+#, php-format
+msgid "%s file"
+msgid_plural "%s files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/pages/single-document.html.twig:147
+#, php-format
+msgid "File size %s"
+msgid_plural "File size %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/pages/single-document.html.twig:162
+msgid "Attached Files"
+msgstr ""
+
+#: views/pages/single-document.html.twig:172
+msgid "Sorry, your browser doesn't support the audio element."
+msgstr ""
+
+#: views/pages/single-document.html.twig:175
+#: views/pages/single-document.html.twig:187
+#: views/pages/single-document.html.twig:194
+msgid "Download"
+msgstr ""
+
+#: views/pages/single-document.html.twig:183
+msgid "Sorry, your browser doesn't support embedded videos."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "WebLexPro Dashboard 2"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://dashboard.weblexpro.fr/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "WP Theme for WebLexPro Dashboard 2"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "19h47"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.19h47.fr/"
+msgstr ""

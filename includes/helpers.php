@@ -76,43 +76,6 @@ function get_webfonts() : array {
 }
 
 
-/**
- * Retrieve the version number of the theme.
- *
- * @since  1.0.0
- * @return string The version number of the theme.
- * @see https://developer.wordpress.org/reference/functions/wp_get_theme/
- */
-function get_theme_version() : string {
-	return wp_get_theme()->get( 'Version' );
-}
-
-
-/**
- * Retrieve the name of the theme.
- *
- * @since  1.0.0
- * @return string The name of the theme.
- * @see https://developer.wordpress.org/reference/functions/wp_get_theme/
- */
-function get_theme_name() : string {
-	return wp_get_theme()->get( 'Name' );
-}
-
-
-/**
- * Retrieve the text domain.
- *
- * @since  1.0.0
- * @return string The text domain.
- * @see https://developer.wordpress.org/reference/functions/wp_get_theme/
- */
-function get_theme_text_domain() : string {
-	return wp_get_theme()->get( 'TextDomain' );
-}
-
-
-
 if ( function_exists( __NAMESPACE__ . '\get_theme_manifest' ) ) {
 	/**
 	 * Asset

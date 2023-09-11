@@ -11,44 +11,46 @@
 	{{ parent() }}
 
 	{% set offers = get_posts( { post_type: 'offer' } ) %}
+	{% set offers_user = offers | filter( o => o.id in user.meta( 'offers' ) ) %}
+	{% set offers_available = offers | filter( o => o.id not in user.meta( 'offers' ) ) %}
+
 	<div class="container space-y-13 text-blue-dark">
 
-		<div class="row">
-			<div>
-				<h2 class="font-medium text-3xl">{{- __( 'My subscriptions', 'weblexprodashboard' ) -}}</h2>
-			</div>
-			<div>
-				<hr class="block border-none bg-blue-dark h-px w-full mt-4">
-			</div>
-
-			<div class="row mt-5">
-				{% for offer in offers %}
-					{% if offer.id in user.meta( 'offers' ) %}
-						<div class="col-6/12">
-							{{- include( 'components/tease-offer.html.twig', { post: offer, active: true } ) -}}
-						</div>
-					{% endif %}
-				{% endfor %}
-			</div>
-		</div>
-
-		<div class="row">
-			<div>
-				<h2 class="font-medium text-3xl">{{- __( 'Subscriptions available', 'weblexprodashboard' ) -}}</h2>
+		{%- if offers_user is iterable and offers_user | length -%}
+			<div class="row">
 				<div>
+					<h2 class="font-medium lg:text-3xl">
+						{{- _n( 'My subscription', 'My subscriptions', offers_user | length, 'weblexpro-dashboard' ) -}}</h2>
 					<hr class="block border-none bg-blue-dark h-px w-full mt-4">
 				</div>
 			</div>
 
-			<div class="row mt-5">
-				{% for offer in offers %}
-					{% if offer.id not in user.meta( 'offers' ) %}
-						<div class="col-6/12">
-							{{- include( 'components/tease-offer.html.twig', { post: offer } ) -}}
+			<div class="row mt-5 gap-y-5">
+				{% for offer in offers_user %}
+
+						<div class="lg:col-6/12">
+							{{- include( 'components/tease-offer.html.twig', { post: offer, active: true } ) -}}
 						</div>
-					{% endif %}
+
 				{% endfor %}
 			</div>
-		</div>
+		{%- endif -%}
+
+		{%- if offers_available is iterable and offers_available | length -%}
+			<div class="row">
+				<div>
+					<h2 class="font-medium lg:text-3xl">{{- _n( 'Subscription available', 'Subscriptions available', offers_available | length, 'weblexpro-dashboard' ) -}}</h2>
+					<hr class="block border-none bg-blue-dark h-px w-full mt-4">
+				</div>
+			</div>
+
+			<div class="row mt-5 gap-y-5">
+				{% for offer in offers_available %}
+					<div class="lg:col-6/12">
+						{{- include( 'components/tease-offer.html.twig', { post: offer } ) -}}
+					</div>
+				{% endfor %}
+			</div>
+		{%- endif -%}
 	</div>
 {% endblock %}

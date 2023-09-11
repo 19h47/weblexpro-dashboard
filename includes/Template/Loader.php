@@ -33,6 +33,16 @@ class Loader {
 			exit();
 		}
 
+		if ( $post && 'templates/likes.php' === get_post_meta( $post->ID, '_wp_page_template', true ) && ! is_user_logged_in() ) {
+			wp_safe_redirect( home_url() );
+			exit();
+		}
+
+		if ( $post && 'templates/documents.php' === get_post_meta( $post->ID, '_wp_page_template', true ) && ! is_user_logged_in() ) {
+			wp_safe_redirect( home_url() );
+			exit();
+		}
+
 		if ( is_singular( 'offer' ) && ! is_user_logged_in() ) {
 			wp_safe_redirect( home_url() );
 			exit();

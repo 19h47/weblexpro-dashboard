@@ -39,29 +39,29 @@ class Settings {
 
 		add_settings_field(
 			'public_email',
-			__( 'Public Email Address', 'weblexprodashboard' ),
+			__( 'Public Email Address', 'weblexpro-dashboard' ),
 			array( $this, 'email_callback_function' ),
 			'reading',
 			'contacts',
 			array(
 				'name'        => 'public_email',
-				'label'       => __( 'Email', 'weblexprodashboard' ),
-				'description' => __( 'This address is used for public purposes.', 'weblexprodashboard' ),
+				'label'       => __( 'Email', 'weblexpro-dashboard' ),
+				'description' => __( 'This address is used for public purposes.', 'weblexpro-dashboard' ),
 				'placeholder' => 'artvandelay@vandelayindustries.com',
 			)
 		);
 
 		add_settings_field(
 			'phone_number',
-			__( 'Phone Number', 'weblexprodashboard' ),
+			__( 'Phone Number', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),
 			'reading',
 			'contacts',
 			array(
 				'name'        => 'phone_number',
-				'label'       => __( 'Phone Number', 'weblexprodashboard' ),
+				'label'       => __( 'Phone Number', 'weblexpro-dashboard' ),
 				'placeholder' => '+353 87 222 0720',
-				'description' => __( 'This phone number is used for public purposes.', 'weblexprodashboard' ),
+				'description' => __( 'This phone number is used for public purposes.', 'weblexpro-dashboard' ),
 			)
 		);
 
@@ -74,7 +74,7 @@ class Settings {
 
 		add_settings_field(
 			'facebook',
-			__( 'Facebook', 'weblexprodashboard' ),
+			__( 'Facebook', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),
 			'general',
 			'socials',
@@ -82,13 +82,13 @@ class Settings {
 				'type'        => 'url',
 				'name'        => 'facebook',
 				'placeholder' => 'https://www.facebook.com/artvandelay',
-				'description' => __( 'Enter the Facebook URL here.', 'weblexprodashboard' ),
+				'description' => __( 'Enter the Facebook URL here.', 'weblexpro-dashboard' ),
 			)
 		);
 
 		add_settings_field(
 			'instagram',
-			__( 'Instagram', 'weblexprodashboard' ),
+			__( 'Instagram', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),
 			'general',
 			'socials',
@@ -96,13 +96,13 @@ class Settings {
 				'type'        => 'url',
 				'name'        => 'instagram',
 				'placeholder' => 'https://instagram.com/artvandelay',
-				'description' => __( 'Enter the Instagram URL here.', 'weblexprodashboard' ),
+				'description' => __( 'Enter the Instagram URL here.', 'weblexpro-dashboard' ),
 			)
 		);
 
 		add_settings_field(
 			'youtube',
-			__( 'YouTube', 'weblexprodashboard' ),
+			__( 'YouTube', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),
 			'general',
 			'socials',
@@ -110,13 +110,13 @@ class Settings {
 				'type'        => 'url',
 				'name'        => 'youtube',
 				'placeholder' => 'https://youtube.com/artvandelay',
-				'description' => __( 'Enter the YouTube URL here.', 'weblexprodashboard' ),
+				'description' => __( 'Enter the YouTube URL here.', 'weblexpro-dashboard' ),
 			)
 		);
 
 		add_settings_field(
 			'twitter',
-			__( 'Twitter', 'weblexprodashboard' ),
+			__( 'Twitter', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),
 			'general',
 			'socials',
@@ -124,13 +124,13 @@ class Settings {
 				'type'        => 'url',
 				'name'        => 'twitter',
 				'placeholder' => 'https://www.twitter.com/artvandelay',
-				'description' => __( 'Enter the Twitter URL here.', 'weblexprodashboard' ),
+				'description' => __( 'Enter the Twitter URL here.', 'weblexpro-dashboard' ),
 			)
 		);
 
 		add_settings_field(
 			'linkedin',
-			__( 'LinkedIn', 'weblexprodashboard' ),
+			__( 'LinkedIn', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),
 			'general',
 			'socials',
@@ -138,13 +138,13 @@ class Settings {
 				'type'        => 'url',
 				'name'        => 'linkedin',
 				'placeholder' => 'https://www.linkedin.com/artvandelay',
-				'description' => __( 'Enter the LinkedIn URL here.', 'weblexprodashboard' ),
+				'description' => __( 'Enter the LinkedIn URL here.', 'weblexpro-dashboard' ),
 			)
 		);
 
 		add_settings_field(
 			'copyright',
-			__( 'Copyright', 'weblexprodashboard' ),
+			__( 'Copyright', 'weblexpro-dashboard' ),
 			array( $this, 'textarea_callback_function' ),
 			'reading',
 			'default',
@@ -152,29 +152,14 @@ class Settings {
 				'id'          => 'copyright',
 				'name'        => 'copyright',
 				'value'       => get_option( 'copyright' ),
-				'placeholder' => __( 'Copyright', 'weblexprodashboard' ),
-				'rows'        => 6,
-			)
-		);
-
-		add_settings_field(
-			'story',
-			__( 'Story', 'weblexprodashboard' ),
-			array( $this, 'textarea_callback_function' ),
-			'reading',
-			'default',
-			array(
-				'id'          => 'story',
-				'name'        => 'story',
-				'value'       => get_option( 'story' ),
-				'placeholder' => __( 'Story', 'weblexprodashboard' ),
+				'placeholder' => __( 'Copyright', 'weblexpro-dashboard' ),
 				'rows'        => 6,
 			)
 		);
 
 		add_settings_field(
 			'address',
-			__( 'Address', 'weblexprodashboard' ),
+			__( 'Address', 'weblexpro-dashboard' ),
 			array( $this, 'textarea_callback_function' ),
 			'reading',
 			'default',
@@ -183,19 +168,82 @@ class Settings {
 				'name'        => 'address',
 				'rows'        => 4,
 				'value'       => get_option( 'address' ),
-				'placeholder' => __( 'Address', 'weblexprodashboard' ),
+				'placeholder' => __( 'Address', 'weblexpro-dashboard' ),
+			)
+		);
+
+		add_settings_field(
+			'notice',
+			__( 'Notice', 'weblexpro-dashboard' ),
+			array( $this, 'text_callback_function' ),
+			'reading',
+			'default',
+			array(
+				'id'          => 'notice',
+				'name'        => 'notice',
+				'value'       => get_option( 'notice' ),
+				'placeholder' => __( 'Notice', 'weblexpro-dashboard' ),
 			)
 		);
 
 		add_settings_field(
 			'page_dashboard',
-			__( 'Dashboard', 'weblexprodashboard' ),
+			__( 'Dashboard', 'weblexpro-dashboard' ),
 			array( $this, 'dropdown_pages_callback_function' ),
 			'reading',
 			'default',
 			array(
 				'name'        => 'page_dashboard',
-				'description' => __( 'Page Dashboard', 'weblexprodashboard' ),
+				'description' => __( 'Page Dashboard', 'weblexpro-dashboard' ),
+			)
+		);
+
+		add_settings_field(
+			'page_likes',
+			__( 'Likes', 'weblexpro-dashboard' ),
+			array( $this, 'dropdown_pages_callback_function' ),
+			'reading',
+			'default',
+			array(
+				'name'        => 'page_likes',
+				'description' => __( 'Page Likes', 'weblexpro-dashboard' ),
+			)
+		);
+
+		add_settings_field(
+			'page_documents',
+			__( 'Documents', 'weblexpro-dashboard' ),
+			array( $this, 'dropdown_pages_callback_function' ),
+			'reading',
+			'default',
+			array(
+				'name'        => 'page_documents',
+				'description' => __( 'Page Documents', 'weblexpro-dashboard' ),
+			)
+		);
+
+		add_settings_field(
+			'page_contact',
+			__( 'Contact', 'weblexpro-dashboard' ),
+			array( $this, 'dropdown_pages_callback_function' ),
+			'reading',
+			'default',
+			array(
+				'name'        => 'page_contact',
+				'description' => __( 'Page Contact', 'weblexpro-dashboard' ),
+			)
+		);
+
+		add_settings_field(
+			'url_weblexpro_contact',
+			__( 'WebLexPro Contact Page', 'weblexpro-dashboard' ),
+			array( $this, 'url_callback_function' ),
+			'reading',
+			'default',
+			array(
+				'name'        => 'url_weblexpro_contact',
+				'placeholder' => 'https://vandelayindustries.com/contact',
+				'description' => __( 'WebLexPro Contact Page', 'weblexpro-dashboard' ),
 			)
 		);
 	}
@@ -342,9 +390,12 @@ class Settings {
 
 		register_setting( 'reading', 'public_email' );
 		register_setting( 'reading', 'phone_number' );
-		register_setting( 'reading', 'copyright' );
-		register_setting( 'reading', 'story' );
 		register_setting( 'reading', 'address' );
+		register_setting( 'reading', 'notice' );
 		register_setting( 'reading', 'page_dashboard' );
+		register_setting( 'reading', 'page_contact' );
+		register_setting( 'reading', 'page_likes' );
+		register_setting( 'reading', 'page_documents' );
+		register_setting( 'reading', 'url_weblexpro_contact' );
 	}
 }

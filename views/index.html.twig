@@ -29,28 +29,52 @@
 
 	<body {{ body_class() }}>
 
+		{%- if notice -%}
+			<div class="bg-red-light text-white py-4" data-module-notice data-notice-name="{{ notice | sanitize }}" style="display:none;">
+				<div class="container !max-w-full">
+					<div class="row">
+						<div>
+							<div class="flex lg:text-3xl items-center justify-between gap-2">
+								<div class="flex gap-2">
+									<span class="border-2 w-8 h-8 flex items-center rounded-full justify-center text-xl font-bold rotate-12">i</span>
+									{{- notice -}}
+								</div>
+
+								<button class="ml-2 w-7 h-7" type="button" data-notice="dismiss" aria-label="{{ __( 'Dismiss', 'weblexpro-dashboard' ) }}">
+									{{- icon( 'times', { classes: [ 'fill-current w-full h-full' ] } ) -}}
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{%- endif -%}
+
 
 		{% block header %}
 			{{- include( 'header.html.twig', { classes: [] } ) -}}
 		{% endblock %}
 
-		<div class="flex relative z-2">
-			<aside class="bg-blue-dark text-white px-4 min-w-98.5">
-				{{- include( 'components/socials.html.twig' ) -}}
-			</aside>
-			<main class="my-17.5 space-y-26.25 pl-21 w-full">
+		<div class="lg:flex">
+
+			<main class="my-17.5 space-y-15 lg:pl-21 w-full lg:order-2">
 				{% block content %}
 					<div class="container">
 						<div class="row">
 							<div>
 								<p>
 									<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-										{{- __( 'Home', 'weblexprodashboard' ) -}}
+										{{- __( 'Home', 'weblexpro-dashboard' ) -}}
 									</a>
 
 									{%- if 'offer' == post.type -%}
 										&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
 									{%- endif -%}
+
+									{%- if 'page' == post.type -%}
+										&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
+									{%- endif -%}
+
 								</p>
 
 							</div>
@@ -58,7 +82,7 @@
 					</div>
 
 					{%- if post.content -%}
-						<div class="container">
+						<div class="container lg:text-4xl text-blue-dark font-bold">
 							<div class="row">
 								<div>
 									{{- post.content -}}
@@ -68,6 +92,66 @@
 					{%- endif -%}
 				{% endblock %}
 			</main>
+
+			<aside class="bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
+				{% if nav_menus.main.get_items() %}
+					<ul class="space-y-3">
+						{% for item in nav_menus.main.get_items() %}
+							<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
+								{%- if 'offer' == item.master_object.post_type %}
+									{%- if item.master_object.ID in user.meta( 'offers' ) -%}
+										<a
+											class="{{
+												html_classes( item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline' )
+											}}"
+											href="{{ item.link }}"
+											{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+										>
+											{{- item.title -}}
+										</a>
+
+										{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+											<ul class="lg:text-3xl my-8 pl-4">
+												{% for child in item.children %}
+													<li>
+														<a
+															class="{{
+																html_classes( child.current ? 'underline' : '', 'hover:underline' )
+															}}"
+															href="{{ child.link }}"
+															{{ child.is_target_blank or child.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+														>
+															{{- child.title -}}
+														</a>
+													</li>
+												{% endfor %}
+											</ul>
+										{% endif %}
+									{%- else -%}
+										<button type="button" class="hover:underline" data-module-dialog-button data-dialog-button-id="offer-unavailable">
+											{{- item.title -}}
+										</button>
+									{%- endif -%}
+								{%- else -%}
+									<a
+										class="{{
+											html_classes( item.current ? 'underline' : '', 'hover:underline' )
+										}}"
+										href="{{ item.link }}"
+										{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+									>
+										{{- item.title -}}
+									</a>
+								{%- endif -%}
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+
+				<hr class="border-none h-1 bg-white block w-full my-13">
+				<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
+				{{- include( 'components/socials.html.twig' ) -}}
+			</aside>
 		</div>
 
 		{% block footer %}
@@ -77,6 +161,27 @@
 		{{ function( 'wp_footer' ) }}
 
 		<div id="svg-sprite" style="display: none;">{{- include( 'icons.svg', ignore_missing = true ) -}}</div>
+
+		<div style="display: none;" class="fixed z-10 flex items-center justify-center w-full h-full inset-0" data-module-dialog="offer-unavailable">
+			<div class="relative m-4 z-2 border-2 border-blue-dark text-blue-dark bg-white max-w-[50.8125rem] p-4 lg:py-[5.25rem] lg:px-[6rem]">
+				<h2 class="lg:text-5xl text-center">{{- __( 'It looks like you are not taking advantage of this solution!', 'weblexpro-dashboard' ) -}}</h2>
+
+
+				<div class="flex items-end justify-center">
+					<img src="{{ asset( 'img/svg/woman.svg' ) }}" class="-mr-12 relative z-2 pointer-events-none" width="101" hright="241" alt="">
+					<a
+						href="{{ url_weblexpro_contact }}"
+						class="relative text-white text-center z-1 block lg:text-4xl py-8 px-5 bg-red-light"
+						target="_blank"
+						rel="noopener noreferer"
+					>
+						{{- __( 'I want a demo!', 'weblexpro-dashboard' ) -}}
+						<div class="absolute w-full pointer-events-none h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-red-light"></div>
+					</a>
+				</div>
+			</div>
+			<div class="absolute z-1 inset-0" data-dialog="backdrop"></div>
+		</div>
 
 	</body>
 

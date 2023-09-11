@@ -65,6 +65,7 @@ class Enqueue {
 			'api_url'                => home_url( 'wp-json' ),
 			'current_url'            => get_permalink(),
 			'nonce'                  => wp_create_nonce( 'security' ),
+			'text_domain'            => get_theme_text_domain(),
 		);
 
 		wp_add_inline_script(

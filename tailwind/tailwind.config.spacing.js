@@ -1,6 +1,7 @@
 const { percentage, rem } = require('./tailwind.utils.js')
 
 module.exports = {
+	"3/12": percentage(3 / 12),
 	"4/12": percentage(4 / 12),
 	11.5: rem(46),
 	13: rem(52),

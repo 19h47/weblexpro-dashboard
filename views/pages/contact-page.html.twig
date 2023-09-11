@@ -1,0 +1,61 @@
+{#
+ # Page: Contact
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div>
+				<p>
+					<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+						{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+					</a>
+
+					{%- if 'offer' == post.type -%}
+						&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
+					{%- endif -%}
+
+					{%- if 'page' == post.type -%}
+						&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
+					{%- endif -%}
+
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="lg:col-4/12 wysiwyg">
+				{{- post.content -}}
+			</div>
+
+			<div class="lg:col-8/12 mt-8 lg:mt-0">
+				<style>
+					.wpcf7-form .wpcf7-form-control-wrap {
+						display: block;
+					}
+					.wpcf7-form .wpcf7-form-control-wrap .wpcf7-form-control {
+						border: 1px solid currentColor;
+						display: block;
+						padding: 0.5em 1em;
+						width: 100%;;
+					}
+					.wpcf7-form > p {
+						margin-bottom: 1em;
+					}
+					.wpcf7-form > p:last-of-type {
+						margin-bottom: 0;
+					}
+				</style>
+				{{- ( '[contact-form-7 id="' ~ post.meta( 'form_id' ) ~ '"]' ) | shortcodes -}}
+			</div>
+		</div>
+	</div>
+{% endblock %}

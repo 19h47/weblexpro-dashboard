@@ -8,16 +8,16 @@
  #}
 
 <article
-	class="text-2xl"
+	class="lg:text-2xl"
 	 style="
 		{{ active ? '' : 'color: #BABABA;' }}
 	"
 >
 	<header class="text-white relative mr-8 -mb-24">
 		<div
-			class="relative z-2 w-full py-4 px-11"
+			class="relative z-2 w-full p-4 lg:px-11 min-h-[7rem]"
 			style="background-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }}">
-			<h3 class="text-[2.5rem] leading-[3rem]">{{- post.meta( 'catchphrase' ) -}}</h3>
+			<h3 class="lg:text-[2.5rem] lg:leading-[3rem]">{{- post.meta( 'catchphrase' ) -}}</h3>
 			<p class="">{{- post.title -}}</p>
 		</div>
 
@@ -46,8 +46,10 @@
 				<button
 					type="button"
 					class="text-xl bg-gray text-white py-3 px-4 hover:underline"
+					data-module-dialog-button
+					data-dialog-button-id="offer-unavailable"
 				>
-					{{- __( 'En savoir plus...', 'weblexprodashboard' ) -}}
+					{{- __( 'En savoir plus...', 'weblexpro-dashboard' ) -}}
 				</button>
 			{%- endif -%}
 		</footer>

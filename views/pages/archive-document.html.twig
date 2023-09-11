@@ -1,0 +1,92 @@
+{#
+ # Archive: Document
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div>
+				<p>
+					<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+						{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+					</a>
+
+					{%- for item in nav_menus.main.get_items() -%}
+
+						{%- if item.current or item.current_item_ancestor or item.current_item_parent -%}
+							&nbsp;&sol;&nbsp;<a class="hover:underline" href="{{ item.link }}">{{ item.title }}</a>
+						{%- endif -%}
+
+						{%- if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children -%}
+
+							{%- for child in item.children -%}
+								{%- if ( child.current or child.current_child_ancestor or child.current_item_parent ) -%}
+									&nbsp;&sol;&nbsp;{{- child.title -}}
+								{%- endif -%}
+							{%- endfor -%}
+
+						{%- endif -%}
+					{% endfor %}
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+	{%- if 'dossiers-thematiques' == term.slug or 'dossiers-de-veille-juridique' == term.slug -%}
+		<div class="container">
+			<div class="row">
+				<div>
+					<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
+						{% for post in term.posts( { post_type: 'document' } ) %}
+							<a href="{{ post.link }}" class="min-h-[17.1875rem] relative text-white text-center w-[17.1875rem] max-w-full flex items-end lg:text-5xl py-8 px-5 bg-red-light">
+								{{ post.title }}
+								<div class="pointer-events-none absolute w-full h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-red-light"></div>
+							</a>
+						{%- endfor -%}
+					</div>
+				</div>
+			</div>
+	{%- endif -%}
+
+	{% if 'webinaires' == term.slug %}
+		<div class="container text-blue-dark">
+			<div class="row">
+				{% for child in term.children %}
+					{% if child.children %}
+						<div>
+							<h2 class="font-medium lg:text-3xl">{{- child.name -}}</h2>
+							<hr class="block border-none bg-blue-dark h-px w-full mt-4">
+						</div>
+
+						<div class="mt-5">
+							<div class="pl-14 lg:pl-28 space-y-4" data-module-accordion>
+								{% for grandchild in child.children %}
+									{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: grandchild, user: user } ) -}}
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+
+
+	{% if 'podcasts' == term.slug or 'lois-de-finances' == term.slug %}
+		<div class="container text-blue-dark">
+			<div class="row">
+				<div class="space-y-4" data-module-accordion>
+					{% for child in term.children %}
+						{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user } ) -}}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{%- endif -%}
+{% endblock %}
