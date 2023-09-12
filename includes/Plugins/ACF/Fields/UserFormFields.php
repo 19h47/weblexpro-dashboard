@@ -55,7 +55,7 @@ class UserFormFields {
 				'label'         => __( 'Likes', 'weblexpro-dashboard' ),
 				'name'          => 'likes',
 				'type'          => 'relationship',
-				'post_type'     => array( 'document' ),
+				'post_type'     => array( 'document', 'attachment' ),
 				'post_status'   => '',
 				'taxonomy'      => '',
 				'filters'       => '',

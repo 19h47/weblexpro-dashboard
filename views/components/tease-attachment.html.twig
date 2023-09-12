@@ -1,0 +1,21 @@
+
+<div class="lg:flex items-center justify-between">
+	<div class="flex items-center gap-x-8">
+		<hr class="w-10 h-0.5 bg-gray-very-dark">
+		{{ post.title }}
+	</div>
+
+	<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
+
+		{{- include( 'components/button-like.html.twig', { user: user, id: post.ID } ) -}}
+
+
+			<a
+				download href="{{ post.guid }}"
+				class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+			>
+				{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+			</a>
+
+	</div>
+</div>

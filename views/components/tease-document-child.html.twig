@@ -4,29 +4,12 @@
 	</a>
 
 	<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
-		<button
-			data-module-button-like
-			data-button-like-user-id="{{ user.id }}"
-			data-button-like-post-id="{{ post.id }}"
-			data-button-like-action="like_document"
-			type="button"
-			class="{{
-				html_classes(
-					'w-6 h-6 relative',
-					post.id in user.meta( 'likes' ) ? 'is-active' : ''
-				)
-			}}"
-		>
-			{{- icon( 'heart-fill', { classes:
-				[ 'fill-red-light absolute w-full h-full inset-0 opacity-0 parent-is-active:opacity-100' ] } )
-			-}}
-			{{- icon( 'heart-stroke', { classes:
-				[ 'fill-red-light absolute w-full h-full inset-0 opacity-100 parent-is-active:opacity-0' ] } )
-			-}}
-		</button>
+
+		{{- include( 'components/button-like.html.twig', { user: user, id: post.id } ) -}}
 
 		{%- for document in post.meta( 'documents' ) -%}
 			<a
+				title="{{ document.file.title }}"
 				download href="{{ document.file.url }}"
 				class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
 			>

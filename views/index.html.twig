@@ -94,7 +94,7 @@
 			</main>
 
 			<aside class="bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
-				{% if nav_menus.main.get_items() %}
+				{% if nav_menus.main.get_items() and user %}
 					<ul class="space-y-3">
 						{% for item in nav_menus.main.get_items() %}
 							<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
@@ -146,9 +146,9 @@
 							</li>
 						{% endfor %}
 					</ul>
+					<hr class="border-none h-1 bg-white block w-full my-13">
 				{% endif %}
 
-				<hr class="border-none h-1 bg-white block w-full my-13">
 				<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
 				{{- include( 'components/socials.html.twig' ) -}}
 			</aside>

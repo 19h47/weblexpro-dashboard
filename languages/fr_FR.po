@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-09-11 16:52+0200\n"
-"PO-Revision-Date: 2023-09-11 16:52+0200\n"
+"POT-Creation-Date: 2023-09-12 14:43+0200\n"
+"PO-Revision-Date: 2023-09-12 14:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -665,8 +665,6 @@ msgid "Notice"
 msgstr "Notification"
 
 #: includes/Setup/Settings.php:191 views/pages/front-page.html.twig:35
-#: views/pages/single-document.html.twig:49
-#: views/pages/single-document.html.twig:94
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -839,23 +837,23 @@ msgstr "Mot de passe perdu ?"
 msgid "En savoir plus..."
 msgstr "En savoir plus..."
 
-#: views/header.html.twig:24 views/index.html.twig:115
+#: views/header.html.twig:30 views/index.html.twig:152
 msgid "Contact Us"
 msgstr "Contactez-nous"
 
-#: views/header.html.twig:41
+#: views/header.html.twig:47
 msgid "My profile"
 msgstr "Mon profil"
 
-#: views/header.html.twig:45
+#: views/header.html.twig:51
 msgid "My likes"
 msgstr "Mes favoris"
 
-#: views/header.html.twig:48
+#: views/header.html.twig:54
 msgid "My documents"
 msgstr "Mes documents"
 
-#: views/header.html.twig:53
+#: views/header.html.twig:59
 msgid "Sign Out"
 msgstr "Se déconnecter"
 
@@ -863,35 +861,35 @@ msgstr "Se déconnecter"
 msgid "Dismiss"
 msgstr "Ignorer"
 
-#: views/index.html.twig:126 views/pages/archive-document.html.twig:16
+#: views/index.html.twig:67 views/pages/archive-document.html.twig:16
 #: views/pages/contact-page.html.twig:16
 #: views/pages/single-document.html.twig:17
 msgid "Home"
 msgstr "Accueil"
 
-#: views/index.html.twig:166
+#: views/index.html.twig:167
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
 "Il semble que vous ne bénéficiez pas\n"
 "encore de cette solution !"
 
-#: views/index.html.twig:175
+#: views/index.html.twig:178
 msgid "I want a demo!"
 msgstr "Je souhaite une démo !"
 
-#: views/pages/dashboard-page.html.twig:22
+#: views/pages/dashboard-page.html.twig:23
 msgid "My subscription"
 msgid_plural "My subscriptions"
 msgstr[0] "Mon abonnement"
 msgstr[1] "Mes abonnements"
 
-#: views/pages/dashboard-page.html.twig:41
+#: views/pages/dashboard-page.html.twig:42
 msgid "Subscription available"
 msgid_plural "Subscriptions available"
 msgstr[0] "Abonnement disponible"
 msgstr[1] "Abonnements disponibles"
 
-#: views/pages/documents-page.html.twig:54 views/pages/likes-page.html.twig:29
+#: views/pages/documents-page.html.twig:69 views/pages/likes-page.html.twig:34
 msgid "No likes to display yet."
 msgstr "Aucun favoris à afficher pour le moment."
 
@@ -905,51 +903,31 @@ msgid "You are already logged in."
 msgstr "Vous êtes déjà connecté(e)."
 
 #: views/pages/front-page.html.twig:38
-#: views/pages/single-document.html.twig:123
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: views/pages/single-document.html.twig:133
-#, php-format
-msgid "Creation date %s"
-msgstr "Date de création %s"
+#: views/pages/single-document.html.twig:56
+msgid "Attached File"
+msgid_plural "Attached Files"
+msgstr[0] "Fichier joint"
+msgstr[1] "Fichiers joints"
 
-#: views/pages/single-document.html.twig:138
-#, php-format
-msgid "Last update %s"
-msgstr "Dernière mise à jour %s"
-
-#: views/pages/single-document.html.twig:143
-#, php-format
-msgid "%s file"
-msgid_plural "%s files"
-msgstr[0] "%s fichier"
-msgstr[1] "%s fichiers"
-
-#: views/pages/single-document.html.twig:147
-#, php-format
-msgid "File size %s"
-msgid_plural "File size %s"
-msgstr[0] "Taille du fichier %s"
-msgstr[1] "Taille du fichier %s"
-
-#: views/pages/single-document.html.twig:162
-msgid "Attached Files"
-msgstr "Fichiers joints"
-
-#: views/pages/single-document.html.twig:172
+#: views/pages/single-document.html.twig:68
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr "Désolé, votre navigateur ne prend pas en charge l’élément audio."
 
-#: views/pages/single-document.html.twig:175
-#: views/pages/single-document.html.twig:187
-#: views/pages/single-document.html.twig:194
+#: views/pages/single-document.html.twig:76
+msgid "Sorry, your browser doesn't support embedded videos."
+msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
+
+#: views/pages/single-document.html.twig:84
+#: views/pages/single-document.html.twig:90
 msgid "Download"
 msgstr "Télécharger"
 
-#: views/pages/single-document.html.twig:183
-msgid "Sorry, your browser doesn't support embedded videos."
-msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
+#: views/pages/single-document.html.twig:102
+msgid "No documents to display yet"
+msgstr "Aucun documents à afficher pour le moment."
 
 #. Theme Name of the plugin/theme
 msgid "WebLexPro Dashboard 2"
@@ -970,6 +948,26 @@ msgstr "19h47"
 #. Author URI of the plugin/theme
 msgid "https://www.19h47.fr/"
 msgstr "https://www.19h47.fr/"
+
+#, php-format
+#~ msgid "Creation date %s"
+#~ msgstr "Date de création %s"
+
+#, php-format
+#~ msgid "Last update %s"
+#~ msgstr "Dernière mise à jour %s"
+
+#, php-format
+#~ msgid "%s file"
+#~ msgid_plural "%s files"
+#~ msgstr[0] "%s fichier"
+#~ msgstr[1] "%s fichiers"
+
+#, php-format
+#~ msgid "File size %s"
+#~ msgid_plural "File size %s"
+#~ msgstr[0] "Taille du fichier %s"
+#~ msgstr[1] "Taille du fichier %s"
 
 #~ msgid "Redirect"
 #~ msgstr "Redirection"

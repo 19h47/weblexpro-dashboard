@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-09-11 16:53+0200\n"
+"POT-Creation-Date: 2023-09-12 14:44+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -661,8 +661,6 @@ msgid "Notice"
 msgstr ""
 
 #: includes/Setup/Settings.php:191 views/pages/front-page.html.twig:35
-#: views/pages/single-document.html.twig:49
-#: views/pages/single-document.html.twig:94
 msgid "Dashboard"
 msgstr ""
 
@@ -833,23 +831,23 @@ msgstr ""
 msgid "En savoir plus..."
 msgstr ""
 
-#: views/header.html.twig:24 views/index.html.twig:115
+#: views/header.html.twig:30 views/index.html.twig:152
 msgid "Contact Us"
 msgstr ""
 
-#: views/header.html.twig:41
+#: views/header.html.twig:47
 msgid "My profile"
 msgstr ""
 
-#: views/header.html.twig:45
+#: views/header.html.twig:51
 msgid "My likes"
 msgstr ""
 
-#: views/header.html.twig:48
+#: views/header.html.twig:54
 msgid "My documents"
 msgstr ""
 
-#: views/header.html.twig:53
+#: views/header.html.twig:59
 msgid "Sign Out"
 msgstr ""
 
@@ -857,34 +855,34 @@ msgstr ""
 msgid "Dismiss"
 msgstr ""
 
-#: views/index.html.twig:126 views/pages/archive-document.html.twig:16
+#: views/index.html.twig:67 views/pages/archive-document.html.twig:16
 #: views/pages/contact-page.html.twig:16
 #: views/pages/single-document.html.twig:17
 msgid "Home"
 msgstr ""
 
-#: views/index.html.twig:166
+#: views/index.html.twig:167
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
 
-#: views/index.html.twig:175
+#: views/index.html.twig:178
 msgid "I want a demo!"
 msgstr ""
 
-#: views/pages/dashboard-page.html.twig:22
+#: views/pages/dashboard-page.html.twig:23
 msgid "My subscription"
 msgid_plural "My subscriptions"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/dashboard-page.html.twig:41
+#: views/pages/dashboard-page.html.twig:42
 msgid "Subscription available"
 msgid_plural "Subscriptions available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:54
-#: views/pages/likes-page.html.twig:29
+#: views/pages/documents-page.html.twig:69
+#: views/pages/likes-page.html.twig:34
 msgid "No likes to display yet."
 msgstr ""
 
@@ -898,50 +896,30 @@ msgid "You are already logged in."
 msgstr ""
 
 #: views/pages/front-page.html.twig:38
-#: views/pages/single-document.html.twig:123
 msgid "Log out"
 msgstr ""
 
-#: views/pages/single-document.html.twig:133
-#, php-format
-msgid "Creation date %s"
-msgstr ""
-
-#: views/pages/single-document.html.twig:138
-#, php-format
-msgid "Last update %s"
-msgstr ""
-
-#: views/pages/single-document.html.twig:143
-#, php-format
-msgid "%s file"
-msgid_plural "%s files"
+#: views/pages/single-document.html.twig:56
+msgid "Attached File"
+msgid_plural "Attached Files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/single-document.html.twig:147
-#, php-format
-msgid "File size %s"
-msgid_plural "File size %s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: views/pages/single-document.html.twig:162
-msgid "Attached Files"
-msgstr ""
-
-#: views/pages/single-document.html.twig:172
+#: views/pages/single-document.html.twig:68
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr ""
 
-#: views/pages/single-document.html.twig:175
-#: views/pages/single-document.html.twig:187
-#: views/pages/single-document.html.twig:194
+#: views/pages/single-document.html.twig:76
+msgid "Sorry, your browser doesn't support embedded videos."
+msgstr ""
+
+#: views/pages/single-document.html.twig:84
+#: views/pages/single-document.html.twig:90
 msgid "Download"
 msgstr ""
 
-#: views/pages/single-document.html.twig:183
-msgid "Sorry, your browser doesn't support embedded videos."
+#: views/pages/single-document.html.twig:102
+msgid "No documents to display yet"
 msgstr ""
 
 #. Theme Name of the plugin/theme

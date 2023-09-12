@@ -15,8 +15,13 @@
 			<div class="row">
 				<div>
 					<div class="border-l border-gray-very-dark space-y-4 lg:space-y-0">
-						{%- for post in get_posts( { post_type: 'document', post__in: user.meta( 'likes' ) } ) -%}
-							{{- include( 'components/tease-document-child.html.twig', { post: post } ) -}}
+						{%- for post in get_posts( { post_status: [ 'inherit', 'publish' ], post_type: [ 'document', 'attachment' ], post__in: user.meta( 'likes' ) } ) -%}
+
+							{%- if 'attachment' == post.post_type -%}
+								{{- include( 'components/tease-attachment.html.twig', { post: post } ) -}}
+							{%- else -%}
+								{{- include( 'components/tease-document-child.html.twig', { post: post } ) -}}
+							{%- endif -%}
 						{% endfor %}
 					</div>
 				</div>

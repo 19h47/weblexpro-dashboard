@@ -1,0 +1,20 @@
+<button
+	data-module-button-like
+	data-button-like-user-id="{{ user.id }}"
+	data-button-like-post-id="{{ id }}"
+	data-button-like-action="like_document"
+	type="button"
+	class="{{
+		html_classes(
+			'w-6 h-6 relative',
+			id in user.meta( 'likes' ) ? 'is-active' : ''
+		)
+	}}"
+>
+	{{- icon( 'heart-fill', { classes:
+		[ 'fill-red-light absolute w-full h-full inset-0 opacity-0 parent-is-active:opacity-100' ] } )
+	-}}
+	{{- icon( 'heart-stroke', { classes:
+		[ 'fill-red-light absolute w-full h-full inset-0 opacity-100 parent-is-active:opacity-0' ] } )
+	-}}
+</button>
