@@ -24,7 +24,7 @@ class Page extends Post {
 		$data = array_merge(
 			$data,
 			array(
-				'redirect'         => get_permalink(),
+				'redirect'         => get_permalink( get_option( 'page_dashboard' ) ),
 				'action'           => site_url( 'wp-login.php', 'login_post' ),
 				'lostpassword_url' => wp_lostpassword_url(),
 			)

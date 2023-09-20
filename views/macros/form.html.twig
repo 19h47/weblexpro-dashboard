@@ -15,7 +15,7 @@
 	<div class="px-4 py-2 border rounded border-blue-dark-grayish-20">
 
 		{% if args.label %}
-			<label class="block mb-2 text-xs text-blue-dark opacity-30" for="{{ args.id | e }}">
+			<label class="block mb-2 text-blue-dark opacity-30" for="{{ args.id | e }}">
 				{{- args.label | e( 'esc_html' ) -}}
 			</label>
 		{% endif %}

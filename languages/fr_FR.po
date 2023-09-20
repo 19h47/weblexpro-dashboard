@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-09-12 14:43+0200\n"
-"PO-Revision-Date: 2023-09-12 14:43+0200\n"
+"POT-Creation-Date: 2023-09-20 13:54+0200\n"
+"PO-Revision-Date: 2023-09-20 13:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -63,7 +63,7 @@ msgstr "Eagle"
 #: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:63
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:54
 msgid "Mag"
-msgstr "Man"
+msgstr "Mag"
 
 #: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:77
 msgid "Document Category Fields"
@@ -73,7 +73,7 @@ msgstr "Champs de la catégorie de document"
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:63
 #: includes/Plugins/ACF/Fields/UserFormFields.php:66
 #: includes/Plugins/ACF/Fields/UserFormFields.php:82
-#: includes/Setup/Settings.php:215
+#: includes/Setup/Settings.php:210
 msgid "Documents"
 msgstr "Documents"
 
@@ -156,7 +156,7 @@ msgid "Offers"
 msgstr "Offres"
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:55
-#: includes/Setup/Settings.php:203
+#: includes/Setup/Settings.php:198
 msgid "Likes"
 msgstr "Favoris"
 
@@ -169,7 +169,23 @@ msgstr "Ajouter une catégorie"
 msgid "Category"
 msgstr "Catégorie"
 
+#: includes/Plugins/ACF/Fields/UserFormFields.php:104
+msgid "Mag URL"
+msgstr "Man URL"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:108
+msgid ""
+"Indicate the URL of the magazine to integrate for users who have subscribed "
+"to the Mag offer."
+msgstr ""
+"Indiquez l’URL du magazine à intégrer pour les utilisateurs ayant souscrits "
+"à l’offre Mag."
+
 #: includes/Plugins/ACF/Fields/UserFormFields.php:109
+msgid "https://mag-experts.fr/weblex/"
+msgstr "https://mag-experts.fr/weblex/"
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:118
 msgid "Users"
 msgstr "Utilisateurs"
 
@@ -616,79 +632,79 @@ msgstr "Ce numéro de téléphone est utilisé à des fins publiques."
 msgid "Facebook"
 msgstr "Facebook"
 
-#: includes/Setup/Settings.php:85
+#: includes/Setup/Settings.php:84
 msgid "Enter the Facebook URL here."
 msgstr "Indiquer l’URL du compte Facebook."
 
-#: includes/Setup/Settings.php:91
+#: includes/Setup/Settings.php:90
 msgid "Instagram"
 msgstr "Instagram"
 
-#: includes/Setup/Settings.php:99
+#: includes/Setup/Settings.php:97
 msgid "Enter the Instagram URL here."
 msgstr "Indiquer l’URL du compte Instagram."
 
-#: includes/Setup/Settings.php:105
+#: includes/Setup/Settings.php:103
 msgid "YouTube"
 msgstr "YouTube"
 
-#: includes/Setup/Settings.php:113
+#: includes/Setup/Settings.php:110
 msgid "Enter the YouTube URL here."
 msgstr "Indiquer l’URL du compte YouTube."
 
-#: includes/Setup/Settings.php:119
+#: includes/Setup/Settings.php:116
 msgid "Twitter"
 msgstr "Partager sur Twitter"
 
-#: includes/Setup/Settings.php:127
+#: includes/Setup/Settings.php:123
 msgid "Enter the Twitter URL here."
 msgstr "Indiquer l’URL du compte Twitter."
 
-#: includes/Setup/Settings.php:133
+#: includes/Setup/Settings.php:129
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: includes/Setup/Settings.php:141
+#: includes/Setup/Settings.php:136
 msgid "Enter the LinkedIn URL here."
 msgstr "Indiquer l’URL du compte LinkedIn."
 
-#: includes/Setup/Settings.php:147 includes/Setup/Settings.php:155
+#: includes/Setup/Settings.php:142 includes/Setup/Settings.php:150
 msgid "Copyright"
 msgstr "Droit d’auteur"
 
-#: includes/Setup/Settings.php:162 includes/Setup/Settings.php:171
+#: includes/Setup/Settings.php:157 includes/Setup/Settings.php:166
 msgid "Address"
 msgstr "Adresse postale"
 
-#: includes/Setup/Settings.php:177 includes/Setup/Settings.php:185
+#: includes/Setup/Settings.php:172 includes/Setup/Settings.php:180
 msgid "Notice"
 msgstr "Notification"
 
-#: includes/Setup/Settings.php:191 views/pages/front-page.html.twig:35
+#: includes/Setup/Settings.php:186 views/pages/front-page.html.twig:40
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: includes/Setup/Settings.php:197
+#: includes/Setup/Settings.php:192
 msgid "Page Dashboard"
 msgstr "Page du tableau de bord"
 
-#: includes/Setup/Settings.php:209
+#: includes/Setup/Settings.php:204
 msgid "Page Likes"
 msgstr "Page des favoris"
 
-#: includes/Setup/Settings.php:221
+#: includes/Setup/Settings.php:216
 msgid "Page Documents"
 msgstr "Page des documents"
 
-#: includes/Setup/Settings.php:227
+#: includes/Setup/Settings.php:222
 msgid "Contact"
 msgstr "Contact"
 
-#: includes/Setup/Settings.php:233
+#: includes/Setup/Settings.php:228
 msgid "Page Contact"
 msgstr "Page Contact"
 
-#: includes/Setup/Settings.php:239 includes/Setup/Settings.php:246
+#: includes/Setup/Settings.php:234 includes/Setup/Settings.php:241
 msgid "WebLexPro Contact Page"
 msgstr "Page de contact de WebLexPro"
 
@@ -809,7 +825,7 @@ msgstr ""
 "votre mot de passe ci-dessous :"
 
 #: views/components/form-login-post.html.twig:22
-#: views/components/form-login.html.twig:27
+#: views/components/form-login.html.twig:31
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -817,27 +833,27 @@ msgstr "Mot de passe"
 msgid "Enter"
 msgstr "Valider"
 
-#: views/components/form-login.html.twig:19
+#: views/components/form-login.html.twig:21
 msgid "Username or Email Address"
 msgstr "Nom d'utilisateur ou adresse e-mail"
 
-#: views/components/form-login.html.twig:44
+#: views/components/form-login.html.twig:48
 msgid "Remember Me"
 msgstr "Se souvenir de moi"
 
-#: views/components/form-login.html.twig:49
-msgid "Log In"
-msgstr "Se connecter"
-
-#: views/components/form-login.html.twig:55
+#: views/components/form-login.html.twig:54
 msgid "Lost your password?"
 msgstr "Mot de passe perdu ?"
+
+#: views/components/form-login.html.twig:59
+msgid "Log In"
+msgstr "Se connecter"
 
 #: views/components/tease-offer.html.twig:52
 msgid "En savoir plus..."
 msgstr "En savoir plus..."
 
-#: views/header.html.twig:30 views/index.html.twig:152
+#: views/header.html.twig:30 views/index.html.twig:153
 msgid "Contact Us"
 msgstr "Contactez-nous"
 
@@ -861,19 +877,19 @@ msgstr "Se déconnecter"
 msgid "Dismiss"
 msgstr "Ignorer"
 
-#: views/index.html.twig:67 views/pages/archive-document.html.twig:16
+#: views/index.html.twig:68 views/pages/archive-document.html.twig:16
 #: views/pages/contact-page.html.twig:16
 #: views/pages/single-document.html.twig:17
 msgid "Home"
 msgstr "Accueil"
 
-#: views/index.html.twig:167
+#: views/index.html.twig:169
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
 "Il semble que vous ne bénéficiez pas\n"
 "encore de cette solution !"
 
-#: views/index.html.twig:178
+#: views/index.html.twig:180
 msgid "I want a demo!"
 msgstr "Je souhaite une démo !"
 
@@ -893,41 +909,45 @@ msgstr[1] "Abonnements disponibles"
 msgid "No likes to display yet."
 msgstr "Aucun favoris à afficher pour le moment."
 
-#: views/pages/front-page.html.twig:24
+#: views/pages/front-page.html.twig:29
 #, php-format
 msgid "Howdy %s"
 msgstr "Bonjour %s"
 
-#: views/pages/front-page.html.twig:29
+#: views/pages/front-page.html.twig:34
 msgid "You are already logged in."
 msgstr "Vous êtes déjà connecté(e)."
 
-#: views/pages/front-page.html.twig:38
+#: views/pages/front-page.html.twig:43
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: views/pages/single-document.html.twig:56
+#: views/pages/front-page.html.twig:48
+msgid "or"
+msgstr "ou"
+
+#: views/pages/front-page.html.twig:50
+msgid "I would like a presentation"
+msgstr "Je souhaite une présentation"
+
+#: views/pages/single-document.html.twig:66
 msgid "Attached File"
 msgid_plural "Attached Files"
 msgstr[0] "Fichier joint"
 msgstr[1] "Fichiers joints"
 
-#: views/pages/single-document.html.twig:68
+#: views/pages/single-document.html.twig:76
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr "Désolé, votre navigateur ne prend pas en charge l’élément audio."
 
-#: views/pages/single-document.html.twig:76
+#: views/pages/single-document.html.twig:84
 msgid "Sorry, your browser doesn't support embedded videos."
 msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
 
-#: views/pages/single-document.html.twig:84
-#: views/pages/single-document.html.twig:90
+#: views/pages/single-document.html.twig:92
+#: views/pages/single-document.html.twig:98
 msgid "Download"
 msgstr "Télécharger"
-
-#: views/pages/single-document.html.twig:102
-msgid "No documents to display yet"
-msgstr "Aucun documents à afficher pour le moment."
 
 #. Theme Name of the plugin/theme
 msgid "WebLexPro Dashboard 2"
@@ -948,6 +968,9 @@ msgstr "19h47"
 #. Author URI of the plugin/theme
 msgid "https://www.19h47.fr/"
 msgstr "https://www.19h47.fr/"
+
+#~ msgid "No documents to display yet"
+#~ msgstr "Aucun documents à afficher pour le moment"
 
 #, php-format
 #~ msgid "Creation date %s"

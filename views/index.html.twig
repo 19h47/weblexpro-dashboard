@@ -55,104 +55,106 @@
 			{{- include( 'header.html.twig', { classes: [] } ) -}}
 		{% endblock %}
 
-		<div class="lg:flex">
+		{% block wrapper %}
+			<div class="lg:flex">
 
-			<main class="my-17.5 space-y-15 lg:pl-21 w-full lg:order-2">
-				{% block content %}
-					<div class="container">
-						<div class="row">
-							<div>
-								<p>
-									<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-										{{- __( 'Home', 'weblexpro-dashboard' ) -}}
-									</a>
-
-									{%- if 'offer' == post.type -%}
-										&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
-									{%- endif -%}
-
-									{%- if 'page' == post.type -%}
-										&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
-									{%- endif -%}
-
-								</p>
-
-							</div>
-						</div>
-					</div>
-
-					{%- if post.content -%}
-						<div class="container lg:text-4xl text-blue-dark font-bold">
+				<main class="my-17.5 space-y-15 lg:pl-21 w-full lg:order-2">
+					{% block content %}
+						<div class="container">
 							<div class="row">
 								<div>
-									{{- post.content -}}
+									<p>
+										<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+											{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+										</a>
+
+										{%- if 'offer' == post.type -%}
+											&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
+										{%- endif -%}
+
+										{%- if 'page' == post.type -%}
+											&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
+										{%- endif -%}
+
+									</p>
+
 								</div>
 							</div>
 						</div>
-					{%- endif -%}
-				{% endblock %}
-			</main>
 
-			<aside class="bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
-				{% if nav_menus.main.get_items() and user %}
-					<ul class="space-y-3">
-						{% for item in nav_menus.main.get_items() %}
-							<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
-								{%- if 'offer' == item.master_object.post_type %}
-									{%- if item.master_object.ID in user.meta( 'offers' ) -%}
+						{%- if post.content -%}
+							<div class="container lg:text-4xl text-blue-dark font-bold">
+								<div class="row">
+									<div>
+										{{- post.content -}}
+									</div>
+								</div>
+							</div>
+						{%- endif -%}
+					{% endblock %}
+				</main>
+
+				<aside class="bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
+					{% if nav_menus.main.get_items() and user %}
+						<ul class="space-y-3">
+							{% for item in nav_menus.main.get_items() %}
+								<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
+									{%- if 'offer' == item.master_object.post_type %}
+										{%- if item.master_object.ID in user.meta( 'offers' ) -%}
+											<a
+												class="{{
+													html_classes( item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline' )
+												}}"
+												href="{{ item.link }}"
+												{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+											>
+												{{- item.title -}}
+											</a>
+
+											{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+												<ul class="lg:text-3xl my-8 pl-4">
+													{% for child in item.children %}
+														<li>
+															<a
+																class="{{
+																	html_classes( child.current ? 'underline' : '', 'hover:underline' )
+																}}"
+																href="{{ child.link }}"
+																{{ child.is_target_blank or child.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+															>
+																{{- child.title -}}
+															</a>
+														</li>
+													{% endfor %}
+												</ul>
+											{% endif %}
+										{%- else -%}
+											<button type="button" class="hover:underline" data-module-dialog-button data-dialog-button-id="offer-unavailable">
+												{{- item.title -}}
+											</button>
+										{%- endif -%}
+									{%- else -%}
 										<a
 											class="{{
-												html_classes( item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline' )
+												html_classes( item.current ? 'underline' : '', 'hover:underline' )
 											}}"
 											href="{{ item.link }}"
 											{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
 										>
 											{{- item.title -}}
 										</a>
-
-										{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
-											<ul class="lg:text-3xl my-8 pl-4">
-												{% for child in item.children %}
-													<li>
-														<a
-															class="{{
-																html_classes( child.current ? 'underline' : '', 'hover:underline' )
-															}}"
-															href="{{ child.link }}"
-															{{ child.is_target_blank or child.is_external ? 'target="_blank" rel="noopener noreferer"' }}
-														>
-															{{- child.title -}}
-														</a>
-													</li>
-												{% endfor %}
-											</ul>
-										{% endif %}
-									{%- else -%}
-										<button type="button" class="hover:underline" data-module-dialog-button data-dialog-button-id="offer-unavailable">
-											{{- item.title -}}
-										</button>
 									{%- endif -%}
-								{%- else -%}
-									<a
-										class="{{
-											html_classes( item.current ? 'underline' : '', 'hover:underline' )
-										}}"
-										href="{{ item.link }}"
-										{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
-									>
-										{{- item.title -}}
-									</a>
-								{%- endif -%}
-							</li>
-						{% endfor %}
-					</ul>
-					<hr class="border-none h-1 bg-white block w-full my-13">
-				{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+						<hr class="border-none h-1 bg-white block w-full my-13">
+					{% endif %}
 
-				<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
-				{{- include( 'components/socials.html.twig' ) -}}
-			</aside>
-		</div>
+					<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
+					{{- include( 'components/socials.html.twig' ) -}}
+				</aside>
+			</div>
+		{% endblock %}
 
 		{% block footer %}
 			{{- include( 'footer.html.twig' ) -}}

@@ -7,43 +7,60 @@
 
 {% extends 'index.html.twig' %}
 
-{% block content %}
+{% block header %}{% endblock %}
 
-	<div class="container my-20 first:mt-0 last:mb-0">
-		<div class="row">
-			<div class="lg:col-6/12 lg:ml-3/12">
-				<div class="p-12 border border-blue-dark-grayish-20">
-					{% if user %}
-						<div class="mt-3 mb-14 first:mt-0 last:mb-0">
-							<a class="block h-8" href="{{ site.link }}">
-								<img class="block h-full mx-auto" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="">
-							</a>
-						</div>
-						<div class="mt-3 mb-4 first:mt-0 last:mb-0">
-							<h3 class="text-center ont-semibold text-red-light">
-								{{- __( 'Howdy %s', 'weblexpro-dashboard' ) | format( user.user_login ) -}}
-							</h3>
-						</div>
-						<div class="my-3 first:mt-0 last:mb-0">
-							<p class="text-center text-blue-dark-grayish">
-								{{- __( 'You are already logged in.', 'weblexpro-dashboard' ) -}}
-							</p>
-						</div>
-						<div class="flex justify-between mt-5 mb-3 first:mt-0 last:mb-0">
-							<a class="flex items-center text-xs text-blue-bright hover:underline" href="{{ dashboard_url }}">
-								{{- include( 'svg/use.html.twig', { classes: [ 'mr-2', 'fill-current', 'w-4', 'h-4' ], icon: 'user-circle' } ) -}}
-								{{- __( 'Dashboard', 'weblexpro-dashboard' ) -}}
-							</a>
-							<a class="text-xs text-red-light hover:underline" href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
-								{{- __( 'Log out', 'weblexpro-dashboard' ) -}}
-							</a>
-						</div>
-					{% else %}
-						{{ post.login_form }}
-					{% endif %}
+{% block wrapper %}
+
+	<main class="fixed inset-0 w-full h-full">
+
+		<div class="overflow-auto scrollbar-hide h-full">
+			<div class="container py-20 first:mt-0 last:mb-0 relative z-2">
+				<div class="row items-center">
+					<div class="lg:col-6/12">
+
+							{% if user %}
+								<div class="first:mt-0 last:mb-0">
+									<a class="block" href="{{ site.link }}">
+										<img class="block mx-auto" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="" width="618" height="114">
+									</a>
+								</div>
+								<div class="mt-3 mb-4 first:mt-0 last:mb-0">
+									<h3 class="text-center ont-semibold text-red-light">
+										{{- __( 'Howdy %s', 'weblexpro-dashboard' ) | format( user.user_login ) -}}
+									</h3>
+								</div>
+								<div class="my-3 first:mt-0 last:mb-0">
+									<p class="text-center text-blue-dark-grayish">
+										{{- __( 'You are already logged in.', 'weblexpro-dashboard' ) -}}
+									</p>
+								</div>
+								<div class="flex justify-between mt-5 mb-3 first:mt-0 last:mb-0">
+									<a class="flex items-center hover:underline" href="{{ dashboard_url }}">
+										{{- include( 'svg/use.html.twig', { classes: [ 'mr-2', 'fill-current', 'w-4', 'h-4' ], icon: 'user-circle' } ) -}}
+										{{- __( 'Dashboard', 'weblexpro-dashboard' ) -}}
+									</a>
+									<a class="text-red-light hover:underline" href="{{ wp_logout_url( front_url ) | e( 'esc_url' ) }}">
+										{{- __( 'Log out', 'weblexpro-dashboard' ) -}}
+									</a>
+								</div>
+							{% else %}
+								{{ post.login_form }}
+								<div class="my-9 text-center">{{ __( 'or', 'weblexpro-dashboard' ) }}</div>
+								<div class="text-center">
+									<a target="_blank" rel="noopener noreferer" href="{{ url_weblexpro_contact }}" class="inline-block align-middle text-center button bg-blue-dark rounded-2xl text-white p-5">{{ __( 'I would like a presentation', 'weblexpro-dashboard' ) }}</a>
+								</div>
+							{% endif %}
+
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<picture>
+			<source srcset="{{ theme.manifest[ 'img/png/front-page-background.png' ] | towebp }}" type="image/webp">
+			<source srcset="{{ theme.manifest[ 'img/png/front-page-background.png' ] }}" type="image/png">
+			<img class="absolute right-0 inset-y-0 w-auto h-full hidden lg:block" src="{{ theme.manifest[ 'img/png/front-page-background.png' ] | towebp }}" alt="{{ site.title }}" width="754" height="926">
+		</picture>
+	</main>
 
 {% endblock %}

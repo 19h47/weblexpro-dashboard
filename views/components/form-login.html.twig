@@ -9,14 +9,18 @@
 
 <form name="loginform" action="{{ action | e( 'esc_url' ) }}" method="post">
 
-	<div class="mt-3 mb-14 first:mt-0 last:mb-0">
-		<a class="block h-8" href="{{ site.link }}">
-			<img class="block h-full mx-auto" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="">
+	<div class="mb-14 first:mt-0 last:mb-0">
+		<a class="block" href="{{ site.link }}">
+			<img class="block mx-auto" src="{{ asset( 'img/svg/logo.svg' ) }}" alt="" width="618" height="114">
 		</a>
 	</div>
 
 	<div class="my-3 first:mt-0 last:mb-0">
-		{{- forms.text({ id: 'user_login', name: 'log', label: __( 'Username or Email Address', 'weblexpro-dashboard' ) }) -}}
+		{{-
+			forms.text({
+				id: 'user_login', name: 'log', label: __( 'Username or Email Address', 'weblexpro-dashboard' )
+			})
+		-}}
 	</div>
 	<div class="my-3 first:mt-0 last:mb-0">
 		{{-
@@ -31,10 +35,10 @@
 			})
 		-}}
 	</div>
-	<div class="mt-3 mb-10 first:mt-0 last:mb-0">
-		<label class="flex text-blue-dark">
+	<div class="mt-6 mb-10 first:mt-0 last:mb-0 flex justify-between items-center text-blue-dark">
+		<label class="flex gap-x-3 items-center">
 			<input
-				class="w-4 h-4 mt-1 mr-1 border rounded-sm appearance-none min-w-4 bg-blue-light-grayish border-blue-light-grayish checked:bg-blue-vivid checked:border-blue-vivid checked:shadow-lg"
+				class="w-7 h-7 border rounded-sm appearance-none min-w-4 bg-gray border-gray checked:bg-blue-vivid checked:border-blue-vivid checked:shadow-lg"
 				name="rememberme"
 				type="checkbox"
 				id="rememberme"
@@ -44,15 +48,15 @@
 				{{- __( 'Remember Me', 'weblexpro-dashboard' ) -}}
 			</span>
 		</label>
-	</div>
-	<div class="mt-10 mb-3 first:mt-0 last:mb-0">
-		<input type="submit" name="wp-submit" id="wp-submit" class="w-full button" value="{{ __( 'Log In', 'weblexpro-dashboard' ) }}">
-		<input type="hidden" name="redirect_to" value="{{ redirect | e }}">
-	</div>
 
-	<div class="my-3 text-right first:mt-0 last:mb-0">
-		<a class="text-xs text-blue-bright hover:underline" href="{{ lostpassword_url | e( 'esc_url' ) }}">
-			{{- __( 'Lost your password?', 'weblexpro-dashboard' ) -}}
-		</a>
+		<div class="text-right first:mt-0 last:mb-0">
+			<a class="hover:underline" href="{{ lostpassword_url | e( 'esc_url' ) }}">
+				{{- __( 'Lost your password?', 'weblexpro-dashboard' ) -}}
+			</a>
+		</div>
+	</div>
+	<div class="mt-10 first:mt-0 last:mb-0 text-center">
+		<input type="submit" name="wp-submit" id="wp-submit" class="w-auto button bg-blue-dark rounded-2xl text-white p-5" value="{{ __( 'Log In', 'weblexpro-dashboard' ) }}">
+		<input type="hidden" name="redirect_to" value="{{ redirect | e }}">
 	</div>
 </form>

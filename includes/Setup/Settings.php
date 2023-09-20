@@ -75,11 +75,10 @@ class Settings {
 		add_settings_field(
 			'facebook',
 			__( 'Facebook', 'weblexpro-dashboard' ),
-			array( $this, 'text_callback_function' ),
+			array( $this, 'url_callback_function' ),
 			'general',
 			'socials',
 			array(
-				'type'        => 'url',
 				'name'        => 'facebook',
 				'placeholder' => 'https://www.facebook.com/artvandelay',
 				'description' => __( 'Enter the Facebook URL here.', 'weblexpro-dashboard' ),
@@ -89,11 +88,10 @@ class Settings {
 		add_settings_field(
 			'instagram',
 			__( 'Instagram', 'weblexpro-dashboard' ),
-			array( $this, 'text_callback_function' ),
+			array( $this, 'url_callback_function' ),
 			'general',
 			'socials',
 			array(
-				'type'        => 'url',
 				'name'        => 'instagram',
 				'placeholder' => 'https://instagram.com/artvandelay',
 				'description' => __( 'Enter the Instagram URL here.', 'weblexpro-dashboard' ),
@@ -103,11 +101,10 @@ class Settings {
 		add_settings_field(
 			'youtube',
 			__( 'YouTube', 'weblexpro-dashboard' ),
-			array( $this, 'text_callback_function' ),
+			array( $this, 'url_callback_function' ),
 			'general',
 			'socials',
 			array(
-				'type'        => 'url',
 				'name'        => 'youtube',
 				'placeholder' => 'https://youtube.com/artvandelay',
 				'description' => __( 'Enter the YouTube URL here.', 'weblexpro-dashboard' ),
@@ -117,11 +114,10 @@ class Settings {
 		add_settings_field(
 			'twitter',
 			__( 'Twitter', 'weblexpro-dashboard' ),
-			array( $this, 'text_callback_function' ),
+			array( $this, 'url_callback_function' ),
 			'general',
 			'socials',
 			array(
-				'type'        => 'url',
 				'name'        => 'twitter',
 				'placeholder' => 'https://www.twitter.com/artvandelay',
 				'description' => __( 'Enter the Twitter URL here.', 'weblexpro-dashboard' ),
@@ -131,11 +127,10 @@ class Settings {
 		add_settings_field(
 			'linkedin',
 			__( 'LinkedIn', 'weblexpro-dashboard' ),
-			array( $this, 'text_callback_function' ),
+			array( $this, 'url_callback_function' ),
 			'general',
 			'socials',
 			array(
-				'type'        => 'url',
 				'name'        => 'linkedin',
 				'placeholder' => 'https://www.linkedin.com/artvandelay',
 				'description' => __( 'Enter the LinkedIn URL here.', 'weblexpro-dashboard' ),
