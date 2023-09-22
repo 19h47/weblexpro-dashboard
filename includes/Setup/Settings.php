@@ -138,36 +138,6 @@ class Settings {
 		);
 
 		add_settings_field(
-			'copyright',
-			__( 'Copyright', 'weblexpro-dashboard' ),
-			array( $this, 'textarea_callback_function' ),
-			'reading',
-			'default',
-			array(
-				'id'          => 'copyright',
-				'name'        => 'copyright',
-				'value'       => get_option( 'copyright' ),
-				'placeholder' => __( 'Copyright', 'weblexpro-dashboard' ),
-				'rows'        => 6,
-			)
-		);
-
-		add_settings_field(
-			'address',
-			__( 'Address', 'weblexpro-dashboard' ),
-			array( $this, 'textarea_callback_function' ),
-			'reading',
-			'default',
-			array(
-				'id'          => 'address',
-				'name'        => 'address',
-				'rows'        => 4,
-				'value'       => get_option( 'address' ),
-				'placeholder' => __( 'Address', 'weblexpro-dashboard' ),
-			)
-		);
-
-		add_settings_field(
 			'notice',
 			__( 'Notice', 'weblexpro-dashboard' ),
 			array( $this, 'text_callback_function' ),

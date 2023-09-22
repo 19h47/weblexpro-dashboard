@@ -81,7 +81,7 @@ class Document {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'title' === $key ) {
-				$new_columns['thumbnail'] = __( 'Thumbnail', 'weblexprodashboard' );
+				$new_columns['thumbnail'] = __( 'Thumbnail', 'weblexpro-dashboard' );
 			}
 
 			$new_columns[ $key ] = $value;
@@ -138,34 +138,34 @@ class Document {
 		$view_link_html = sprintf(
 			' <a href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'View document', 'weblexprodashboard' )
+			__( 'View document', 'weblexpro-dashboard' )
 		);
 
 		$scheduled_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'Preview document', 'weblexprodashboard' )
+			__( 'Preview document', 'weblexpro-dashboard' )
 		);
 
 		$preview_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( $preview_url ),
-			__( 'Preview document', 'weblexprodashboard' )
+			__( 'Preview document', 'weblexpro-dashboard' )
 		);
 
 		$messages['document'] = array(
 			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Document updated.', 'weblexprodashboard' ) . $view_link_html,
-			2  => __( 'Custom field updated.', 'weblexprodashboard' ),
-			3  => __( 'Custom field deleted.', 'weblexprodashboard' ),
-			4  => __( 'Document updated.', 'weblexprodashboard' ),
+			1  => __( 'Document updated.', 'weblexpro-dashboard' ) . $view_link_html,
+			2  => __( 'Custom field updated.', 'weblexpro-dashboard' ),
+			3  => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
+			4  => __( 'Document updated.', 'weblexpro-dashboard' ),
 			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'weblexprodashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-			6  => __( 'Document published.', 'weblexprodashboard' ) . $view_link_html,
-			7  => __( 'Document saved.', 'weblexprodashboard' ),
-			8  => __( 'Document submitted.', 'weblexprodashboard' ) . $preview_link_html,
-			9  => sprintf( __( 'Document scheduled for: %s.', 'weblexprodashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-			10 => __( 'Document draft updated.', 'weblexprodashboard' ) . $preview_link_html,
+			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
+			6  => __( 'Document published.', 'weblexpro-dashboard' ) . $view_link_html,
+			7  => __( 'Document saved.', 'weblexpro-dashboard' ),
+			8  => __( 'Document submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
+			9  => sprintf( __( 'Document scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
+			10 => __( 'Document draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -185,16 +185,16 @@ class Document {
 	public function bulk_updated_messages( array $bulk_messages, array $bulk_counts ) : array {
 		$bulk_messages['document'] = array(
 			/* translators: %s: Number of documents. */
-			'updated'   => _n( '%s document updated.', '%s documents updated.', $bulk_counts['updated'], 'weblexprodashboard' ),
-			'locked'    => ( 1 === $bulk_counts['locked'] ) ? __( '1 document not updated, somebody is editing it.', 'weblexprodashboard' ) :
+			'updated'   => _n( '%s document updated.', '%s documents updated.', $bulk_counts['updated'], 'weblexpro-dashboard' ),
+			'locked'    => ( 1 === $bulk_counts['locked'] ) ? __( '1 document not updated, somebody is editing it.', 'weblexpro-dashboard' ) :
 				/* translators: %s: Number of documents. */
-				_n( '%s document not updated, somebody is editing it.', '%s documents not updated, somebody is editing them.', $bulk_counts['locked'], 'weblexprodashboard' ),
+				_n( '%s document not updated, somebody is editing it.', '%s documents not updated, somebody is editing them.', $bulk_counts['locked'], 'weblexpro-dashboard' ),
 			/* translators: %s: Number of documents. */
-			'deleted'   => _n( '%s document permanently deleted.', '%s document permanently deleted.', $bulk_counts['deleted'], 'weblexprodashboard' ),
+			'deleted'   => _n( '%s document permanently deleted.', '%s document permanently deleted.', $bulk_counts['deleted'], 'weblexpro-dashboard' ),
 			/* translators: %s: Number of documents. */
-			'trashed'   => _n( '%s document moved to the Trash.', '%s document moved to the Trash.', $bulk_counts['trashed'], 'weblexprodashboard' ),
+			'trashed'   => _n( '%s document moved to the Trash.', '%s document moved to the Trash.', $bulk_counts['trashed'], 'weblexpro-dashboard' ),
 			/* translators: %s: Number of documents. */
-			'untrashed' => _n( '%s document restored from the Trash.', '%s document restored from the Trash.', $bulk_counts['untrashed'], 'weblexprodashboard' ),
+			'untrashed' => _n( '%s document restored from the Trash.', '%s document restored from the Trash.', $bulk_counts['untrashed'], 'weblexpro-dashboard' ),
 		);
 
 		return $bulk_messages;
@@ -209,34 +209,34 @@ class Document {
 	 */
 	public function register() : void {
 		$labels = array(
-			'name'                     => _x( 'Documents', 'document type generale name', 'weblexprodashboard' ),
-			'singular_name'            => _x( 'Document', 'document type singular name', 'weblexprodashboard' ),
-			'add_new'                  => _x( 'Add New', 'document type', 'weblexprodashboard' ),
-			'add_new_item'             => __( 'Add New Document', 'weblexprodashboard' ),
-			'edit_item'                => __( 'Edit Document', 'weblexprodashboard' ),
-			'new_item'                 => __( 'New Document', 'weblexprodashboard' ),
-			'view_items'               => __( 'View Documents', 'weblexprodashboard' ),
-			'view_item'                => __( 'View Document', 'weblexprodashboard' ),
-			'search_items'             => __( 'Search Documents', 'weblexprodashboard' ),
-			'not_found'                => __( 'No Documents found.', 'weblexprodashboard' ),
-			'not_found_in_trash'       => __( 'No Documents found in Trash.', 'weblexprodashboard' ),
-			'parent_item_colon'        => __( 'Parent Document:', 'weblexprodashboard' ),
-			'all_items'                => __( 'All Documents', 'weblexprodashboard' ),
-			'archives'                 => __( 'Document Archives', 'weblexprodashboard' ),
-			'attributes'               => __( 'Document Attributes', 'weblexprodashboard' ),
-			'insert_into_item'         => __( 'Insert into document', 'weblexprodashboard' ),
-			'uploaded_to_this_item'    => __( 'Uploaded to this document', 'weblexprodashboard' ),
-			'featured_image'           => _x( 'Featured Image', 'document', 'weblexprodashboard' ),
-			'set_featured_image'       => _x( 'Set featured image', 'document', 'weblexprodashboard' ),
-			'remove_featured_image'    => _x( 'Remove featured image', 'document', 'weblexprodashboard' ),
-			'use_featured_image'       => _x( 'Use as featured image', 'document', 'weblexprodashboard' ),
-			'items_list_navigation'    => __( 'Documents list navigation', 'weblexprodashboard' ),
-			'items_list'               => __( 'Documents list', 'weblexprodashboard' ),
-			'item_published'           => __( 'Document published.', 'weblexprodashboard' ),
-			'item_published_privately' => __( 'Document published privately.', 'weblexprodashboard' ),
-			'item_reverted_to_draft'   => __( 'Document reverted to draft.', 'weblexprodashboard' ),
-			'item_scheduled'           => __( 'Document scheduled.', 'weblexprodashboard' ),
-			'item_updated'             => __( 'Document updated.', 'weblexprodashboard' ),
+			'name'                     => _x( 'Documents', 'document type generale name', 'weblexpro-dashboard' ),
+			'singular_name'            => _x( 'Document', 'document type singular name', 'weblexpro-dashboard' ),
+			'add_new'                  => _x( 'Add New', 'document type', 'weblexpro-dashboard' ),
+			'add_new_item'             => __( 'Add New Document', 'weblexpro-dashboard' ),
+			'edit_item'                => __( 'Edit Document', 'weblexpro-dashboard' ),
+			'new_item'                 => __( 'New Document', 'weblexpro-dashboard' ),
+			'view_items'               => __( 'View Documents', 'weblexpro-dashboard' ),
+			'view_item'                => __( 'View Document', 'weblexpro-dashboard' ),
+			'search_items'             => __( 'Search Documents', 'weblexpro-dashboard' ),
+			'not_found'                => __( 'No Documents found.', 'weblexpro-dashboard' ),
+			'not_found_in_trash'       => __( 'No Documents found in Trash.', 'weblexpro-dashboard' ),
+			'parent_item_colon'        => __( 'Parent Document:', 'weblexpro-dashboard' ),
+			'all_items'                => __( 'All Documents', 'weblexpro-dashboard' ),
+			'archives'                 => __( 'Document Archives', 'weblexpro-dashboard' ),
+			'attributes'               => __( 'Document Attributes', 'weblexpro-dashboard' ),
+			'insert_into_item'         => __( 'Insert into document', 'weblexpro-dashboard' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this document', 'weblexpro-dashboard' ),
+			'featured_image'           => _x( 'Featured Image', 'document', 'weblexpro-dashboard' ),
+			'set_featured_image'       => _x( 'Set featured image', 'document', 'weblexpro-dashboard' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'document', 'weblexpro-dashboard' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'document', 'weblexpro-dashboard' ),
+			'items_list_navigation'    => __( 'Documents list navigation', 'weblexpro-dashboard' ),
+			'items_list'               => __( 'Documents list', 'weblexpro-dashboard' ),
+			'item_published'           => __( 'Document published.', 'weblexpro-dashboard' ),
+			'item_published_privately' => __( 'Document published privately.', 'weblexpro-dashboard' ),
+			'item_reverted_to_draft'   => __( 'Document reverted to draft.', 'weblexpro-dashboard' ),
+			'item_scheduled'           => __( 'Document scheduled.', 'weblexpro-dashboard' ),
+			'item_updated'             => __( 'Document updated.', 'weblexpro-dashboard' ),
 		);
 
 		$rewrite = array(
@@ -245,7 +245,7 @@ class Document {
 		);
 
 		$args = array(
-			'label'               => __( 'Document', 'weblexprodashboard' ),
+			'label'               => __( 'Document', 'weblexpro-dashboard' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'thumbnail', 'editor' ),
 			'public'              => true,

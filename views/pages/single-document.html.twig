@@ -73,7 +73,7 @@
 								{% if 'audio' == document.file.type and document.file %}
 									<div class="flex items-center p-5 border rounded border-black/20">
 										<audio class="w-full" controls src="{{ document.file.url }}">
-											{{- __( "Sorry, your browser doesn't support the audio element.", 'weblexprodashboard' ) -}}
+											{{- __( "Sorry, your browser doesn't support the audio element.", 'weblexpro-dashboard' ) -}}
 										</audio>
 									</div>
 								{% elseif 'video' == document.file.type and document.file %}
@@ -81,7 +81,7 @@
 										<div class="relative pb-[56.25%] h-auto max-w-full overflow-hidden">
 											<video controls class="absolute inset-0 w-full h-full">
 												<source src="{{ document.file.url }}" type="{{ mime_type }}">
-												{{ __( "Sorry, your browser doesn't support embedded videos.", 'weblexprodashboard' ) -}}
+												{{ __( "Sorry, your browser doesn't support embedded videos.", 'weblexpro-dashboard' ) -}}
 											</video>
 										</div>
 									</div>
@@ -89,7 +89,7 @@
 									<a download class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
 										<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
 
-										<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexprodashboard' ) -}}</p>
+										<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexpro-dashboard' ) -}}</p>
 									</a>
 								{% endif %}
 

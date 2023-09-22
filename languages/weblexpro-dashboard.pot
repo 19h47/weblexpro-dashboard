@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-09-20 13:53+0200\n"
+"POT-Creation-Date: 2023-09-22 17:22+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -73,7 +73,7 @@ msgstr ""
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:63
 #: includes/Plugins/ACF/Fields/UserFormFields.php:66
 #: includes/Plugins/ACF/Fields/UserFormFields.php:82
-#: includes/Setup/Settings.php:210
+#: includes/Setup/Settings.php:180
 msgid "Documents"
 msgstr ""
 
@@ -107,11 +107,8 @@ msgid "Color"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:93
-msgid "Catchphrase"
-msgstr ""
-
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:96
-msgid "catchphrase"
+msgid "Catchphrase"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:100
@@ -156,7 +153,7 @@ msgid "Offers"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:55
-#: includes/Setup/Settings.php:198
+#: includes/Setup/Settings.php:168
 msgid "Likes"
 msgstr ""
 
@@ -663,42 +660,34 @@ msgid "Enter the LinkedIn URL here."
 msgstr ""
 
 #: includes/Setup/Settings.php:142 includes/Setup/Settings.php:150
-msgid "Copyright"
-msgstr ""
-
-#: includes/Setup/Settings.php:157 includes/Setup/Settings.php:166
-msgid "Address"
-msgstr ""
-
-#: includes/Setup/Settings.php:172 includes/Setup/Settings.php:180
 msgid "Notice"
 msgstr ""
 
-#: includes/Setup/Settings.php:186 views/pages/front-page.html.twig:40
+#: includes/Setup/Settings.php:156 views/pages/front-page.html.twig:40
 msgid "Dashboard"
 msgstr ""
 
-#: includes/Setup/Settings.php:192
+#: includes/Setup/Settings.php:162
 msgid "Page Dashboard"
 msgstr ""
 
-#: includes/Setup/Settings.php:204
+#: includes/Setup/Settings.php:174
 msgid "Page Likes"
 msgstr ""
 
-#: includes/Setup/Settings.php:216
+#: includes/Setup/Settings.php:186
 msgid "Page Documents"
 msgstr ""
 
-#: includes/Setup/Settings.php:222
+#: includes/Setup/Settings.php:192
 msgid "Contact"
 msgstr ""
 
-#: includes/Setup/Settings.php:228
+#: includes/Setup/Settings.php:198
 msgid "Page Contact"
 msgstr ""
 
-#: includes/Setup/Settings.php:234 includes/Setup/Settings.php:241
+#: includes/Setup/Settings.php:204 includes/Setup/Settings.php:211
 msgid "WebLexPro Contact Page"
 msgstr ""
 

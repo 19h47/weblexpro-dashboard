@@ -41,6 +41,10 @@ class PostStates {
 			$post_states[] = __( 'Likes Page', 'weblexpro-dashboard' );
 		}
 
+		if ( 'templates/contact.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+			$post_states[] = __( 'Contact Page', 'weblexpro-dashboard' );
+		}
+
 		if ( 'templates/documents.php' === get_post_meta( $post->ID, '_wp_page_template', true ) ) {
 			$post_states[] = __( 'Documents Page', 'weblexpro-dashboard' );
 		}

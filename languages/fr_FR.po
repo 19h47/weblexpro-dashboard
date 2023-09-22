@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-09-20 13:54+0200\n"
-"PO-Revision-Date: 2023-09-20 13:54+0200\n"
+"POT-Creation-Date: 2023-09-22 17:26+0200\n"
+"PO-Revision-Date: 2023-09-22 17:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -73,7 +73,7 @@ msgstr "Champs de la catégorie de document"
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:63
 #: includes/Plugins/ACF/Fields/UserFormFields.php:66
 #: includes/Plugins/ACF/Fields/UserFormFields.php:82
-#: includes/Setup/Settings.php:210
+#: includes/Setup/Settings.php:180
 msgid "Documents"
 msgstr "Documents"
 
@@ -107,12 +107,9 @@ msgid "Color"
 msgstr "Couleur"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:93
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:96
 msgid "Catchphrase"
 msgstr "Phrase d’accroche"
-
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:96
-msgid "catchphrase"
-msgstr "phrase d’accroche"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:100
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:105
@@ -156,7 +153,7 @@ msgid "Offers"
 msgstr "Offres"
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:55
-#: includes/Setup/Settings.php:198
+#: includes/Setup/Settings.php:168
 msgid "Likes"
 msgstr "Favoris"
 
@@ -171,7 +168,7 @@ msgstr "Catégorie"
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:104
 msgid "Mag URL"
-msgstr "Man URL"
+msgstr "URL du magazine"
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:108
 msgid ""
@@ -654,7 +651,7 @@ msgstr "Indiquer l’URL du compte YouTube."
 
 #: includes/Setup/Settings.php:116
 msgid "Twitter"
-msgstr "Partager sur Twitter"
+msgstr "Twitter"
 
 #: includes/Setup/Settings.php:123
 msgid "Enter the Twitter URL here."
@@ -669,42 +666,34 @@ msgid "Enter the LinkedIn URL here."
 msgstr "Indiquer l’URL du compte LinkedIn."
 
 #: includes/Setup/Settings.php:142 includes/Setup/Settings.php:150
-msgid "Copyright"
-msgstr "Droit d’auteur"
-
-#: includes/Setup/Settings.php:157 includes/Setup/Settings.php:166
-msgid "Address"
-msgstr "Adresse postale"
-
-#: includes/Setup/Settings.php:172 includes/Setup/Settings.php:180
 msgid "Notice"
 msgstr "Notification"
 
-#: includes/Setup/Settings.php:186 views/pages/front-page.html.twig:40
+#: includes/Setup/Settings.php:156 views/pages/front-page.html.twig:40
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: includes/Setup/Settings.php:192
+#: includes/Setup/Settings.php:162
 msgid "Page Dashboard"
 msgstr "Page du tableau de bord"
 
-#: includes/Setup/Settings.php:204
+#: includes/Setup/Settings.php:174
 msgid "Page Likes"
 msgstr "Page des favoris"
 
-#: includes/Setup/Settings.php:216
+#: includes/Setup/Settings.php:186
 msgid "Page Documents"
 msgstr "Page des documents"
 
-#: includes/Setup/Settings.php:222
+#: includes/Setup/Settings.php:192
 msgid "Contact"
 msgstr "Contact"
 
-#: includes/Setup/Settings.php:228
+#: includes/Setup/Settings.php:198
 msgid "Page Contact"
 msgstr "Page Contact"
 
-#: includes/Setup/Settings.php:234 includes/Setup/Settings.php:241
+#: includes/Setup/Settings.php:204 includes/Setup/Settings.php:211
 msgid "WebLexPro Contact Page"
 msgstr "Page de contact de WebLexPro"
 
@@ -813,6 +802,10 @@ msgid "Likes Page"
 msgstr "Page des favoris"
 
 #: includes/Template/PostStates.php:45
+msgid "Contact Page"
+msgstr "Page de contact"
+
+#: includes/Template/PostStates.php:49
 msgid "Documents Page"
 msgstr "Page des documents"
 
@@ -968,6 +961,15 @@ msgstr "19h47"
 #. Author URI of the plugin/theme
 msgid "https://www.19h47.fr/"
 msgstr "https://www.19h47.fr/"
+
+#~ msgid "Copyright"
+#~ msgstr "Droit d’auteur"
+
+#~ msgid "Address"
+#~ msgstr "Adresse postale"
+
+#~ msgid "catchphrase"
+#~ msgstr "phrase d’accroche"
 
 #~ msgid "No documents to display yet"
 #~ msgstr "Aucun documents à afficher pour le moment"

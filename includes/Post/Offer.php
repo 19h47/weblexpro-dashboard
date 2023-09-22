@@ -298,7 +298,7 @@ class Offer {
 			'label'               => __( 'Offer', 'weblexpro-dashboard' ),
 			'description'         => __( 'Offer Description', 'weblexpro-dashboard' ),
 			'labels'              => $labels,
-			'supports'            => array( 'title', 'thumbnail', 'editor' ),
+			'supports'            => array( 'title', 'editor' ),
 			'taxonomies'          => array( 'offer_category' ),
 			'public'              => true,
 			'show_ui'             => true,

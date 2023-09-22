@@ -113,7 +113,7 @@ class DocumentCategory {
 				if ( $thumbnail ) {
 					$html  = '<a href="' . esc_attr( get_edit_term_link( $term_id, 'document_category', 'document' ) ) . '"';
 					$html .= '>';
-					$html .= wp_get_attachment_image( $thumbnail, 'medium' );
+					$html .= wp_get_attachment_image( $thumbnail );
 					$html .= '</a>';
 				}
 

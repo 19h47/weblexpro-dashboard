@@ -35,7 +35,8 @@ class User {
 		$post_id = (int) $_GET['postId']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$user_id = (int) $_GET['userId']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-		$likes = get_field( 'likes', "user_{$user_id}" );
+
+		$likes = (array) get_field( 'likes', "user_{$user_id}" );
 
 		$search = array_search( $post_id, $likes, true );
 

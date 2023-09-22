@@ -93,7 +93,7 @@ class OfferPostFields {
 				'label'       => __( 'Catchphrase', 'weblexpro-dashboard' ),
 				'name'        => 'catchphrase',
 				'type'        => 'text',
-				'placeholder' => __( 'catchphrase', 'weblexpro-dashboard' ),
+				'placeholder' => __( 'Catchphrase', 'weblexpro-dashboard' ),
 			),
 			array(
 				'key'         => 'field_' . $key . '_description',

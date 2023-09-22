@@ -103,7 +103,6 @@ class UserFormFields {
 				'key'          => 'field_' . $key . '_mag_url',
 				'label'        => __( 'Mag URL', 'weblexpro-dashboard' ),
 				'name'         => 'mag_url',
-				'aria-label'   => '',
 				'type'         => 'url',
 				'instructions' => __( 'Indicate the URL of the magazine to integrate for users who have subscribed to the Mag offer.', 'weblexpro-dashboard' ),
 				'placeholder'  => __( 'https://mag-experts.fr/weblex/', 'weblexpro-dashboard' ),
