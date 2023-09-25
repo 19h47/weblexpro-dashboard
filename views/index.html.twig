@@ -94,7 +94,7 @@
 					{% endblock %}
 				</main>
 
-				<aside class="bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
+				<aside class="lg:min-h-[calc(100vh_-_7.125rem)] bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
 					{% if nav_menus.main.get_items() and user %}
 						<ul class="space-y-3">
 							{% for item in nav_menus.main.get_items() %}
@@ -103,12 +103,21 @@
 										{%- if item.master_object.ID in user.meta( 'offers' ) -%}
 											<a
 												class="{{
-													html_classes( item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline' )
+													html_classes(
+														item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline',
+														'flex gap-x-4 items-center'
+													)
 												}}"
 												href="{{ item.link }}"
 												{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
 											>
 												{{- item.title -}}
+
+												{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+													{{ icon( 'chevron-up', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
+												{% elseif item.children %}
+													{{ icon( 'chevron-down', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
+												{% endif %}
 											</a>
 
 											{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
@@ -150,8 +159,10 @@
 						<hr class="border-none h-1 bg-white block w-full my-13">
 					{% endif %}
 
-					<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
-					{{- include( 'components/socials.html.twig' ) -}}
+					<div class="flex lg:inline-flex flex-col items-center">
+						<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
+						{{- include( 'components/socials.html.twig' ) -}}
+					</div>
 				</aside>
 			</div>
 		{% endblock %}

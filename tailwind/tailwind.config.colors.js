@@ -13,6 +13,6 @@ module.exports = {
 	},
 	gray: {
 		DEFAULT: '#BABABA',
-		'very-dark': '#686868'
+		'very-dark': '#707070'
 	}
 };

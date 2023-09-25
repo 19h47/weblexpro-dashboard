@@ -21,8 +21,8 @@
 							<a href="{{ category.link }}" class="relative min-h-[17.1875rem] text-white justify-center text-center w-[17.1875rem] flex items-end lg:text-5xl py-8 px-5"
 								style="background-color: {{ post.meta( 'color' ) }};">
 
-								<div>
-									{{ category.name }}
+								<div class="h-full flex flex-col">
+									<h2 class="my-auto">{{ category.name }}</h2>
 
 									{{- include( 'components/image.html.twig', { image: category.meta( 'image' ), classes: [ 'mt-8 mx-auto w-38 h-20 object-contain' ] } ) -}}
 								</div>

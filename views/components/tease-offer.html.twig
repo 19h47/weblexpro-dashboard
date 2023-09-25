@@ -8,12 +8,25 @@
  #}
 
 <article
-	class="lg:text-2xl"
+	class="lg:text-2xl relative group"
 	 style="
 		{{ active ? '' : 'color: #BABABA;' }}
 	"
 >
-	<header class="text-white relative mr-8 -mb-24">
+
+	{%- if active -%}
+		<a href="{{ offer.link }}" class="absolute inset-0 w-full h-full z-2" aria-label="{{ post.title }}"></a>
+	{%- else -%}
+		<button
+			type="button"
+			class="absolute inset-0 w-full h-full z-2"
+			data-module-dialog-button
+			data-dialog-button-id="offer-unavailable"
+			aria-label="{{ __( 'En savoir plus...', 'weblexpro-dashboard' ) }}"
+		></button>
+	{%- endif -%}
+
+	<header class="text-white mr-8 -mb-24 relative z-1">
 		<div
 			class="relative z-2 w-full p-4 lg:px-11 min-h-[7rem]"
 			style="background-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }}">
@@ -31,26 +44,23 @@
 	</header>
 
 	<div
-		class="border-[3px] ml-4 pt-33.5"
+		class="border-[3px] ml-4 pt-33.5 relative z-1"
 		style="border-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }};"
 	>
 		<p class="px-7">{{- post.meta( 'description' ) -}}</p>
 		<footer class="mt-1 text-right">
 			{%- if active -%}
-				<a href="{{ offer.link }}" class="py-3 px-10 inline-block" style="background-color: {{ post.meta( 'color' ) | default( '#BABABA' ) }};">
+				<div class="py-3 px-10 inline-block" style="background-color: {{ post.meta( 'color' ) | default( '#BABABA' ) }};">
 					<span class="w-6 h-6 border-white border rounded-full flex items-center justify-center">
 						{{- icon( 'chevron-right', { classes: [ 'w-2 h-3 fill-white' ] } ) -}}
 					</span>
-				</a>
+				</div>
 			{%- else -%}
-				<button
-					type="button"
-					class="text-xl bg-gray text-white py-3 px-4 hover:underline"
-					data-module-dialog-button
-					data-dialog-button-id="offer-unavailable"
+				<div
+					class="text-xl bg-gray text-white py-3 px-4 group-hover:underline inline-block"
 				>
 					{{- __( 'En savoir plus...', 'weblexpro-dashboard' ) -}}
-				</button>
+				</div>
 			{%- endif -%}
 		</footer>
 	</div>
