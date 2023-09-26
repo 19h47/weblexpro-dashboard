@@ -2,7 +2,7 @@
 /**
  * Class Offer
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -14,6 +14,7 @@ use Timber\{ Timber };
  * Offer class
  */
 class Offer {
+
 
 	/**
 	 * Runs initialization tasks.
@@ -36,7 +37,7 @@ class Offer {
 	 *
 	 * @return bool
 	 */
-	public function css() : bool {
+	public function css(): bool {
 		global $typenow;
 
 		if ( 'offer' !== $typenow ) {
@@ -85,11 +86,11 @@ class Offer {
 	/**
 	 * Add custom columns
 	 *
-	 * @param array $columns Array of columns.
+	 * @param  array $columns Array of columns.
 	 * @return array $new_columns
-	 * @link https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
+	 * @link   https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
 	 */
-	public function add_custom_columns( array $columns ) : array {
+	public function add_custom_columns( array $columns ): array {
 		$new_columns = array();
 
 		unset( $columns['date'] );
@@ -110,12 +111,12 @@ class Offer {
 	 * Render custom columns
 	 *
 	 * @param string $column_name The column name.
-	 * @param int    $post_id The ID of the post.
-	 * @link https://developer.wordpress.org/reference/hooks/manage_post-post_type_posts_custom_column/
+	 * @param int    $post_id     The ID of the post.
+	 * @link  https://developer.wordpress.org/reference/hooks/manage_post-post_type_posts_custom_column/
 	 *
 	 * @return void
 	 */
-	public function render_custom_columns( string $column_name, int $post_id ) : void {
+	public function render_custom_columns( string $column_name, int $post_id ): void {
 		$color = get_field( 'color', $post_id );
 
 		switch ( $column_name ) {
@@ -166,12 +167,12 @@ class Offer {
 	/**
 	 * Updated messages
 	 *
-	 * @param array $messages Post updated messages. For defaults see $messages declarations above.
+	 * @param  array $messages Post updated messages. For defaults see $messages declarations above.
 	 * @return array $message
-	 * @link https://developer.wordpress.org/reference/hooks/post_updated_messages/
+	 * @link   https://developer.wordpress.org/reference/hooks/post_updated_messages/
 	 * @access public
 	 */
-	public function updated_messages( array $messages ) : array {
+	public function updated_messages( array $messages ): array {
 		global $post;
 
 		$post_ID     = isset( $post_ID ) ? (int) $post_ID : 0;
@@ -199,18 +200,18 @@ class Offer {
 		);
 
 		$messages['offer'] = array(
-			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Offer updated.', 'weblexpro-dashboard' ) . $view_link_html,
-			2  => __( 'Custom field updated.', 'weblexpro-dashboard' ),
-			3  => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
-			4  => __( 'Offer updated.', 'weblexpro-dashboard' ),
+			0 => '', // Unused. Messages start at index 1.
+			1 => __( 'Offer updated.', 'weblexpro-dashboard' ) . $view_link_html,
+			2 => __( 'Custom field updated.', 'weblexpro-dashboard' ),
+			3 => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
+			4 => __( 'Offer updated.', 'weblexpro-dashboard' ),
 			/* translators: %s: date and time of the revision */
         	5  => isset( $_GET['revision'] ) ? sprintf( __( 'Offer restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-			6  => __( 'Offer published.', 'weblexpro-dashboard' ) . $view_link_html,
-			7  => __( 'Offer saved.', 'weblexpro-dashboard' ),
-			8  => __( 'Offer submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
+		6     => __( 'Offer published.', 'weblexpro-dashboard' ) . $view_link_html,
+		7     => __( 'Offer saved.', 'weblexpro-dashboard' ),
+		8     => __( 'Offer submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
         	9  => sprintf( __( 'Offer scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-			10 => __( 'Offer draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
+		10    => __( 'Offer draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -221,13 +222,13 @@ class Offer {
 	 * Bulk updated messages
 	 *
 	 * @param array $bulk_messages Arrays of messages, each keyed by the corresponding post type. Messages are keyed with 'updated', 'locked', 'deleted', 'trashed', and 'untrashed'.
-	 * @param array $bulk_counts Array of item counts for each message, used to build internationalized strings.
+	 * @param array $bulk_counts   Array of item counts for each message, used to build internationalized strings.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/bulk_post_updated_messages/
 	 *
 	 * @return array $bulk_counts
 	 */
-	public function bulk_updated_messages( array $bulk_messages, array $bulk_counts ) : array {
+	public function bulk_updated_messages( array $bulk_messages, array $bulk_counts ): array {
 		$bulk_counts_updated   = $bulk_counts['updated'];
 		$bulk_counts_locked    = $bulk_counts['locked'];
 		$bulk_counts_deleted   = $bulk_counts['deleted'];
@@ -238,8 +239,8 @@ class Offer {
 			/* translators: %s: Number of offers. */
 			'updated'   => _n( '%s offer updated.', '%s offers updated.', $bulk_counts_updated, 'weblexpro-dashboard' ),
 			'locked'    => ( 1 === $bulk_counts_locked ) ? __( '1 offer not updated, somebody is editing it.', 'weblexpro-dashboard' ) :
-				/* translators: %s: Number of offers. */
-				_n( '%s offer not updated, somebody is editing it.', '%s offers not updated, somebody is editing them.', $bulk_counts_locked, 'weblexpro-dashboard' ),
+			/* translators: %s: Number of offers. */
+			_n( '%s offer not updated, somebody is editing it.', '%s offers not updated, somebody is editing them.', $bulk_counts_locked, 'weblexpro-dashboard' ),
 			/* translators: %s: Number of offers. */
 			'deleted'   => _n( '%s offer permanently deleted.', '%s offer permanently deleted.', $bulk_counts_deleted, 'weblexpro-dashboard' ),
 			/* translators: %s: Number of offers. */
@@ -258,7 +259,7 @@ class Offer {
 	 * @return void
 	 * @access public
 	 */
-	public function register() : void {
+	public function register(): void {
 		$labels = array(
 			'name'                     => _x( 'Offers', 'offer type generale name', 'weblexpro-dashboard' ),
 			'singular_name'            => _x( 'Offer', 'offer type singular name', 'weblexpro-dashboard' ),

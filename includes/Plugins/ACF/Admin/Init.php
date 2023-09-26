@@ -2,18 +2,17 @@
 /**
  * Init
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage Dagobert/Plugins/ACF/Admin
  */
 
 namespace Dagobert\Plugins\ACF\Admin;
 
-use Timber\Timber;
-
 /**
  * Init
  */
 class Init {
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -27,13 +26,15 @@ class Init {
 	 * Add options pages
 	 */
 	public function add_options_theme() {
-		$parent = acf_add_options_page(
-			array(
-				'page_title' => __( 'Theme Settings', 'dagobert' ),
-				'menu_slug'  => 'theme-settings',
-				'capability' => 'edit_posts',
-				'icon_url'   => 'dashicons-admin-settings',
-			)
-		);
+		if ( function_exists( 'acf_add_options_page' ) ) {
+			acf_add_options_page(
+				array(
+					'page_title' => __( 'Theme Settings', 'weblexpro-dashboard' ),
+					'menu_slug'  => 'theme-settings',
+					'capability' => 'edit_posts',
+					'icon_url'   => 'dashicons-admin-settings',
+				)
+			);
+		}
 	}
 }

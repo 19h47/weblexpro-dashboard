@@ -2,7 +2,7 @@
 /**
  * General Template
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -13,12 +13,13 @@ namespace WebLexProDashboard;
  */
 class GeneralTemplate {
 
+
 	/**
 	 * Runs initialization tasks.
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_filter( 'loginout', array( $this, 'loginout' ), 10, 1 );
 	}
 
@@ -27,7 +28,7 @@ class GeneralTemplate {
 	 *
 	 * @param string $loginout The loginout string.
 	 */
-	public function loginout( string $loginout ) : string {
+	public function loginout( string $loginout ): string {
 		$loginout = str_replace( '<a', '<a class="w-full button"', $loginout );
 
 		return $loginout;

@@ -2,7 +2,7 @@
 /**
  * AdminHeader
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -13,12 +13,13 @@ namespace WebLexProDashboard;
  */
 class AdminHeader {
 
+
 	/**
 	 * Runs initialization tasks.
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 	}
 

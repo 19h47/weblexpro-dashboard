@@ -2,7 +2,7 @@
 /**
  * Supports
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -13,12 +13,13 @@ namespace WebLexProDashboard\Setup;
  */
 class Supports {
 
+
 	/**
 	 * Runs initialization tasks.
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_supports' ) );
 		add_action( 'after_setup_theme', array( $this, 'add_post_type_supports' ) );
 	}
@@ -29,20 +30,20 @@ class Supports {
 	 *
 	 * @return void
 	 */
-	public function add_theme_supports() : void {
+	public function add_theme_supports(): void {
 		add_theme_support( 'title-tag' );
 
 		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
+		* Enable support for Post Thumbnails on posts and pages.
+		*
+		* @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		*/
 		add_theme_support( 'post-thumbnails' );
 
 		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
+		* Switch default core markup for search form, comment form, and comments
+		* to output valid HTML5.
+		*/
 		add_theme_support(
 			'html5',
 			array(
@@ -63,7 +64,7 @@ class Supports {
 	 *
 	 * @return void
 	 */
-	public function add_post_type_supports() : void {
+	public function add_post_type_supports(): void {
 		add_post_type_support( 'page', 'excerpt' );
 	}
 }

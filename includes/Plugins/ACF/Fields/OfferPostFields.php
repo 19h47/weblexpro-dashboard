@@ -2,7 +2,7 @@
 /**
  * Member Offer Fields
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Plugins\ACF\Fields;
  * Member Offer Fields
  */
 class OfferPostFields {
+
 	/**
 	 * Runs initialization tasks.
 	 *

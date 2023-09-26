@@ -2,7 +2,7 @@
 /**
  * Class Document
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Post;
  * Document class
  */
 class Document {
+
 
 	/**
 	 * Runs initialization tasks.
@@ -34,7 +35,7 @@ class Document {
 	 *
 	 * @return bool
 	 */
-	public function css() : bool {
+	public function css(): bool {
 		global $typenow;
 
 		if ( 'document' !== $typenow ) {
@@ -70,11 +71,11 @@ class Document {
 	/**
 	 * Add custom columns
 	 *
-	 * @param array $columns Array of columns.
+	 * @param  array $columns Array of columns.
 	 * @return array $new_columns
-	 * @link https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
+	 * @link   https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
 	 */
-	public function add_custom_columns( array $columns ) : array {
+	public function add_custom_columns( array $columns ): array {
 		$new_columns = array();
 
 		unset( $columns['date'] );
@@ -94,12 +95,12 @@ class Document {
 	 * Render custom columns
 	 *
 	 * @param string $column_name The column name.
-	 * @param int    $post_id The ID of the post.
-	 * @link https://developer.wordpress.org/reference/hooks/manage_post-post_type_posts_custom_column/
+	 * @param int    $post_id     The ID of the post.
+	 * @link  https://developer.wordpress.org/reference/hooks/manage_post-post_type_posts_custom_column/
 	 *
 	 * @return void
 	 */
-	public function render_custom_columns( string $column_name, int $post_id ) : void {
+	public function render_custom_columns( string $column_name, int $post_id ): void {
 		switch ( $column_name ) {
 			case 'thumbnail':
 				$thumbnail = get_the_post_thumbnail( $post_id, 'medium' );
@@ -121,12 +122,12 @@ class Document {
 	/**
 	 * Updated messages
 	 *
-	 * @param array $messages Post updated messages. For defaults see $messages declarations above.
+	 * @param  array $messages Post updated messages. For defaults see $messages declarations above.
 	 * @return array $message
-	 * @link https://developer.wordpress.org/reference/hooks/post_updated_messages/
+	 * @link   https://developer.wordpress.org/reference/hooks/post_updated_messages/
 	 * @access public
 	 */
-	public function updated_messages( array $messages ) : array {
+	public function updated_messages( array $messages ): array {
 		global $post;
 
 		$post_ID     = isset( $post_ID ) ? (int) $post_ID : 0;
@@ -154,18 +155,18 @@ class Document {
 		);
 
 		$messages['document'] = array(
-			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Document updated.', 'weblexpro-dashboard' ) . $view_link_html,
-			2  => __( 'Custom field updated.', 'weblexpro-dashboard' ),
-			3  => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
-			4  => __( 'Document updated.', 'weblexpro-dashboard' ),
+			0 => '', // Unused. Messages start at index 1.
+			1 => __( 'Document updated.', 'weblexpro-dashboard' ) . $view_link_html,
+			2 => __( 'Custom field updated.', 'weblexpro-dashboard' ),
+			3 => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
+			4 => __( 'Document updated.', 'weblexpro-dashboard' ),
 			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-			6  => __( 'Document published.', 'weblexpro-dashboard' ) . $view_link_html,
-			7  => __( 'Document saved.', 'weblexpro-dashboard' ),
-			8  => __( 'Document submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
-			9  => sprintf( __( 'Document scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-			10 => __( 'Document draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
+      5  => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
+		6     => __( 'Document published.', 'weblexpro-dashboard' ) . $view_link_html,
+		7     => __( 'Document saved.', 'weblexpro-dashboard' ),
+		8     => __( 'Document submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
+      9  => sprintf( __( 'Document scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
+		10    => __( 'Document draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -176,19 +177,19 @@ class Document {
 	 * Bulk updated messages
 	 *
 	 * @param array $bulk_messages Arrays of messages, each keyed by the corresponding post type. Messages are keyed with 'updated', 'locked', 'deleted', 'trashed', and 'untrashed'.
-	 * @param array $bulk_counts Array of item counts for each message, used to build internationalized strings.
+	 * @param array $bulk_counts   Array of item counts for each message, used to build internationalized strings.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/bulk_post_updated_messages/
 	 *
 	 * @return array $bulk_counts
 	 */
-	public function bulk_updated_messages( array $bulk_messages, array $bulk_counts ) : array {
+	public function bulk_updated_messages( array $bulk_messages, array $bulk_counts ): array {
 		$bulk_messages['document'] = array(
 			/* translators: %s: Number of documents. */
 			'updated'   => _n( '%s document updated.', '%s documents updated.', $bulk_counts['updated'], 'weblexpro-dashboard' ),
 			'locked'    => ( 1 === $bulk_counts['locked'] ) ? __( '1 document not updated, somebody is editing it.', 'weblexpro-dashboard' ) :
-				/* translators: %s: Number of documents. */
-				_n( '%s document not updated, somebody is editing it.', '%s documents not updated, somebody is editing them.', $bulk_counts['locked'], 'weblexpro-dashboard' ),
+			/* translators: %s: Number of documents. */
+			_n( '%s document not updated, somebody is editing it.', '%s documents not updated, somebody is editing them.', $bulk_counts['locked'], 'weblexpro-dashboard' ),
 			/* translators: %s: Number of documents. */
 			'deleted'   => _n( '%s document permanently deleted.', '%s document permanently deleted.', $bulk_counts['deleted'], 'weblexpro-dashboard' ),
 			/* translators: %s: Number of documents. */
@@ -207,7 +208,7 @@ class Document {
 	 * @return void
 	 * @access public
 	 */
-	public function register() : void {
+	public function register(): void {
 		$labels = array(
 			'name'                     => _x( 'Documents', 'document type generale name', 'weblexpro-dashboard' ),
 			'singular_name'            => _x( 'Document', 'document type singular name', 'weblexpro-dashboard' ),

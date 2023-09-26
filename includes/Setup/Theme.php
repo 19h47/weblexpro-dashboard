@@ -2,9 +2,9 @@
 /**
  * Bootstraps WordPress theme related functions, most importantly enqueuing javascript and styles.
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
- * @since 0.0.0
+ * @since      0.0.0
  */
 
 namespace WebLexProDashboard\Setup;
@@ -12,7 +12,7 @@ namespace WebLexProDashboard\Setup;
 use Timber\{ Timber, Site };
 use Twig\{ TwigFunction };
 use Twig\Extra\Html\HtmlExtension;
-use WebLexProDashboard\Models\{ Page };
+use WebLexProDashboard\Models\{ Document, Page };
 use WP_Post;
 
 Timber::init();
@@ -23,12 +23,13 @@ Timber::$dirname = array( 'views', 'templates', 'dist' );
  */
 class Theme extends Site {
 
+
 	/**
 	 * Constructor
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_filter( 'timber/context', array( $this, 'add_socials_to_context' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_theme' ) );
@@ -41,7 +42,7 @@ class Theme extends Site {
 	 *
 	 * @param array $context Timber context.
 	 */
-	public function add_to_theme( array $context ) : array {
+	public function add_to_theme( array $context ): array {
 		$manifest = get_theme_manifest();
 
 		$context['theme']->manifest = array();
@@ -57,10 +58,10 @@ class Theme extends Site {
 	/**
 	 * Add socials to context
 	 *
-	 * @param array $context Timber context.
+	 * @param  array $context Timber context.
 	 * @return array
 	 */
-	public function add_socials_to_context( array $context ) : array {
+	public function add_socials_to_context( array $context ): array {
 		// Share and Socials links.
 		$socials = array(
 			array(
@@ -129,7 +130,7 @@ class Theme extends Site {
 	 * @return array
 	 * @since  1.0.0
 	 */
-	public function add_to_context( array $context ) : array {
+	public function add_to_context( array $context ): array {
 		global $wp;
 
 		$context['current_url']           = home_url( add_query_arg( array(), $wp->request ) );
@@ -152,10 +153,13 @@ class Theme extends Site {
 	 *
 	 * @return array
 	 */
-	public function add_post_classmap( $classmap ) : array {
+	public function add_post_classmap( $classmap ): array {
 		$custom_classmap = array(
-			'page' => function( WP_Post $post ) {
+			'page'     => function ( WP_Post $post ) {
 				return Page::class;
+			},
+			'document' => function ( WP_Post $post ) {
+				return Document::class;
 			},
 		);
 

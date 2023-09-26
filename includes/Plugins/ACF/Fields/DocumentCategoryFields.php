@@ -2,7 +2,7 @@
 /**
  * Document Category Fields
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Plugins\ACF\Fields;
  * Document Category Fields
  */
 class DocumentCategoryFields {
+
 	/**
 	 * Runs initialization tasks.
 	 *

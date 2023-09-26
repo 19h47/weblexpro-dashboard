@@ -2,7 +2,7 @@
 /**
  * Loader
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -13,12 +13,13 @@ namespace WebLexProDashboard\Template;
  */
 class Loader {
 
+
 	/**
 	 * Runs initialization tasks.
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_action( 'template_redirect', array( $this, 'template_redirect' ) );
 	}
 

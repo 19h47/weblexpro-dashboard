@@ -2,7 +2,7 @@
 /**
  * Enqueue Scripts
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage Dagobert/Plugins/ACF/Admin
  */
 
@@ -12,6 +12,7 @@ namespace Dagobert\Plugins\ACF\Admin;
  * Enqueue Scripts
  */
 class EnqueueScripts {
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -27,6 +28,9 @@ class EnqueueScripts {
 	public function admin_enqueue_scripts() {
 		wp_enqueue_style(
 			get_theme_text_domain() . '-acf',
-			get_template_directory_uri() . '/includes/Plugins/ACF/Admin/style.css', false, null );
+			get_template_directory_uri() . '/includes/Plugins/ACF/Admin/style.css',
+			false,
+			null
+		);
 	}
 }

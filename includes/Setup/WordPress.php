@@ -2,7 +2,7 @@
 /**
  * Mostly involved with cleaning up default WordPress cruft.
  *
- * @package WebLexProDashboard
+ * @package    WebLexProDashboard
  * @subpackage WebLexProDashboard/WordPress
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Setup;
  * WordPress
  */
 class WordPress {
+
 
 	/**
 	 * Runs initialization tasks.
@@ -59,7 +60,7 @@ class WordPress {
 	 *
 	 * @return void
 	 */
-	public function remove_dashboard_widgets() : void {
+	public function remove_dashboard_widgets(): void {
 		global $wp_meta_boxes;
 
 		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
@@ -80,7 +81,7 @@ class WordPress {
 	 *
 	 * @return array $public_query_vars
 	 */
-	public function add_query_vars( array $public_query_vars ) : array {
+	public function add_query_vars( array $public_query_vars ): array {
 		$public_query_vars[] = 'view';
 
 		return $public_query_vars;

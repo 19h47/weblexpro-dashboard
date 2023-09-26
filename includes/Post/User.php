@@ -2,7 +2,7 @@
 /**
  * Class User
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Post;
  * User class
  */
 class User {
+
 
 	/**
 	 * Runs initialization tasks.
@@ -34,7 +35,6 @@ class User {
 
 		$post_id = (int) $_GET['postId']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$user_id = (int) $_GET['userId']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
 
 		$likes = (array) get_field( 'likes', "user_{$user_id}" );
 

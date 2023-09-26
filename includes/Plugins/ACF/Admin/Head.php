@@ -2,7 +2,7 @@
 /**
  * Head
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage Dagobert/Plugins/ACF/Admin
  */
 
@@ -12,6 +12,7 @@ namespace Dagobert\Plugins\ACF\Admin;
  * Head
  */
 class Head {
+
 	/**
 	 * Runs initialization tasks.
 	 *

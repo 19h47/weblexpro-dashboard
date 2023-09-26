@@ -2,7 +2,7 @@
 /**
  * Settings
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -13,12 +13,13 @@ namespace WebLexProDashboard\Setup;
  */
 class Settings {
 
+
 	/**
 	 * Runs initialization tasks.
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_action( 'admin_init', array( $this, 'settings_api_init' ) );
 		add_action( 'init', array( $this, 'register_settings' ) );
 	}
@@ -29,7 +30,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function settings_api_init() : void {
+	public function settings_api_init(): void {
 		add_settings_section(
 			'contacts',
 			'',
@@ -219,7 +220,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function socials_callback_function() : void {
+	public function socials_callback_function(): void {
 		echo '';
 	}
 
@@ -229,7 +230,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function contacts_callback_function() : void {
+	public function contacts_callback_function(): void {
 		echo '';
 	}
 
@@ -243,11 +244,11 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function dropdown_pages_callback_function( array $args ) : void {
+	public function dropdown_pages_callback_function( array $args ): void {
 		wp_dropdown_pages(
 			array(
 				'selected' => get_option( $args['name'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				'name'     => $args['name'], // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			'name'         => $args['name'], // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			)
 		);
 
@@ -264,7 +265,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function text_callback_function( array $args ) : void {
+	public function text_callback_function( array $args ): void {
 		wp_form_controls_input(
 			array(
 				'type'        => isset( $args['type'] ) && ! empty( $args['type'] ) ? $args['type'] : 'text',
@@ -284,7 +285,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function email_callback_function( $args ) : void {
+	public function email_callback_function( $args ): void {
 		wp_form_controls_input(
 			array(
 				'type'        => 'email',
@@ -309,7 +310,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function url_callback_function( $args ) : void {
+	public function url_callback_function( $args ): void {
 		wp_form_controls_input(
 			array(
 				'type'        => 'url',
@@ -327,10 +328,10 @@ class Settings {
 	 *
 	 * @param array $args Arguments.
 	 *
-	 * @see https://core.trac.wordpress.org/browser/tags/5.6/src/wp-includes/post-template.php#L1163
+	 * @see    https://core.trac.wordpress.org/browser/tags/5.6/src/wp-includes/post-template.php#L1163
 	 * @return void
 	 */
-	public function textarea_callback_function( array $args ) : void {
+	public function textarea_callback_function( array $args ): void {
 		wp_form_controls_textarea( $args );
 	}
 
@@ -342,7 +343,7 @@ class Settings {
 	 *
 	 * @return void
 	 */
-	public function register_settings() : void {
+	public function register_settings(): void {
 		$args = array(
 			'type'              => 'string',
 			'sanitize_callback' => 'sanitize_text_field',

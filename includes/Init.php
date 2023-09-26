@@ -2,7 +2,7 @@
 /**
  * Bootstraps WordPress theme related functions, most importantly enqueuing javascript and styles.
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -15,12 +15,13 @@ use WebLexProDashboard\{ WP, Setup, Plugins, Post, PostTemplate, Taxonomy, Gener
  */
 class Init {
 
+
 	/**
 	 * Store all the classes inside an array
 	 *
 	 * @return array Full list of classes
 	 */
-	public static function get_services() : array {
+	public static function get_services(): array {
 		$array = array(
 			WP\Query::class,
 			WP\Settings::class,
@@ -57,7 +58,7 @@ class Init {
 	 *
 	 * @return void
 	 */
-	public static function run_services() : void {
+	public static function run_services(): void {
 		foreach ( self::get_services() as $class ) {
 			$service = self::instantiate( $class );
 
@@ -74,7 +75,7 @@ class Init {
 	 * @param  string $class class name from the services array.
 	 * @return object
 	 */
-	private static function instantiate( string $class ) : object {
+	private static function instantiate( string $class ): object {
 		return new $class();
 	}
 }

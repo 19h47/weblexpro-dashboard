@@ -2,7 +2,7 @@
 /**
  * WebLexProDashboard functions and definitions
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WeblexProDashboard
  */
 // Autoloader.

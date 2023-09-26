@@ -2,7 +2,7 @@
 /**
  * Nav Menu
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -14,6 +14,7 @@ use Timber\{Timber};
  * Nav menu
  */
 class NavMenu {
+
 
 	/**
 	 * Runs initialization tasks.
@@ -46,8 +47,8 @@ class NavMenu {
 	 *
 	 * @param array $context Timber context.
 	 *
-	 * @see https://developer.wordpress.org/reference/functions/get_registered_nav_menus/
-	 * @since  1.0.0
+	 * @see   https://developer.wordpress.org/reference/functions/get_registered_nav_menus/
+	 * @since 1.0.0
 	 *
 	 * @return array
 	 */

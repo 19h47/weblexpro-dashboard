@@ -2,7 +2,7 @@
 /**
  * Theme Settings Fields
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Plugins\ACF\Fields;
  * Theme Settings Fields
  */
 class ThemeSettingsFields {
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -43,7 +44,7 @@ class ThemeSettingsFields {
 		$fields = array(
 			array(
 				'key'           => 'field_' . $key . '_case_studies',
-				'label'         => __( 'Case Studies', 'dagobert' ),
+				'label'         => __( 'Case Studies', 'weblexpro-dashboard' ),
 				'name'          => 'case_studies',
 				'type'          => 'relationship',
 				'post_type'     => array( 'case_study' ),
@@ -54,12 +55,12 @@ class ThemeSettingsFields {
 			array(
 				'key'        => 'fields_' . $key . '_footer',
 				'name'       => 'footer',
-				'label'      => __( 'Footer', 'dagobert' ),
+				'label'      => __( 'Footer', 'weblexpro-dashboard' ),
 				'type'       => 'group',
 				'sub_fields' => array(
 					array(
 						'key'           => 'field_' . $key . '_footer_stickers',
-						'label'         => __( 'Stickers', 'dagobert' ),
+						'label'         => __( 'Stickers', 'weblexpro-dashboard' ),
 						'name'          => 'stickers',
 						'type'          => 'gallery',
 						'return_format' => 'id',
@@ -76,7 +77,7 @@ class ThemeSettingsFields {
 			acf_add_local_field_group(
 				array(
 					'key'            => 'group_' . $key,
-					'title'          => __( 'Theme Settings Fields', 'dagobert' ),
+					'title'          => __( 'Theme Settings Fields', 'weblexpro-dashboard' ),
 					'fields'         => $fields,
 					'location'       => $location,
 					'hide_on_screen' => $hide_on_screen,

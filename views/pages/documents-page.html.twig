@@ -50,7 +50,7 @@
 												href="{{ document.file.url }}"
 												download
 											>
-												<hr class="w-10 h-0.5 bg-gray-very-dark">{{ document.file.title }}
+												<hr class="w-10 h-0.5 bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
 											</a>
 										{% endfor %}
 									</div>

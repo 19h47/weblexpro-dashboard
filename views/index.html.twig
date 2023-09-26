@@ -58,7 +58,7 @@
 		{% block wrapper %}
 			<div class="lg:flex">
 
-				<main class="my-17.5 space-y-15 lg:pl-21 w-full lg:order-2">
+				<main class="my-17.5 space-y-15 lg:pl-21 w-full lg:order-2 lg:relative lg:z-1">
 					{% block content %}
 						<div class="container">
 							<div class="row">
@@ -113,20 +113,24 @@
 											>
 												{{- item.title -}}
 
-												{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+												{% if ( 'document' == post.type or item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
 													{{ icon( 'chevron-up', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
 												{% elseif item.children %}
 													{{ icon( 'chevron-down', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
 												{% endif %}
 											</a>
 
-											{% if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+											{% if ( 'document' == post.type or item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
 												<ul class="lg:text-3xl my-8 pl-4">
 													{% for child in item.children %}
 														<li>
 															<a
 																class="{{
-																	html_classes( child.current ? 'underline' : '', 'hover:underline' )
+																	html_classes(
+																		'hover:underline',
+																		child.current ? 'underline' : '',
+																		post.ancestors and child.master_object.id in post.ancestors | map( a => a.id ) ? 'underline' : '',
+																	)
 																}}"
 																href="{{ child.link }}"
 																{{ child.is_target_blank or child.is_external ? 'target="_blank" rel="noopener noreferer"' }}
@@ -160,7 +164,10 @@
 					{% endif %}
 
 					<div class="flex lg:inline-flex flex-col items-center">
-						<h2 class="mb-7">{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</h2>
+						<a
+							class="{{ html_classes( 'mb-7', post.link == contact_url ? 'underline' : 'hover:underline' ) }}"
+							href="{{ contact_url }}"
+						>{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</a>
 						{{- include( 'components/socials.html.twig' ) -}}
 					</div>
 				</aside>

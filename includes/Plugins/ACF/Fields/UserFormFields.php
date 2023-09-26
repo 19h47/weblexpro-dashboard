@@ -2,7 +2,7 @@
 /**
  * User Form Fields
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Plugins\ACF\Fields;
  * User Form Fields
  */
 class UserFormFields {
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -36,6 +37,11 @@ class UserFormFields {
 					'param'    => 'user_form',
 					'operator' => '==',
 					'value'    => 'all',
+				),
+				array(
+					'param'    => 'user_role',
+					'operator' => '==',
+					'value'    => 'administrator',
 				),
 			),
 		);
@@ -85,6 +91,14 @@ class UserFormFields {
 						'layout'          => 'block',
 						'button_label'    => __( 'Add Document', 'weblexpro-dashboard' ),
 						'sub_fields'      => array(
+							array(
+								'key'             => 'field_' . $key . '_documents_documents_title',
+								'label'           => __( 'Title', 'weblexpro-dashboard' ),
+								'name'            => 'title',
+								'type'            => 'text',
+								'placeholder'     => __( 'Title', 'weblexpro-dashboard' ),
+								'parent_repeater' => 'field_' . $key . '_documents_documents',
+							),
 							array(
 								'key'             => 'field_' . $key . '_documents_documents_file',
 								'label'           => __( 'File', 'weblexpro-dashboard' ),

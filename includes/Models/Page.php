@@ -2,7 +2,7 @@
 /**
  * Page
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -11,9 +11,10 @@ namespace WebLexProDashboard\Models;
 use Timber\{ Timber, Post };
 
 /**
- * Class Front Page
+ * Class Page
  */
 class Page extends Post {
+
 
 	/**
 	 * Login Form

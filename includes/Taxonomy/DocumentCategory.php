@@ -4,9 +4,9 @@
  *
  * PHP version 8.0.0
  *
- * @author  Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -16,6 +16,7 @@ namespace WebLexProDashboard\Taxonomy;
  * DocumentCategory
  */
 class DocumentCategory {
+
 
 	/**
 	 * Runs initialization tasks.
@@ -36,7 +37,7 @@ class DocumentCategory {
 	 *
 	 * @return bool
 	 */
-	public function css() : bool {
+	public function css(): bool {
 		global $typenow, $taxonomy;
 
 		if ( 'document' !== $typenow && 'document_category' !== $taxonomy ) {
@@ -72,11 +73,11 @@ class DocumentCategory {
 	/**
 	 * Add custom columns
 	 *
-	 * @param array $columns Array of columns.
+	 * @param  array $columns Array of columns.
 	 * @return array $new_columns
-	 * @link https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
+	 * @link   https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
 	 */
-	public function add_custom_columns( array $columns ) : array {
+	public function add_custom_columns( array $columns ): array {
 		$new_columns = array();
 
 		unset( $columns['description'] );
@@ -96,15 +97,15 @@ class DocumentCategory {
 	/**
 	 * Render custom columns
 	 *
-	 * @param string $string Custom column output. Default empty.
+	 * @param string $string      Custom column output. Default empty.
 	 * @param string $column_name Name of the column.
-	 * @param int    $term_id Term ID.
+	 * @param int    $term_id     Term ID.
 	 *
 	 * @link https://developer.wordpress.org/reference/hooks/manage_this-screen-taxonomy_custom_column/
 	 *
 	 * @return void
 	 */
-	public function render_custom_columns( string $string, string $column_name, int $term_id ) : void {
+	public function render_custom_columns( string $string, string $column_name, int $term_id ): void {
 		switch ( $column_name ) {
 			case 'thumbnail':
 				$thumbnail = get_field( 'image', 'term_' . $term_id );
@@ -131,7 +132,7 @@ class DocumentCategory {
 	 *
 	 * @return void
 	 */
-	public function register() : void {
+	public function register(): void {
 
 		$labels = array(
 			'name'                       => _x( 'Categories', 'document category general name', 'weblexpro-dashboard' ),

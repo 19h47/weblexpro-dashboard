@@ -2,7 +2,7 @@
 /**
  * WebLexProDashboard helpers function
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -25,7 +25,7 @@ function get_theme_manifest() {
  * @return array Array of classes.
  * @access public
  */
-function get_html_class( $class = '' ) : array {
+function get_html_class( $class = '' ): array {
 	$classes = array();
 
 	if ( ! empty( $class ) ) {
@@ -55,10 +55,10 @@ function get_html_class( $class = '' ) : array {
 /**
  * Display the classes for the html element.
  *
- * @param string|array $class One or more classes to add to the class list.
+ * @param  string|array $class One or more classes to add to the class list.
  * @return string
  */
-function html_class( $class = '' ) : string {
+function html_class( $class = '' ): string {
 	// Separates classes with a single space, collates classes for html element.
 	return 'class="' . join( ' ', get_html_class( $class ) ) . '"';
 }
@@ -71,7 +71,7 @@ function html_class( $class = '' ) : string {
  * @return array
  * @access public
  */
-function get_webfonts() : array {
+function get_webfonts(): array {
 	return array();
 }
 
@@ -81,7 +81,7 @@ if ( function_exists( __NAMESPACE__ . '\get_theme_manifest' ) ) {
 	 * Asset
 	 *
 	 * @param string $asset Asset to retrieve from theme manifest.
-	 * @param bool   $echo Whether to echo or return.
+	 * @param bool   $echo  Whether to echo or return.
 	 *
 	 * @since 1.0.0
 	 */
@@ -91,7 +91,7 @@ if ( function_exists( __NAMESPACE__ . '\get_theme_manifest' ) ) {
 			$uri = get_template_directory_uri() . '/' . get_theme_manifest()[ $asset ];
 
 			if ( $echo ) {
-				echo esc_url( $uri ); //phpcs:ignore
+                echo esc_url( $uri ); //phpcs:ignore
 			} else {
 				return $uri;
 			}

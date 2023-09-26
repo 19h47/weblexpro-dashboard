@@ -2,7 +2,7 @@
 /**
  * Document Post Fields
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -12,6 +12,7 @@ namespace WebLexProDashboard\Plugins\ACF\Fields;
  * Document Post Fields
  */
 class DocumentPostFields {
+
 
 	/**
 	 * Runs initialization tasks.

@@ -9,9 +9,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WeblexProDashboard
- * @since 0.0.0
+ * @since      0.0.0
  */
 
 use Timber\{ Timber };
@@ -19,4 +19,4 @@ use Timber\{ Timber };
 $templates = array( 'index.html.twig' );
 $data      = Timber::context();
 
-Timber::render( $templates, $data );
+Timber::render($templates, $data);

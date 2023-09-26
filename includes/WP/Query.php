@@ -2,7 +2,7 @@
 /**
  * Query
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage WebLexProDashboard
  */
 
@@ -15,12 +15,13 @@ use WP_Query;
  */
 class Query {
 
+
 	/**
 	 * Runs initialization tasks.
 	 *
 	 * @return void
 	 */
-	public function run() : void {
+	public function run(): void {
 		add_action( 'pre_get_posts', array( $this, 'pre_get_search' ), 10, 1 );
 		add_filter( 'query_vars', array( $this, 'add_custom_query_var' ), 10, 1 );
 	}
@@ -53,7 +54,7 @@ class Query {
 	 *
 	 * @return array $public_query_vars
 	 */
-	public function add_custom_query_var( array $public_query_vars ) : array {
+	public function add_custom_query_var( array $public_query_vars ): array {
 		$public_query_vars[] = 'products';
 
 		return $public_query_vars;
