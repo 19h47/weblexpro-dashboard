@@ -14,8 +14,8 @@
 		"@19h47/scripts": "19h47/19h47-scripts"
 	},
 	"dependencies": {
-		"@19h47/accordion": "^4.7.2",
-		"@19h47/disclosure-button": "^0.0.5",
+		"@19h47/accordion": "^5.0.2",
+		"@19h47/disclosure-button": "^0.1.0",
 		"@19h47/modular": "19h47/19h47-modular",
 		"js-cookie": "^3.0.5"
 	}

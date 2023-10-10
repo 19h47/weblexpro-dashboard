@@ -1,0 +1,76 @@
+
+{#
+ # Page: Practical Sheets
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block content %}
+	{{- parent() -}}
+
+	{%- if user.meta( 'documents' ).practical_sheets -%}
+		<div class="container lg:text-3xl">
+			<div class="row">
+
+				<div
+					class="space-y-4"
+					data-module-accordion
+				>
+					{%- if user.meta( 'documents' ).practical_sheets -%}
+
+						{% set id = 'practical-sheets-' ~ uniqid() %}
+
+						<div
+							class="js-accordion-panel"
+							data-accordion-open="false"
+							data-accordion-deselect="true"
+						>
+							<button
+								class="js-accordion-header lg:text-4xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+								type="button"
+								aria-expanded="false"
+								aria-controls="{{ id }}"
+							>
+								{{- _n( 'Practical Sheet', 'Practical Sheets', user.meta( 'documents' ).practical_sheets | length, 'weblexpro-dashboard' ) -}}
+								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
+							</button>
+
+							<div
+								id="{{ id }}"
+								class="js-accordion-body lg:text-3xl"
+								role="region"
+							>
+								<div class="js-accordion-inner ml-6 lg:ml-20 pt-6">
+									<div class="border-l border-gray-very-dark">
+										{% for document in user.meta( 'documents' ).practical_sheets %}
+											<a
+												class="flex items-center gap-x-8 hover:underline"
+												href="{{ document.file.url }}"
+												download
+											>
+												<hr class="w-10 h-0.5 bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
+											</a>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endif %}
+
+				</div>
+
+			</div>
+		</div>
+	{%- else -%}
+		<div class="container lg:text-4xl text-blue-dark font-bold">
+			<div class="row">
+				<div>
+					{{- __( 'No practical sheets to display yet.', 'weblexpro-dashboard' ) -}}
+				</div>
+			</div>
+		</div>
+	{%- endif -%}
+{% endblock %}

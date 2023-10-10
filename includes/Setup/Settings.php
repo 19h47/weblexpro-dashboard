@@ -201,6 +201,18 @@ class Settings {
 		);
 
 		add_settings_field(
+			'page_practical_sheets',
+			__( 'Practical Sheets', 'weblexpro-dashboard' ),
+			array( $this, 'dropdown_pages_callback_function' ),
+			'reading',
+			'default',
+			array(
+				'name'        => 'page_practical_sheets',
+				'description' => __( 'Page Practical Sheets', 'weblexpro-dashboard' ),
+			)
+		);
+
+		add_settings_field(
 			'url_weblexpro_contact',
 			__( 'WebLexPro Contact Page', 'weblexpro-dashboard' ),
 			array( $this, 'url_callback_function' ),
@@ -362,6 +374,7 @@ class Settings {
 		register_setting( 'reading', 'page_contact' );
 		register_setting( 'reading', 'page_likes' );
 		register_setting( 'reading', 'page_documents' );
+		register_setting( 'reading', 'page_practical_sheets' );
 		register_setting( 'reading', 'url_weblexpro_contact' );
 	}
 }

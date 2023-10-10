@@ -159,6 +159,19 @@
 									{%- endif -%}
 								</li>
 							{% endfor %}
+
+							{%- if practical_sheets_url and user.meta( 'documents' ).practical_sheets -%}
+								<li class="m-1">
+									<a
+										class="{{
+											html_classes( post.url == practical_sheets_url ? 'underline' : '', 'hover:underline' )
+										}}"
+										href="{{ practical_sheets_url }}"
+									>
+										{{- __( 'My Practical Sheets', 'weblexpro-dashboard' ) -}}
+									</a>
+								</li>
+							{%- endif -%}
 						</ul>
 						<hr class="border-none h-1 bg-white block w-full my-13">
 					{% endif %}

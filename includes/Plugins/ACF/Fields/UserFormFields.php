@@ -28,8 +28,7 @@ class UserFormFields {
 	 * @return void
 	 */
 	public function fields() {
-		$key            = 'user_form';
-		$hide_on_screen = array();
+		$key = 'user_form';
 
 		$location = array(
 			array(
@@ -68,48 +67,92 @@ class UserFormFields {
 				'return_format' => 'id',
 			),
 			array(
-				'key'          => 'field_' . $key . '_documents',
-				'label'        => __( 'Documents', 'weblexpro-dashboard' ),
-				'name'         => 'documents',
-				'type'         => 'repeater',
-				'layout'       => 'block',
-				'button_label' => __( 'Add Category', 'weblexpro-dashboard' ),
-				'sub_fields'   => array(
+				'key'        => 'field_' . $key . '_documents',
+				'label'      => __( 'Documents', 'weblexpro-dashboard' ),
+				'name'       => 'documents',
+				'type'       => 'group',
+				'layout'     => 'block',
+				'sub_fields' => array(
 					array(
-						'key'             => 'field_' . $key . '_documents_category',
-						'label'           => __( 'Category', 'weblexpro-dashboard' ),
-						'name'            => 'category',
-						'type'            => 'text',
-						'placeholder'     => __( 'Category', 'weblexpro-dashboard' ),
-						'parent_repeater' => 'field_' . $key . '_documents',
-					),
-					array(
-						'key'             => 'field_' . $key . '_documents_documents',
-						'label'           => __( 'Documents', 'weblexpro-dashboard' ),
-						'name'            => 'documents',
-						'type'            => 'repeater',
-						'layout'          => 'block',
-						'button_label'    => __( 'Add Document', 'weblexpro-dashboard' ),
-						'sub_fields'      => array(
+						'key'          => 'field_' . $key . '_documents_bills',
+						'label'        => __( 'Bills', 'weblexpro-dashboard' ),
+						'name'         => 'bills',
+						'type'         => 'repeater',
+						'layout'       => 'block',
+						'button_label' => __( 'Add Bill', 'weblexpro-dashboard' ),
+						'sub_fields'   => array(
 							array(
-								'key'             => 'field_' . $key . '_documents_documents_title',
+								'key'             => 'field_' . $key . '_documents_bills_title',
 								'label'           => __( 'Title', 'weblexpro-dashboard' ),
 								'name'            => 'title',
 								'type'            => 'text',
 								'placeholder'     => __( 'Title', 'weblexpro-dashboard' ),
-								'parent_repeater' => 'field_' . $key . '_documents_documents',
+								'parent_repeater' => 'field_' . $key . '_documents_bills',
 							),
 							array(
-								'key'             => 'field_' . $key . '_documents_documents_file',
+								'key'             => 'field_' . $key . '_documents_bills_file',
 								'label'           => __( 'File', 'weblexpro-dashboard' ),
 								'name'            => 'file',
 								'type'            => 'file',
 								'return_format'   => 'array',
 								'library'         => 'all',
-								'parent_repeater' => 'field_' . $key . '_documents_documents',
+								'parent_repeater' => 'field_' . $key . '_documents_bills',
 							),
 						),
-						'parent_repeater' => 'field_' . $key . '_documents',
+					),
+					array(
+						'key'          => 'field_' . $key . '_documents_contracts',
+						'label'        => __( 'Contracts', 'weblexpro-dashboard' ),
+						'name'         => 'contracts',
+						'type'         => 'repeater',
+						'layout'       => 'block',
+						'button_label' => __( 'Add Contracts', 'weblexpro-dashboard' ),
+						'sub_fields'   => array(
+							array(
+								'key'             => 'field_' . $key . '_documents_contracts_title',
+								'label'           => __( 'Title', 'weblexpro-dashboard' ),
+								'name'            => 'title',
+								'type'            => 'text',
+								'placeholder'     => __( 'Title', 'weblexpro-dashboard' ),
+								'parent_repeater' => 'field_' . $key . '_documents_contracts',
+							),
+							array(
+								'key'             => 'field_' . $key . '_documents_contracts_file',
+								'label'           => __( 'File', 'weblexpro-dashboard' ),
+								'name'            => 'file',
+								'type'            => 'file',
+								'return_format'   => 'array',
+								'library'         => 'all',
+								'parent_repeater' => 'field_' . $key . '_documents_contracts',
+							),
+						),
+					),
+					array(
+						'key'          => 'field_' . $key . '_documents_practical_sheets',
+						'label'        => __( 'Practical Sheets', 'weblexpro-dashboard' ),
+						'name'         => 'practical_sheets',
+						'type'         => 'repeater',
+						'layout'       => 'block',
+						'button_label' => __( 'Add Practical Sheets', 'weblexpro-dashboard' ),
+						'sub_fields'   => array(
+							array(
+								'key'             => 'field_' . $key . '_documents_practical_sheets_title',
+								'label'           => __( 'Title', 'weblexpro-dashboard' ),
+								'name'            => 'title',
+								'type'            => 'text',
+								'placeholder'     => __( 'Title', 'weblexpro-dashboard' ),
+								'parent_repeater' => 'field_' . $key . '_documents_practical_sheets',
+							),
+							array(
+								'key'             => 'field_' . $key . '_documents_practical_sheets_file',
+								'label'           => __( 'File', 'weblexpro-dashboard' ),
+								'name'            => 'file',
+								'type'            => 'file',
+								'return_format'   => 'array',
+								'library'         => 'all',
+								'parent_repeater' => 'field_' . $key . '_documents_practical_sheets',
+							),
+						),
 					),
 				),
 			),

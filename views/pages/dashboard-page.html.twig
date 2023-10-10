@@ -8,7 +8,7 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-	{{ parent() }}
+	{{- parent() -}}
 
 	{% set offers = get_posts( { post_type: 'offer' } ) %}
 	{% set offers_user = offers | filter( o => o.id in user.meta( 'offers' ) ) %}
