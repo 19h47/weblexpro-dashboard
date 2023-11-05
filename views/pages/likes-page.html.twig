@@ -16,9 +16,19 @@
 				<div>
 					<div class="border-l border-gray-very-dark space-y-4 lg:space-y-0">
 						{%- for post in get_posts( { post_status: [ 'inherit', 'publish' ], post_type: [ 'document', 'attachment' ], post__in: user.meta( 'likes' ) } ) -%}
-
 							{%- if 'attachment' == post.post_type -%}
-								{{- include( 'components/tease-attachment.html.twig', { post: post } ) -}}
+								{% if post.id in user.meta( 'documents' ).practical_sheets | map(  d => d.file.id ) %}
+									{% for document in user.meta( 'documents' ).practical_sheets %}
+										{% if post.id == document.file.id %}
+											{{- include( 'components/tease-attachment.html.twig', { post: {
+												title: document.title  | default( post.title ),
+												guid: post.guid
+											} } ) -}}
+										{% endif %}
+									{% endfor %}
+								{%- else -%}
+									{{- include( 'components/tease-attachment.html.twig', { post: post } ) -}}
+								{%- endif -%}
 							{%- else -%}
 								{{- include( 'components/tease-document-child.html.twig', { post: post } ) -}}
 							{%- endif -%}
@@ -28,7 +38,7 @@
 			</div>
 		</div>
 	{%- else -%}
-		<div class="container lg:text-4xl text-blue-dark font-bold">
+		<div class="container lg:text-2xltext-blue-dark font-bold">
 			<div class="row">
 				<div>
 					{{- __( 'No likes to display yet.', 'weblexpro-dashboard' ) -}}

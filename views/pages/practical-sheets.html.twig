@@ -29,10 +29,11 @@
 							data-accordion-deselect="true"
 						>
 							<button
-								class="js-accordion-header lg:text-4xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+								class="js-accordion-header lg:text-2xlfont-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
 								type="button"
 								aria-expanded="false"
 								aria-controls="{{ id }}"
+								id="{{ id }}-header"
 							>
 								{{- _n( 'Practical Sheet', 'Practical Sheets', user.meta( 'documents' ).practical_sheets | length, 'weblexpro-dashboard' ) -}}
 								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
@@ -40,19 +41,40 @@
 
 							<div
 								id="{{ id }}"
-								class="js-accordion-body lg:text-3xl"
+								class="lg:text-2xl"
 								role="region"
 							>
-								<div class="js-accordion-inner ml-6 lg:ml-20 pt-6">
+								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
 									<div class="border-l border-gray-very-dark">
 										{% for document in user.meta( 'documents' ).practical_sheets %}
-											<a
-												class="flex items-center gap-x-8 hover:underline"
-												href="{{ document.file.url }}"
-												download
-											>
-												<hr class="w-10 h-0.5 bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
-											</a>
+											{% set post = get_post( document.file.id ) %}
+											{{- include( 'components/tease-attachment.html.twig', { post: {
+												title: document.title | default( document.file.title ),
+												guid: post.guid
+											} } ) -}}
+											{# <div class="lg:flex items-center justify-between">
+												<a
+													class="flex items-center gap-x-8 hover:underline"
+													href="{{ document.file.url }}"
+													download
+												>
+													<hr class="w-10 h-0.5 bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
+												</a>
+
+												<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
+
+													{{- include( 'components/button-like.html.twig', { user: user, id: document.file.id } ) -}}
+
+													<a
+														title="{{ document.file.title }}"
+														download href="{{ document.file.url }}"
+														class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+													>
+														{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+													</a>
+
+												</div>
+											</div> #}
 										{% endfor %}
 									</div>
 								</div>
@@ -65,7 +87,7 @@
 			</div>
 		</div>
 	{%- else -%}
-		<div class="container lg:text-4xl text-blue-dark font-bold">
+		<div class="container lg:text-2xltext-blue-dark font-bold">
 			<div class="row">
 				<div>
 					{{- __( 'No practical sheets to display yet.', 'weblexpro-dashboard' ) -}}

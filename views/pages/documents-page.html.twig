@@ -28,10 +28,11 @@
 							data-accordion-deselect="true"
 						>
 							<button
-								class="js-accordion-header lg:text-4xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+								class="js-accordion-header lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-8 flex w-full justify-between items-center"
 								type="button"
 								aria-expanded="false"
 								aria-controls="{{ id }}"
+								id="{{ id }}-header"
 							>
 								{{- _n( 'Bill', 'Bills', user.meta( 'documents' ).bills | length, 'weblexpro-dashboard' ) -}}
 								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
@@ -39,10 +40,10 @@
 
 							<div
 								id="{{ id }}"
-								class="js-accordion-body lg:text-3xl"
+								class="lg:text-2xl"
 								role="region"
 							>
-								<div class="js-accordion-inner ml-6 lg:ml-20 pt-6">
+								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
 									<div class="border-l border-gray-very-dark">
 										{% for document in user.meta( 'documents' ).bills %}
 											<a
@@ -69,10 +70,11 @@
 							data-accordion-deselect="true"
 						>
 							<button
-								class="js-accordion-header lg:text-4xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+								class="js-accordion-header lg:text-2xlfont-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
 								type="button"
 								aria-expanded="false"
 								aria-controls="{{ id }}"
+								id="{{ id }}-header"
 							>
 								{{- _n( 'Contract', 'Contracts', user.meta( 'documents' ).contracts | length, 'weblexpro-dashboard' ) -}}
 								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
@@ -80,10 +82,10 @@
 
 							<div
 								id="{{ id }}"
-								class="js-accordion-body lg:text-3xl"
+								class="lg:text-3xl"
 								role="region"
 							>
-								<div class="js-accordion-inner ml-6 lg:ml-20 pt-6">
+								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
 									<div class="border-l border-gray-very-dark">
 										{% for document in user.meta( 'documents' ).contracts %}
 											<a
@@ -104,7 +106,7 @@
 			</div>
 		</div>
 	{%- else -%}
-		<div class="container lg:text-4xl text-blue-dark font-bold">
+		<div class="container lg:text-2xltext-blue-dark font-bold">
 			<div class="row">
 				<div>
 					{{- __( 'No documents to display yet.', 'weblexpro-dashboard' ) -}}

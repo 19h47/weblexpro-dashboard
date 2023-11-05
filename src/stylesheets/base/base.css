@@ -10,7 +10,7 @@
 
 @layer base {
 	body {
-		@apply font-body text-xl font-medium text-gray-very-dark;
+		@apply font-body font-medium text-gray-very-dark;
 	}
 
 	/* Qlassik */

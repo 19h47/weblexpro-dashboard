@@ -14,12 +14,12 @@
 	{% set offers_user = offers | filter( o => o.id in user.meta( 'offers' ) ) %}
 	{% set offers_available = offers | filter( o => o.id not in user.meta( 'offers' ) ) %}
 
-	<div class="container space-y-13 text-blue-dark">
+	<div class="container space-y-12 text-blue-dark">
 
 		{%- if offers_user is iterable and offers_user | length -%}
 			<div class="row">
 				<div>
-					<h2 class="font-medium lg:text-3xl">
+					<h2 class="font-medium lg:text-2xl">
 						{{- _n( 'My subscription', 'My subscriptions', offers_user | length, 'weblexpro-dashboard' ) -}}</h2>
 					<hr class="block border-none bg-blue-dark h-px w-full mt-4">
 				</div>

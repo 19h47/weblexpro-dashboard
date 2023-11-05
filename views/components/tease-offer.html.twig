@@ -8,30 +8,29 @@
  #}
 
 <article
-	class="lg:text-2xl relative group"
-	 style="
-		{{ active ? '' : 'color: #BABABA;' }}
-	"
+	class="lg:text-xl relative group"
+	style="{{ active ? '' : 'color: #BABABA;' }}"
 >
 
 	{%- if active -%}
-		<a href="{{ offer.link }}" class="absolute inset-0 w-full h-full z-2" aria-label="{{ post.title }}"></a>
+		<a href="{{ offer.link }}" class="absolute inset-0 w-full h-full z-3" aria-label="{{ post.title }}"></a>
 	{%- else -%}
 		<button
 			type="button"
-			class="absolute inset-0 w-full h-full z-2"
+			class="absolute inset-0 w-full h-full z-3"
 			data-module-dialog-button
 			data-dialog-button-id="offer-unavailable"
 			aria-label="{{ __( 'En savoir plus...', 'weblexpro-dashboard' ) }}"
 		></button>
 	{%- endif -%}
 
-	<header class="text-white mr-8 -mb-24 relative z-1">
+	<header class="text-white mr-8 -mb-24 relative z-2">
 		<div
-			class="relative z-2 w-full p-4 lg:px-11 min-h-[7rem]"
-			style="background-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }}">
-			<h3 class="lg:text-[2.5rem] lg:leading-[3rem]">{{- post.meta( 'catchphrase' ) -}}</h3>
-			<p class="">{{- post.title -}}</p>
+			class="relative z-2 w-full p-4 lg:px-8 min-h-[7rem]"
+			style="background-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }}"
+		>
+			<h3 class="lg:text-3xl lg:leading-none">{{- post.meta( 'catchphrase' ) -}}</h3>
+			<p class="mt-2">{{- post.title -}}</p>
 		</div>
 
 		<div
@@ -44,10 +43,10 @@
 	</header>
 
 	<div
-		class="border-[3px] ml-4 pt-33.5 relative z-1"
+		class="border-2 ml-4 pt-32 relative z-1"
 		style="border-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }};"
 	>
-		<p class="px-7">{{- post.meta( 'description' ) -}}</p>
+		<p class="px-6">{{- post.meta( 'description' ) -}}</p>
 		<footer class="mt-1 text-right">
 			{%- if active -%}
 				<div class="py-3 px-10 inline-block" style="background-color: {{ post.meta( 'color' ) | default( '#BABABA' ) }};">

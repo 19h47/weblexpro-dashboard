@@ -58,7 +58,7 @@
 		{% block wrapper %}
 			<div class="lg:flex">
 
-				<main class="my-17.5 space-y-15 lg:pl-21 w-full lg:order-2 lg:relative lg:z-1">
+				<main class="my-16 space-y-14 lg:pl-20 w-full lg:order-2 lg:relative lg:z-1">
 					{% block content %}
 						<div class="container">
 							<div class="row">
@@ -83,7 +83,7 @@
 						</div>
 
 						{%- if post.content -%}
-							<div class="container lg:text-4xl text-blue-dark font-bold">
+							<div class="container lg:text-3xl text-blue-dark font-bold">
 								<div class="row">
 									<div>
 										{{- post.content -}}
@@ -94,7 +94,7 @@
 					{% endblock %}
 				</main>
 
-				<aside class="lg:min-h-[calc(100vh_-_7.125rem)] bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-4xl py-17.5 relative z-2 lg:order-1">
+				<aside class="lg:min-h-[calc(100vh_-_7.125rem)] bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-3xl lg:px-8 py-16 relative z-2 lg:order-1">
 					{% if nav_menus.main.get_items() and user %}
 						<ul class="space-y-3">
 							{% for item in nav_menus.main.get_items() %}
@@ -164,11 +164,11 @@
 								<li class="m-1">
 									<a
 										class="{{
-											html_classes( post.url == practical_sheets_url ? 'underline' : '', 'hover:underline' )
+											html_classes( post.link == practical_sheets_url ? 'underline' : '', 'hover:underline' )
 										}}"
 										href="{{ practical_sheets_url }}"
 									>
-										{{- __( 'My Practical Sheets', 'weblexpro-dashboard' ) -}}
+										{{- practical_sheets_title -}}
 									</a>
 								</li>
 							{%- endif -%}
@@ -204,7 +204,7 @@
 					<img src="{{ asset( 'img/svg/woman.svg' ) }}" class="-mr-12 relative z-2 pointer-events-none" width="101" hright="241" alt="">
 					<a
 						href="{{ url_weblexpro_contact }}"
-						class="relative text-white text-center z-1 block lg:text-4xl py-8 px-5 bg-red-light"
+						class="relative text-white text-center z-1 block lg:text-3xl py-8 px-5 bg-red-light"
 						target="_blank"
 						rel="noopener noreferer"
 					>

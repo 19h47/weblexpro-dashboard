@@ -133,16 +133,17 @@ class Theme extends Site {
 	public function add_to_context( array $context ): array {
 		global $wp;
 
-		$context['current_url']           = home_url( add_query_arg( array(), $wp->request ) );
-		$context['front_url']             = get_permalink( get_option( 'page_on_front' ) );
-		$context['dashboard_url']         = get_permalink( get_option( 'page_dashboard' ) );
-		$context['contact_url']           = get_permalink( get_option( 'page_contact' ) );
-		$context['likes_url']             = get_permalink( get_option( 'page_likes' ) );
-		$context['documents_url']         = get_permalink( get_option( 'page_documents' ) );
-		$context['practical_sheets_url']  = get_permalink( get_option( 'page_practical_sheets' ) );
-		$context['phone_number']          = get_option( 'phone_number' );
-		$context['notice']                = get_option( 'notice' );
-		$context['url_weblexpro_contact'] = get_option( 'url_weblexpro_contact' );
+		$context['current_url']            = home_url( add_query_arg( array(), $wp->request ) );
+		$context['front_url']              = get_permalink( get_option( 'page_on_front' ) );
+		$context['dashboard_url']          = get_permalink( get_option( 'page_dashboard' ) );
+		$context['contact_url']            = get_permalink( get_option( 'page_contact' ) );
+		$context['likes_url']              = get_permalink( get_option( 'page_likes' ) );
+		$context['documents_url']          = get_permalink( get_option( 'page_documents' ) );
+		$context['practical_sheets_title'] = get_the_title( get_option( 'page_practical_sheets' ) );
+		$context['practical_sheets_url']   = get_permalink( get_option( 'page_practical_sheets' ) );
+		$context['phone_number']           = get_option( 'phone_number' );
+		$context['notice']                 = get_option( 'notice' );
+		$context['url_weblexpro_contact']  = get_option( 'url_weblexpro_contact' );
 
 		return $context;
 	}

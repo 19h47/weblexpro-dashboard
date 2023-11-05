@@ -45,6 +45,12 @@
 		flex: 0 0 auto;
 	}
 
+	.col-1\.5\/12 {
+		@apply w-1.5/12 px-4;
+
+		flex: 0 0 auto;
+	}
+
 	.col-2\/12 {
 		@apply w-2/12 px-4;
 
@@ -53,6 +59,12 @@
 
 	.col-2\.4\/12 {
 		@apply w-2.4/12 px-4;
+
+		flex: 0 0 auto;
+	}
+
+	.col-2\.5\/12 {
+		@apply w-2.5/12 px-4;
 
 		flex: 0 0 auto;
 	}
@@ -77,6 +89,12 @@
 
 	.col-6\/12 {
 		@apply w-6/12 px-4;
+
+		flex: 0 0 auto;
+	}
+
+	.col-6\.5\/12 {
+		@apply w-6.5/12 px-4;
 
 		flex: 0 0 auto;
 	}

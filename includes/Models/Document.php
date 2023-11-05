@@ -23,13 +23,19 @@ class Document extends Post {
 	 * @return array
 	 */
 	public function ancestors() {
-		$ancestors = get_ancestors( $this->terms()[0]->id, '', 'taxonomy' );
+		$terms     = $this->terms(
+			array(
+				'taxonomy'   => 'document_category',
+				'object_ids' => $this->ID,
+			)
+		);
+		$ancestors = get_ancestors( $terms[0]->id, 'document_category', 'taxonomy' );
 
-		if ( is_array( $ancestors ) ) {
+		if ( is_array( $ancestors ) && ! empty( $ancestors ) ) {
 			return array_reverse( (array) Timber::get_terms( $ancestors ) );
 		}
 
-		return $this->terms();
+		return $terms;
 	}
 
 	/**

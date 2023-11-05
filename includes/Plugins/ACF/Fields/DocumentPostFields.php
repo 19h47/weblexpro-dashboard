@@ -45,12 +45,14 @@ class DocumentPostFields {
 					'name'        => 'title',
 					'type'        => 'text',
 					'placeholder' => __( 'Title', 'weblexpro-dashboard' ),
+					'wrapper'     => array( 'width' => 4 / 12 * 100 ),
 				),
 				array(
-					'key'   => 'field_' . $key . '_documents_file',
-					'label' => __( 'File', 'weblexpro-dashboard' ),
-					'name'  => 'file',
-					'type'  => 'file',
+					'key'     => 'field_' . $key . '_documents_file',
+					'label'   => __( 'File', 'weblexpro-dashboard' ),
+					'name'    => 'file',
+					'type'    => 'file',
+					'wrapper' => array( 'width' => 8 / 12 * 100 ),
 				),
 			),
 		);
@@ -70,7 +72,15 @@ class DocumentPostFields {
 				array(
 					'key'      => 'group_document',
 					'title'    => __( 'Document', 'weblexpro-dashboard' ),
-					'fields'   => array( $documents ),
+					'fields'   => array(
+						$documents,
+						array(
+							'key'     => 'field_' . $key . '_archive',
+							'label'   => __( 'Archive', 'weblexpro-dashboard' ),
+							'name'    => 'archive',
+							'type'    => 'file',
+						),
+					),
 					'location' => $location,
 				)
 			);

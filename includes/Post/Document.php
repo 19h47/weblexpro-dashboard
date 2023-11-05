@@ -8,6 +8,8 @@
 
 namespace WebLexProDashboard\Post;
 
+use WP_Post, ZipArchive;
+
 /**
  * Document class
  */
@@ -27,6 +29,8 @@ class Document {
 		add_filter( 'post_updated_messages', array( $this, 'updated_messages' ), 10, 1 );
 		add_filter( 'bulk_post_updated_messages', array( $this, 'bulk_updated_messages' ), 10, 2 );
 		add_filter( 'manage_document_posts_columns', array( $this, 'add_custom_columns' ) );
+
+		add_filter( 'acf/save_post', array( $this, 'create_archive' ), 15, 1 );
 	}
 
 
@@ -155,18 +159,18 @@ class Document {
 		);
 
 		$messages['document'] = array(
-			0 => '', // Unused. Messages start at index 1.
-			1 => __( 'Document updated.', 'weblexpro-dashboard' ) . $view_link_html,
-			2 => __( 'Custom field updated.', 'weblexpro-dashboard' ),
-			3 => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
-			4 => __( 'Document updated.', 'weblexpro-dashboard' ),
+			0  => '', // Unused. Messages start at index 1.
+			1  => __( 'Document updated.', 'weblexpro-dashboard' ) . $view_link_html,
+			2  => __( 'Custom field updated.', 'weblexpro-dashboard' ),
+			3  => __( 'Custom field deleted.', 'weblexpro-dashboard' ),
+			4  => __( 'Document updated.', 'weblexpro-dashboard' ),
 			/* translators: %s: date and time of the revision */
-      5  => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-		6     => __( 'Document published.', 'weblexpro-dashboard' ) . $view_link_html,
-		7     => __( 'Document saved.', 'weblexpro-dashboard' ),
-		8     => __( 'Document submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
-      9  => sprintf( __( 'Document scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-		10    => __( 'Document draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
+      		5  => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'weblexpro-dashboard' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
+			6  => __( 'Document published.', 'weblexpro-dashboard' ) . $view_link_html,
+			7  => __( 'Document saved.', 'weblexpro-dashboard' ),
+			8  => __( 'Document submitted.', 'weblexpro-dashboard' ) . $preview_link_html,
+      		9  => sprintf( __( 'Document scheduled for: %s.', 'weblexpro-dashboard' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
+			10 => __( 'Document draft updated.', 'weblexpro-dashboard' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -267,5 +271,66 @@ class Document {
 		);
 
 		register_post_type( 'document', $args );
+	}
+
+
+	/**
+	 * Create Archive
+	 *
+	 * @param int|string $post_id The ID of the post being edited.
+	 *
+	 * @see https://www.advancedcustomfields.com/resources/acf-save_post/
+	 */
+	public function create_archive( int $post_id ) {
+
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+
+		$post_type = get_post_type( $post_id );
+
+		if ( 'document' !== $post_type ) {
+			return;
+		}
+
+		$documents = (array) get_field( 'documents', $post_id );
+
+		if ( count( $documents ) <= 1 ) {
+			return;
+		}
+
+		$zip      = new ZipArchive();
+		$filepath = wp_get_upload_dir()['basedir'] . '/' . get_post_field( 'post_name', $post_id ) . '.zip';
+
+		if ( file_exists( $filepath ) ) {
+			wp_delete_attachment( (int) get_field( 'archive', $post_id )['id'], true );
+		}
+
+		// Create and open the ZIP file.
+		if ( ! $zip->open( $filepath, ZipArchive::CREATE ) ) {
+			wp_die( 'Failed to create zip at ' . $filepath );
+		}
+
+		foreach ( $documents as $document ) {
+			$file = $document['file'];
+
+			$zip->addFile( get_attached_file( $file['id'] ), $file['filename'] );
+		}
+
+		$attachment_id = wp_insert_attachment(
+			array(
+				'file'        => $zip->filename,
+				'post_parent' => $post_id,
+				'post_title'  => get_the_title( $post_id ),
+			),
+			$zip->filename,
+			$post_id
+		);
+
+		$zip->close();
+
+		update_field( 'archive', $attachment_id, $post_id );
+
+		// wp_die( var_dump( get_post_meta( $post_id ), $attachment_id ) );
 	}
 }

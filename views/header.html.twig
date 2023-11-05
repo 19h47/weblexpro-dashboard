@@ -11,7 +11,7 @@
 		<div class="container !max-w-full">
 			<div class="row">
 				<div class="lg:col-4/12">
-					<a class="block h-11.5 w-auto" href="{{ site.link }}" aria-label="{{ site.description }}">
+					<a class="block h-11 w-auto" href="{{ dashboard_url }}" aria-label="{{ site.description }}">
 						<img
 							class="block h-full"
 							src="{{ asset( 'img/svg/logo-white.svg' ) }}"
@@ -21,27 +21,27 @@
 						>
 					</a>
 				</div>
-				<div class="lg:col-6/12 lg:flex lg:justify-end mt-8 lg:mt-0">
+				<div class="lg:col-7/12 lg:flex lg:justify-end mt-8 lg:mt-0">
 					<div class="flex gap-7 items-center">
 						<a class="text-xl underline hover:no-underline" href="tel:{{ phone_number | replace( { '.' : '' } ) }}">
 							{{ phone_number }}
 						</a>
 
-						<a href="{{ contact_url }}" class="h-8 w-12 block" aria-label="{{ __( 'Contact Us' ) }}">
+						<a href="{{ contact_url }}" class="h-6 w-10 block" aria-label="{{ __( 'Contact Us' ) }}">
 							{{ icon( 'envelope', { classes: [ 'w-full h-full fill-current' ] } ) }}
 						</a>
 
-						{{- user and icon( 'bell', { classes: [ 'w-10 h-10 fill-current' ] } ) -}}
+						{{- user and icon( 'bell', { classes: [ 'w-8 h-8 fill-current' ] } ) -}}
 					</div>
 				</div>
 
 				{%- if user -%}
-					<div class="lg:col-2/12 flex justify-end mt-8 lg:mt-0">
+					<div class="lg:col-1/12 flex justify-end mt-8 lg:mt-0">
 						<div class="relative -mb-[4.75rem] z-10 group w-full lg:w-auto">
-							<button data-module-disclosure-button aria-controls="user-menu" type="button" class="rounded-full ml-auto relative z-2 w-31.5 h-31.5 border-blue-dark border-4 flex items-center justify-center bg-white">
-								{{- icon( 'user', { classes: [ 'w-9 h-15 fill-red-light' ] } ) -}}
+							<button data-module-disclosure-button aria-controls="user-menu" type="button" class="rounded-full ml-auto relative z-2 w-24 h-24 border-blue-dark border-4 flex items-center justify-center bg-white">
+								{{- icon( 'user', { classes: [ 'w-8 h-14 fill-red-light' ] } ) -}}
 							</button>
-							<div id="user-menu" style="display: none;" class="absolute w-full lg:w-auto z-1 -mt-[4.75rem] px-4 pt-[7.75rem] pb-8 top-full right-0 rounded-[2.25rem] border border-gray-very-dark bg-white text-blue-dark">
+							<div id="user-menu" style="display: none;" class="absolute w-full lg:w-auto z-1 -mt-[4.75rem] px-4 pt-24 pb-8 top-full right-0 rounded-[2.25rem] border border-gray-very-dark bg-white text-blue-dark">
 								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ fn( 'get_edit_profile_url', user.id ) }}" target="_blank" rel="noopener noreferer">
 									{{- icon( 'user', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
 									{{- __( 'My profile', 'weblexpro-dashboard' ) -}}

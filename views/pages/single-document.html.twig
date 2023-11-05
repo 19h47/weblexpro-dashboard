@@ -19,14 +19,13 @@
 
 					{%- if post.terms() -%}
 
-
-
 						{{- '&nbsp;&sol;&nbsp;' -}}
-						<a class="hover:underline" href="{{ post.offer[0].link }}">
+
+						 <a class="hover:underline" href="{{ post.offer[0].link }}">
 							{{- post.offer[0].meta( 'catchphrase' ) -}}
 						</a>
 
-						{%- if post.ancestors -%}
+						{%- if post.ancestors and post.ancestors[0] -%}
 							{{- '&nbsp;&sol;&nbsp;' -}}
 							<a class="hover:underline" href="{{ post.ancestors[0].link }}">
 								{{- post.ancestors[0].name -}}
@@ -42,6 +41,9 @@
 							{% endfor %}
 						{%- endif -%}
 					{%- endif -%}
+
+					{{- '&nbsp;&sol;&nbsp;' -}}
+					{{- post.title -}}
 
 				</p>
 
@@ -91,7 +93,7 @@
 									<a download class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
 										<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
 
-										<p class="ml-auto button group-hover:bg-red-light group-hover:shadow-lg" type="button">{{- __( 'Download', 'weblexpro-dashboard' ) -}}</p>
+										<p class="ml-auto button group-hover:underline" type="button">{{- __( 'Download', 'weblexpro-dashboard' ) -}}</p>
 									</a>
 								{% endif %}
 
@@ -102,6 +104,7 @@
 											{{- icon( 'download', { classes: [ 'w-4 h-4 fill-red-light' ] } ) -}}
 										</span>
 									</a>
+
 									{{- include( 'components/button-like.html.twig', { user: user, id: document.file.id } ) -}}
 								</div>
 

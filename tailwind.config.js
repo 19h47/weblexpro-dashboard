@@ -29,5 +29,6 @@ module.exports = {
 	},
 	plugins: [
 		plugin(({ addVariant }) => addVariant('parent-is-active', '.is-active > &')),
+		plugin(({ addVariant }) => addVariant('parent-is-expanded', '[aria-expanded="true"] > &')),
 	],
 };

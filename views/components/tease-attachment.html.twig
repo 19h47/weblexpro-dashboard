@@ -1,21 +1,28 @@
+{#
+ # Tease: Attachment
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
 
 <div class="lg:flex items-center justify-between">
-	<div class="flex items-center gap-x-8">
+	<a class="flex items-center gap-x-8 hover:underline" download href="{{ post.guid }}">
 		<hr class="w-10 h-0.5 bg-gray-very-dark">
 		{{ post.title }}
-	</div>
+	</a>
 
 	<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
 
-		{{- include( 'components/button-like.html.twig', { user: user, id: post.ID } ) -}}
+		{{- include( 'components/button-like.html.twig', { user: user, id: post.id } ) -}}
 
-
-			<a
-				download href="{{ post.guid }}"
-				class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
-			>
-				{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
-			</a>
+		<a
+			download href="{{ post.guid }}"
+			class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+		>
+			{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+		</a>
 
 	</div>
 </div>

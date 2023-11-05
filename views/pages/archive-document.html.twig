@@ -44,8 +44,11 @@
 				<div>
 					<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
 						{% for post in term.posts( { post_type: 'document' } ) %}
-							<a href="{{ post.link }}" class="min-h-[17.1875rem] relative text-white text-center w-[17.1875rem] max-w-full flex items-end lg:text-5xl py-8 px-5 bg-red-light">
-								{{ post.title }}
+							<a
+								href="{{ post.link }}"
+								class="min-h-[16rem] relative text-white text-center justify-center w-64 max-w-full flex items-center lg:text-2xl py-8 px-5 bg-red-light"
+							>
+								{{- post.title -}}
 								<div class="pointer-events-none absolute w-full h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-red-light"></div>
 							</a>
 						{%- endfor -%}
@@ -54,9 +57,9 @@
 			</div>
 	{%- endif -%}
 
-	{% if 'webinaires' == term.slug %}
+	{%- if 'webinaires' == term.slug -%}
 		<div class="container text-blue-dark">
-			<div class="row">
+			<div class="row space-y-6">
 				{% for child in term.children %}
 					{% if child.children %}
 						<div>
@@ -64,8 +67,8 @@
 							<hr class="block border-none bg-blue-dark h-px w-full mt-4">
 						</div>
 
-						<div class="mt-5">
-							<div class="pl-14 lg:pl-28 space-y-4" data-module-accordion>
+						<div class="mt-6">
+							<div class="pl-7 lg:pl-10 space-y-6" data-module-accordion>
 								{% for grandchild in child.children %}
 									{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: grandchild, user: user } ) -}}
 								{% endfor %}
@@ -75,13 +78,13 @@
 				{% endfor %}
 			</div>
 		</div>
-	{% endif %}
+	{%- endif -%}
 
 
 	{% if 'podcasts' == term.slug or 'lois-de-finances' == term.slug %}
 		<div class="container text-blue-dark">
 			<div class="row">
-				<div class="space-y-4" data-module-accordion>
+				<div class="space-y-6" data-module-accordion>
 					{% for child in term.children %}
 						{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user } ) -}}
 					{% endfor %}

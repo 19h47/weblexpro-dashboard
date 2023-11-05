@@ -1,3 +1,12 @@
+{#
+ # Tease: Document Child
+ #
+ # @package WordPress
+ # @subpackage WebLexProDashboard
+ #
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+
 <div class="lg:flex items-center justify-between">
 	<a class="flex items-center gap-x-8 hover:underline" href="{{ post.link }}">
 		<hr class="w-10 h-0.5 bg-gray-very-dark">{{ post.title }}
@@ -7,14 +16,25 @@
 
 		{{- include( 'components/button-like.html.twig', { user: user, id: post.id } ) -}}
 
-		{%- for document in post.meta( 'documents' ) -%}
+		{%- if post.meta( 'documents' ) | length > 1 and post.meta( 'archive' ) -%}
 			<a
-				title="{{ document.file.title }}"
-				download href="{{ document.file.url }}"
+				title="{{ post.meta( 'archive' ).title }}"
+				download
+				href="{{ post.meta( 'archive' ).url }}"
 				class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
 			>
 				{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
 			</a>
-		{%- endfor -%}
+		{% else %}
+			{%- for document in post.meta( 'documents' ) -%}
+				<a
+					title="{{ document.file.title }}"
+					download href="{{ document.file.url }}"
+					class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+				>
+					{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+				</a>
+			{%- endfor -%}
+		{% endif %}
 	</div>
 </div>
