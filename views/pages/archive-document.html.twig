@@ -38,7 +38,7 @@
 		</div>
 	</div>
 
-	{%- if 'dossiers-thematiques' == term.slug or 'dossiers-de-veille-juridique' == term.slug -%}
+	{%- if 'dossiers-thematiques' == term.slug or 'dossiers-veille-juridique' == term.slug or 'dossiers-de-veille-juridique' == term.slug -%}
 		<div class="container">
 			<div class="row">
 				<div>
@@ -74,8 +74,8 @@
 								{% endfor %}
 							</div>
 						</div>
-					{% endif %}
-				{% endfor %}
+					{%- endif -%}
+				{%- endfor -%}
 			</div>
 		</div>
 	{%- endif -%}
@@ -85,9 +85,18 @@
 		<div class="container text-blue-dark">
 			<div class="row">
 				<div class="space-y-6" data-module-accordion>
-					{% for child in term.children %}
-						{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user } ) -}}
-					{% endfor %}
+					{%- for child in term.children( { orderby: 'term_order' } ) -%}
+						{{-
+							include(
+								'components/tease-document.html.twig',
+								{
+									slug: term.slug,
+									document: child,
+									user: user
+								}
+							)
+						-}}
+					{%- endfor -%}
 				</div>
 			</div>
 		</div>

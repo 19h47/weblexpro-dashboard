@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-10-10 16:34+0200\n"
+"POT-Creation-Date: 2023-11-13 11:28+0100\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -23,10 +23,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: dist\n"
-
-#: includes/Plugins/ACF/Admin/Init.php:32
-msgid "Theme Settings"
-msgstr ""
 
 #: includes/Plugins/ACF/Fields/ContactPageFields.php:47
 msgid "Form ID"
@@ -91,16 +87,20 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/DocumentPostFields.php:51
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:52
 #: includes/Plugins/ACF/Fields/UserFormFields.php:94
 #: includes/Plugins/ACF/Fields/UserFormFields.php:121
 #: includes/Plugins/ACF/Fields/UserFormFields.php:148
 msgid "File"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/DocumentPostFields.php:72
-#: includes/Post/Document.php:249
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:74
+#: includes/Post/Document.php:253
 msgid "Document"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:79
+msgid "Archive"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:67
@@ -123,35 +123,22 @@ msgid "Description"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:110
+#: includes/Plugins/ACF/Fields/UserFormFields.php:161
 msgid "Links"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:123
+#: includes/Plugins/ACF/Fields/UserFormFields.php:166
 msgid "Add Link"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:128
+#: includes/Plugins/ACF/Fields/UserFormFields.php:170
 msgid "Link"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:143
 msgid "Offer Post Fields"
-msgstr ""
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:47
-msgid "Case Studies"
-msgstr ""
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:58
-msgid "Footer"
-msgstr ""
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:63
-msgid "Stickers"
-msgstr ""
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:80
-msgid "Theme Settings Fields"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:51
@@ -188,95 +175,99 @@ msgstr ""
 msgid "Add Practical Sheets"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:161
+#: includes/Plugins/ACF/Fields/UserFormFields.php:164
+msgid "Indicate the links for users who have subscribed to the Eagle offer."
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:180
 msgid "Mag URL"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:164
+#: includes/Plugins/ACF/Fields/UserFormFields.php:183
 msgid ""
 "Indicate the URL of the magazine to integrate for users who have "
 "subscribed to the Mag offer."
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:165
+#: includes/Plugins/ACF/Fields/UserFormFields.php:184
 msgid "https://mag-experts.fr/weblex/"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:174
+#: includes/Plugins/ACF/Fields/UserFormFields.php:193
 msgid "Users"
 msgstr ""
 
-#: includes/Post/Document.php:85 includes/Taxonomy/DocumentCategory.php:88
+#: includes/Post/Document.php:89 includes/Taxonomy/DocumentCategory.php:88
 msgid "Thumbnail"
 msgstr ""
 
 #. translators: Publish box date format, see https://secure.php.net/date
-#: includes/Post/Document.php:137 includes/Post/Offer.php:182
+#: includes/Post/Document.php:141 includes/Post/Offer.php:182
 msgid "M j, Y @ H:i"
 msgstr ""
 
-#: includes/Post/Document.php:142
+#: includes/Post/Document.php:146
 msgid "View document"
 msgstr ""
 
-#: includes/Post/Document.php:148 includes/Post/Document.php:154
+#: includes/Post/Document.php:152 includes/Post/Document.php:158
 msgid "Preview document"
 msgstr ""
 
-#: includes/Post/Document.php:159 includes/Post/Document.php:162
-#: includes/Post/Document.php:240
+#: includes/Post/Document.php:163 includes/Post/Document.php:166
+#: includes/Post/Document.php:244
 msgid "Document updated."
 msgstr ""
 
-#: includes/Post/Document.php:160 includes/Post/Offer.php:205
+#: includes/Post/Document.php:164 includes/Post/Offer.php:205
 msgid "Custom field updated."
 msgstr ""
 
-#: includes/Post/Document.php:161 includes/Post/Offer.php:206
+#: includes/Post/Document.php:165 includes/Post/Offer.php:206
 msgid "Custom field deleted."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: includes/Post/Document.php:164
+#: includes/Post/Document.php:168
 #, php-format
 msgid "Document restored to revision from %s."
 msgstr ""
 
-#: includes/Post/Document.php:165 includes/Post/Document.php:236
+#: includes/Post/Document.php:169 includes/Post/Document.php:240
 msgid "Document published."
 msgstr ""
 
-#: includes/Post/Document.php:166
+#: includes/Post/Document.php:170
 msgid "Document saved."
 msgstr ""
 
-#: includes/Post/Document.php:167
+#: includes/Post/Document.php:171
 msgid "Document submitted."
 msgstr ""
 
-#: includes/Post/Document.php:168
+#: includes/Post/Document.php:172
 #, php-format
 msgid "Document scheduled for: %s."
 msgstr ""
 
-#: includes/Post/Document.php:169
+#: includes/Post/Document.php:173
 msgid "Document draft updated."
 msgstr ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:189
+#: includes/Post/Document.php:193
 #, php-format
 msgid "%s document updated."
 msgid_plural "%s documents updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/Post/Document.php:190
+#: includes/Post/Document.php:194
 msgid "1 document not updated, somebody is editing it."
 msgstr ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:192
+#: includes/Post/Document.php:196
 #, php-format
 msgid "%s document not updated, somebody is editing it."
 msgid_plural "%s documents not updated, somebody is editing them."
@@ -284,7 +275,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:194
+#: includes/Post/Document.php:198
 #, php-format
 msgid "%s document permanently deleted."
 msgid_plural "%s document permanently deleted."
@@ -292,7 +283,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:196
+#: includes/Post/Document.php:200
 #, php-format
 msgid "%s document moved to the Trash."
 msgid_plural "%s document moved to the Trash."
@@ -300,121 +291,121 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:198
+#: includes/Post/Document.php:202
 #, php-format
 msgid "%s document restored from the Trash."
 msgid_plural "%s document restored from the Trash."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/Post/Document.php:213
+#: includes/Post/Document.php:217
 msgctxt "document type generale name"
 msgid "Documents"
 msgstr ""
 
-#: includes/Post/Document.php:214
+#: includes/Post/Document.php:218
 msgctxt "document type singular name"
 msgid "Document"
 msgstr ""
 
-#: includes/Post/Document.php:215
+#: includes/Post/Document.php:219
 msgctxt "document type"
 msgid "Add New"
 msgstr ""
 
-#: includes/Post/Document.php:216
+#: includes/Post/Document.php:220
 msgid "Add New Document"
 msgstr ""
 
-#: includes/Post/Document.php:217
+#: includes/Post/Document.php:221
 msgid "Edit Document"
 msgstr ""
 
-#: includes/Post/Document.php:218
+#: includes/Post/Document.php:222
 msgid "New Document"
 msgstr ""
 
-#: includes/Post/Document.php:219
+#: includes/Post/Document.php:223
 msgid "View Documents"
 msgstr ""
 
-#: includes/Post/Document.php:220
+#: includes/Post/Document.php:224
 msgid "View Document"
 msgstr ""
 
-#: includes/Post/Document.php:221
+#: includes/Post/Document.php:225
 msgid "Search Documents"
 msgstr ""
 
-#: includes/Post/Document.php:222
+#: includes/Post/Document.php:226
 msgid "No Documents found."
 msgstr ""
 
-#: includes/Post/Document.php:223
+#: includes/Post/Document.php:227
 msgid "No Documents found in Trash."
 msgstr ""
 
-#: includes/Post/Document.php:224
+#: includes/Post/Document.php:228
 msgid "Parent Document:"
 msgstr ""
 
-#: includes/Post/Document.php:225
+#: includes/Post/Document.php:229
 msgid "All Documents"
 msgstr ""
 
-#: includes/Post/Document.php:226
+#: includes/Post/Document.php:230
 msgid "Document Archives"
 msgstr ""
 
-#: includes/Post/Document.php:227
+#: includes/Post/Document.php:231
 msgid "Document Attributes"
 msgstr ""
 
-#: includes/Post/Document.php:228
+#: includes/Post/Document.php:232
 msgid "Insert into document"
 msgstr ""
 
-#: includes/Post/Document.php:229
+#: includes/Post/Document.php:233
 msgid "Uploaded to this document"
 msgstr ""
 
-#: includes/Post/Document.php:230
+#: includes/Post/Document.php:234
 msgctxt "document"
 msgid "Featured Image"
 msgstr ""
 
-#: includes/Post/Document.php:231
+#: includes/Post/Document.php:235
 msgctxt "document"
 msgid "Set featured image"
 msgstr ""
 
-#: includes/Post/Document.php:232
+#: includes/Post/Document.php:236
 msgctxt "document"
 msgid "Remove featured image"
 msgstr ""
 
-#: includes/Post/Document.php:233
+#: includes/Post/Document.php:237
 msgctxt "document"
 msgid "Use as featured image"
 msgstr ""
 
-#: includes/Post/Document.php:234
+#: includes/Post/Document.php:238
 msgid "Documents list navigation"
 msgstr ""
 
-#: includes/Post/Document.php:235
+#: includes/Post/Document.php:239
 msgid "Documents list"
 msgstr ""
 
-#: includes/Post/Document.php:237
+#: includes/Post/Document.php:241
 msgid "Document published privately."
 msgstr ""
 
-#: includes/Post/Document.php:238
+#: includes/Post/Document.php:242
 msgid "Document reverted to draft."
 msgstr ""
 
-#: includes/Post/Document.php:239
+#: includes/Post/Document.php:243
 msgid "Document scheduled."
 msgstr ""
 
@@ -864,9 +855,12 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: views/components/tease-offer.html.twig:25
-#: views/components/tease-offer.html.twig:62
+#: views/components/tease-offer.html.twig:23
 msgid "En savoir plus..."
+msgstr ""
+
+#: views/components/tease-offer.html.twig:61
+msgid "Learn more..."
 msgstr ""
 
 #: views/header.html.twig:30 views/index.html.twig:183
@@ -899,10 +893,6 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: views/index.html.twig:171
-msgid "My Practical Sheets"
-msgstr ""
-
 #: views/index.html.twig:200
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
@@ -923,19 +913,19 @@ msgid_plural "Subscriptions available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:36
+#: views/pages/documents-page.html.twig:37
 msgid "Bill"
 msgid_plural "Bills"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:77
+#: views/pages/documents-page.html.twig:79
 msgid "Contract"
 msgid_plural "Contracts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:110
+#: views/pages/documents-page.html.twig:112
 msgid "No documents to display yet."
 msgstr ""
 
@@ -960,37 +950,41 @@ msgstr ""
 msgid "I would like a presentation"
 msgstr ""
 
-#: views/pages/likes-page.html.twig:34
+#: views/pages/likes-page.html.twig:44
 msgid "No likes to display yet."
 msgstr ""
 
-#: views/pages/practical-sheets.html.twig:37
+#: views/pages/practical-sheets.html.twig:38
 msgid "Practical Sheet"
 msgid_plural "Practical Sheets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/practical-sheets.html.twig:71
+#: views/pages/practical-sheets.html.twig:93
 msgid "No practical sheets to display yet."
 msgstr ""
 
-#: views/pages/single-document.html.twig:68
+#: views/pages/single-document.html.twig:70
 msgid "Attached File"
 msgid_plural "Attached Files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/single-document.html.twig:78
+#: views/pages/single-document.html.twig:80
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr ""
 
-#: views/pages/single-document.html.twig:86
+#: views/pages/single-document.html.twig:88
 msgid "Sorry, your browser doesn't support embedded videos."
 msgstr ""
 
-#: views/pages/single-document.html.twig:94
-#: views/pages/single-document.html.twig:100
+#: views/pages/single-document.html.twig:96
+#: views/pages/single-document.html.twig:102
 msgid "Download"
+msgstr ""
+
+#: views/pages/single-offer.html.twig:59
+msgid "No links to display yet."
 msgstr ""
 
 #. Theme Name of the plugin/theme

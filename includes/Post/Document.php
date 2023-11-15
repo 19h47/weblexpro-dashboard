@@ -277,12 +277,11 @@ class Document {
 	/**
 	 * Create Archive
 	 *
-	 * @param int|string $post_id The ID of the post being edited.
+	 * @param int|string $post_id The ID of the post being edited. Can't use union_types in PHP 7.
 	 *
 	 * @see https://www.advancedcustomfields.com/resources/acf-save_post/
 	 */
-	public function create_archive( int $post_id ) {
-
+	public function create_archive( $post_id ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}

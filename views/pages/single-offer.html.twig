@@ -40,19 +40,24 @@
 		<div class="container">
 			<div class="row">
 				<div>
-					<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
-						{% for item in post.meta( 'links' ) %}
-							<a
-								href="{{ item.link.url }}"
-								class="relative text-white text-center w-[17.1875rem] block lg:text-5xl py-8 px-5 bg-blue-dark"
-								{{ item.link.target ? 'target="_blank" rel="noopener noreferer"' }}
-							>
-								{{ item.link.title }}
+					{%- if user.meta( 'links' ) -%}
+						<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
+							{% for item in user.meta( 'links' ) %}
+								<a
+									href="{{ item.link.url }}"
+									class="relative text-white text-center w-[17.1875rem] block lg:text-5xl py-8 px-5 bg-blue-dark"
+									{{ item.link.target ? 'target="_blank" rel="noopener noreferer"' }}
+								>
+									{{ item.link.title }}
 
-								<div class="absolute w-full h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-blue-dark"></div>
-							</a>
-						{% endfor %}
-					</div>
+									<div class="absolute w-full h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-blue-dark"></div>
+								</a>
+
+							{% endfor %}
+						</div>
+					{%- else -%}
+						<p class="lg:text-2xl text-blue-dark font-bold">{{- __( 'No links to display yet.', 'weblexpro-dashboard' ) -}}</p>
+					{%- endif -%}
 				</div>
 			</div>
 		</div>

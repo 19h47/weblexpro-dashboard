@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-10-10 16:34+0200\n"
-"PO-Revision-Date: 2023-10-10 16:34+0200\n"
+"POT-Creation-Date: 2023-11-13 11:28+0100\n"
+"PO-Revision-Date: 2023-11-13 11:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -23,10 +23,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: dist\n"
-
-#: includes/Plugins/ACF/Admin/Init.php:32
-msgid "Theme Settings"
-msgstr "Paramètres du thème"
 
 #: includes/Plugins/ACF/Fields/ContactPageFields.php:47
 msgid "Form ID"
@@ -91,17 +87,21 @@ msgstr "Ajouter un document"
 msgid "Title"
 msgstr "Titre"
 
-#: includes/Plugins/ACF/Fields/DocumentPostFields.php:51
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:52
 #: includes/Plugins/ACF/Fields/UserFormFields.php:94
 #: includes/Plugins/ACF/Fields/UserFormFields.php:121
 #: includes/Plugins/ACF/Fields/UserFormFields.php:148
 msgid "File"
 msgstr "Fichier"
 
-#: includes/Plugins/ACF/Fields/DocumentPostFields.php:72
-#: includes/Post/Document.php:249
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:74
+#: includes/Post/Document.php:253
 msgid "Document"
 msgstr "Document"
+
+#: includes/Plugins/ACF/Fields/DocumentPostFields.php:79
+msgid "Archive"
+msgstr "Archive"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:67
 msgid "Indicate the document categories related to the offer."
@@ -123,36 +123,23 @@ msgid "Description"
 msgstr "Description"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:110
+#: includes/Plugins/ACF/Fields/UserFormFields.php:161
 msgid "Links"
 msgstr "Liens"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:123
+#: includes/Plugins/ACF/Fields/UserFormFields.php:166
 msgid "Add Link"
 msgstr "Ajouter un lien"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:128
+#: includes/Plugins/ACF/Fields/UserFormFields.php:170
 msgid "Link"
 msgstr "Lien"
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:143
 msgid "Offer Post Fields"
 msgstr "Champs de la page d’une offre"
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:47
-msgid "Case Studies"
-msgstr "Études de cas"
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:58
-msgid "Footer"
-msgstr "Pied de page"
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:63
-msgid "Stickers"
-msgstr "Autocollants"
-
-#: includes/Plugins/ACF/Fields/ThemeSettingsFields.php:80
-msgid "Theme Settings Fields"
-msgstr "Champs des paramètres du thème"
 
 #: includes/Plugins/ACF/Fields/UserFormFields.php:51
 msgid "Offers"
@@ -188,11 +175,17 @@ msgstr "Fiches pratiques"
 msgid "Add Practical Sheets"
 msgstr "Ajouter une fiche pratique"
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:161
+#: includes/Plugins/ACF/Fields/UserFormFields.php:164
+msgid "Indicate the links for users who have subscribed to the Eagle offer."
+msgstr ""
+"Indiquez les liens à intégrer pour les utilisateurs ayant souscrits à "
+"l’offre Eagle."
+
+#: includes/Plugins/ACF/Fields/UserFormFields.php:180
 msgid "Mag URL"
 msgstr "URL du magazine"
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:164
+#: includes/Plugins/ACF/Fields/UserFormFields.php:183
 msgid ""
 "Indicate the URL of the magazine to integrate for users who have subscribed "
 "to the Mag offer."
@@ -200,86 +193,86 @@ msgstr ""
 "Indiquez l’URL du magazine à intégrer pour les utilisateurs ayant souscrits "
 "à l’offre Mag."
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:165
+#: includes/Plugins/ACF/Fields/UserFormFields.php:184
 msgid "https://mag-experts.fr/weblex/"
 msgstr "https://mag-experts.fr/weblex/"
 
-#: includes/Plugins/ACF/Fields/UserFormFields.php:174
+#: includes/Plugins/ACF/Fields/UserFormFields.php:193
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: includes/Post/Document.php:85 includes/Taxonomy/DocumentCategory.php:88
+#: includes/Post/Document.php:89 includes/Taxonomy/DocumentCategory.php:88
 msgid "Thumbnail"
 msgstr "Image mise en avant"
 
 #. translators: Publish box date format, see https://secure.php.net/date
-#: includes/Post/Document.php:137 includes/Post/Offer.php:182
+#: includes/Post/Document.php:141 includes/Post/Offer.php:182
 msgid "M j, Y @ H:i"
 msgstr "M j, Y @ H:i"
 
-#: includes/Post/Document.php:142
+#: includes/Post/Document.php:146
 msgid "View document"
 msgstr "Voir le document"
 
-#: includes/Post/Document.php:148 includes/Post/Document.php:154
+#: includes/Post/Document.php:152 includes/Post/Document.php:158
 msgid "Preview document"
 msgstr "Prévisualiser le document"
 
-#: includes/Post/Document.php:159 includes/Post/Document.php:162
-#: includes/Post/Document.php:240
+#: includes/Post/Document.php:163 includes/Post/Document.php:166
+#: includes/Post/Document.php:244
 msgid "Document updated."
 msgstr "Document mis à jour."
 
-#: includes/Post/Document.php:160 includes/Post/Offer.php:205
+#: includes/Post/Document.php:164 includes/Post/Offer.php:205
 msgid "Custom field updated."
 msgstr "Champ personnalisé mis à jour."
 
-#: includes/Post/Document.php:161 includes/Post/Offer.php:206
+#: includes/Post/Document.php:165 includes/Post/Offer.php:206
 msgid "Custom field deleted."
 msgstr "Champ personnalisé supprimé."
 
 #. translators: %s: date and time of the revision
-#: includes/Post/Document.php:164
+#: includes/Post/Document.php:168
 #, php-format
 msgid "Document restored to revision from %s."
 msgstr "Document rétabli à partir de la révision du %s."
 
-#: includes/Post/Document.php:165 includes/Post/Document.php:236
+#: includes/Post/Document.php:169 includes/Post/Document.php:240
 msgid "Document published."
 msgstr "Document publié."
 
-#: includes/Post/Document.php:166
+#: includes/Post/Document.php:170
 msgid "Document saved."
 msgstr "Document enregistré."
 
-#: includes/Post/Document.php:167
+#: includes/Post/Document.php:171
 msgid "Document submitted."
 msgstr "Document transmis."
 
-#: includes/Post/Document.php:168
+#: includes/Post/Document.php:172
 #, php-format
 msgid "Document scheduled for: %s."
 msgstr "Document planifié pour le : %s."
 
-#: includes/Post/Document.php:169
+#: includes/Post/Document.php:173
 msgid "Document draft updated."
 msgstr "Le brouillon du document a été mis à jour."
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:189
+#: includes/Post/Document.php:193
 #, php-format
 msgid "%s document updated."
 msgid_plural "%s documents updated."
 msgstr[0] "%s document mis à jour."
 msgstr[1] "%s documents mis à jour."
 
-#: includes/Post/Document.php:190
+#: includes/Post/Document.php:194
 msgid "1 document not updated, somebody is editing it."
 msgstr ""
 "1 document n’a pas été mis à jour, car quelqu’un est en train de le modifier."
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:192
+#: includes/Post/Document.php:196
 #, php-format
 msgid "%s document not updated, somebody is editing it."
 msgid_plural "%s documents not updated, somebody is editing them."
@@ -287,7 +280,7 @@ msgstr[0] "%s document non mis à jour, quelqu’un l’édite."
 msgstr[1] "%s documents non mis à jour, quelqu’un les édite."
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:194
+#: includes/Post/Document.php:198
 #, php-format
 msgid "%s document permanently deleted."
 msgid_plural "%s document permanently deleted."
@@ -295,7 +288,7 @@ msgstr[0] "%s document définitivement supprimé."
 msgstr[1] "%s documents définitivement supprimés."
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:196
+#: includes/Post/Document.php:200
 #, php-format
 msgid "%s document moved to the Trash."
 msgid_plural "%s document moved to the Trash."
@@ -303,121 +296,121 @@ msgstr[0] "%s document déplacé dans la corbeille."
 msgstr[1] "%s documents déplacés dans la corbeille."
 
 #. translators: %s: Number of documents.
-#: includes/Post/Document.php:198
+#: includes/Post/Document.php:202
 #, php-format
 msgid "%s document restored from the Trash."
 msgid_plural "%s document restored from the Trash."
 msgstr[0] "%s document restauré depuis la corbeille."
 msgstr[1] "%s documents restaurés depuis la corbeille."
 
-#: includes/Post/Document.php:213
+#: includes/Post/Document.php:217
 msgctxt "document type generale name"
 msgid "Documents"
 msgstr "Documents"
 
-#: includes/Post/Document.php:214
+#: includes/Post/Document.php:218
 msgctxt "document type singular name"
 msgid "Document"
 msgstr "Document"
 
-#: includes/Post/Document.php:215
+#: includes/Post/Document.php:219
 msgctxt "document type"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: includes/Post/Document.php:216
+#: includes/Post/Document.php:220
 msgid "Add New Document"
 msgstr "Ajouter un nouveau document"
 
-#: includes/Post/Document.php:217
+#: includes/Post/Document.php:221
 msgid "Edit Document"
 msgstr "Éditer le document"
 
-#: includes/Post/Document.php:218
+#: includes/Post/Document.php:222
 msgid "New Document"
 msgstr "Nouveau document"
 
-#: includes/Post/Document.php:219
+#: includes/Post/Document.php:223
 msgid "View Documents"
 msgstr "Voir les documents"
 
-#: includes/Post/Document.php:220
+#: includes/Post/Document.php:224
 msgid "View Document"
 msgstr "Voir le document"
 
-#: includes/Post/Document.php:221
+#: includes/Post/Document.php:225
 msgid "Search Documents"
 msgstr "Rechercher des documents"
 
-#: includes/Post/Document.php:222
+#: includes/Post/Document.php:226
 msgid "No Documents found."
 msgstr "Aucun document trouvé."
 
-#: includes/Post/Document.php:223
+#: includes/Post/Document.php:227
 msgid "No Documents found in Trash."
 msgstr "Aucun document trouvé dans la corbeille."
 
-#: includes/Post/Document.php:224
+#: includes/Post/Document.php:228
 msgid "Parent Document:"
 msgstr "Document parent :"
 
-#: includes/Post/Document.php:225
+#: includes/Post/Document.php:229
 msgid "All Documents"
 msgstr "Tous les documents"
 
-#: includes/Post/Document.php:226
+#: includes/Post/Document.php:230
 msgid "Document Archives"
 msgstr "Archives des documents"
 
-#: includes/Post/Document.php:227
+#: includes/Post/Document.php:231
 msgid "Document Attributes"
 msgstr "Attributs de document"
 
-#: includes/Post/Document.php:228
+#: includes/Post/Document.php:232
 msgid "Insert into document"
 msgstr "Insérer dans le document"
 
-#: includes/Post/Document.php:229
+#: includes/Post/Document.php:233
 msgid "Uploaded to this document"
 msgstr "Téléversé sur ce document"
 
-#: includes/Post/Document.php:230
+#: includes/Post/Document.php:234
 msgctxt "document"
 msgid "Featured Image"
 msgstr "Image mise en avant"
 
-#: includes/Post/Document.php:231
+#: includes/Post/Document.php:235
 msgctxt "document"
 msgid "Set featured image"
 msgstr "Définir comme image mise en avant"
 
-#: includes/Post/Document.php:232
+#: includes/Post/Document.php:236
 msgctxt "document"
 msgid "Remove featured image"
 msgstr "Supprimer l’image mise en avant"
 
-#: includes/Post/Document.php:233
+#: includes/Post/Document.php:237
 msgctxt "document"
 msgid "Use as featured image"
 msgstr "Utiliser comme image mise en avant"
 
-#: includes/Post/Document.php:234
+#: includes/Post/Document.php:238
 msgid "Documents list navigation"
 msgstr "Navigation de la liste des documents"
 
-#: includes/Post/Document.php:235
+#: includes/Post/Document.php:239
 msgid "Documents list"
 msgstr "Liste des documents"
 
-#: includes/Post/Document.php:237
+#: includes/Post/Document.php:241
 msgid "Document published privately."
 msgstr "Document mis en ligne en privé."
 
-#: includes/Post/Document.php:238
+#: includes/Post/Document.php:242
 msgid "Document reverted to draft."
 msgstr "Document reconverti en brouillon."
 
-#: includes/Post/Document.php:239
+#: includes/Post/Document.php:243
 msgid "Document scheduled."
 msgstr "Document planifié."
 
@@ -872,9 +865,12 @@ msgstr "Mot de passe perdu ?"
 msgid "Log In"
 msgstr "Se connecter"
 
-#: views/components/tease-offer.html.twig:25
-#: views/components/tease-offer.html.twig:62
+#: views/components/tease-offer.html.twig:23
 msgid "En savoir plus..."
+msgstr "En savoir plus..."
+
+#: views/components/tease-offer.html.twig:61
+msgid "Learn more..."
 msgstr "En savoir plus..."
 
 #: views/header.html.twig:30 views/index.html.twig:183
@@ -907,10 +903,6 @@ msgstr "Ignorer"
 msgid "Home"
 msgstr "Accueil"
 
-#: views/index.html.twig:171
-msgid "My Practical Sheets"
-msgstr "Mes fiches pratiques"
-
 #: views/index.html.twig:200
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
@@ -933,19 +925,19 @@ msgid_plural "Subscriptions available"
 msgstr[0] "Abonnement disponible"
 msgstr[1] "Abonnements disponibles"
 
-#: views/pages/documents-page.html.twig:36
+#: views/pages/documents-page.html.twig:37
 msgid "Bill"
 msgid_plural "Bills"
 msgstr[0] "Facture"
 msgstr[1] "Factures"
 
-#: views/pages/documents-page.html.twig:77
+#: views/pages/documents-page.html.twig:79
 msgid "Contract"
 msgid_plural "Contracts"
 msgstr[0] "Contrat"
 msgstr[1] "Contrats"
 
-#: views/pages/documents-page.html.twig:110
+#: views/pages/documents-page.html.twig:112
 msgid "No documents to display yet."
 msgstr "Aucun documents à afficher pour le moment."
 
@@ -970,38 +962,42 @@ msgstr "ou"
 msgid "I would like a presentation"
 msgstr "Je souhaite une présentation"
 
-#: views/pages/likes-page.html.twig:34
+#: views/pages/likes-page.html.twig:44
 msgid "No likes to display yet."
 msgstr "Aucun favoris à afficher pour le moment."
 
-#: views/pages/practical-sheets.html.twig:37
+#: views/pages/practical-sheets.html.twig:38
 msgid "Practical Sheet"
 msgid_plural "Practical Sheets"
 msgstr[0] "Fiche pratique"
 msgstr[1] "Fiches pratiques"
 
-#: views/pages/practical-sheets.html.twig:71
+#: views/pages/practical-sheets.html.twig:93
 msgid "No practical sheets to display yet."
 msgstr "Aucune fiches pratiques à afficher pour le moment."
 
-#: views/pages/single-document.html.twig:68
+#: views/pages/single-document.html.twig:70
 msgid "Attached File"
 msgid_plural "Attached Files"
 msgstr[0] "Fichier joint"
 msgstr[1] "Fichiers joints"
 
-#: views/pages/single-document.html.twig:78
+#: views/pages/single-document.html.twig:80
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr "Désolé, votre navigateur ne prend pas en charge l’élément audio."
 
-#: views/pages/single-document.html.twig:86
+#: views/pages/single-document.html.twig:88
 msgid "Sorry, your browser doesn't support embedded videos."
 msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
 
-#: views/pages/single-document.html.twig:94
-#: views/pages/single-document.html.twig:100
+#: views/pages/single-document.html.twig:96
+#: views/pages/single-document.html.twig:102
 msgid "Download"
 msgstr "Télécharger"
+
+#: views/pages/single-offer.html.twig:59
+msgid "No links to display yet."
+msgstr "Aucun liens à afficher pour le moment."
 
 #. Theme Name of the plugin/theme
 msgid "WebLexPro Dashboard 2"
@@ -1022,6 +1018,24 @@ msgstr "19h47"
 #. Author URI of the plugin/theme
 msgid "https://www.19h47.fr/"
 msgstr "https://www.19h47.fr/"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Paramètres du thème"
+
+#~ msgid "Case Studies"
+#~ msgstr "Études de cas"
+
+#~ msgid "Footer"
+#~ msgstr "Pied de page"
+
+#~ msgid "Stickers"
+#~ msgstr "Autocollants"
+
+#~ msgid "Theme Settings Fields"
+#~ msgstr "Champs des paramètres du thème"
+
+#~ msgid "My Practical Sheets"
+#~ msgstr "Mes fiches pratiques"
 
 #, fuzzy
 #~| msgid "Practical Sheets"
