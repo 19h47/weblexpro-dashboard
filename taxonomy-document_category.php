@@ -15,6 +15,12 @@ $filename       = 'pages/archive-document.html.twig';
 
 $data = Timber::context();
 
-$data['term'] = Timber::get_term( $queried_object['term_id'] );
+$data['term']  = Timber::get_term( $queried_object['term_id'] );
+$data['posts'] = $data['term']->posts(
+	array(
+		'posts_per_page' => -1,
+		'post_type'      => 'document',
+	)
+);
 
 Timber::render( $filename, $data );
