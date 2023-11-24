@@ -38,7 +38,7 @@
 		</div>
 	</div>
 
-	{%- if 'dossiers-veille-juridique' == term.slug or 'dossiers-de-veille-juridique' == term.slug -%}
+	{%- if 'dossiers-thematiques' == term.slug -%}
 		<div class="container">
 			<div class="row">
 				<div>
@@ -57,7 +57,7 @@
 			</div>
 	{%- endif -%}
 
-	{%- if 'webinaires' == term.slug or 'dossiers-thematiques' == term.slug -%}
+	{%- if 'webinaires' == term.slug or 'dossiers-veille-juridique' == term.slug or 'dossiers-de-veille-juridique' == term.slug -%}
 		<div class="container text-blue-dark">
 			<div class="row space-y-6">
 				{% for child in term.children( { orderby: 'term_order' } ) %}
@@ -75,7 +75,7 @@
 								{% endfor %}
 							</div>
 						</div>
-					{%- elseif child.posts( { post_type: 'document' } ).found_posts -%}
+					{%- elseif child.posts( { post_type: 'document', posts_per_page: -1 } ).found_posts -%}
 						<div data-module-accordion>
 							{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user } ) -}}
 						</div>

@@ -6,7 +6,7 @@
  #
  # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  #}
-{% set posts = document.posts( { post_type: 'document' } ) %}
+{% set posts = document.posts( { post_type: 'document', posts_per_page: -1 } ) %}
 
 {%- if posts.found_posts -%}
 	<div class="js-accordion-panel" data-accordion-open="false" data-accordion-deselect="true">
