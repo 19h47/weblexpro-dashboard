@@ -15,7 +15,7 @@
 			<div class="row">
 				<div>
 					<div class="border-l border-gray-very-dark space-y-4 lg:space-y-0">
-						{%- for post in get_posts( { post_status: [ 'inherit', 'publish' ], post_type: [ 'document', 'attachment' ], posts_per_page: -1, post__in: user.meta( 'likes' ) } ) -%}
+						{%- for post in get_posts( { post_status: [ 'inherit', 'publish' ], post_type: [ 'document', 'attachment' ], posts_per_page: -1, orderby: 'post__in', post__in: user.meta( 'likes' ) | reverse } ) -%}
 							{%- if 'attachment' == post.post_type -%}
 								{% if post.id in user.meta( 'documents' ).practical_sheets | map(  d => d.file.id ) %}
 									{% for document in user.meta( 'documents' ).practical_sheets %}
