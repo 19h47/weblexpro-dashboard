@@ -20,6 +20,20 @@ $data['posts'] = $data['term']->posts(
 	array(
 		'posts_per_page' => -1,
 		'post_type'      => 'document',
+		'tax_query'      => array(
+			array(
+				'taxonomy'         => $queried_object['taxonomy'],
+				'field'            => 'term_id',
+				'terms'            => $queried_object['term_id'],
+				'include_children' => false,
+			),
+			array(
+				'taxonomy' => $queried_object['taxonomy'],
+				'terms'    => get_term_children( $queried_object['term_id'], $queried_object['taxonomy'] ),
+				'field'    => 'term_id',
+				'operator' => 'NOT IN',
+			),
+		),
 	)
 );
 

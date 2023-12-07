@@ -71,13 +71,13 @@
 						<div class="mt-6">
 							<div class="pl-7 lg:pl-10 space-y-6" data-module-accordion>
 								{% for grandchild in child.children() %}
-									{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: grandchild, user: user } ) -}}
+									{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: grandchild, user: user }, with_context = false ) -}}
 								{% endfor %}
 							</div>
 						</div>
 					{%- elseif child.posts( { post_type: 'document', posts_per_page: -1 } ).found_posts -%}
 						<div data-module-accordion>
-							{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user } ) -}}
+							{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user }, with_context = false ) -}}
 						</div>
 					{%- endif -%}
 				{%- endfor -%}
@@ -90,6 +90,20 @@
 		<div class="container text-blue-dark">
 			<div class="row">
 				<div class="space-y-6" data-module-accordion>
+
+					{{-
+						include(
+							'components/tease-document.html.twig',
+							{
+								slug: term.slug,
+								document: term,
+								user: user,
+								posts: posts
+							},
+							with_context = false
+						)
+					-}}
+
 					{%- for child in term.children( { orderby: 'term_order' } ) -%}
 						{{-
 							include(
@@ -98,7 +112,8 @@
 									slug: term.slug,
 									document: child,
 									user: user
-								}
+								},
+								with_context = false
 							)
 						-}}
 					{%- endfor -%}
