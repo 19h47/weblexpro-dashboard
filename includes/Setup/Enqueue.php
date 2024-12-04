@@ -103,7 +103,6 @@ class Enqueue {
 
 		wp_dequeue_style( 'wp-block-library' );
 		wp_dequeue_style( 'dashicons' );
-		wp_dequeue_style( 'searchwp-live-search' );
 
 		// Theme stylesheet.
 		wp_register_style( // phpcs:ignore

@@ -23,15 +23,12 @@ class Init {
 	 */
 	public static function get_services(): array {
 		$array = array(
-			WP\Query::class,
 			WP\Settings::class,
 			Setup\Theme::class,
 			Setup\Enqueue::class,
-			Setup\WordPress::class,
 			Setup\NavMenu::class,
 			Setup\Supports::class,
 			Setup\Textdomain::class,
-			Setup\WordPress::class,
 			Setup\Settings::class,
 			Setup\Twig::class,
 			Post\Document::class,
