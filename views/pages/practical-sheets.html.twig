@@ -15,10 +15,7 @@
 		<div class="container lg:text-3xl">
 			<div class="row">
 
-				<div
-					class="space-y-4"
-					data-module-accordion
-				>
+				<wlpd-accordion class="space-y-4">
 					{%- if user.meta( 'documents' ).practical_sheets -%}
 
 						{% set id = 'practical-sheets-' ~ uniqid() %}
@@ -58,7 +55,7 @@
 													href="{{ document.file.url }}"
 													download
 												>
-													<hr class="w-10 h-0.5 bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
+													<hr class="w-10 h-px bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
 												</a>
 
 												<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
@@ -68,9 +65,9 @@
 													<a
 														title="{{ document.file.title }}"
 														download href="{{ document.file.url }}"
-														class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+														class="size-6 border border-cyan-very-soft text-cyan-very-soft rounded-full flex items-center justify-center"
 													>
-														{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+														{{ icon( 'download', { classes: [ 'w-2 h-4' ] } ) }}
 													</a>
 
 												</div>
@@ -82,7 +79,7 @@
 						</div>
 					{% endif %}
 
-				</div>
+				</wlpd-accordion>
 
 			</div>
 		</div>

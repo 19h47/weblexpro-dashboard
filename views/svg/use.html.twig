@@ -7,15 +7,15 @@
  #
  # @file views/svg/use.html.twig
  # @package WordPress
- # @subpackage Perspective
+ # @subpackage WebLexProDashboard
  #
  # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  #}
 <svg
-	class="{{ icon }}{{ classes is defined ? ' ' ~ classes | join(' ') }}"
+	class="{{ html_classes( icon, classes | default( [] ) | join( ' ' ), 'fill-current' ) }}"
 	{{ id is defined ? "id=\"#{ id }\"" }}
-	aria-label="{{ description | default( site.description ) }}"
-	{{ attributes ? attributes | map( ( value, key ) => "#{key}=\"#{value}\"" ) | join( ' ' )  | raw }}
+	aria-label="{{ __( "%s's icon", 'le-taille-crayon' ) | format( icon ) }}"
+	{{ attributes ? attributes | map( ( value, key ) => value == '' ? key : "#{key}=\"#{value}\"" ) | join( ' ' )  | raw }}
 >
 	<use xlink:href="#{{ icon }}" href="#{{ icon }}"></use>
 </svg>

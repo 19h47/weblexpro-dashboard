@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2023-11-13 11:28+0100\n"
+"POT-Creation-Date: 2025-10-20 11:35+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,14 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
@@ -42,7 +41,7 @@ msgid "Type"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:61
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:52
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:55
 msgid "Event"
 msgstr ""
 
@@ -57,7 +56,7 @@ msgid "Eagle"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/DocumentCategoryFields.php:64
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:55
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:56
 msgid "Mag"
 msgstr ""
 
@@ -66,7 +65,7 @@ msgid "Document Category Fields"
 msgstr ""
 
 #: includes/Plugins/ACF/Fields/DocumentPostFields.php:36
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:64
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:65
 #: includes/Plugins/ACF/Fields/UserFormFields.php:71
 #: includes/Setup/Settings.php:181
 msgid "Documents"
@@ -103,41 +102,45 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:67
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:52
+msgid "Albatros"
+msgstr ""
+
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:68
 msgid "Indicate the document categories related to the offer."
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:87
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:88
 #: includes/Post/Offer.php:101
 msgid "Color"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:94
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:97
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:95
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:98
 msgid "Catchphrase"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:101
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:106
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:102
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:107
 msgid "Description"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:110
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:111
 #: includes/Plugins/ACF/Fields/UserFormFields.php:161
 msgid "Links"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:123
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:124
 #: includes/Plugins/ACF/Fields/UserFormFields.php:166
 msgid "Add Link"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:128
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:129
 #: includes/Plugins/ACF/Fields/UserFormFields.php:170
 msgid "Link"
 msgstr ""
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:143
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:144
 msgid "Offer Post Fields"
 msgstr ""
 
@@ -676,7 +679,7 @@ msgstr ""
 msgid "Notice"
 msgstr ""
 
-#: includes/Setup/Settings.php:157 views/pages/front-page.html.twig:40
+#: includes/Setup/Settings.php:157
 msgid "Dashboard"
 msgstr ""
 
@@ -708,19 +711,19 @@ msgstr ""
 msgid "WebLexPro Contact Page"
 msgstr ""
 
-#: includes/Setup/Theme.php:70
+#: includes/Setup/Theme.php:46
 msgid "Share on Facebook"
 msgstr ""
 
-#: includes/Setup/Theme.php:78
+#: includes/Setup/Theme.php:54
 msgid "Share on Twitter"
 msgstr ""
 
-#: includes/Setup/Theme.php:86
+#: includes/Setup/Theme.php:62
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: includes/Setup/Theme.php:105
+#: includes/Setup/Theme.php:81
 msgid "Share on Pinterest"
 msgstr ""
 
@@ -824,6 +827,15 @@ msgstr ""
 msgid "Practical Sheets Page"
 msgstr ""
 
+#: includes/Vite.php:94
+msgid "No Vite Manifest exists. Should hot server be running?"
+msgstr ""
+
+#: includes/Vite.php:135
+#, php-format
+msgid "Unknown Vite build asset: %s"
+msgstr ""
+
 #: views/components/form-login-post.html.twig:13
 msgid ""
 "This content is password protected. To view it please enter your password "
@@ -855,31 +867,31 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: views/components/tease-offer.html.twig:23
+#: views/components/tease-offer.html.twig:22
 msgid "En savoir plus..."
 msgstr ""
 
-#: views/components/tease-offer.html.twig:61
+#: views/components/tease-offer.html.twig:52
 msgid "Learn more..."
 msgstr ""
 
-#: views/header.html.twig:30 views/index.html.twig:183
+#: views/header.html.twig:30 views/index.html.twig:185
 msgid "Contact Us"
 msgstr ""
 
-#: views/header.html.twig:47
+#: views/header.html.twig:49
 msgid "My profile"
 msgstr ""
 
-#: views/header.html.twig:51
+#: views/header.html.twig:53
 msgid "My likes"
 msgstr ""
 
-#: views/header.html.twig:54
+#: views/header.html.twig:56
 msgid "My documents"
 msgstr ""
 
-#: views/header.html.twig:59
+#: views/header.html.twig:61
 msgid "Sign Out"
 msgstr ""
 
@@ -893,39 +905,39 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: views/index.html.twig:200
+#: views/index.html.twig:202
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
 
-#: views/index.html.twig:211
+#: views/index.html.twig:213
 msgid "I want a demo!"
 msgstr ""
 
-#: views/pages/dashboard-page.html.twig:23
+#: views/pages/dashboard-page.html.twig:25
 msgid "My subscription"
 msgid_plural "My subscriptions"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/dashboard-page.html.twig:42
+#: views/pages/dashboard-page.html.twig:44
 msgid "Subscription available"
 msgid_plural "Subscriptions available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:37
+#: views/pages/documents-page.html.twig:34
 msgid "Bill"
 msgid_plural "Bills"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:79
+#: views/pages/documents-page.html.twig:76
 msgid "Contract"
 msgid_plural "Contracts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/documents-page.html.twig:112
+#: views/pages/documents-page.html.twig:109
 msgid "No documents to display yet."
 msgstr ""
 
@@ -954,13 +966,13 @@ msgstr ""
 msgid "No likes to display yet."
 msgstr ""
 
-#: views/pages/practical-sheets.html.twig:38
+#: views/pages/practical-sheets.html.twig:35
 msgid "Practical Sheet"
 msgid_plural "Practical Sheets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/pages/practical-sheets.html.twig:93
+#: views/pages/practical-sheets.html.twig:90
 msgid "No practical sheets to display yet."
 msgstr ""
 
@@ -983,8 +995,13 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: views/pages/single-offer.html.twig:59
+#: views/pages/single-offer.html.twig:69
 msgid "No links to display yet."
+msgstr ""
+
+#: views/svg/use.html.twig:17
+#, php-format
+msgid "%s's icon"
 msgstr ""
 
 #. Theme Name of the plugin/theme

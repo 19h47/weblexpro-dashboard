@@ -2,9 +2,7 @@
  * Tailwind config
  */
 
-const colors = require("./tailwind/tailwind.config.colors");
 const minWidth = require("./tailwind/tailwind.config.minWidth");
-const plugin = require('tailwindcss/plugin');
 const spacing = require("./tailwind/tailwind.config.spacing");
 
 const zIndex = {
@@ -21,14 +19,6 @@ module.exports = {
 		container: false,
 	},
 	theme: {
-		fontFamily: {
-			body: ['Qlassik', 'sans-serif'],
-			title: ['Qlassik', 'sans-serif'],
-		},
-		extend: { colors, minWidth, spacing, zIndex },
+		extend: { minWidth, spacing, zIndex },
 	},
-	plugins: [
-		plugin(({ addVariant }) => addVariant('parent-is-active', '.is-active > &')),
-		plugin(({ addVariant }) => addVariant('parent-is-expanded', '[aria-expanded="true"] > &')),
-	],
 };

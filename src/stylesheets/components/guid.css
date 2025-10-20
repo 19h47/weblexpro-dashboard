@@ -12,7 +12,7 @@
 	}
 
 	.Guid [class^="col"] .Guid__column {
-		background-color: theme("colors.blue.DEFAULT");
+		@apply bg-blue;
 	}
 
 	.Guid [class^="col"]:nth-child(odd) .Guid__column {
@@ -20,6 +20,6 @@
 	}
 
 	.Guid__column {
-		@apply w-full h-full;
+		@apply size-full;
 	}
 }

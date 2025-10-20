@@ -11,7 +11,7 @@
 {%- if posts.found_posts -%}
 	<div class="js-accordion-panel" data-accordion-open="false" data-accordion-deselect="true">
 		<button
-			class="js-accordion-header lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+			class="js-accordion-header group lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
 			type="button"
 			aria-expanded="false"
 			aria-controls="{{ slug ~ '-' ~ document.slug }}"
@@ -22,7 +22,7 @@
 					'chevron-right',
 					{
 						classes: [
-							'w-5 h-3', 'parent-is-expanded:rotate-90 transition-transform duration-800 ease-in-out'
+							'w-5 h-3', 'group-aria-expanded:rotate-90 transition-transform duration-800 ease-in-out'
 						]
 					}
 				)

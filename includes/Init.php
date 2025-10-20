@@ -44,6 +44,7 @@ class Init {
 			Plugins\ACF\Fields\UserFormFields::class,
 			GeneralTemplate::class,
 			AdminHeader::class,
+			Vite::class,
 		);
 
 		return $array;

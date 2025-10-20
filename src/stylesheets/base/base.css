@@ -6,25 +6,23 @@
  * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
-@tailwind base;
-
 @layer base {
 	body {
 		@apply font-body font-medium text-gray-very-dark;
 	}
 
-	/* Qlassik */
+	/* Open Sans */
 	@font-face {
-		font-family: 'Qlassik';
-		src: url('../fonts/qlassik/bold.woff2') format('woff2');
+		font-family: 'Open Sans';
+		src: url('../../fonts/open-sans/bold.woff2') format('woff2');
 		font-weight: 700;
 		font-style: normal;
 		font-display: swap;
 	}
 
 	@font-face {
-		font-family: 'Qlassik';
-		src: url('../fonts/qlassik/medium.woff2') format('woff2');
+		font-family: 'Open Sans';
+		src: url('../../fonts/open-sans/medium.woff2') format('woff2');
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;

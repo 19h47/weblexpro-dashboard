@@ -2,19 +2,23 @@
 /**
  * Enqueue
  *
- * @package    WordPress
+ * @package WordPress
  * @subpackage WebLexProDashboard
  */
 
 namespace WebLexProDashboard\Setup;
 
-use Timber\{ Timber };
+use WebLexProDashboard\Vite;
 
 /**
  * Enqueue
+ *
+ * Enqueue scripts and styles.
+ *
+ * @package WordPress
+ * @subpackage WebLexProDashboard/Setup/Enqueue
  */
 class Enqueue {
-
 
 	/**
 	 * Runs initialization tasks.
@@ -22,10 +26,50 @@ class Enqueue {
 	 * @return void
 	 */
 	public function run(): void {
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_filter( 'style_loader_tag', array( $this, 'style_loader_tag' ), 10, 4 );
-		add_action( 'wp_head', array( $this, 'preload' ) );
+
+		add_action( 'wp_head', array( $this, 'preload_wp_scripts' ) );
+		add_action( 'wp_head', array( $this, 'preload_wp_styles' ) );
+	}
+
+
+	/**
+	 * Enqueue styles.
+	 *
+	 * Enqueue stylesheets.
+	 *
+	 * @access public
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function enqueue_styles(): void {
+		// Add custom fonts, used in the main stylesheet.
+		$deps = array();
+
+		// register theme-style-css
+		$filename = Vite::asset( 'src/stylesheets/styles.css' );
+
+		// enqueue theme-style-css into our head
+		wp_enqueue_style( get_theme_text_domain() . '-main', $filename, $deps, null );
+	}
+
+
+	/**
+	 * Dequeue styles
+	 *
+	 * Remove styles that are not needed.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function dequeue_styles(): void {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' );
+		wp_dequeue_style( 'wc-block-style' );
+		wp_dequeue_style( 'global-styles' );
+		wp_dequeue_style( 'classic-theme-styles' );
 	}
 
 	/**
@@ -36,27 +80,26 @@ class Enqueue {
 	 * @since  1.0.0
 	 */
 	public function enqueue_scripts(): void {
+
+		wp_deregister_script( 'jquery' );
 		wp_deregister_script( 'wp-embed' );
-		$deps = array( 'wp-util' );
+		wp_deregister_script( 'wp-i18n' );
 
-		if ( isset( get_theme_manifest()['vendors.js'] ) ) {
-			wp_register_script( // phpcs:ignore
-				get_theme_text_domain() . '-vendors',
-				get_template_directory_uri() . '/' . get_theme_manifest()['vendors.js'],
-				array(),
-				null,
-				true
-			);
-			array_push( $deps, get_theme_text_domain() . '-vendors' );
-		}
+		$deps = array();
 
-		wp_register_script( // phpcs:ignore
+		// Enqueue the Vite module.
+		Vite::enqueue_script_module();
+
+		wp_register_script_module(
 			get_theme_text_domain() . '-main',
-			get_template_directory_uri() . '/' . get_theme_manifest()['main.js'],
+			Vite::asset( 'src/scripts/app.js' ),
 			$deps,
-			null,
-			true
+			null
 		);
+
+		wp_register_script( get_theme_text_domain() . '-feature', false );
+		wp_add_inline_script( get_theme_text_domain() . '-feature', '!function(e,n,o){("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch||o.MaxTouchPoints>0||o.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch")),n.documentElement.className=n.documentElement.className.replace(/\bno-js\b/,"js")}(window,document,navigator);' );
+		wp_add_inline_script( get_theme_text_domain() . '-feature', '/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor)&&(document.documentElement.className+=" is-safari");' );
 
 		$data = array(
 			'template_directory_uri' => get_template_directory_uri(),
@@ -69,79 +112,31 @@ class Enqueue {
 			'text_domain'            => get_theme_text_domain(),
 		);
 
+		// @TODO doesn't work with wp_enqueue_script_module so we use wp_add_inline_script attached to the feature script.
 		wp_add_inline_script(
-			get_theme_text_domain() . '-main',
+			get_theme_text_domain() . '-feature',
 			'var ' . get_theme_text_domain() . ' = ' . wp_json_encode(
 				$data
 			),
 			'before',
 		);
 
-		wp_register_script( get_theme_text_domain() . '-feature', false ); // phpcs:ignore
-		wp_add_inline_script( get_theme_text_domain() . '-feature', '!function(e,n,o){("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch||o.MaxTouchPoints>0||o.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch")),n.documentElement.className=n.documentElement.className.replace(/\bno-js\b/,"js")}(window,document,navigator);' );
-
 		wp_enqueue_script( get_theme_text_domain() . '-feature' );
-		wp_enqueue_script( get_theme_text_domain() . '-main' );
+		wp_enqueue_script_module( get_theme_text_domain() . '-main' );
 	}
 
 
 	/**
-	 * Enqueue styles.
+	 * Preload scripts
+	 *
+	 * Preload scripts for faster loading.
 	 *
 	 * @access public
 	 * @return void
-	 * @since  1.0.0
 	 */
-	public function enqueue_style(): void {
+	public function preload_wp_scripts(): void {
+		global $wp_scripts;
 
-		// Add custom fonts, used in the main stylesheet.
-		$webfonts = array();
-		foreach ( get_webfonts() as $name => $url ) {
-			wp_register_style( 'font-' . $name, $url, array(), '1.0.0' );
-			$webfonts[] = "font-$name";
-		}
-
-		wp_dequeue_style( 'wp-block-library' );
-		wp_dequeue_style( 'dashicons' );
-
-		// Theme stylesheet.
-		wp_register_style( // phpcs:ignore
-			get_theme_text_domain() . '-main',
-			get_template_directory_uri() . '/' . get_theme_manifest()['main.css'],
-			$webfonts,
-			null
-		);
-
-		wp_enqueue_style( get_theme_text_domain() . '-main' );
-	}
-
-
-	/**
-	 * Style Loader Tag
-	 *
-	 * @param string $html   The link tag for the enqueued style.
-	 * @param string $handle The style's registered handle.
-	 * @param string $href   The stylesheet's source URL.
-	 * @param string $media  The stylesheet's media attribute.
-	 *
-	 * @return string
-	 */
-	public function style_loader_tag( string $html, string $handle, string $href, string $media ): string {
-		if ( get_theme_text_domain() . '-main' === $handle ) {
-			$html = str_replace( '/>', ' onload="this.media=\'all\'; this.onload=null; this.isLoaded=true" />', $html );
-		}
-
-		return $html;
-	}
-
-
-	/**
-	 * Preload
-	 */
-	public function preload() {
-		global $wp_scripts, $wp_styles;
-
-		// Scripts.
 		foreach ( $wp_scripts->queue as $handle ) {
 			$script = $wp_scripts->registered[ $handle ];
 
@@ -151,11 +146,23 @@ class Enqueue {
 
 			if ( isset( $script->extra['group'] ) && 1 === $script->extra['group'] ) {
 				$href = $script->src . ( $script->ver ? "?ver={$script->ver}" : '' );
-				echo '<link rel="preload" as="script" href="' . $href . '">';
+				echo '<link rel="preload" as="script" href="' . esc_attr( $href ) . '">';
 			}
 		}
+	}
 
-		// Styles.
+
+	/**
+	 * Preload styles
+	 *
+	 * Preload styles for faster loading.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function preload_wp_styles(): void {
+		global $wp_styles;
+
 		foreach ( $wp_styles->queue as $handle ) {
 			$style = $wp_styles->registered[ $handle ];
 
@@ -164,18 +171,8 @@ class Enqueue {
 			}
 
 			$href = $style->src . ( $style->ver ? "?ver={$style->ver}" : '' );
-			echo '<link rel="preload" as="style" href="' . $href . '">';
+			echo '<link rel="preload" as="style" href="' . esc_attr( $href ) . '">';
 
-		}
-
-		// Fonts.
-		foreach ( get_theme_manifest() as $key => $value ) {
-			if ( substr( $key, 0, 6 ) === 'fonts/' ) {
-				$extension = pathinfo( $key, PATHINFO_EXTENSION );
-				$href      = get_template_directory_uri() . '/' . $value;
-
-				echo '<link rel="preload" as="font" href="' . $href . '" type="font/' . $extension . '" crossorigin>';
-			}
 		}
 	}
 }

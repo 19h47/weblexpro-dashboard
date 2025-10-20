@@ -9,7 +9,7 @@
 
 <div class="lg:flex items-center justify-between">
 	<a class="flex items-center gap-x-8 hover:underline" download href="{{ post.guid }}">
-		<hr class="w-10 h-0.5 bg-gray-very-dark">
+		<hr class="w-10 h-px bg-gray-very-dark">
 		{{ post.title }}
 	</a>
 
@@ -19,9 +19,9 @@
 
 		<a
 			download href="{{ post.guid }}"
-			class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+			class="size-6 border border-cyan-very-soft rounded-full text-cyan-very-soft  flex items-center justify-center"
 		>
-			{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+			{{ icon( 'download', { classes: [ 'w-2 h-4' ] } ) }}
 		</a>
 
 	</div>

@@ -11,13 +11,13 @@
 		<div class="container !max-w-full">
 			<div class="row">
 				<div class="lg:col-4/12">
-					<a class="block h-11 w-auto" href="{{ dashboard_url }}" aria-label="{{ site.description }}">
+					<a class="block w-auto h-11" href="{{ dashboard_url }}" aria-label="{{ site.description }}">
 						<img
-							class="block h-full"
-							src="{{ asset( 'img/svg/logo-white.svg' ) }}"
+							class="block h-full w-auto object-contain object-left"
+							src="{{ asset( 'src/img/png/logo-white.png' ) }}"
 							alt="{{ site.description }}"
-							width="247"
-							height="45"
+							width="1206"
+							height="360"
 						>
 					</a>
 				</div>
@@ -28,7 +28,7 @@
 						</a>
 
 						<a href="{{ contact_url }}" class="h-6 w-10 block" aria-label="{{ __( 'Contact Us' ) }}">
-							{{ icon( 'envelope', { classes: [ 'w-full h-full fill-current' ] } ) }}
+							{{ icon( 'envelope', { classes: [ 'size-full fill-current' ] } ) }}
 						</a>
 
 						{{- user and icon( 'bell', { classes: [ 'w-8 h-8 fill-current' ] } ) -}}
@@ -38,24 +38,26 @@
 				{%- if user -%}
 					<div class="lg:col-1/12 flex justify-end mt-8 lg:mt-0">
 						<div class="relative -mb-[4.75rem] z-10 group w-full lg:w-auto">
-							<button data-module-disclosure-button aria-controls="user-menu" type="button" class="rounded-full ml-auto relative z-2 w-24 h-24 border-blue-dark border-4 flex items-center justify-center bg-white">
-								{{- icon( 'user', { classes: [ 'w-8 h-14 fill-red-light' ] } ) -}}
-							</button>
+							<wlpd-disclosure-button>
+								<button data-dom="button" aria-controls="user-menu" type="button" class="rounded-full text-cyan-very-soft ml-auto relative z-2 w-24 h-24 border-blue-dark border-4 flex items-center justify-center bg-white">
+									{{- icon( 'user', { classes: [ 'w-8 h-14' ] } ) -}}
+								</button>
+							</wlpd-disclosure-button>
 							<div id="user-menu" style="display: none;" class="absolute w-full lg:w-auto z-1 -mt-[4.75rem] px-4 pt-24 pb-8 top-full right-0 rounded-[2.25rem] border border-gray-very-dark bg-white text-blue-dark">
 								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ fn( 'get_edit_profile_url', user.id ) }}" target="_blank" rel="noopener noreferer">
-									{{- icon( 'user', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- icon( 'user', { classes: [ 'size-4 fill-blue-dark' ] } ) -}}
 									{{- __( 'My profile', 'weblexpro-dashboard' ) -}}
 								</a>
 								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ likes_url }}">
-									{{- icon( 'heart-fill', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- icon( 'heart-fill', { classes: [ 'size-4 fill-blue-dark' ] } ) -}}
 									{{- __( 'My likes', 'weblexpro-dashboard' ) -}}</a>
 								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ documents_url }}">
-									{{- icon( 'documents', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- icon( 'documents', { classes: [ 'size-4 fill-blue-dark' ] } ) -}}
 									{{- __( 'My documents', 'weblexpro-dashboard' ) -}}
 								</a>
 								<hr class="border-dashed border-0.5 border-blue-dark w-full my-8">
 								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ fn( 'wp_logout_url' ) }}">
-									{{- icon( 'logout', { classes: [ 'w-4 h-4 fill-blue-dark' ] } ) -}}
+									{{- icon( 'logout', { classes: [ 'size-4 fill-blue-dark' ] } ) -}}
 									{{ __( 'Sign Out', 'weblexpro-dashboard' ) }}
 								</a>
 							</div>
@@ -70,7 +72,7 @@
 	<div class="container absolute inset-x-0 bottom-0 h-17 z-1 -mb-3">
 		<div class="row h-full">
 			<div class="h-full">
-				<div class="bg-cyan-soft h-full block w-full rotate-1"></div>
+				<div class="bg-cyan-very-soft h-full block w-full rotate-1"></div>
 			</div>
 		</div>
 	</div>

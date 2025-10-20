@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+	--default-font-family: 'Open Sans', sans-serif;
+	--font-body: var(--default-font-family);
+
+	/* Colors */
+	--color-*: initial;
+
+	--color-blue: #0073ff;
+	--color-blue-dark: #02378C;
+	--color-blue-vivid: #1484f5;
+	--color-red: #ff5062;
+	--color-red-light: #FF7351;
+	--color-cyan-soft: #60C3E3;
+	--color-cyan-very-soft: #8be8cb;
+
+	--color-gray: #BABABA;
+	--color-gray-very-dark: #707070;
+
+	--color-white: #ffffff;
+}

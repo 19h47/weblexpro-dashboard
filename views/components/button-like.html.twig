@@ -1,20 +1,19 @@
-<button
-	data-module-button-like
-	data-button-like-user-id="{{ user.id }}"
-	data-button-like-post-id="{{ id }}"
-	data-button-like-action="like_document"
-	type="button"
-	class="{{
-		html_classes(
-			'w-6 h-6 relative',
-			id in user.meta( 'likes' ) ? 'is-active' : ''
-		)
-	}}"
+<wlpd-button-like
+	class="{{ html_classes( 'block group', id in user.meta( 'likes' ) ? 'is-active' : '' ) }}"
+	data-action="like_document"
+	data-user-id="{{ user.id }}"
+	data-post-id="{{ id }}"
 >
-	{{- icon( 'heart-fill', { classes:
-		[ 'fill-red-light absolute w-full h-full inset-0 opacity-0 parent-is-active:opacity-100' ] } )
-	-}}
-	{{- icon( 'heart-stroke', { classes:
-		[ 'fill-red-light absolute w-full h-full inset-0 opacity-100 parent-is-active:opacity-0' ] } )
-	-}}
-</button>
+	<button
+		data-dom="like"
+		type="button"
+		class="{{ html_classes( 'size-6 text-cyan-very-soft relative group' ) }}"
+	>
+		{{- icon( 'heart-fill', { classes:
+			[ 'absolute size-full inset-0 opacity-0 group-[.is-active_&]:opacity-100' ] } )
+		-}}
+		{{- icon( 'heart-stroke', { classes:
+			[ 'absolute size-full inset-0 opacity-100 group-[.is-active_&]:opacity-0' ] } )
+		-}}
+	</button>
+</wlpd-button-like>

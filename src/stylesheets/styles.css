@@ -1,6 +1,15 @@
+@import "./theme.css";
+
 @import "./base/base.css";
 
-@import "./components/components.css";
+
+@layer base {
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		cursor: pointer;
+	}
+}
+
 @import "./components/button.css";
 @import "./components/guid.css";
 

@@ -8,51 +8,42 @@
  #}
 
 <article
-	class="lg:text-xl relative group"
+	class="lg:text-xl border-2 rounded-2xl relative group"
 	style="{{ active ? '' : 'color: #BABABA;' }}"
 >
 
 	{%- if active -%}
-		<a href="{{ offer.link }}" class="absolute inset-0 w-full h-full z-3" aria-label="{{ post.title }}"></a>
+		<a href="{{ offer.link }}" class="absolute inset-0 size-full z-3" aria-label="{{ post.title }}"></a>
 	{%- else -%}
-		<button
-			type="button"
-			class="absolute inset-0 w-full h-full z-3"
-			data-module-dialog-button
-			data-dialog-button-id="offer-unavailable"
-			aria-label="{{ __( 'En savoir plus...', 'weblexpro-dashboard' ) }}"
-		></button>
+		<wlpd-dialog-button data-id="offer-unavailable">
+			<button
+				type="button"
+				class="absolute inset-0 size-full z-3"
+				aria-label="{{ __( 'En savoir plus...', 'weblexpro-dashboard' ) }}"
+				data-dom="button"
+			></button>
+		</wlpd-dialog-button>
 	{%- endif -%}
 
-	<header class="text-white mr-8 -mb-24 relative z-2">
+	<header class="p-8 relative z-2">
 		<div
-			class="relative z-2 w-full p-4 lg:px-8 min-h-[7rem]"
-			style="background-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }}"
+			class="relative z-2 w-full"
 		>
 			<h3 class="lg:text-3xl lg:leading-none">{{- post.meta( 'catchphrase' ) -}}</h3>
 			<p class="mt-2">{{- post.title -}}</p>
 		</div>
-
-		<div
-			class="absolute left-full top-0 z-1 origin-bottom-left"
-			style="
-				border-bottom : 7rem solid transparent;
- 				border-left : 2rem solid  {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }};
-			"
-		></div>
 	</header>
 
 	<div
-		class="border-2 ml-4 pt-32 relative z-1"
-		style="border-color: {{ active ? post.meta( 'color' ) | default( '#BABABA' ) : '#BABABA' }};"
+		class="relative z-1"
 	>
 		<p class="px-6">{{- post.meta( 'description' ) -}}</p>
-		<footer class="mt-1 text-right">
+		<footer class="p-8 text-right">
 			{%- if active -%}
-				<div class="py-3 px-10 inline-block" style="background-color: {{ post.meta( 'color' ) | default( '#BABABA' ) }};">
-					<span class="w-6 h-6 border-white border rounded-full flex items-center justify-center">
+				<div class="size-10 flex text-white items-center rounded-full ml-auto justify-center bg-cyan-very-soft">
+
 						{{- icon( 'chevron-right', { classes: [ 'w-2 h-3 fill-white' ] } ) -}}
-					</span>
+
 				</div>
 			{%- else -%}
 				<div

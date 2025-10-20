@@ -1,15 +1,19 @@
 /* global weblexprodashboard */
-import modular from '@19h47/modular';
-import { body, html } from 'utils/environment';
+import { body, html } from './utils/environment.js';
+import { load } from 'piecesjs';
+import.meta.glob("../img/**/*");
+
+load('wlpd-accordion', () => import('./components/Accordion.js'));
+load('wlpd-button-like', () => import('./components/ButtonLike.js'));
+load('wlpd-disclosure-button', () => import('./components/DisclosureButton.js'));
+load('wlpd-dialog', () => import('./components/Dialog.js'));
+load('wlpd-dialog-button', () => import('./components/DialogButton.js'));
+load('wlpd-notice', () => import('./components/Notice.js'));
 
 const { text_domain: textDomain } = weblexprodashboard;
 
-// eslint-disable-next-line new-cap
-const app = new modular({ modules: [] });
 
 function init() {
-	app.init(app);
-
 	html.classList.add('is-loaded');
 	html.classList.add('is-ready');
 	html.classList.add('is-first-load');

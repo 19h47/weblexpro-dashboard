@@ -9,7 +9,7 @@
 
 <div class="lg:flex items-center justify-between">
 	<a class="flex items-center gap-x-8 hover:underline" href="{{ post.link }}">
-		<hr class="w-10 h-0.5 bg-gray-very-dark">{{ post.title }}
+		<hr class="w-10 h-px bg-gray-very-dark">{{ post.title }}
 	</a>
 
 	<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
@@ -21,18 +21,18 @@
 				title="{{ post.meta( 'archive' ).title }}"
 				download
 				href="{{ post.meta( 'archive' ).url }}"
-				class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+				class="size-6 border border-cyan-very-soft text-cyan-very-soft  rounded-full flex items-center justify-center"
 			>
-				{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+				{{ icon( 'download', { classes: [ 'w-2 h-4' ] } ) }}
 			</a>
 		{% else %}
 			{%- for document in post.meta( 'documents' ) -%}
 				<a
 					title="{{ document.file.title }}"
 					download href="{{ document.file.url }}"
-					class="w-6 h-6 border border-red-light rounded-full flex items-center justify-center"
+					class="size-6 border border-cyan-very-soft text-cyan-very-soft rounded-full flex items-center justify-center"
 				>
-					{{ icon( 'download', { classes: [ 'fill-red-light w-2 h-4' ] } ) }}
+					{{ icon( 'download', { classes: [ 'w-2 h-4' ] } ) }}
 				</a>
 			{%- endfor -%}
 		{% endif %}

@@ -21,16 +21,16 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
 		<meta name="format-detection" content="telephone=no">
 
-		<link rel="stylesheet" href="https://use.typekit.net/waj2avu.css">
-
 		{{ function( 'wp_head' ) }}
 
 	</head>
 
 	<body {{ body_class() }}>
 
+		{{- function('wp_body_open') -}}
+
 		{%- if notice -%}
-			<div class="bg-red-light text-white py-4" data-module-notice data-notice-name="{{ notice | sanitize }}" style="display:none;">
+			<wlpd-notice class="bg-cyan-very-soft text-white py-4 block" data-name="{{ notice | sanitize }}" style="display:none;">
 				<div class="container !max-w-full">
 					<div class="row">
 						<div>
@@ -40,14 +40,14 @@
 									{{- notice -}}
 								</div>
 
-								<button class="ml-2 w-7 h-7" type="button" data-notice="dismiss" aria-label="{{ __( 'Dismiss', 'weblexpro-dashboard' ) }}">
-									{{- icon( 'times', { classes: [ 'fill-current w-full h-full' ] } ) -}}
+								<button class="ml-2 w-7 h-7" type="button" data-dom="dismiss" aria-label="{{ __( 'Dismiss', 'weblexpro-dashboard' ) }}">
+									{{- icon( 'times', { classes: [ 'fill-current size-full' ] } ) -}}
 								</button>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</wlpd-notice>
 		{%- endif -%}
 
 
@@ -56,7 +56,7 @@
 		{% endblock %}
 
 		{% block wrapper %}
-			<div class="lg:flex">
+			<div class="lg:flex lg:items-start">
 
 				<main class="my-16 space-y-14 lg:pl-20 w-full lg:order-2 lg:relative lg:z-1">
 					{% block content %}
@@ -94,7 +94,7 @@
 					{% endblock %}
 				</main>
 
-				<aside class="lg:min-h-[calc(100vh_-_7.125rem)] bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-3xl lg:px-8 py-16 relative z-2 lg:order-1">
+				<aside class="m-4 lg:m-8 rounded-2xl bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-3xl lg:px-8 py-16 relative z-2 lg:order-1">
 					{% if nav_menus.main.get_items() and user %}
 						<ul class="space-y-3">
 							{% for item in nav_menus.main.get_items() %}
@@ -142,9 +142,11 @@
 												</ul>
 											{% endif %}
 										{%- else -%}
-											<button type="button" class="hover:underline" data-module-dialog-button data-dialog-button-id="offer-unavailable">
-												{{- item.title -}}
-											</button>
+											<wlpd-dialog-button data-id="offer-unavailable">
+												<button type="button" data-dom="button" class="hover:underline">
+													{{- item.title -}}
+												</button>
+											</wlpd-dialog-button>
 										{%- endif -%}
 									{%- else -%}
 										<a
@@ -193,28 +195,28 @@
 
 		{{ function( 'wp_footer' ) }}
 
-		<div id="svg-sprite" style="display: none;">{{- include( 'icons.svg', ignore_missing = true ) -}}</div>
+		<div id="svg-sprite" style="display: none;">{{- include( 'public/sprite.svg', ignore_missing = true ) -}}</div>
 
-		<div style="display: none;" class="fixed z-10 flex items-center justify-center w-full h-full inset-0" data-module-dialog="offer-unavailable">
+		<wlpd-dialog cid="offer-unavailable" style="display: none;" class="fixed z-10 flex items-center justify-center size-full inset-0">
 			<div class="relative m-4 z-2 border-2 border-blue-dark text-blue-dark bg-white max-w-[50.8125rem] p-4 lg:py-[5.25rem] lg:px-[6rem]">
 				<h2 class="lg:text-5xl text-center">{{- __( 'It looks like you are not taking advantage of this solution!', 'weblexpro-dashboard' ) -}}</h2>
 
 
 				<div class="flex items-end justify-center">
-					<img src="{{ asset( 'img/svg/woman.svg' ) }}" class="-mr-12 relative z-2 pointer-events-none" width="101" hright="241" alt="">
+					<img src="{{ asset( 'src/img/svg/woman.svg' ) }}" class="-mr-12 relative z-2 pointer-events-none" width="101" hright="241" alt="">
 					<a
 						href="{{ url_weblexpro_contact }}"
-						class="relative text-white text-center z-1 block lg:text-3xl py-8 px-5 bg-red-light"
+						class="relative text-white text-center z-1 block lg:text-3xl py-8 px-5 bg-cyan-very-soft"
 						target="_blank"
 						rel="noopener noreferer"
 					>
 						{{- __( 'I want a demo!', 'weblexpro-dashboard' ) -}}
-						<div class="absolute w-full pointer-events-none h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-red-light"></div>
+						<div class="absolute w-full pointer-events-none h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-cyan-very-soft"></div>
 					</a>
 				</div>
 			</div>
-			<div class="absolute z-1 inset-0" data-dialog="backdrop"></div>
-		</div>
+			<div class="absolute z-1 inset-0" data-dom="backdrop"></div>
+		</wlpd-dialog>
 
 	</body>
 

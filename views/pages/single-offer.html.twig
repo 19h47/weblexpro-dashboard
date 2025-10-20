@@ -10,6 +10,16 @@
 {% block content %}
 	{{ parent() }}
 
+	{%- if 'albatros' == post.meta( 'type' ) -%}
+		<div class="container">
+			<div class="row">
+				<div>
+					{{- post.meta( 'description' ) -}}
+				</div>
+			</div>
+		</div>
+	{%- endif -%}
+
 	{% if 'event' == post.meta( 'type' ) %}
 		<div class="container">
 			<div class="row">
@@ -27,7 +37,7 @@
 									{{- include( 'components/image.html.twig', { image: category.meta( 'image' ), classes: [ 'mt-8 mx-auto w-38 h-20 object-contain' ] } ) -}}
 								</div>
 
-								<div class="absolute w-full h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2" style="border-color:  {{ post.meta( 'color' ) }};"></div>
+								<div class="absolute size-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2" style="border-color:  {{ post.meta( 'color' ) }};"></div>
 							</a>
 						{% endfor %}
 					</div>
@@ -50,7 +60,7 @@
 								>
 									{{ item.link.title }}
 
-									<div class="absolute w-full h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-blue-dark"></div>
+									<div class="absolute size-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-blue-dark"></div>
 								</a>
 
 							{% endfor %}
@@ -68,7 +78,7 @@
 			<div class="row">
 				<div>
 					<div class="relative overflow-hidden w-full pt-[56.25%]">
-						<iframe class="absolute inset-0 w-full h-full" src="{{ user.meta( 'mag_url' ) }}"></iframe>
+						<iframe class="absolute inset-0 size-full" src="{{ user.meta( 'mag_url' ) }}"></iframe>
 					</div>
 				</div>
 			</div>

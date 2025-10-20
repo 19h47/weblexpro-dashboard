@@ -9,14 +9,9 @@
 
 namespace WebLexProDashboard\Setup;
 
-use Timber\{ Timber, Site };
-use Twig\{ TwigFunction };
-use Twig\Extra\Html\HtmlExtension;
+use Timber\{ Site };
 use WebLexProDashboard\Models\{ Document, Page };
 use WP_Post;
-
-Timber::init();
-Timber::$dirname = array( 'views', 'templates', 'dist' );
 
 /**
  * Theme
@@ -32,26 +27,7 @@ class Theme extends Site {
 	public function run(): void {
 		add_filter( 'timber/context', array( $this, 'add_socials_to_context' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-		add_filter( 'timber/context', array( $this, 'add_to_theme' ) );
 		add_filter( 'timber/post/classmap', array( $this, 'add_post_classmap' ) );
-	}
-
-
-	/**
-	 * Add to theme
-	 *
-	 * @param array $context Timber context.
-	 */
-	public function add_to_theme( array $context ): array {
-		$manifest = get_theme_manifest();
-
-		$context['theme']->manifest = array();
-
-		foreach ( $manifest as $label => $path ) {
-			$context['theme']->manifest[ $label ] = get_template_directory_uri() . '/' . $path;
-		}
-
-		return $context;
 	}
 
 

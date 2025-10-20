@@ -1,4 +1,4 @@
-import { html, body, scroll } from 'utils/environment';
+import { html, body, scroll } from './environment.js';
 
 /**
  * reset

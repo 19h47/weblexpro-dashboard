@@ -11,6 +11,7 @@ namespace WebLexProDashboard\Setup;
 use Twig\Extra\Html\{ HtmlExtension };
 use Twig\Extra\Intl\{ IntlExtension };
 use Twig\{ TwigFunction };
+use WebLexProDashboard\Vite;
 
 /**
  * Twig
@@ -166,8 +167,8 @@ class Twig {
 		$twig->addFunction(
 			new TwigFunction(
 				'asset',
-				function ( string $asset, bool $echo = false ) {
-						return asset( $asset, $echo );
+				function ( $asset ) {
+					return Vite::asset( $asset );
 				}
 			)
 		);
