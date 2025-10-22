@@ -84,13 +84,6 @@ class OfferPostFields {
 				'field_type'        => 'multi_select',
 			),
 			array(
-				'key'           => 'field_' . $key . '_color',
-				'label'         => __( 'Color', 'weblexpro-dashboard' ),
-				'name'          => 'color',
-				'type'          => 'color_picker',
-				'default_value' => '#ffffff',
-			),
-			array(
 				'key'         => 'field_' . $key . '_catchphrase',
 				'label'       => __( 'Catchphrase', 'weblexpro-dashboard' ),
 				'name'        => 'catchphrase',

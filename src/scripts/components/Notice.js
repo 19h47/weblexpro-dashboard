@@ -1,6 +1,6 @@
-import { Piece } from 'piecesjs';
-import { body } from '../utils/environment.js';
-import Cookies from 'js-cookie';
+import { Piece } from "piecesjs";
+import { body } from "../utils/environment.js";
+import Cookies from "js-cookie";
 
 /**
  * Notice
@@ -9,40 +9,53 @@ import Cookies from 'js-cookie';
  */
 class Notice extends Piece {
 	constructor() {
-		super('Notice');
+		super("Notice");
 
-		this.on('click', this.domAttr('dismiss'), this.dismiss);
+		this.on("click", this.domAttr("dismiss"), this.dismiss);
 	}
 
 	mount() {
-		this.name = this.getAttribute('data-name');
+		this.name = this.getAttribute("data-name");
 
-		const id = this.getAttribute('data-id') || '';
+		const id = this.getAttribute("data-id") || "";
 		this.cookieName = `${this.name}${id}`;
 
 		// Check the value of that cookie and show/hide the notice accordingly
-		if ('hidden' === Cookies.get(this.cookieName)) {
-			this.close();
+		if ("hidden" === Cookies.get(this.cookieName)) {
+			this.removeAttribute("open");
 		} else {
-			this.open();
+			this.setAttribute("open", "");
 		}
 	}
 
 	// Set a cookie and hide the store notice when the dismiss button is clicked
 	dismiss() {
-		Cookies.set(this.cookieName, 'hidden', { path: '/' });
-		this.close();
+		Cookies.set(this.cookieName, "hidden", { path: "/" });
+		this.removeAttribute("open");
 	}
 
 	close() {
 		body.classList.remove(`Notice-${this.name}--is-open`);
-		this.style.setProperty('display', 'none');
-		this.parentElement.removeChild(this);
+		this.style.setProperty("display", "none");
 	}
 
 	open() {
 		body.classList.add(`Notice-${this.name}--is-open`);
-		this.style.removeProperty('display');
+		this.style.removeProperty("display");
+	}
+
+	attributeChangedCallback(name, oldValue, newValue) {
+		if (name === "open") {
+			if (newValue === "") {
+				this.open();
+			} else {
+				this.close();
+			}
+		}
+	}
+
+	static get observedAttributes() {
+		return ["open"];
 	}
 }
 

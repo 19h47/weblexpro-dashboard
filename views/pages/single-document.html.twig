@@ -9,112 +9,107 @@
 
 {% block content %}
 
-	<div class="container">
-		<div class="row">
-			<div>
-				<p>
-					<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-						{{- __( 'Home', 'weblexpro-dashboard' ) -}}
-					</a>
+	<div>
+		<p>
+			<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+				{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+			</a>
 
-					{%- if post.terms() -%}
+			{%- if post.terms() -%}
 
-						{{- '&nbsp;&sol;&nbsp;' -}}
+				{{- '&nbsp;&sol;&nbsp;' -}}
 
-						 <a class="hover:underline" href="{{ post.offer[0].link }}">
-							{{- post.offer[0].meta( 'catchphrase' ) -}}
-						</a>
+					<a class="hover:underline" href="{{ post.offer[0].link }}">
+					{{- post.offer[0].meta( 'catchphrase' ) -}}
+				</a>
 
-						{%- if post.ancestors and post.ancestors[0] -%}
-							{{- '&nbsp;&sol;&nbsp;' -}}
-							<a class="hover:underline" href="{{ post.ancestors[0].link }}">
-								{{- post.ancestors[0].name -}}
-							</a>
-						{%- endif -%}
-
-						{%- if post.terms() -%}
-							{% for term in post.terms() | reverse %}
-								{%- if term.term_id != post.ancestors[0].term_id -%}
-									{{- '&nbsp;&sol;&nbsp;' -}}
-									<span>{{- term.name -}}</span>
-								{%- endif -%}
-							{% endfor %}
-						{%- endif -%}
-					{%- endif -%}
-
+				{%- if post.ancestors and post.ancestors[0] -%}
 					{{- '&nbsp;&sol;&nbsp;' -}}
-					{{- post.title -}}
+					<a class="hover:underline" href="{{ post.ancestors[0].link }}">
+						{{- post.ancestors[0].name -}}
+					</a>
+				{%- endif -%}
 
-				</p>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="container mb-4 mt-9">
-		<div class="row">
-
-			{%- if post.content -%}
-				<div class="{{ html_classes( post.meta( 'documents' ) ? 'col-4/12' : '', 'wysiwyg text-xl text-blue-dark' ) }}">
-					{{- post.content -}}
-				</div>
+				{%- if post.terms() -%}
+					{% for term in post.terms() | reverse %}
+						{%- if term.term_id != post.ancestors[0].term_id -%}
+							{{- '&nbsp;&sol;&nbsp;' -}}
+							<span>{{- term.name -}}</span>
+						{%- endif -%}
+					{% endfor %}
+				{%- endif -%}
 			{%- endif -%}
 
-			<div class="{{ html_classes( post.content ? 'col-8/12' : '' ) }}">
+			{{- '&nbsp;&sol;&nbsp;' -}}
+			{{- post.title -}}
 
-				<h2 class="text-4xl font-medium font-title text-gray-very-dark">{{- post.title -}}</h2>
+		</p>
 
-				{% if post.meta( 'documents' ) %}
+	</div>
 
-					<h3 class="text-2xl text-cyan-very-soft mt-4">
-						{{- _n( 'Attached File', 'Attached Files', post.meta( 'documents' ) | length, 'weblexpro-dashboard' ) -}}
-					</h3>
+	<div class="mb-4 mt-9 row">
 
-					<div class="space-y-4 mt-4">
-						{% for document in post.meta( 'documents' ) %}
-							<div>
-
-								{% if 'audio' == document.file.type and document.file %}
-									<div class="flex items-center p-5 border rounded border-black/20">
-										<audio class="w-full" controls src="{{ document.file.url }}">
-											{{- __( "Sorry, your browser doesn't support the audio element.", 'weblexpro-dashboard' ) -}}
-										</audio>
-									</div>
-								{% elseif 'video' == document.file.type and document.file %}
-									<div class="p-5 border rounded border-black/20">
-										<div class="relative pb-[56.25%] h-auto max-w-full overflow-hidden">
-											<video controls class="absolute inset-0 size-full">
-												<source src="{{ document.file.url }}" type="{{ mime_type }}">
-												{{ __( "Sorry, your browser doesn't support embedded videos.", 'weblexpro-dashboard' ) -}}
-											</video>
-										</div>
-									</div>
-								{% elseif document.file %}
-									<a download class="flex items-center p-5 border rounded group border-black/20" href="{{ document.file.url }}">
-										<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
-
-										<p class="ml-auto button group-hover:underline" type="button">{{- __( 'Download', 'weblexpro-dashboard' ) -}}</p>
-									</a>
-								{% endif %}
-
-								<div class="flex gap-x-2.5 items-center mt-4">
-									<a download href="{{ document.file.url }}" class="bg-cyan-very-soft text-white text-3xl items-center flex gap-x-2 p-2">
-										{{- __( 'Download', 'weblexpro-dashboard' ) -}}
-										<span class="flex items-center justify-center w-8 h-8 bg-white text-cyan-very-soft rounded-full">
-											{{- icon( 'download', { classes: [ 'size-4' ] } ) -}}
-										</span>
-									</a>
-
-									{{- include( 'components/button-like.html.twig', { user: user, id: document.file.id } ) -}}
-								</div>
-
-							</div>
-						{% endfor %}
-					</div>
-				{% endif %}
-
+		{%- if post.content -%}
+			<div class="{{ html_classes( post.meta( 'documents' ) ? 'col-4/12' : '', 'wysiwyg text-xl text-blue-dark' ) }}">
+				{{- post.content -}}
 			</div>
+		{%- endif -%}
+
+		<div class="{{ html_classes( post.content ? 'col-8/12' : '' ) }}">
+
+			<h2 class="text-4xl font-extrabold font-heading text-blue-dark">{{- post.title -}}</h2>
+
+			{% if post.meta( 'documents' ) %}
+
+				<h3 class="text-2xl text-cyan-very-soft mt-4">
+					{{- _n( 'Attached File', 'Attached Files', post.meta( 'documents' ) | length, 'weblexpro-dashboard' ) -}}
+				</h3>
+
+				<div class="space-y-4 mt-4">
+					{% for document in post.meta( 'documents' ) %}
+						<div>
+
+							{% if 'audio' == document.file.type and document.file %}
+								<div class="flex items-center p-5 border rounded-full border-black/20">
+									<audio class="w-full" controls src="{{ document.file.url }}">
+										{{- __( "Sorry, your browser doesn't support the audio element.", 'weblexpro-dashboard' ) -}}
+									</audio>
+								</div>
+							{% elseif 'video' == document.file.type and document.file %}
+								<div class="p-5 border rounded-3xl border-black/20">
+									<div class="relative pb-[56.25%] h-auto max-w-full overflow-hidden">
+										<video controls class="absolute inset-0 size-full">
+											<source src="{{ document.file.url }}" type="{{ mime_type }}">
+											{{ __( "Sorry, your browser doesn't support embedded videos.", 'weblexpro-dashboard' ) -}}
+										</video>
+									</div>
+								</div>
+							{% elseif document.file %}
+								<a download class="flex items-center p-5 border rounded-full group border-black/20" href="{{ document.file.url }}">
+									<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
+
+									<p class="ml-auto button group-hover:underline" type="button">{{- __( 'Download', 'weblexpro-dashboard' ) -}}</p>
+								</a>
+							{% endif %}
+
+							<div class="flex gap-x-2.5 items-center mt-4">
+								<a download href="{{ document.file.url }}" class="rounded-full text-xl py-3 px-4 text-blue-dark bg-cyan-very-soft items-center flex gap-x-2">
+									{{- __( 'Download', 'weblexpro-dashboard' ) -}}
+									<span class="flex items-center justify-center w-8 h-8 bg-white text-cyan-very-soft rounded-full">
+										{{- icon( 'download', { classes: [ 'size-4' ] } ) -}}
+									</span>
+								</a>
+
+								{{- include( 'components/button-like.html.twig', { user: user, id: document.file.id } ) -}}
+							</div>
+
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+
 		</div>
+
 	</div>
 
 {% endblock %}

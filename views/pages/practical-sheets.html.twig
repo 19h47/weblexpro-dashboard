@@ -26,14 +26,14 @@
 							data-accordion-deselect="true"
 						>
 							<button
-								class="js-accordion-header lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+								class="js-accordion-header group text-xl font-extrabold italic text-blue-dark gap-5 rounded-full border-3 border-blue-dark p-4 lg:px-8.5 flex items-center"
 								type="button"
 								aria-expanded="false"
 								aria-controls="{{ id }}"
 								id="{{ id }}-header"
 							>
 								{{- _n( 'Practical Sheet', 'Practical Sheets', user.meta( 'documents' ).practical_sheets | length, 'weblexpro-dashboard' ) -}}
-								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
+								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3', 'group-aria-expanded:rotate-90 transition-transform duration-800 ease-in-out' ] } ) -}}
 							</button>
 
 							<div
@@ -41,39 +41,16 @@
 								class="lg:text-2xl"
 								role="region"
 							>
-								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
-									<div class="border-l border-gray-very-dark">
+								<div class="js-accordion-inner space-y-4 mx-6 lg:mr-10 lg:ml-35 pt-6">
+
 										{% for document in user.meta( 'documents' ).practical_sheets %}
 											{% set post = get_post( document.file.id ) %}
 											{{- include( 'components/tease-attachment.html.twig', { post: {
 												title: document.title | default( document.file.title ),
 												guid: post.guid
 											} } ) -}}
-											{# <div class="lg:flex items-center justify-between">
-												<a
-													class="flex items-center gap-x-8 hover:underline"
-													href="{{ document.file.url }}"
-													download
-												>
-													<hr class="w-10 h-px bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
-												</a>
-
-												<div class="flex gap-x-4 ml-[4.5rem] lg:ml-0 mt-2 lg:mt-0">
-
-													{{- include( 'components/button-like.html.twig', { user: user, id: document.file.id } ) -}}
-
-													<a
-														title="{{ document.file.title }}"
-														download href="{{ document.file.url }}"
-														class="size-6 border border-cyan-very-soft text-cyan-very-soft rounded-full flex items-center justify-center"
-													>
-														{{ icon( 'download', { classes: [ 'w-2 h-4' ] } ) }}
-													</a>
-
-												</div>
-											</div> #}
 										{% endfor %}
-									</div>
+
 								</div>
 							</div>
 						</div>

@@ -1,5 +1,5 @@
 <wlpd-button-like
-	class="{{ html_classes( 'block group', id in user.meta( 'likes' ) ? 'is-active' : '' ) }}"
+	class="{{ html_classes( 'block group/button', id in user.meta( 'likes' ) ? 'is-active' : '' ) }}"
 	data-action="like_document"
 	data-user-id="{{ user.id }}"
 	data-post-id="{{ id }}"
@@ -7,13 +7,13 @@
 	<button
 		data-dom="like"
 		type="button"
-		class="{{ html_classes( 'size-6 text-cyan-very-soft relative group' ) }}"
+		class="{{ html_classes( 'size-6 text-cyan-very-soft relative' ) }}"
 	>
 		{{- icon( 'heart-fill', { classes:
-			[ 'absolute size-full inset-0 opacity-0 group-[.is-active_&]:opacity-100' ] } )
+			[ 'absolute size-full inset-0 opacity-0 group-[.is-active]/button:opacity-100' ] } )
 		-}}
 		{{- icon( 'heart-stroke', { classes:
-			[ 'absolute size-full inset-0 opacity-100 group-[.is-active_&]:opacity-0' ] } )
+			[ 'absolute size-full inset-0 opacity-100 group-[.is-active]/button:opacity-0' ] } )
 		-}}
 	</button>
 </wlpd-button-like>

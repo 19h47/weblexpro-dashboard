@@ -8,60 +8,58 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-	<div class="container">
-		<div class="row">
-			<div>
-				<p>
-					<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-						{{- __( 'Home', 'weblexpro-dashboard' ) -}}
-					</a>
 
-					{%- if 'offer' == post.type -%}
-						&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
-					{%- endif -%}
+	<div class="row">
+		<div>
+			<p>
+				<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+					{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+				</a>
 
-					{%- if 'page' == post.type -%}
-						&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
-					{%- endif -%}
+				{%- if 'offer' == post.type -%}
+					&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
+				{%- endif -%}
 
-				</p>
+				{%- if 'page' == post.type -%}
+					&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
+				{%- endif -%}
 
-			</div>
+			</p>
+
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="lg:col-4/12 wysiwyg">
-				{{- post.content -}}
-			</div>
+	<div class="row">
+		<div class="lg:col-4/12 wysiwyg">
+			{{- post.content -}}
+		</div>
 
-			<div class="lg:col-8/12 mt-8 lg:mt-0">
-				<style>
-					.wpcf7-form .wpcf7-form-control-wrap {
-						display: block;
-					}
-					.wpcf7-form .wpcf7-form-control-wrap .wpcf7-form-control {
-						border: 1px solid currentColor;
-						display: block;
-						padding: 0.5em 1em;
-						width: 100%;;
-					}
-					.wpcf7-form > p {
-						margin-bottom: 1em;
-					}
-					.wpcf7-form > p:last-of-type {
-						margin-bottom: 0;
-					}
+		<div class="lg:col-8/12 mt-8 lg:mt-0">
+			<style>
+				.wpcf7-form .wpcf7-form-control-wrap {
+					display: block;
+				}
+				.wpcf7-form .wpcf7-form-control-wrap .wpcf7-form-control {
+					border: 1px solid currentColor;
+					display: block;
+					padding: 0.5em 1em;
+					width: 100%;;
+				}
+				.wpcf7-form > p {
+					margin-bottom: 1em;
+				}
+				.wpcf7-form > p:last-of-type {
+					margin-bottom: 0;
+				}
 
-					.wpcf7-form .wpcf7-form-control.wpcf7-submit {
-						background-color: #FF7351;
-						color: white;
-						padding: 0.5em 1em;
-					}
-				</style>
-				{{- ( '[contact-form-7 id="' ~ post.meta( 'form_id' ) ~ '"]' ) | shortcodes -}}
-			</div>
+				.wpcf7-form .wpcf7-form-control.wpcf7-submit {
+					background-color: #02378c;
+					color: white;
+					padding: 0.5em 1em;
+				}
+			</style>
+			{{- ( '[contact-form-7 id="' ~ post.meta( 'form_id' ) ~ '"]' ) | shortcodes -}}
 		</div>
 	</div>
+
 {% endblock %}

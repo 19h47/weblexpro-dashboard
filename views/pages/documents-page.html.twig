@@ -14,7 +14,7 @@
 		<div class="container lg:text-3xl">
 			<div class="row">
 
-				<wlpd-accordion class="space-y-4">
+				<wlpd-accordion class="space-y-8">
 					{%- if user.meta( 'documents' ).bills -%}
 
 						{% set id = 'bills-' ~ uniqid() %}
@@ -25,14 +25,14 @@
 							data-accordion-deselect="true"
 						>
 							<button
-								class="js-accordion-header lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-8 flex w-full justify-between items-center"
+								class="js-accordion-header  group text-xl font-extrabold italic text-blue-dark gap-5 rounded-full border-3 border-blue-dark p-4 lg:px-8.5 flex items-center"
 								type="button"
 								aria-expanded="false"
 								aria-controls="{{ id }}"
 								id="{{ id }}-header"
 							>
 								{{- _n( 'Bill', 'Bills', user.meta( 'documents' ).bills | length, 'weblexpro-dashboard' ) -}}
-								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
+								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3', 'group-aria-expanded:rotate-90 transition-transform duration-800 ease-in-out' ] } ) -}}
 							</button>
 
 							<div
@@ -40,18 +40,18 @@
 								class="lg:text-2xl"
 								role="region"
 							>
-								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
-									<div class="border-l border-gray-very-dark">
-										{% for document in user.meta( 'documents' ).bills %}
-											<a
-												class="flex items-center gap-x-8 hover:underline"
-												href="{{ document.file.url }}"
-												download
-											>
-												<hr class="w-10 h-px bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
-											</a>
-										{% endfor %}
-									</div>
+								<div class="js-accordion-inner space-y-4 mx-6 lg:mx-10 pt-6">
+
+									{% for document in user.meta( 'documents' ).bills %}
+										<a
+											class="hover:underline block italic text-blue-dark"
+											href="{{ document.file.url }}"
+											download
+										>
+											{{ document.title | default( document.file.title ) }}
+										</a>
+									{% endfor %}
+
 								</div>
 							</div>
 						</div>
@@ -67,14 +67,14 @@
 							data-accordion-deselect="true"
 						>
 							<button
-								class="js-accordion-header lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+								class="js-accordion-header group text-xl font-extrabold italic text-blue-dark gap-5 rounded-full border-3 border-blue-dark p-4 lg:px-8.5 flex items-center"
 								type="button"
 								aria-expanded="false"
 								aria-controls="{{ id }}"
 								id="{{ id }}-header"
 							>
 								{{- _n( 'Contract', 'Contracts', user.meta( 'documents' ).contracts | length, 'weblexpro-dashboard' ) -}}
-								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3' ] } ) -}}
+								{{- icon( 'chevron-right', { classes: [ 'w-5 h-3', 'group-aria-expanded:rotate-90 transition-transform duration-800 ease-in-out' ] } ) -}}
 							</button>
 
 							<div
@@ -82,18 +82,18 @@
 								class="lg:text-3xl"
 								role="region"
 							>
-								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
-									<div class="border-l border-gray-very-dark">
-										{% for document in user.meta( 'documents' ).contracts %}
-											<a
-												class="flex items-center gap-x-8 hover:underline"
-												href="{{ document.file.url }}"
-												download
-											>
-												<hr class="w-10 h-px bg-gray-very-dark">{{ document.title | default( document.file.title ) }}
-											</a>
-										{% endfor %}
-									</div>
+								<div class="js-accordion-inner mx-6 lg:mx-10 pt-6 space-y-4">
+
+									{% for document in user.meta( 'documents' ).contracts %}
+										<a
+											class="hover:underline text-xl block font-medium text-blue-dark italic"
+											href="{{ document.file.url }}"
+											download
+										>
+											{{ document.title | default( document.file.title ) }}
+										</a>
+									{% endfor %}
+
 								</div>
 							</div>
 						</div>

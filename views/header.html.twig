@@ -8,8 +8,8 @@
 
 <header class="relative text-white z-10 lg:z-2">
 	<div class="bg-blue-dark py-8 relative z-2">
-		<div class="container !max-w-full">
-			<div class="row">
+		<div class="container">
+			<div class="row lg:items-center">
 				<div class="lg:col-4/12">
 					<a class="block w-auto h-11" href="{{ dashboard_url }}" aria-label="{{ site.description }}">
 						<img
@@ -21,29 +21,23 @@
 						>
 					</a>
 				</div>
-				<div class="lg:col-7/12 lg:flex lg:justify-end mt-8 lg:mt-0">
+				<div class="col-6/12 lg:flex lg:justify-end mt-8 lg:mt-0">
 					<div class="flex gap-7 items-center">
-						<a class="text-xl underline hover:no-underline" href="tel:{{ phone_number | replace( { '.' : '' } ) }}">
-							{{ phone_number }}
+						<a href="{{ contact_url }}" class="rounded-full text-xs font-medium py-3 px-6 text-blue-dark bg-cyan-very-soft block" aria-label="{{ __( 'Contact Us', 'weblexpro-dashboard' ) }}">
+							{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}
 						</a>
-
-						<a href="{{ contact_url }}" class="h-6 w-10 block" aria-label="{{ __( 'Contact Us' ) }}">
-							{{ icon( 'envelope', { classes: [ 'size-full fill-current' ] } ) }}
-						</a>
-
-						{{- user and icon( 'bell', { classes: [ 'w-8 h-8 fill-current' ] } ) -}}
 					</div>
 				</div>
 
 				{%- if user -%}
-					<div class="lg:col-1/12 flex justify-end mt-8 lg:mt-0">
-						<div class="relative -mb-[4.75rem] z-10 group w-full lg:w-auto">
-							<wlpd-disclosure-button>
-								<button data-dom="button" aria-controls="user-menu" type="button" class="rounded-full text-cyan-very-soft ml-auto relative z-2 w-24 h-24 border-blue-dark border-4 flex items-center justify-center bg-white">
-									{{- icon( 'user', { classes: [ 'w-8 h-14' ] } ) -}}
+					<div class="col-6/12 lg:col-2/12 flex justify-end mt-8 lg:mt-0">
+						<div class="relative z-10 group w-auto">
+							<wlpd-disclosure-button class="block">
+								<button data-dom="button" aria-controls="user-menu" type="button" class="rounded-full text-xs font-medium py-3 px-6 text-blue-dark bg-cyan-very-soft block">
+									{{- __( 'My Account', 'weblexpro-dashboard' ) -}}
 								</button>
 							</wlpd-disclosure-button>
-							<div id="user-menu" style="display: none;" class="absolute w-full lg:w-auto z-1 -mt-[4.75rem] px-4 pt-24 pb-8 top-full right-0 rounded-[2.25rem] border border-gray-very-dark bg-white text-blue-dark">
+							<div id="user-menu" style="display: none;" class="absolute z-1 px-4 py-8 top-full right-0 rounded-3xl border border-gray-very-dark bg-white text-blue-dark">
 								<a class="hover:underline flex whitespace-nowrap flex-nowrap items-center gap-x-3" href="{{ fn( 'get_edit_profile_url', user.id ) }}" target="_blank" rel="noopener noreferer">
 									{{- icon( 'user', { classes: [ 'size-4 fill-blue-dark' ] } ) -}}
 									{{- __( 'My profile', 'weblexpro-dashboard' ) -}}
@@ -65,14 +59,6 @@
 
 					</div>
 				{%- endif -%}
-			</div>
-		</div>
-	</div>
-
-	<div class="container absolute inset-x-0 bottom-0 h-17 z-1 -mb-3">
-		<div class="row h-full">
-			<div class="h-full">
-				<div class="bg-cyan-very-soft h-full block w-full rotate-1"></div>
 			</div>
 		</div>
 	</div>

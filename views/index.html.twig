@@ -56,136 +56,127 @@
 		{% endblock %}
 
 		{% block wrapper %}
-			<div class="lg:flex lg:items-start">
+			<div class="container py-5">
+				<div class="row space-y-5 lg:space-y-0 lg:items-start">
 
-				<main class="my-16 space-y-14 lg:pl-20 w-full lg:order-2 lg:relative lg:z-1">
-					{% block content %}
-						<div class="container">
-							<div class="row">
-								<div>
-									<p>
-										<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-											{{- __( 'Home', 'weblexpro-dashboard' ) -}}
-										</a>
+					<div class="lg:col-8/12 space-y-7 lg:space-y-14 lg:order-2">
+						{% block content %}
+							<div>
+								<p>
+									<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+										{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+									</a>
 
-										{%- if 'offer' == post.type -%}
-											&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
-										{%- endif -%}
+									{%- if 'offer' == post.type -%}
+										&nbsp;&sol;&nbsp;<span>{{- post.meta( 'catchphrase' ) -}}</span>
+									{%- endif -%}
 
-										{%- if 'page' == post.type -%}
-											&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
-										{%- endif -%}
+									{%- if 'page' == post.type -%}
+										&nbsp;&sol;&nbsp;<span>{{- post.title -}}</span>
+									{%- endif -%}
 
-									</p>
+								</p>
 
-								</div>
 							</div>
-						</div>
 
-						{%- if post.content -%}
-							<div class="container lg:text-3xl text-blue-dark font-bold">
-								<div class="row">
-									<div>
-										{{- post.content -}}
-									</div>
+							{%- if post.content -%}
+								<div class="lg:text-3xl text-blue-dark font-bold">
+									{{- post.content -}}
 								</div>
-							</div>
-						{%- endif -%}
-					{% endblock %}
-				</main>
+							{%- endif -%}
+						{% endblock %}
+					</div>
 
-				<aside class="m-4 lg:m-8 rounded-2xl bg-blue-dark text-white px-4 lg:min-w-98.5 lg:text-3xl lg:px-8 py-16 relative z-2 lg:order-1">
-					{% if nav_menus.main.get_items() and user %}
-						<ul class="space-y-3">
-							{% for item in nav_menus.main.get_items() %}
-								<li class="m-1 {{ item.classes | join( ' ' ) | trim }}">
-									{%- if 'offer' == item.master_object.post_type %}
-										{%- if item.master_object.ID in user.meta( 'offers' ) -%}
+					<aside class="lg:col-4/12 lg:order-1 lg:sticky lg:top-5">
+						<div class="rounded-3xl bg-blue-dark  text-white p-4 text-xl lg:px-21.25 lg:pt-6.5">
+							{% if nav_menus.main.get_items() and user %}
+								<ul class="space-y-2.5">
+									{% for item in nav_menus.main.get_items() %}
+										<li class="{{ html_classes( item.classes | join( ' ' ) | trim ) }}">
+											{%- if loop.first -%}
+												<a href="{{ item.link }}" class="font-extrabold italic text-center block mb-8" {{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}>{{- item.title -}}</a>
+											{%- else -%}
+												{%- if 'offer' == item.master_object.post_type %}
+													{%- if item.master_object.ID in user.meta( 'offers' ) -%}
+														<a
+															class="{{
+																html_classes(
+																	item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline',
+																	'flex gap-x-4 italic items-center'
+																)
+															}}"
+															href="{{ item.link }}"
+															{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+														>
+															{{- item.title -}}
+
+															{% if ( 'document' == post.type or item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+																{{ icon( 'chevron-up', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
+															{% elseif item.children %}
+																{{ icon( 'chevron-down', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
+															{% endif %}
+														</a>
+
+														{% if ( 'document' == post.type or item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
+															<ul class="my-8 text-xl pl-4">
+																{% for child in item.children %}
+																	<li>
+																		<a
+																			class="{{
+																				html_classes(
+																					'hover:underline italic text-base',
+																					child.current ? 'underline' : '',
+																					post.ancestors and child.master_object.id in post.ancestors | map( a => a.id ) ? 'underline' : '',
+																				)
+																			}}"
+																			href="{{ child.link }}"
+																			{{ child.is_target_blank or child.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+																		>
+																			{{- child.title -}}
+																		</a>
+																	</li>
+																{% endfor %}
+															</ul>
+														{% endif %}
+													{%- else -%}
+														<wlpd-dialog-button data-id="offer-unavailable">
+															<button type="button" data-dom="button" class="italic hover:underline">
+																{{- item.title -}}
+															</button>
+														</wlpd-dialog-button>
+													{%- endif -%}
+												{%- else -%}
+													<a
+														class="{{
+															html_classes( 'italic', item.current ? 'underline' : '', 'hover:underline' )
+														}}"
+														href="{{ item.link }}"
+														{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+													>
+														{{- item.title -}}
+													</a>
+												{%- endif -%}
+											{%- endif -%}
+										</li>
+									{% endfor %}
+
+									{%- if practical_sheets_url and user.meta( 'documents' ).practical_sheets -%}
+										<li>
 											<a
 												class="{{
-													html_classes(
-														item.current or item.current_item_ancestor or item.current_item_parent ? 'underline' : '', 'hover:underline',
-														'flex gap-x-4 items-center'
-													)
+													html_classes( 'italic', post.link == practical_sheets_url ? 'underline' : '', 'hover:underline' )
 												}}"
-												href="{{ item.link }}"
-												{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
+												href="{{ practical_sheets_url }}"
 											>
-												{{- item.title -}}
-
-												{% if ( 'document' == post.type or item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
-													{{ icon( 'chevron-up', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
-												{% elseif item.children %}
-													{{ icon( 'chevron-down', { classes: [ 'fill-white', 'h-5 w-3' ] } ) }}
-												{% endif %}
+												{{- practical_sheets_title -}}
 											</a>
-
-											{% if ( 'document' == post.type or item.current or item.current_item_ancestor or item.current_item_parent ) and item.children %}
-												<ul class="lg:text-3xl my-8 pl-4">
-													{% for child in item.children %}
-														<li>
-															<a
-																class="{{
-																	html_classes(
-																		'hover:underline',
-																		child.current ? 'underline' : '',
-																		post.ancestors and child.master_object.id in post.ancestors | map( a => a.id ) ? 'underline' : '',
-																	)
-																}}"
-																href="{{ child.link }}"
-																{{ child.is_target_blank or child.is_external ? 'target="_blank" rel="noopener noreferer"' }}
-															>
-																{{- child.title -}}
-															</a>
-														</li>
-													{% endfor %}
-												</ul>
-											{% endif %}
-										{%- else -%}
-											<wlpd-dialog-button data-id="offer-unavailable">
-												<button type="button" data-dom="button" class="hover:underline">
-													{{- item.title -}}
-												</button>
-											</wlpd-dialog-button>
-										{%- endif -%}
-									{%- else -%}
-										<a
-											class="{{
-												html_classes( item.current ? 'underline' : '', 'hover:underline' )
-											}}"
-											href="{{ item.link }}"
-											{{ item.is_target_blank or item.is_external ? 'target="_blank" rel="noopener noreferer"' }}
-										>
-											{{- item.title -}}
-										</a>
+										</li>
 									{%- endif -%}
-								</li>
-							{% endfor %}
-
-							{%- if practical_sheets_url and user.meta( 'documents' ).practical_sheets -%}
-								<li class="m-1">
-									<a
-										class="{{
-											html_classes( post.link == practical_sheets_url ? 'underline' : '', 'hover:underline' )
-										}}"
-										href="{{ practical_sheets_url }}"
-									>
-										{{- practical_sheets_title -}}
-									</a>
-								</li>
-							{%- endif -%}
-						</ul>
-						<hr class="border-none h-1 bg-white block w-full my-13">
-					{% endif %}
-
-					<div class="flex lg:inline-flex flex-col items-center">
-						<a
-							class="{{ html_classes( 'mb-7', post.link == contact_url ? 'underline' : 'hover:underline' ) }}"
-							href="{{ contact_url }}"
-						>{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}</a>
-						{{- include( 'components/socials.html.twig' ) -}}
-					</div>
-				</aside>
+								</ul>
+							{% endif %}
+						</div>
+					</aside>
+				</div>
 			</div>
 		{% endblock %}
 
@@ -198,22 +189,17 @@
 		<div id="svg-sprite" style="display: none;">{{- include( 'public/sprite.svg', ignore_missing = true ) -}}</div>
 
 		<wlpd-dialog cid="offer-unavailable" style="display: none;" class="fixed z-10 flex items-center justify-center size-full inset-0">
-			<div class="relative m-4 z-2 border-2 border-blue-dark text-blue-dark bg-white max-w-[50.8125rem] p-4 lg:py-[5.25rem] lg:px-[6rem]">
-				<h2 class="lg:text-5xl text-center">{{- __( 'It looks like you are not taking advantage of this solution!', 'weblexpro-dashboard' ) -}}</h2>
+			<div class="relative m-4 z-2 border-2 rounded-3xl border-blue-dark text-blue-dark bg-white max-w-[50.8125rem] p-4 lg:py-[5.25rem] space-y-5 lg:px-[6rem]">
+				<h2 class="lg:text-5xl font-heading font-extrabold text-center">{{- __( 'It looks like you are not taking advantage of this solution!', 'weblexpro-dashboard' ) -}}</h2>
 
-
-				<div class="flex items-end justify-center">
-					<img src="{{ asset( 'src/img/svg/woman.svg' ) }}" class="-mr-12 relative z-2 pointer-events-none" width="101" hright="241" alt="">
-					<a
-						href="{{ url_weblexpro_contact }}"
-						class="relative text-white text-center z-1 block lg:text-3xl py-8 px-5 bg-cyan-very-soft"
-						target="_blank"
-						rel="noopener noreferer"
-					>
-						{{- __( 'I want a demo!', 'weblexpro-dashboard' ) -}}
-						<div class="absolute w-full pointer-events-none h-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-cyan-very-soft"></div>
-					</a>
-				</div>
+				<a
+					href="{{ url_weblexpro_contact }}"
+					class="relative text-center z-1 block lg:text-3xl py-3 px-4 text-blue-dark bg-cyan-very-soft rounded-full"
+					target="_blank"
+					rel="noopener noreferer"
+				>
+					{{- __( 'I want a demo!', 'weblexpro-dashboard' ) -}}
+				</a>
 			</div>
 			<div class="absolute z-1 inset-0" data-dom="backdrop"></div>
 		</wlpd-dialog>

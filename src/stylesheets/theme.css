@@ -3,6 +3,7 @@
 @theme {
 	--default-font-family: 'Open Sans', sans-serif;
 	--font-body: var(--default-font-family);
+	--font-heading: 'Montserrat', sans-serif;
 
 	/* Colors */
 	--color-*: initial;
@@ -19,4 +20,5 @@
 	--color-gray-very-dark: #707070;
 
 	--color-white: #ffffff;
+	--color-black: #000000;
 }

@@ -9,13 +9,14 @@
 {% set posts = posts | default( document.posts( { post_type: 'document', posts_per_page: -1 } ) ) %}
 
 {%- if posts.found_posts -%}
+	{% set id = uniqid() %}
 	<div class="js-accordion-panel" data-accordion-open="false" data-accordion-deselect="true">
 		<button
-			class="js-accordion-header group lg:text-2xl font-medium border border-gray-very-dark p-4 lg:px-9 flex w-full justify-between items-center"
+			class="js-accordion-header group text-xl font-extrabold italic text-blue-dark gap-5 rounded-full border-3 border-blue-dark p-4 lg:px-8.5 flex items-center"
 			type="button"
 			aria-expanded="false"
-			aria-controls="{{ slug ~ '-' ~ document.slug }}"
-			id="{{ slug ~ '-' ~ document.slug }}-header"
+			aria-controls="{{ slug ~ '-' ~ document.slug ~ '-' ~ id }}"
+			id="{{ slug ~ '-' ~ document.slug ~ '-' ~ id }}-header"
 		>
 			{{- document.name -}}
 			{{- icon(
@@ -29,13 +30,11 @@
 			-}}
 		</button>
 
-		<div id="{{ slug ~ '-' ~ document.slug }}" class="lg:text-2xl" role="region">
-			<div class="js-accordion-inner mx-6 lg:mx-10 pt-6">
-				<div class="border-l border-gray-very-dark space-y-4 lg:space-y-0">
-					{% for post in posts %}
-						{{- include( 'components/tease-document-child.html.twig', { post: post } ) -}}
-					{% endfor %}
-				</div>
+		<div id="{{ slug ~ '-' ~ document.slug ~ '-' ~ id }}" class="lg:text-2xl" role="region">
+			<div class="js-accordion-inner lg:mx-10 pt-6 space-y-6">
+				{% for post in posts %}
+					{{- include( 'components/tease-document-child.html.twig', { post: post } ) -}}
+				{% endfor %}
 			</div>
 		</div>
 	</div>

@@ -51,7 +51,7 @@
 	flex: 0 0 auto;
 }
 
-.col-2\/12 {
+@utility col-2/12 {
 	@apply w-2/12 px-4;
 
 	flex: 0 0 auto;
@@ -69,7 +69,7 @@
 	flex: 0 0 auto;
 }
 
-.col-3\/12 {
+@utility col-3/12 {
 	@apply w-3/12 px-4;
 
 	flex: 0 0 auto;
@@ -111,7 +111,7 @@
 	flex: 0 0 auto;
 }
 
-.col-9\/12 {
+@utility col-9/12 {
 	@apply w-9/12 px-4;
 
 	flex: 0 0 auto;

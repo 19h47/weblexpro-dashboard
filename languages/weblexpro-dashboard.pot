@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2025-10-20 11:35+0200\n"
+"POT-Creation-Date: 2025-10-21 12:43+0200\n"
 "PO-Revision-Date: 2022-03-27 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -875,23 +875,28 @@ msgstr ""
 msgid "Learn more..."
 msgstr ""
 
-#: views/header.html.twig:30 views/index.html.twig:185
+#: views/header.html.twig:26 views/header.html.twig:27
+#: views/index.html.twig:185
 msgid "Contact Us"
 msgstr ""
 
-#: views/header.html.twig:49
+#: views/header.html.twig:37
+msgid "My Account"
+msgstr ""
+
+#: views/header.html.twig:43
 msgid "My profile"
 msgstr ""
 
-#: views/header.html.twig:53
+#: views/header.html.twig:47
 msgid "My likes"
 msgstr ""
 
-#: views/header.html.twig:56
+#: views/header.html.twig:50
 msgid "My documents"
 msgstr ""
 
-#: views/header.html.twig:61
+#: views/header.html.twig:55
 msgid "Sign Out"
 msgstr ""
 
@@ -995,7 +1000,7 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: views/pages/single-offer.html.twig:69
+#: views/pages/single-offer.html.twig:61
 msgid "No links to display yet."
 msgstr ""
 

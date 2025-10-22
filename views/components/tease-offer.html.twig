@@ -8,8 +8,8 @@
  #}
 
 <article
-	class="lg:text-xl border-2 rounded-2xl relative group"
-	style="{{ active ? '' : 'color: #BABABA;' }}"
+	class="border-3 rounded-2xl relative group"
+	style="{{ active ? 'color: #02378C;' : 'color: #BABABA;' }}"
 >
 
 	{%- if active -%}
@@ -25,29 +25,27 @@
 		</wlpd-dialog-button>
 	{%- endif -%}
 
-	<header class="p-8 relative z-2">
+	<header class="p-3 lg:px-28.5 relative z-2">
 		<div
-			class="relative z-2 w-full"
+			class="relative z-2 text-xl italic"
 		>
-			<h3 class="lg:text-3xl lg:leading-none">{{- post.meta( 'catchphrase' ) -}}</h3>
-			<p class="mt-2">{{- post.title -}}</p>
+			<h3 class="font-heading font-extrabold">{{- post.meta( 'catchphrase' ) -}}</h3>
+			<p>{{- post.title -}}</p>
 		</div>
 	</header>
 
 	<div
-		class="relative z-1"
+		class="relative z-1 pb-3 lg:pb-11.5 px-3 lg:px-28.5 flex gap-5"
 	>
-		<p class="px-6">{{- post.meta( 'description' ) -}}</p>
-		<footer class="p-8 text-right">
+		<p class="{{ html_classes( active ? 'text-black', 'text-xs' ) }}">{{- post.meta( 'description' ) -}}</p>
+		<footer class="text-right shrink-0">
 			{%- if active -%}
 				<div class="size-10 flex text-white items-center rounded-full ml-auto justify-center bg-cyan-very-soft">
-
-						{{- icon( 'chevron-right', { classes: [ 'w-2 h-3 fill-white' ] } ) -}}
-
+					{{- icon( 'chevron-right', { classes: [ 'w-2 h-3 fill-white' ] } ) -}}
 				</div>
 			{%- else -%}
 				<div
-					class="text-xl bg-gray text-white py-3 px-4 group-hover:underline inline-block"
+					class="text-xl bg-gray text-white py-3 px-4 rounded-full inline-block"
 				>
 					{{- __( 'Learn more...', 'weblexpro-dashboard' ) -}}
 				</div>

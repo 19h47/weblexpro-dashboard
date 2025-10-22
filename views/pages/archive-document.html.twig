@@ -8,124 +8,108 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-	<div class="container">
-		<div class="row">
-			<div>
-				<p>
-					<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
-						{{- __( 'Home', 'weblexpro-dashboard' ) -}}
-					</a>
 
-					{%- for item in nav_menus.main.get_items() -%}
+	<div>
+		<p>
+			<a class="hover:underline" href="{{ dashboard_url | e( 'esc_url' ) }}">
+				{{- __( 'Home', 'weblexpro-dashboard' ) -}}
+			</a>
 
-						{%- if item.current or item.current_item_ancestor or item.current_item_parent -%}
-							&nbsp;&sol;&nbsp;<a class="hover:underline" href="{{ item.link }}">{{ item.title }}</a>
+			{%- for item in nav_menus.main.get_items() -%}
+
+				{%- if item.current or item.current_item_ancestor or item.current_item_parent -%}
+					&nbsp;&sol;&nbsp;<a class="hover:underline" href="{{ item.link }}">{{ item.title }}</a>
+				{%- endif -%}
+
+				{%- if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children -%}
+
+					{%- for child in item.children -%}
+						{%- if ( child.current or child.current_child_ancestor or child.current_item_parent ) -%}
+							&nbsp;&sol;&nbsp;{{- child.title -}}
 						{%- endif -%}
+					{%- endfor -%}
 
-						{%- if ( item.current or item.current_item_ancestor or item.current_item_parent ) and item.children -%}
+				{%- endif -%}
+			{% endfor %}
+		</p>
 
-							{%- for child in item.children -%}
-								{%- if ( child.current or child.current_child_ancestor or child.current_item_parent ) -%}
-									&nbsp;&sol;&nbsp;{{- child.title -}}
-								{%- endif -%}
-							{%- endfor -%}
-
-						{%- endif -%}
-					{% endfor %}
-				</p>
-
-			</div>
-		</div>
 	</div>
 
 	{%- if 'dossiers-thematiques' == term.slug -%}
-		<div class="container">
-			<div class="row">
-				<div>
-					<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
-						{% for post in posts %}
-							<a
-								href="{{ post.link }}"
-								class="min-h-[16rem] hover:bg-cyan-very-soft hover:text-white transition-colors duration-300 ease-out relative  text-center justify-center w-64 max-w-full flex items-center lg:text-2xl py-8 px-5 rounded-2xl border-2 border-cyan-very-soft"
-							>
-								{{- post.title -}}
-							</a>
-						{%- endfor -%}
-					</div>
-				</div>
-			</div>
+		<div class="flex flex-col lg:flex-row flex-wrap gap-5 justify-center">
+			{% for post in posts %}
+				<a
+					href="{{ post.link }}"
+						class="font-heading text-blue-dark font-extrabold italic hover:bg-blue-dark hover:text-white transition-colors duration-300 ease-out relative text-center justify-center lg:w-1/4 flex items-center text-xl p-5 rounded-3xl border-2 border-blue-dark"
+				>
+					{{- post.title -}}
+				</a>
+			{%- endfor -%}
+		</div>
 	{%- endif -%}
 
 	{%- if 'webinaires' == term.slug or 'dossiers-veille-juridique' == term.slug or 'dossiers-de-veille-juridique' == term.slug -%}
-		<div class="container text-blue-dark">
-			<div class="row space-y-6">
-				{% for child in term.children( { orderby: 'term_order' } ) %}
+		<div class="space-y-6 text-blue-dark">
+			{% for child in term.children( { orderby: 'term_order' } ) %}
 
-					{% if child.children() %}
-						<div>
-							<h2 class="font-medium lg:text-3xl">{{- child.name -}}</h2>
-							<hr class="block border-none bg-blue-dark h-px w-full mt-4">
-						</div>
+				{% if child.children() %}
 
-						<div class="mt-6">
-							<wlpd-accordion class="block pl-7 lg:pl-10 space-y-6">
-								{% for grandchild in child.children() %}
-									{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: grandchild, user: user }, with_context = false ) -}}
-								{% endfor %}
-							</wlpd-accordion>
-						</div>
-					{%- elseif child.posts( { post_type: 'document', posts_per_page: -1 } ).found_posts -%}
-						<wlpd-accordion class="block">
-							{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user }, with_context = false ) -}}
+					<h2 class="font-extrabold font-heading lg:text-3xl">{{- child.name -}}</h2>
+
+					<div class="mt-6">
+						<wlpd-accordion class="block space-y-6">
+							{% for grandchild in child.children() %}
+								{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: grandchild, user: user }, with_context = false ) -}}
+							{% endfor %}
 						</wlpd-accordion>
-					{%- endif -%}
-				{%- endfor -%}
-			</div>
+					</div>
+				{%- elseif child.posts( { post_type: 'document', posts_per_page: -1 } ).found_posts -%}
+					<wlpd-accordion class="block">
+						{{- include( 'components/tease-document.html.twig', { slug: term.slug, document: child, user: user }, with_context = false ) -}}
+					</wlpd-accordion>
+				{%- endif -%}
+			{%- endfor -%}
 		</div>
 	{%- endif -%}
 
 
 	{% if 'lois-de-finances' == term.slug %}
-		<div class="container text-blue-dark">
-			<div class="row">
-				<wlpd-accordion class="space-y-6">
-					{%- for child in term.children( { orderby: 'term_order' } ) -%}
-						{{-
-							include(
-								'components/tease-document.html.twig',
-								{
-									slug: term.slug,
-									document: child,
-									user: user
-								},
-								with_context = false
-							)
-						-}}
-					{%- endfor -%}
-				</wlpd-accordion>
-			</div>
+		<div class="text-blue-dark">
+			<wlpd-accordion class="space-y-6">
+				{%- for child in term.children( { orderby: 'term_order' } ) -%}
+					{{-
+						include(
+							'components/tease-document.html.twig',
+							{
+								slug: term.slug,
+								document: child,
+								user: user
+							},
+							with_context = false
+						)
+					-}}
+				{%- endfor -%}
+			</wlpd-accordion>
 		</div>
 	{%- endif -%}
 
 	{% if 'podcasts' == term.slug %}
-		<div class="container text-blue-dark">
-			<div class="row">
-				<wlpd-accordion class="space-y-6">
-					{%- for child in term.children( { orderby: 'term_order' } ) -%}
-						{{-
-							include(
-								'components/tease-document.html.twig',
-								{
-									slug: term.slug,
-									document: child,
-									user: user
-								},
-								with_context = false
-							)
-						-}}
-					{%- endfor -%}
-				</wlpd-accordion>
-			</div>
+		<div class="text-blue-dark">
+			<wlpd-accordion class="space-y-6">
+				{%- for child in term.children( { orderby: 'term_order' } ) -%}
+					{{-
+						include(
+							'components/tease-document.html.twig',
+							{
+								slug: term.slug,
+								document: child,
+								user: user
+							},
+							with_context = false
+						)
+					-}}
+				{%- endfor -%}
+			</wlpd-accordion>
 		</div>
 	{%- endif -%}
 {% endblock %}

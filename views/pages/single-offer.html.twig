@@ -8,7 +8,11 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-	{{ parent() }}
+	<div class="space-y-11.5 text-center">
+		<h1 class="text-4xl text-blue-dark font-heading font-extrabold">{{- post.meta( 'catchphrase' ) -}}</h1>
+
+		{{ post.content }}
+	</div>
 
 	{%- if 'albatros' == post.meta( 'type' ) -%}
 		<div class="container">
@@ -21,67 +25,45 @@
 	{%- endif -%}
 
 	{% if 'event' == post.meta( 'type' ) %}
-		<div class="container">
-			<div class="row">
-				<div>
-					<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
-						{% for category in post.meta( 'documents' ) %}
-							{% set category = get_term( category ) %}
 
-							<a href="{{ category.link }}" class="relative min-h-[17.1875rem] text-white justify-center text-center w-[17.1875rem] flex items-end lg:text-5xl py-8 px-5"
-								style="background-color: {{ post.meta( 'color' ) }};">
 
-								<div class="h-full flex flex-col">
-									<h2 class="my-auto">{{ category.name }}</h2>
 
-									{{- include( 'components/image.html.twig', { image: category.meta( 'image' ), classes: [ 'mt-8 mx-auto w-38 h-20 object-contain' ] } ) -}}
-								</div>
+		<div class="flex flex-col lg:flex-row flex-wrap gap-5 justify-center">
+			{% for category in post.meta( 'documents' ) %}
+				{% set category = get_term( category ) %}
 
-								<div class="absolute size-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2" style="border-color:  {{ post.meta( 'color' ) }};"></div>
-							</a>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
+				<a href="{{ category.link }}" class="font-heading text-blue-dark font-extrabold italic hover:bg-blue-dark hover:text-white transition-colors duration-300 ease-out relative text-center justify-center lg:w-1/4 flex items-center text-xl p-5 rounded-3xl border-2 border-blue-dark">
+					{{- category.name -}}
+				</a>
+			{% endfor %}
 		</div>
+
+
+
 	{% endif %}
 
 	{% if 'eagle' == post.meta( 'type' ) %}
-		<div class="container">
-			<div class="row">
-				<div>
-					{%- if user.meta( 'links' ) -%}
-						<div class="flex flex-wrap gap-x-32 gap-y-16 justify-center">
-							{% for item in user.meta( 'links' ) %}
-								<a
-									href="{{ item.link.url }}"
-									class="relative text-white text-center w-[17.1875rem] block lg:text-5xl py-8 px-5 bg-blue-dark"
-									{{ item.link.target ? 'target="_blank" rel="noopener noreferer"' }}
-								>
-									{{ item.link.title }}
+		{%- if user.meta( 'links' ) -%}
+			<div class="flex flex-col lg:flex-row flex-wrap gap-5 justify-center">
+				{% for item in user.meta( 'links' ) %}
+					<a
+						href="{{ item.link.url }}"
+						class="font-heading text-blue-dark font-extrabold italic hover:bg-blue-dark hover:text-white transition-colors duration-300 ease-out relative text-center justify-center w-1/4 flex items-center text-xl p-5 rounded-3xl border-2 border-blue-dark"
+						{{ item.link.target ? 'target="_blank" rel="noopener noreferer"' }}
+					>
+						{{ item.link.title }}
+					</a>
 
-									<div class="absolute size-full mb-4 ml-4 bottom-0 left-0 rotate-1 border-2 border-blue-dark"></div>
-								</a>
-
-							{% endfor %}
-						</div>
-					{%- else -%}
-						<p class="lg:text-2xl text-blue-dark font-bold">{{- __( 'No links to display yet.', 'weblexpro-dashboard' ) -}}</p>
-					{%- endif -%}
-				</div>
+				{% endfor %}
 			</div>
-		</div>
+		{%- else -%}
+			<p class="font-heading text-blue-dark font-extrabold italic hover:bg-blue-dark hover:text-white transition-colors duration-300 ease-out relative text-center justify-center flex items-center text-xl p-5 rounded-3xl border-2 border-blue-dark">{{- __( 'No links to display yet.', 'weblexpro-dashboard' ) -}}</p>
+		{%- endif -%}
 	{% endif %}
 
 	{%- if 'mag' == post.meta( 'type' ) and user.meta( 'mag_url' ) -%}
-		<div class="container">
-			<div class="row">
-				<div>
-					<div class="relative overflow-hidden w-full pt-[56.25%]">
-						<iframe class="absolute inset-0 size-full" src="{{ user.meta( 'mag_url' ) }}"></iframe>
-					</div>
-				</div>
-			</div>
+		<div class="relative overflow-hidden w-full pt-[56.25%]">
+			<iframe class="absolute inset-0 size-full" src="{{ user.meta( 'mag_url' ) }}"></iframe>
 		</div>
 	{%- endif -%}
 {% endblock %}
