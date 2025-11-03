@@ -21,16 +21,14 @@
 						>
 					</a>
 				</div>
-				<div class="col-6/12 lg:flex lg:justify-end mt-8 lg:mt-0">
+				<div class="lg:col-8/12 flex lg:justify-end gap-5 mt-8 lg:mt-0">
 					<div class="flex gap-7 items-center">
 						<a href="{{ contact_url }}" class="rounded-full text-xs font-medium py-3 px-6 text-blue-dark bg-cyan-very-soft block" aria-label="{{ __( 'Contact Us', 'weblexpro-dashboard' ) }}">
 							{{- __( 'Contact Us', 'weblexpro-dashboard' ) -}}
 						</a>
 					</div>
-				</div>
 
-				{%- if user -%}
-					<div class="col-6/12 lg:col-2/12 flex justify-end mt-8 lg:mt-0">
+					{%- if user -%}
 						<div class="relative z-10 group w-auto">
 							<wlpd-disclosure-button class="block">
 								<button data-dom="button" aria-controls="user-menu" type="button" class="rounded-full text-xs font-medium py-3 px-6 text-blue-dark bg-cyan-very-soft block">
@@ -56,9 +54,8 @@
 								</a>
 							</div>
 						</div>
-
-					</div>
-				{%- endif -%}
+					{%- endif -%}
+				</div>
 			</div>
 		</div>
 	</div>

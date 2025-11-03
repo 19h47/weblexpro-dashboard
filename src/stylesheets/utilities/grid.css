@@ -7,9 +7,8 @@
  */
 
 @utility container {
-		@apply max-w-7xl mx-auto px-4;
-	}
-
+	@apply max-w-[119.0625rem] mx-auto px-4;
+}
 
 @utility row {
 	@apply flex -mx-4 flex-wrap;

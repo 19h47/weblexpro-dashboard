@@ -47,15 +47,9 @@
 
 	</div>
 
-	<div class="mb-4 mt-9 row">
+	<div class="mb-4 mt-9 space-y-11.5">
 
-		{%- if post.content -%}
-			<div class="{{ html_classes( post.meta( 'documents' ) ? 'col-4/12' : '', 'wysiwyg text-xl text-blue-dark' ) }}">
-				{{- post.content -}}
-			</div>
-		{%- endif -%}
-
-		<div class="{{ html_classes( post.content ? 'col-8/12' : '' ) }}">
+		<div class="{{ html_classes() }}">
 
 			<h2 class="text-4xl font-extrabold font-heading text-blue-dark">{{- post.title -}}</h2>
 
@@ -87,8 +81,6 @@
 							{% elseif document.file %}
 								<a download class="flex items-center p-5 border rounded-full group border-black/20" href="{{ document.file.url }}">
 									<span class="mr-4 group-hover:underline">{{- document.title -}}</span>
-
-									<p class="ml-auto button group-hover:underline" type="button">{{- __( 'Download', 'weblexpro-dashboard' ) -}}</p>
 								</a>
 							{% endif %}
 
@@ -109,6 +101,14 @@
 			{% endif %}
 
 		</div>
+
+		{%- if post.content -%}
+			<div class="{{ html_classes( 'wysiwyg text-center text-xl' ) }}">
+				{{- post.content -}}
+			</div>
+		{%- endif -%}
+
+
 
 	</div>
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebLexPro Dashboard\n"
-"POT-Creation-Date: 2025-10-21 12:43+0200\n"
-"PO-Revision-Date: 2025-10-21 12:44+0200\n"
+"POT-Creation-Date: 2025-11-03 08:46+0100\n"
+"PO-Revision-Date: 2025-11-03 08:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -111,36 +111,31 @@ msgid "Indicate the document categories related to the offer."
 msgstr "Indiquer les catégories de document liées à l’offre."
 
 #: includes/Plugins/ACF/Fields/OfferPostFields.php:88
-#: includes/Post/Offer.php:101
-msgid "Color"
-msgstr "Couleur"
-
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:95
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:98
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:91
 msgid "Catchphrase"
 msgstr "Phrase d’accroche"
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:102
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:107
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:95
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:100
 msgid "Description"
 msgstr "Description"
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:111
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:104
 #: includes/Plugins/ACF/Fields/UserFormFields.php:161
 msgid "Links"
 msgstr "Liens"
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:124
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:117
 #: includes/Plugins/ACF/Fields/UserFormFields.php:166
 msgid "Add Link"
 msgstr "Ajouter un lien"
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:129
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:122
 #: includes/Plugins/ACF/Fields/UserFormFields.php:170
 msgid "Link"
 msgstr "Lien"
 
-#: includes/Plugins/ACF/Fields/OfferPostFields.php:144
+#: includes/Plugins/ACF/Fields/OfferPostFields.php:137
 msgid "Offer Post Fields"
 msgstr "Champs de la page d’une offre"
 
@@ -416,6 +411,10 @@ msgstr "Document reconverti en brouillon."
 #: includes/Post/Document.php:243
 msgid "Document scheduled."
 msgstr "Document planifié."
+
+#: includes/Post/Offer.php:101
+msgid "Color"
+msgstr "Couleur"
 
 #: includes/Post/Offer.php:187 includes/Post/Offer.php:271
 msgid "View Offer"
@@ -883,32 +882,31 @@ msgstr "Se connecter"
 msgid "En savoir plus..."
 msgstr "En savoir plus..."
 
-#: views/components/tease-offer.html.twig:52
+#: views/components/tease-offer.html.twig:50
 msgid "Learn more..."
 msgstr "En savoir plus..."
 
 #: views/header.html.twig:26 views/header.html.twig:27
-#: views/index.html.twig:185
 msgid "Contact Us"
-msgstr "Contactez-nous"
+msgstr "Nous contactez"
 
-#: views/header.html.twig:37
+#: views/header.html.twig:35
 msgid "My Account"
 msgstr "Mon Compte"
 
-#: views/header.html.twig:43
+#: views/header.html.twig:41
 msgid "My profile"
 msgstr "Mon profil"
 
-#: views/header.html.twig:47
+#: views/header.html.twig:45
 msgid "My likes"
 msgstr "Mes favoris"
 
-#: views/header.html.twig:50
+#: views/header.html.twig:48
 msgid "My documents"
 msgstr "Mes documents"
 
-#: views/header.html.twig:55
+#: views/header.html.twig:53
 msgid "Sign Out"
 msgstr "Se déconnecter"
 
@@ -916,29 +914,29 @@ msgstr "Se déconnecter"
 msgid "Dismiss"
 msgstr "Ignorer"
 
-#: views/index.html.twig:68 views/pages/archive-document.html.twig:16
+#: views/index.html.twig:67 views/pages/archive-document.html.twig:15
 #: views/pages/contact-page.html.twig:16
-#: views/pages/single-document.html.twig:17
+#: views/pages/single-document.html.twig:15
 msgid "Home"
 msgstr "Accueil"
 
-#: views/index.html.twig:202
+#: views/index.html.twig:193
 msgid "It looks like you are not taking advantage of this solution!"
 msgstr ""
 "Il semble que vous ne bénéficiez pas\n"
 "encore de cette solution !"
 
-#: views/index.html.twig:213
-msgid "I want a demo!"
-msgstr "Je souhaite une démo !"
+#: views/index.html.twig:201
+msgid "Contact us"
+msgstr "Contactez-nous"
 
-#: views/pages/dashboard-page.html.twig:25
+#: views/pages/dashboard-page.html.twig:23
 msgid "My subscription"
 msgid_plural "My subscriptions"
 msgstr[0] "Mon abonnement"
 msgstr[1] "Mes abonnements"
 
-#: views/pages/dashboard-page.html.twig:44
+#: views/pages/dashboard-page.html.twig:37
 msgid "Subscription available"
 msgid_plural "Subscriptions available"
 msgstr[0] "Abonnement disponible"
@@ -969,19 +967,19 @@ msgstr "Bonjour %s"
 msgid "You are already logged in."
 msgstr "Vous êtes déjà connecté(e)."
 
-#: views/pages/front-page.html.twig:43
+#: views/pages/front-page.html.twig:42
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: views/pages/front-page.html.twig:48
+#: views/pages/front-page.html.twig:47
 msgid "or"
 msgstr "ou"
 
-#: views/pages/front-page.html.twig:50
+#: views/pages/front-page.html.twig:49
 msgid "I would like a presentation"
 msgstr "Je souhaite une présentation"
 
-#: views/pages/likes-page.html.twig:44
+#: views/pages/likes-page.html.twig:38
 msgid "No likes to display yet."
 msgstr "Aucun favoris à afficher pour le moment."
 
@@ -991,30 +989,30 @@ msgid_plural "Practical Sheets"
 msgstr[0] "Fiche pratique"
 msgstr[1] "Fiches pratiques"
 
-#: views/pages/practical-sheets.html.twig:90
+#: views/pages/practical-sheets.html.twig:67
 msgid "No practical sheets to display yet."
 msgstr "Aucune fiches pratiques à afficher pour le moment."
 
-#: views/pages/single-document.html.twig:70
+#: views/pages/single-document.html.twig:59
 msgid "Attached File"
 msgid_plural "Attached Files"
 msgstr[0] "Fichier joint"
 msgstr[1] "Fichiers joints"
 
-#: views/pages/single-document.html.twig:80
+#: views/pages/single-document.html.twig:69
 msgid "Sorry, your browser doesn't support the audio element."
 msgstr "Désolé, votre navigateur ne prend pas en charge l’élément audio."
 
-#: views/pages/single-document.html.twig:88
+#: views/pages/single-document.html.twig:77
 msgid "Sorry, your browser doesn't support embedded videos."
 msgstr "Désolé, votre navigateur ne prend pas en charge les vidéos intégrées."
 
-#: views/pages/single-document.html.twig:96
-#: views/pages/single-document.html.twig:102
+#: views/pages/single-document.html.twig:85
+#: views/pages/single-document.html.twig:91
 msgid "Download"
 msgstr "Télécharger"
 
-#: views/pages/single-offer.html.twig:61
+#: views/pages/single-offer.html.twig:62
 msgid "No links to display yet."
 msgstr "Aucun liens à afficher pour le moment."
 
@@ -1042,6 +1040,9 @@ msgstr "19h47"
 #. Author URI of the plugin/theme
 msgid "https://www.19h47.fr/"
 msgstr "https://www.19h47.fr/"
+
+#~ msgid "I want a demo!"
+#~ msgstr "Je souhaite une démo !"
 
 #~ msgid "Theme Settings"
 #~ msgstr "Paramètres du thème"

@@ -12,7 +12,7 @@
 	{% set id = uniqid() %}
 	<div class="js-accordion-panel" data-accordion-open="false" data-accordion-deselect="true">
 		<button
-			class="js-accordion-header group text-xl font-extrabold italic text-blue-dark gap-5 rounded-full border-3 border-blue-dark p-4 lg:px-8.5 flex items-center"
+			class="js-accordion-header group w-full max-w-101 text-xl font-extrabold italic text-blue-dark gap-5 rounded-full border-3 border-blue-dark p-4 lg:px-8.5 flex items-center"
 			type="button"
 			aria-expanded="false"
 			aria-controls="{{ slug ~ '-' ~ document.slug ~ '-' ~ id }}"
@@ -23,7 +23,7 @@
 					'chevron-right',
 					{
 						classes: [
-							'w-5 h-3', 'group-aria-expanded:rotate-90 transition-transform duration-800 ease-in-out'
+							'w-5 h-3 ml-auto', 'group-aria-expanded:rotate-90 transition-transform duration-800 ease-in-out'
 						]
 					}
 				)

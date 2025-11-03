@@ -14,7 +14,7 @@
 	{% set offers_user = offers | filter( o => o.id in user.meta( 'offers' ) ) %}
 	{% set offers_available = offers | filter( o => o.id not in user.meta( 'offers' ) ) %}
 
-	<div class="space-y-5">
+	<div class="space-y-11.5">
 
 		{%- if offers_user is iterable and offers_user | length -%}
 

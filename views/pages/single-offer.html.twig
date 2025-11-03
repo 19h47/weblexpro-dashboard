@@ -11,7 +11,9 @@
 	<div class="space-y-11.5 text-center">
 		<h1 class="text-4xl text-blue-dark font-heading font-extrabold">{{- post.meta( 'catchphrase' ) -}}</h1>
 
-		{{ post.content }}
+		<div class="space-y-5.75">
+			{{ post.content }}
+		</div>
 	</div>
 
 	{%- if 'albatros' == post.meta( 'type' ) -%}
@@ -48,7 +50,7 @@
 				{% for item in user.meta( 'links' ) %}
 					<a
 						href="{{ item.link.url }}"
-						class="font-heading text-blue-dark font-extrabold italic hover:bg-blue-dark hover:text-white transition-colors duration-300 ease-out relative text-center justify-center w-1/4 flex items-center text-xl p-5 rounded-3xl border-2 border-blue-dark"
+						class="aspect-296/142 font-heading text-blue-dark font-extrabold italic hover:bg-blue-dark hover:text-white transition-colors duration-300 ease-out relative text-center justify-center w-1/5 flex items-center text-xl py-5 px-2.5 rounded-3xl border-2 border-blue-dark"
 						{{ item.link.target ? 'target="_blank" rel="noopener noreferer"' }}
 					>
 						{{ item.link.title }}
