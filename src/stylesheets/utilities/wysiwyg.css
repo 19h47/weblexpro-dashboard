@@ -18,4 +18,9 @@
 	.wysiwyg > p {
 		@apply mb-4;
 	}
+
+	.wysiwyg > ul,
+	.wysiwyg > ol {
+		@apply mb-4 pl-6 list-disc;
+	}
 }

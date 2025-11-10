@@ -47,15 +47,15 @@
 
 	</div>
 
-	<div class="mb-4 mt-9 space-y-11.5">
+	<div class="mb-4 mt-9 space-y-11.5 2xl:row">
 
-		<div class="{{ html_classes() }}">
-
+		<div class="2xl:col-full">
 			<h2 class="text-4xl font-extrabold font-heading text-blue-dark">{{- post.title -}}</h2>
+		</div>
 
-			{% if post.meta( 'documents' ) %}
-
-				<h3 class="text-2xl text-cyan-very-soft mt-4">
+		{% if post.meta( 'documents' ) %}
+			<div class="{{ html_classes( '2xl:col-6/12 2xl:order-2' ) }}">
+				<h3 class="text-2xl text-cyan-very-soft">
 					{{- _n( 'Attached File', 'Attached Files', post.meta( 'documents' ) | length, 'weblexpro-dashboard' ) -}}
 				</h3>
 
@@ -98,12 +98,11 @@
 						</div>
 					{% endfor %}
 				</div>
-			{% endif %}
-
-		</div>
+			</div>
+		{% endif %}
 
 		{%- if post.content -%}
-			<div class="{{ html_classes( 'wysiwyg text-center text-xl' ) }}">
+			<div class="{{ html_classes( 'wysiwyg 2xl:col-6/12 2xl:order-1 text-xl' ) }}">
 				{{- post.content -}}
 			</div>
 		{%- endif -%}

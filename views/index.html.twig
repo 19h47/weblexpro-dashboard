@@ -9,7 +9,7 @@
 <html
     itemscope
     itemtype="http://schema.org/WebPage"
-    {{ html_class( 'no-js no-touch is-loading is-first-time-loaded' ) }}
+    {{ html_class( 'no-js no-touch is-loading text-xl is-first-time-loaded' ) }}
     {{ site.language_attributes }}
 >
 
@@ -31,7 +31,7 @@
 
 		{%- if notice -%}
 			<wlpd-notice class="bg-cyan-very-soft text-white py-4 block" data-name="{{ notice | sanitize }}" style="display:none;">
-				<div class="container !max-w-full">
+				<div class="container max-w-full!">
 					<div class="row">
 						<div>
 							<div class="flex lg:text-3xl items-center justify-between gap-2">
@@ -80,7 +80,7 @@
 							</div>
 
 							{%- if post.content -%}
-								<div class="lg:text-3xl text-blue-dark font-bold">
+								<div class="lg:text-xl wysiwyg">
 									{{- post.content -}}
 								</div>
 							{%- endif -%}
@@ -188,7 +188,7 @@
 
 		<div id="svg-sprite" style="display: none;">{{- include( 'public/sprite.svg', ignore_missing = true ) -}}</div>
 
-		<wlpd-dialog cid="offer-unavailable" style="display: none;" class="fixed z-10 flex items-center justify-center size-full inset-0">
+		<wlpd-dialog cid="offer-unavailable" style="display: none;" class="[backdrop-filter:blur(3.4px)] bg-[rgba(192,192,192,0.3)] fixed z-10 flex items-center justify-center size-full inset-0">
 			<div class="relative m-4 z-2 border-2 text-center rounded-3xl border-blue-dark text-blue-dark bg-white max-w-203.25 p-4 lg:py-21 space-y-5 lg:space-y-12.5 lg:px-24">
 				<h2 class="lg:text-4xl font-heading font-extrabold ">{{- __( 'It looks like you are not taking advantage of this solution!', 'weblexpro-dashboard' ) -}}</h2>
 

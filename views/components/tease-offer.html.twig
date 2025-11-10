@@ -27,15 +27,15 @@
 
 	<header class="p-3 lg:pt-11.5 lg:px-28.5 relative z-2">
 		<div
-			class="relative z-2 text-xl italic"
+			class="relative z-2 italic"
 		>
-			<h3 class="font-heading font-extrabold">{{- post.meta( 'catchphrase' ) -}}</h3>
-			<p>{{- post.title -}}</p>
+			<h3 class="font-heading text-3xl font-extrabold">{{- post.meta( 'catchphrase' ) -}}</h3>
+			<p class="text-2xl">{{- post.title -}}</p>
 		</div>
 	</header>
 
 	<div
-		class="relative z-1 pb-3 lg:pb-11.5 px-3 lg:px-28.5 flex gap-5"
+		class="relative z-1 pb-3 lg:pb-11.5 px-3 lg:px-28.5 flex flex-col lg:flex-row items-center gap-5"
 	>
 		<p class="{{ html_classes( active ? 'text-black', 'text-xs' ) }}">{{- post.meta( 'description' ) -}}</p>
 		<footer class="text-right shrink-0">
