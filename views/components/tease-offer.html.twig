@@ -38,7 +38,7 @@
 		class="relative z-1 pb-3 lg:pb-11.5 px-3 lg:px-28.5 flex flex-col lg:flex-row items-center gap-5"
 	>
 		<p class="{{ html_classes( active ? 'text-black', 'text-xs' ) }}">{{- post.meta( 'description' ) -}}</p>
-		<footer class="text-right shrink-0">
+		<footer class="text-right shrink-0 ml-auto">
 			{%- if active -%}
 				<div class="size-10 flex text-white items-center rounded-full ml-auto justify-center bg-cyan-very-soft">
 					{{- icon( 'chevron-right', { classes: [ 'w-2 h-3 fill-white' ] } ) -}}

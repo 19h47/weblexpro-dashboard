@@ -13,22 +13,22 @@
 	},
 	"devDependencies": {
 		"@19h47/keycode": "^3.1.0",
-		"@tailwindcss/postcss": "^4.1.16",
-		"@tailwindcss/vite": "^4.1.16",
+		"@tailwindcss/postcss": "^4.1.17",
+		"@tailwindcss/vite": "^4.1.17",
 		"@zackad/prettier-plugin-twig": "^0.16.0",
 		"laravel-vite-plugin": "^2.0.1",
 		"postcss": "^8.5.4",
 		"prettier": "^3.6.2",
 		"prettier-plugin-tailwindcss": "^0.7.1",
-		"vite": "^7.1.12",
+		"vite": "^7.2.2",
 		"vite-plugin-compression": "^0.5.1",
 		"vite-svg-sprite-wrapper": "^1.5.0"
 	},
 	"dependencies": {
-		"@19h47/accordion": "^7.0.1",
+		"@19h47/accordion": "^8.0.0",
 		"@19h47/disclosure-button": "^1.2.3",
 		"js-cookie": "^3.0.5",
 		"piecesjs": "^0.4.2",
-		"tailwindcss": "^4.1.16"
+		"tailwindcss": "^4.1.17"
 	}
 }
